@@ -1,0 +1,438 @@
+{
+  "id": "A01",
+  "title": "Start an Agent Session in GCP",
+  "subtitle": "Advanced · Claude Code and OpenCode",
+  "sources": [
+    {
+      "label": "Claude Code settings",
+      "url": "https://code.claude.com/docs/en/settings"
+    },
+    {
+      "label": "Claude Code model configuration",
+      "url": "https://code.claude.com/docs/en/model-config"
+    },
+    {
+      "label": "OpenCode providers",
+      "url": "https://opencode.ai/docs/providers/"
+    },
+    {
+      "label": "OpenCode permissions",
+      "url": "https://opencode.ai/docs/permissions/"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "lab",
+      "kind": "diagram",
+      "eyebrow": "ADVANCED · GCP",
+      "title": "Place the terminal in GCP",
+      "body": "Establish the workspace before running a client.",
+      "code": "Corporate GCP workspace\nTraining checkout: /work/training-orders\nClients: Claude Code and OpenCode",
+      "result": "Synthetic workspace · example directory",
+      "narration": "Before we launch either agent, look at the workspace badge. It says Corporate G C P, and the terminal is open in that workspace. That's the operating boundary for this series. The repository in the demo is a synthetic order service. We'll start with a read-only task, so by the end you can compare exactly what the agent explored with what changed on disk.",
+      "focus": "Workspace badge: Corporate GCP",
+      "action": "Open the approved GCP workspace.",
+      "durationFrames": 547,
+      "duration": 22.791666666666668,
+      "cues": [
+        {
+          "start": 0.368,
+          "end": 3.768,
+          "text": "Before we launch either agent, look at\nthe workspace badge."
+        },
+        {
+          "start": 3.843,
+          "end": 8.064,
+          "text": "It says Corporate G C P, and the\nterminal is open in that workspace."
+        },
+        {
+          "start": 8.677,
+          "end": 11.377,
+          "text": "That's the operating boundary for this\nseries."
+        },
+        {
+          "start": 11.427,
+          "end": 14.802,
+          "text": "The repository in the demo is a\nsynthetic order service."
+        },
+        {
+          "start": 14.852,
+          "end": 19.327,
+          "text": "We'll start with a read-only task, so by\nthe end you can compare exactly what the"
+        },
+        {
+          "start": 19.377,
+          "end": 21.703,
+          "text": "agent explored with what changed on\ndisk."
+        }
+      ]
+    },
+    {
+      "id": "checkout",
+      "kind": "terminal",
+      "eyebrow": "WORKSPACE · REPOSITORY",
+      "title": "Check the working directory",
+      "body": "The next three commands establish the starting state.",
+      "code": "pwd\ngit status --short --branch\ngit rev-parse --short HEAD",
+      "result": "/work/training-orders\n## lab/a01\n27e4ab1",
+      "narration": "In the terminal, run P W D, then Git status and Git rev-parse. The path ends in training-orders. Status displays the lab branch and no file entries beneath it, so we have a clean starting point. The short commit is twenty-seven E four A B one. Copy the commit from your own terminal. You can use it later to reproduce the same inspection.",
+      "focus": "Clean branch lab/a01 at 27e4ab1",
+      "action": "Check the directory, status, and commit.",
+      "durationFrames": 544,
+      "duration": 22.666666666666668,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 5.168,
+          "text": "In the terminal, run P W D, then Git\nstatus and Git rev-parse."
+        },
+        {
+          "start": 5.218,
+          "end": 7.393,
+          "text": "The path ends in training-orders."
+        },
+        {
+          "start": 7.493,
+          "end": 11.118,
+          "text": "Status displays the lab branch and no\nfile entries beneath it,"
+        },
+        {
+          "start": 11.168,
+          "end": 12.885,
+          "text": "so we have a clean starting point."
+        },
+        {
+          "start": 13.519,
+          "end": 16.569,
+          "text": "The short commit is twenty-seven E four\nA B one."
+        },
+        {
+          "start": 16.644,
+          "end": 18.844,
+          "text": "Copy the commit from your own terminal."
+        },
+        {
+          "start": 18.894,
+          "end": 21.575,
+          "text": "You can use it later to reproduce the\nsame inspection."
+        }
+      ]
+    },
+    {
+      "id": "clients",
+      "kind": "terminal",
+      "eyebrow": "WORKSPACE · TOOLS",
+      "title": "Identify the installed clients",
+      "body": "The installed build determines which controls you can check.",
+      "code": "claude --version\nopencode --version",
+      "result": "Claude Code version: copy from terminal\nOpenCode version: copy from terminal",
+      "narration": "Now ask each client for its version. This is much faster than guessing from the menu or from a video. Record the two values your workspace reports. If one command is missing, you can finish the first inspection with the other approved client. Use those version numbers when you look up configuration, model selection, or skill discovery later.",
+      "focus": "Two client versions belong in the record",
+      "action": "Run both approved version commands.",
+      "durationFrames": 539,
+      "duration": 22.458333333333332,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 2.914,
+          "text": "Now ask each client for its version."
+        },
+        {
+          "start": 2.989,
+          "end": 6.689,
+          "text": "This is much faster than guessing from\nthe menu or from a video."
+        },
+        {
+          "start": 6.764,
+          "end": 9.344,
+          "text": "Record the two values your workspace\nreports."
+        },
+        {
+          "start": 9.972,
+          "end": 13.622,
+          "text": "If one command is missing, you can\nfinish the first inspection with the"
+        },
+        {
+          "start": 13.672,
+          "end": 15.522,
+          "text": "other approved client."
+        },
+        {
+          "start": 15.597,
+          "end": 19.822,
+          "text": "Use those version numbers when you look\nup configuration, model selection,"
+        },
+        {
+          "start": 19.872,
+          "end": 21.351,
+          "text": "or skill discovery later."
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "kind": "decision",
+      "eyebrow": "SESSION · MODEL",
+      "title": "Record the resolved model",
+      "body": "Record the resolved identifier where the client displays it.",
+      "code": "Client: Claude Code or OpenCode\nResolved model: from authorized session\nProvider: from approved workspace settings\nRuntime: corporate GCP workspace",
+      "result": "Lab record fields · use your workspace values",
+      "narration": "Open the existing session's model selector or status view. Suppose the client shows a friendly model label. Record the resolved identifier when the workspace makes it visible, since the same label can point to different versions. Then check the configured provider. The terminal runs in G C P, while the configured provider determines where model requests are processed. Keep both facts in the session record.",
+      "focus": "A client, a model, and a provider are separate",
+      "action": "Read the session's active model and provider.",
+      "durationFrames": 642,
+      "duration": 26.75,
+      "cues": [
+        {
+          "start": 0.396,
+          "end": 4.246,
+          "text": "Open the existing session's model\nselector or status view."
+        },
+        {
+          "start": 4.321,
+          "end": 7.296,
+          "text": "Suppose the client shows a friendly\nmodel label."
+        },
+        {
+          "start": 7.371,
+          "end": 11.121,
+          "text": "Record the resolved identifier when the\nworkspace makes it visible,"
+        },
+        {
+          "start": 11.196,
+          "end": 13.675,
+          "text": "since the same label can point to\ndifferent versions."
+        },
+        {
+          "start": 14.309,
+          "end": 16.509,
+          "text": "Then check the configured provider."
+        },
+        {
+          "start": 16.559,
+          "end": 21.009,
+          "text": "The terminal runs in G C P, while the\nconfigured provider determines where"
+        },
+        {
+          "start": 21.059,
+          "end": 22.705,
+          "text": "model requests are processed."
+        },
+        {
+          "start": 23.336,
+          "end": 25.699,
+          "text": "Keep both facts in the session record."
+        }
+      ]
+    },
+    {
+      "id": "access",
+      "kind": "decision",
+      "eyebrow": "SESSION · PERMISSIONS",
+      "title": "Confirm what the session may do",
+      "body": "The listed grants belong to the synthetic lab.",
+      "code": "Read training files       allowed\nEdit the training branch  ask first\nRun unit tests            ask first\nExternal integrations     unavailable",
+      "result": "First task scope: inspect the checkout",
+      "narration": "Here is the effective policy for our example: reading the training files is allowed, and edits or unit-test runs ask for confirmation. Look up the effective policy for your own session. This matters even for a simple prompt. You can tell an agent to inspect a file, but a proposed command is still a separate action that needs to fit the session's permissions.",
+      "focus": "Read allowed; edits and tests ask first",
+      "action": "Open the effective session permissions.",
+      "durationFrames": 542,
+      "duration": 22.583333333333332,
+      "cues": [
+        {
+          "start": 0.414,
+          "end": 3.289,
+          "text": "Here is the effective policy for our\nexample:"
+        },
+        {
+          "start": 3.364,
+          "end": 7.564,
+          "text": "reading the training files is allowed,\nand edits or unit-test runs ask for"
+        },
+        {
+          "start": 7.614,
+          "end": 8.384,
+          "text": "confirmation."
+        },
+        {
+          "start": 9.012,
+          "end": 11.887,
+          "text": "Look up the effective policy for your\nown session."
+        },
+        {
+          "start": 11.962,
+          "end": 14.487,
+          "text": "This matters even for a simple prompt."
+        },
+        {
+          "start": 14.562,
+          "end": 16.887,
+          "text": "You can tell an agent to inspect a file,"
+        },
+        {
+          "start": 16.937,
+          "end": 20.387,
+          "text": "but a proposed command is still a\nseparate action that needs to fit the"
+        },
+        {
+          "start": 20.437,
+          "end": 21.501,
+          "text": "session's permissions."
+        }
+      ]
+    },
+    {
+      "id": "request",
+      "kind": "editor",
+      "eyebrow": "SESSION · FIRST REQUEST",
+      "title": "Begin with a read-only task",
+      "body": "Use specific evidence the learner can open independently.",
+      "code": "Find the order quantity validator and its unit tests.\nPoint to the zero-quantity case with its file path.\nUse read-only inspection for this request.",
+      "result": "orders/quantity.py · is_valid_quantity\ntests/test_quantity.py · test_rejects_zero",
+      "narration": "Ask the agent for two paths and one concrete case: the quantity validator, its test file, and the test for zero. Watch it inspect the checkout. The example points to the validator in orders slash quantity dot P Y and to test rejects zero in the test suite. Those names give us a simple way to confirm the answer ourselves.",
+      "focus": "Find the validator and its zero-case test",
+      "action": "Send the inspection request in one approved client.",
+      "durationFrames": 520,
+      "duration": 21.666666666666668,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 4.868,
+          "text": "Ask the agent for two paths and one\nconcrete case: the quantity validator,"
+        },
+        {
+          "start": 5.068,
+          "end": 7.468,
+          "text": "its test file, and the test for zero."
+        },
+        {
+          "start": 7.543,
+          "end": 9.089,
+          "text": "Watch it inspect the checkout."
+        },
+        {
+          "start": 9.691,
+          "end": 14.341,
+          "text": "The example points to the validator in\norders slash quantity dot P Y and to"
+        },
+        {
+          "start": 14.391,
+          "end": 16.509,
+          "text": "test rejects zero in the test suite."
+        },
+        {
+          "start": 17.098,
+          "end": 20.592,
+          "text": "Those names give us a simple way to\nconfirm the answer ourselves."
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "kind": "terminal",
+      "eyebrow": "SESSION · VERIFY",
+      "title": "Verify the paths and starting state",
+      "body": "The no-edit claim has a visible check.",
+      "code": "git status --short --branch\ngit rev-parse --short HEAD",
+      "result": "## lab/a01\n27e4ab1",
+      "narration": "Open the reported validator and the test. Check that the test actually passes zero to the validator and expects a rejection. Then run the branch and commit checks again. In the demonstration the branch header is still the only status line, and the commit is unchanged. That gives us direct evidence about the checkout, independent of the agent's summary.",
+      "focus": "The commit matches and the file list is empty",
+      "action": "Open the two paths and rerun Git status.",
+      "durationFrames": 561,
+      "duration": 23.375,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 3.243,
+          "text": "Open the reported validator and the\ntest."
+        },
+        {
+          "start": 3.318,
+          "end": 7.518,
+          "text": "Check that the test actually passes zero\nto the validator and expects a"
+        },
+        {
+          "start": 7.568,
+          "end": 8.213,
+          "text": "rejection."
+        },
+        {
+          "start": 8.837,
+          "end": 11.412,
+          "text": "Then run the branch and commit checks\nagain."
+        },
+        {
+          "start": 11.487,
+          "end": 15.262,
+          "text": "In the demonstration the branch header\nis still the only status line,"
+        },
+        {
+          "start": 15.312,
+          "end": 16.893,
+          "text": "and the commit is unchanged."
+        },
+        {
+          "start": 17.527,
+          "end": 20.402,
+          "text": "That gives us direct evidence about the\ncheckout,"
+        },
+        {
+          "start": 20.452,
+          "end": 22.297,
+          "text": "independent of the agent's summary."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "kind": "diagram",
+      "eyebrow": "SESSION · HANDOFF",
+      "title": "Save a short session record",
+      "body": "Keep enough information for another teammate to repeat it.",
+      "code": "Workspace · branch · commit\nClient version · resolved model · provider\nPermission scope · inspected file paths",
+      "result": "Lab complete: two paths verified, clean checkout",
+      "narration": "Finish by saving the workspace, commit, client version, model, provider, and permissions next to the two verified paths. That's the minimum useful record for the next lab. You can now start a session with a clear boundary, ask a small question, and verify the answer. Next, we'll check how both clients pick up the same repository convention.",
+      "focus": "The next session begins with a reproducible record",
+      "action": "Save the verified paths with the session details.",
+      "durationFrames": 551,
+      "duration": 22.958333333333332,
+      "cues": [
+        {
+          "start": 0.414,
+          "end": 4.904,
+          "text": "Finish by saving the workspace, commit,\nclient version, model, provider,"
+        },
+        {
+          "start": 5.069,
+          "end": 8.269,
+          "text": "and permissions next to the two verified\npaths."
+        },
+        {
+          "start": 8.344,
+          "end": 10.833,
+          "text": "That's the minimum useful record for the\nnext lab."
+        },
+        {
+          "start": 11.447,
+          "end": 15.372,
+          "text": "You can now start a session with a clear\nboundary, ask a small question,"
+        },
+        {
+          "start": 15.492,
+          "end": 17.467,
+          "text": "and verify the answer."
+        },
+        {
+          "start": 17.567,
+          "end": 21.45,
+          "text": "Next, we'll check how both clients pick\nup the same repository convention."
+        }
+      ]
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 4446,
+  "voiceBuild": "70119234fa469b46f1df16870a29ef9884d45423b26e866b558fde8a5dc0d780"
+}

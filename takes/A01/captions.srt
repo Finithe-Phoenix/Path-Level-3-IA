@@ -1,0 +1,259 @@
+1
+00:00:00,368 --> 00:00:03,768
+Before we launch either agent, look at
+the workspace badge.
+
+2
+00:00:03,843 --> 00:00:08,064
+It says Corporate G C P, and the
+terminal is open in that workspace.
+
+3
+00:00:08,677 --> 00:00:11,377
+That's the operating boundary for this
+series.
+
+4
+00:00:11,427 --> 00:00:14,802
+The repository in the demo is a
+synthetic order service.
+
+5
+00:00:14,852 --> 00:00:19,327
+We'll start with a read-only task, so by
+the end you can compare exactly what the
+
+6
+00:00:19,377 --> 00:00:21,703
+agent explored with what changed on
+disk.
+
+7
+00:00:23,210 --> 00:00:27,960
+In the terminal, run P W D, then Git
+status and Git rev-parse.
+
+8
+00:00:28,010 --> 00:00:30,185
+The path ends in training-orders.
+
+9
+00:00:30,285 --> 00:00:33,910
+Status displays the lab branch and no
+file entries beneath it,
+
+10
+00:00:33,960 --> 00:00:35,677
+so we have a clean starting point.
+
+11
+00:00:36,311 --> 00:00:39,361
+The short commit is twenty-seven E four
+A B one.
+
+12
+00:00:39,436 --> 00:00:41,636
+Copy the commit from your own terminal.
+
+13
+00:00:41,686 --> 00:00:44,367
+You can use it later to reproduce the
+same inspection.
+
+14
+00:00:45,897 --> 00:00:48,372
+Now ask each client for its version.
+
+15
+00:00:48,447 --> 00:00:52,147
+This is much faster than guessing from
+the menu or from a video.
+
+16
+00:00:52,222 --> 00:00:54,802
+Record the two values your workspace
+reports.
+
+17
+00:00:55,430 --> 00:00:59,080
+If one command is missing, you can
+finish the first inspection with the
+
+18
+00:00:59,130 --> 00:01:00,980
+other approved client.
+
+19
+00:01:01,055 --> 00:01:05,280
+Use those version numbers when you look
+up configuration, model selection,
+
+20
+00:01:05,330 --> 00:01:06,809
+or skill discovery later.
+
+21
+00:01:08,313 --> 00:01:12,163
+Open the existing session's model
+selector or status view.
+
+22
+00:01:12,238 --> 00:01:15,213
+Suppose the client shows a friendly
+model label.
+
+23
+00:01:15,288 --> 00:01:19,038
+Record the resolved identifier when the
+workspace makes it visible,
+
+24
+00:01:19,113 --> 00:01:21,592
+since the same label can point to
+different versions.
+
+25
+00:01:22,226 --> 00:01:24,426
+Then check the configured provider.
+
+26
+00:01:24,476 --> 00:01:28,926
+The terminal runs in G C P, while the
+configured provider determines where
+
+27
+00:01:28,976 --> 00:01:30,622
+model requests are processed.
+
+28
+00:01:31,253 --> 00:01:33,616
+Keep both facts in the session record.
+
+29
+00:01:35,081 --> 00:01:37,956
+Here is the effective policy for our
+example:
+
+30
+00:01:38,031 --> 00:01:42,231
+reading the training files is allowed,
+and edits or unit-test runs ask for
+
+31
+00:01:42,281 --> 00:01:43,051
+confirmation.
+
+32
+00:01:43,679 --> 00:01:46,554
+Look up the effective policy for your
+own session.
+
+33
+00:01:46,629 --> 00:01:49,154
+This matters even for a simple prompt.
+
+34
+00:01:49,229 --> 00:01:51,554
+You can tell an agent to inspect a file,
+
+35
+00:01:51,604 --> 00:01:55,054
+but a proposed command is still a
+separate action that needs to fit the
+
+36
+00:01:55,104 --> 00:01:56,168
+session's permissions.
+
+37
+00:01:57,668 --> 00:02:02,118
+Ask the agent for two paths and one
+concrete case: the quantity validator,
+
+38
+00:02:02,318 --> 00:02:04,718
+its test file, and the test for zero.
+
+39
+00:02:04,793 --> 00:02:06,339
+Watch it inspect the checkout.
+
+40
+00:02:06,941 --> 00:02:11,591
+The example points to the validator in
+orders slash quantity dot P Y and to
+
+41
+00:02:11,641 --> 00:02:13,759
+test rejects zero in the test suite.
+
+42
+00:02:14,348 --> 00:02:17,842
+Those names give us a simple way to
+confirm the answer ourselves.
+
+43
+00:02:19,310 --> 00:02:22,160
+Open the reported validator and the
+test.
+
+44
+00:02:22,235 --> 00:02:26,435
+Check that the test actually passes zero
+to the validator and expects a
+
+45
+00:02:26,485 --> 00:02:27,130
+rejection.
+
+46
+00:02:27,754 --> 00:02:30,329
+Then run the branch and commit checks
+again.
+
+47
+00:02:30,404 --> 00:02:34,179
+In the demonstration the branch header
+is still the only status line,
+
+48
+00:02:34,229 --> 00:02:35,810
+and the commit is unchanged.
+
+49
+00:02:36,444 --> 00:02:39,319
+That gives us direct evidence about the
+checkout,
+
+50
+00:02:39,369 --> 00:02:41,214
+independent of the agent's summary.
+
+51
+00:02:42,706 --> 00:02:47,196
+Finish by saving the workspace, commit,
+client version, model, provider,
+
+52
+00:02:47,361 --> 00:02:50,561
+and permissions next to the two verified
+paths.
+
+53
+00:02:50,636 --> 00:02:53,125
+That's the minimum useful record for the
+next lab.
+
+54
+00:02:53,739 --> 00:02:57,664
+You can now start a session with a clear
+boundary, ask a small question,
+
+55
+00:02:57,784 --> 00:02:59,759
+and verify the answer.
+
+56
+00:02:59,859 --> 00:03:03,742
+Next, we'll check how both clients pick
+up the same repository convention.
