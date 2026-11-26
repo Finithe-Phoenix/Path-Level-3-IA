@@ -1,0 +1,218 @@
+1
+00:00:00,389 --> 00:00:03,539
+Put yourself at the moment before a fix
+is handed off.
+
+2
+00:00:03,614 --> 00:00:05,939
+How do you know it solves the right
+problem?
+
+3
+00:00:05,989 --> 00:00:09,536
+We will use a fixed regression test and
+an independent human review.
+
+4
+00:00:10,164 --> 00:00:13,864
+In this order service, the agent can
+choose how to inspect and edit the
+
+5
+00:00:13,914 --> 00:00:16,514
+validator inside the planned scope.
+
+6
+00:00:16,589 --> 00:00:19,858
+Each transition in the workflow depends
+on a visible result.
+
+7
+00:00:21,376 --> 00:00:25,251
+Read the issue and write down the
+expected answer for each example.
+
+8
+00:00:25,326 --> 00:00:27,226
+One and five should be accepted.
+
+9
+00:00:27,326 --> 00:00:29,513
+Zero and negative one should be
+rejected.
+
+10
+00:00:30,150 --> 00:00:34,225
+Use the zero case for the regression
+test, and keep the earlier cases in the
+
+11
+00:00:34,300 --> 00:00:35,250
+suite.
+
+12
+00:00:35,325 --> 00:00:38,775
+These fixed inputs give us something
+concrete to check before and after the
+
+13
+00:00:38,825 --> 00:00:39,226
+edit.
+
+14
+00:00:40,751 --> 00:00:44,126
+Run the suite with the regression in
+place and the original code still
+
+15
+00:00:44,176 --> 00:00:45,201
+present.
+
+16
+00:00:45,276 --> 00:00:46,751
+Pause at the failure.
+
+17
+00:00:46,826 --> 00:00:50,901
+It's the zero-case assertion, and the
+validator returned true even though we
+
+18
+00:00:50,951 --> 00:00:51,960
+expected false.
+
+19
+00:00:52,572 --> 00:00:55,072
+An import error would tell a different
+story.
+
+20
+00:00:55,147 --> 00:00:57,472
+Capture the assertion and its revision.
+
+21
+00:00:57,547 --> 00:01:01,033
+Now we have evidence that the new test
+actually detects the defect.
+
+22
+00:01:02,493 --> 00:01:05,243
+Before asking for the edit, agree on a
+gate.
+
+23
+00:01:05,293 --> 00:01:09,018
+The post-fix tests must pass, and the
+files must fit the task.
+
+24
+00:01:09,093 --> 00:01:11,064
+If an assertion fails, inspect it.
+
+25
+00:01:11,657 --> 00:01:16,657
+If the diff includes an unrelated file,
+follow up before handing it to review.
+
+26
+00:01:16,732 --> 00:01:20,382
+Keep the regression's expected result
+fixed while trying a repair,
+
+27
+00:01:20,432 --> 00:01:23,424
+so the passing result still answers the
+original question.
+
+28
+00:01:24,939 --> 00:01:28,814
+Run the same command again, this time on
+the edited revision.
+
+29
+00:01:28,864 --> 00:01:32,819
+The zero-case test now passes, along
+with the three existing cases.
+
+30
+00:01:33,421 --> 00:01:36,671
+Check the diff and save this output
+beside the first run.
+
+31
+00:01:36,746 --> 00:01:41,121
+You've just shown a behavior change: the
+same test observed acceptance before the
+
+32
+00:01:41,196 --> 00:01:42,693
+fix and rejection after it.
+
+33
+00:01:43,302 --> 00:01:46,497
+The reviewer can now evaluate the
+implementation and scope.
+
+34
+00:01:47,997 --> 00:01:51,422
+Once the human author has opened the
+training pull request,
+
+35
+00:01:51,497 --> 00:01:55,604
+use G H P R checks to see what
+continuous integration observed.
+
+36
+00:01:56,217 --> 00:01:58,717
+This sample has two completed checks.
+
+37
+00:01:58,792 --> 00:02:03,187
+In your repo, check the required set and
+what each result belongs to.
+
+38
+00:02:03,262 --> 00:02:07,312
+If a required check is still pending,
+stay at that gate until it finishes and
+
+39
+00:02:07,362 --> 00:02:08,652
+you can inspect the result.
+
+40
+00:02:10,168 --> 00:02:14,348
+Now hand over the issue reference, diff,
+test command, both outputs,
+
+41
+00:02:14,408 --> 00:02:16,308
+and the pull request checks.
+
+42
+00:02:16,383 --> 00:02:20,808
+The reviewer opens the actual change and
+records their own decision with GitHub
+
+43
+00:02:20,883 --> 00:02:21,666
+CLI.
+
+44
+00:02:22,279 --> 00:02:26,804
+Give them enough to question the result:
+which assertion failed, what changed,
+
+45
+00:02:26,884 --> 00:02:28,534
+and what was verified.
+
+46
+00:02:28,609 --> 00:02:32,084
+That's the value of a deterministic
+checkpoint in a workflow that also
+
+47
+00:02:32,134 --> 00:02:33,244
+requires judgment.
