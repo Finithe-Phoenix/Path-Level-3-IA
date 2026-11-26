@@ -1,0 +1,226 @@
+1
+00:00:00,340 --> 00:00:05,496
+For this lab, two paths in the synthetic
+repository each validate an order
+
+2
+00:00:05,496 --> 00:00:06,123
+quantity.
+
+3
+00:00:06,303 --> 00:00:11,902
+The issue asks us to centralize that rule
+while preserving both existing interfaces.
+
+4
+00:00:12,082 --> 00:00:17,615
+Before opening the approved agent session
+in GCP, identify the parts of this work
+
+5
+00:00:17,615 --> 00:00:18,844
+that are in scope.
+
+6
+00:00:19,024 --> 00:00:23,513
+Our boundary is the shared rule, two
+callers, and their existing tests.
+
+7
+00:00:24,965 --> 00:00:29,966
+Begin with a clean training branch and run
+the existing tests in the authorized
+
+8
+00:00:29,966 --> 00:00:30,726
+environment.
+
+9
+00:00:30,906 --> 00:00:35,886
+Confirm that both callers have a positive
+case and a zero or negative case.
+
+10
+00:00:36,066 --> 00:00:38,394
+Save the result with the starting commit.
+
+11
+00:00:38,574 --> 00:00:43,918
+A known baseline gives you a concrete way
+to detect an unintended change once the
+
+12
+00:00:43,918 --> 00:00:45,304
+agent begins editing.
+
+13
+00:00:46,757 --> 00:00:51,818
+In an approved agent client, ask for a
+plan with an explicit stop after each
+
+14
+00:00:51,818 --> 00:00:52,217
+stage.
+
+15
+00:00:52,397 --> 00:00:56,845
+Have the agent identify the actual call
+sites and the tests it will run.
+
+16
+00:00:57,025 --> 00:01:01,015
+Open the referenced files and check that
+the plan fits the issue.
+
+17
+00:01:01,195 --> 00:01:06,402
+Once you approve the first stage, keep the
+second stage pending until the first stage
+
+18
+00:01:06,402 --> 00:01:07,137
+is verified.
+
+19
+00:01:08,590 --> 00:01:12,429
+After the first stage, review the diff in
+the affected files.
+
+20
+00:01:12,609 --> 00:01:17,584
+Look at the comparison itself, the public
+behavior of the command, and the tests
+
+21
+00:01:17,584 --> 00:01:19,512
+that demonstrate compatibility.
+
+22
+00:01:19,692 --> 00:01:24,435
+If the agent proposes the focused test
+command, confirm that it is the approved
+
+23
+00:01:24,435 --> 00:01:25,996
+command for this checkout.
+
+24
+00:01:26,176 --> 00:01:29,527
+Keep the proof from this run before asking
+it to proceed.
+
+25
+00:01:31,007 --> 00:01:36,105
+During the second stage, the example agent
+proposes touching a deployment file.
+
+26
+00:01:36,285 --> 00:01:40,660
+The issue needs an API caller change and a
+check of its behavior.
+
+27
+00:01:40,840 --> 00:01:43,403
+Pause before accepting the proposed edit.
+
+28
+00:01:43,583 --> 00:01:48,095
+Point the agent at the approved files
+again and ask for a revised plan.
+
+29
+00:01:48,275 --> 00:01:52,393
+Record the decision so the reviewer can
+see why the change stayed small.
+
+30
+00:01:53,840 --> 00:01:58,571
+When the second diff is ready, check the
+list of changed files as well as the
+
+31
+00:01:58,571 --> 00:01:59,493
+actual changes.
+
+32
+00:01:59,673 --> 00:02:04,960
+Run the same baseline suite, and confirm
+the original cases still hold for both
+
+33
+00:02:04,960 --> 00:02:05,496
+callers.
+
+34
+00:02:05,676 --> 00:02:09,154
+Make sure the test result belongs to the
+current revision.
+
+35
+00:02:09,334 --> 00:02:14,496
+A pass from an earlier stage only proves
+the code that existed at that stage.
+
+36
+00:02:15,965 --> 00:02:21,506
+Summarize the behavior preserved, the code
+paths changed, and the baseline and final
+
+37
+00:02:21,506 --> 00:02:22,363
+test results.
+
+38
+00:02:22,543 --> 00:02:25,789
+Keep the final diff available for the
+author to review.
+
+39
+00:02:25,969 --> 00:02:31,145
+The separate reviewer checks the pull
+request and its evidence from the approved
+
+40
+00:02:31,145 --> 00:02:32,762
+terminal with GitHub CLI.
+
+41
+00:02:32,942 --> 00:02:37,871
+This approach scales because each stage
+leaves evidence that another person can
+
+42
+00:02:37,871 --> 00:02:38,370
+inspect.
+
+43
+00:02:39,840 --> 00:02:42,998
+Try the same method on another training
+refactor.
+
+44
+00:02:43,178 --> 00:02:48,362
+Pick an existing behavior, identify two
+short stages and give each stage a
+
+45
+00:02:48,362 --> 00:02:49,833
+verification command.
+
+46
+00:02:50,013 --> 00:02:55,435
+Notice which decisions the agent can make
+within the task and which decisions belong
+
+47
+00:02:55,435 --> 00:02:56,209
+to a person.
+
+48
+00:02:56,389 --> 00:03:01,406
+The most useful checkpoint is the one that
+catches a mistake while the diff is still
+
+49
+00:03:01,406 --> 00:03:01,765
+small.

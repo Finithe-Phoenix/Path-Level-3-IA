@@ -1,0 +1,128 @@
+{
+  "id": "A02",
+  "title": "Version Instructions and Skills Across Tools",
+  "subtitle": "Advanced · One repository, two agent clients",
+  "sources": [
+    {
+      "label": "Claude Code memory and instructions",
+      "url": "https://code.claude.com/docs/en/memory"
+    },
+    {
+      "label": "Claude Code skills",
+      "url": "https://code.claude.com/docs/en/skills"
+    },
+    {
+      "label": "OpenCode instructions",
+      "url": "https://opencode.ai/docs/instructions/"
+    },
+    {
+      "label": "OpenCode skills",
+      "url": "https://opencode.ai/docs/skills/"
+    },
+    {
+      "label": "Agent Skills specification",
+      "url": "https://agentskills.io/specification"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "example",
+      "kind": "github",
+      "eyebrow": "ADVANCED · INSTRUCTIONS",
+      "title": "Start with a convention you can test",
+      "body": "Both GCP clients will work on the same synthetic training checkout.",
+      "code": "Lab convention\nRun the quantity test suite after a validator change.\nReport the command, outcome, and checked files.",
+      "result": "A reviewer can verify all three items.",
+      "narration": "We will share a simple engineering convention across Claude Code and OpenCode in the approved Google Cloud workspace. After a change to the validator, the workflow calls for a focused test and a short evidence summary. Choose a convention you can check from the result. That gives you a practical way to verify that the guidance reached the session.",
+      "durationFrames": 560,
+      "duration": 23.333333333333332
+    },
+    {
+      "id": "persistent",
+      "kind": "editor",
+      "eyebrow": "REPOSITORY · INSTRUCTIONS",
+      "title": "Place persistent guidance in the repository",
+      "body": "Use the supported project-level instruction files for each client and version.",
+      "code": "CLAUDE.md\nAGENTS.md\n\nTests: python -m unittest discover -s tests -v",
+      "result": "Same convention. Confirm both load paths.",
+      "narration": "Project instructions carry conventions that apply to work in the repository. In this example, the repository contains the instruction file used by each configured client. Some versions and configurations support shared instructions or imports. Check the documentation and what your session actually loads. Keep the convention short enough that a teammate can review it easily.",
+      "durationFrames": 640,
+      "duration": 26.666666666666668
+    },
+    {
+      "id": "skill",
+      "kind": "editor",
+      "eyebrow": "REPOSITORY · SKILL",
+      "title": "Put the procedure in a skill",
+      "body": "Give the agent a reusable method for producing a test evidence summary.",
+      "code": "---\nname: training-test-evidence\ndescription: Summarize test evidence for training PRs.\n---\nRecord command, outcome, and inspected files.",
+      "result": "SKILL.md · focused and versioned",
+      "narration": "A skill gives the agent a reusable procedure for a particular job. Write a clear description, so the client can decide when the procedure is relevant, and include the steps and output format in the body of the skill. This example contains a test evidence procedure. Keep supporting templates with the skill when the selected client supports that layout.",
+      "durationFrames": 579,
+      "duration": 24.125
+    },
+    {
+      "id": "paths",
+      "kind": "diagram",
+      "eyebrow": "REPOSITORY · DISCOVERY",
+      "title": "Verify each configured discovery path",
+      "body": "The two clients can discover skills in different locations.",
+      "code": "Example project-relative locations\n.claude/skills/training-test-evidence/SKILL.md\n.opencode/skills/training-test-evidence/SKILL.md",
+      "result": "Verify version, location, and precedence.",
+      "narration": "The same skill can be placed where each client is configured to discover it. Confirm the paths and precedence for the installed versions, especially if the workspace provides managed policies or additional skill directories. If you maintain two files, keep their contents aligned and review changes together. Treat discovery as something to verify, rather than inferring it from a filename.",
+      "durationFrames": 618,
+      "duration": 25.75
+    },
+    {
+      "id": "positive",
+      "kind": "terminal",
+      "eyebrow": "LAB · MATCHING TASK",
+      "title": "Check the skill on a relevant task",
+      "body": "Use a recorded, synthetic test run as the input.",
+      "code": "Summarize the supplied validation evidence.\nProduce the training PR evidence summary.",
+      "result": "Command · python -m unittest discover -s tests\nOutcome · 4 passed\nScope · quantity validator and boundary test",
+      "narration": "Start a fresh authorized session in each client. Give both sessions the same recorded test results and ask for the training pull request evidence summary. Check that the returned text includes the command, the outcome, and the files that were inspected. When the client shows a skill invocation, capture that signal as well. Confirm the result against the input.",
+      "durationFrames": 577,
+      "duration": 24.041666666666668
+    },
+    {
+      "id": "unrelated",
+      "kind": "terminal",
+      "eyebrow": "LAB · UNRELATED TASK",
+      "title": "Try an unrelated request",
+      "body": "Check that the procedure does not dominate other tasks.",
+      "code": "Explain how order IDs are formatted.\nCite the source file.",
+      "result": "Expected: an explanation with a source path.",
+      "narration": "Run an unrelated request about order identifiers. The evidence summary procedure should be irrelevant here, although the repository's general guidance may still apply. Look for evidence in the response and any invocation record. This pairing of one matching request and one unrelated request is a small behavior check you can repeat when the description or installed version changes.",
+      "durationFrames": 643,
+      "duration": 26.791666666666668
+    },
+    {
+      "id": "authority",
+      "kind": "decision",
+      "eyebrow": "LAB · PERMISSIONS",
+      "title": "Confirm the tool boundary",
+      "body": "Use the workspace policy to decide which actions can run.",
+      "code": "Instruction: report the test command\nSkill: format the evidence\nPermission: authorize the command separately",
+      "result": "Human review remains part of the PR.",
+      "narration": "A repository instruction or skill can describe what an agent should do. The host and workspace determine what it is allowed to do. If a test command requires approval, read and approve the exact command only in the authorized environment. The training reviewer still checks the final result and records any pull request decision using their own account.",
+      "durationFrames": 585,
+      "duration": 24.375
+    },
+    {
+      "id": "review",
+      "kind": "github",
+      "eyebrow": "LAB · REVIEW",
+      "title": "Review the instructions as code",
+      "body": "Keep guidance and its verification together in a small diff.",
+      "code": "git diff -- CLAUDE.md AGENTS.md\nExpected evidence fields\n- command\n- outcome\n- scope",
+      "result": "Compare results in Claude Code and OpenCode.",
+      "narration": "Review and version the files through the repository's ordinary human review process. Include the exact versions and the outcomes of your matching and unrelated tasks in the evidence. A teammate should be able to reproduce the behavior and see why the instructions belong in the project. The next lab applies these conventions to a change across several files.",
+      "durationFrames": 592,
+      "duration": 24.666666666666668
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

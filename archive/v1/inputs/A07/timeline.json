@@ -1,0 +1,108 @@
+{
+  "id": "A07",
+  "title": "Evaluate Models and Agents on the Same Task",
+  "subtitle": "Advanced · Compare behavior with a repeatable lab",
+  "sources": [
+    {
+      "label": "Claude Code best practices",
+      "url": "https://code.claude.com/docs/en/best-practices"
+    },
+    {
+      "label": "OpenCode models",
+      "url": "https://opencode.ai/docs/models/"
+    },
+    {
+      "label": "DORA software delivery metrics",
+      "url": "https://dora.dev/guides/dora-metrics/"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "question",
+      "kind": "decision",
+      "eyebrow": "ADVANCED · EVALUATION",
+      "title": "Ask what you are trying to learn",
+      "body": "This lab compares two complete agent configurations on a synthetic issue.",
+      "code": "Question\nWhich setup produces a smaller, reviewable fix?\n\nTask: reject zero order quantities.",
+      "result": "Compare complete setups on the same evidence.",
+      "narration": "Before running a comparison, write down the practical question. Here we want to know which approved setup produces a small, reviewable fix for a synthetic defect. We will compare Claude Code and OpenCode inside the corporate GCP workspace. A result will describe the tested setup, the task, and the evidence that a reviewer can verify.",
+      "durationFrames": 559,
+      "duration": 23.291666666666668
+    },
+    {
+      "id": "baseline",
+      "kind": "terminal",
+      "eyebrow": "EVALUATION · STARTING STATE",
+      "title": "Use the same baseline for both runs",
+      "body": "Prepare a fresh approved training checkout for each setup.",
+      "code": "git rev-parse --short HEAD\ngit status --short --branch",
+      "result": "Run A · 27e4ab1 · clean\nRun B · 27e4ab1 · clean",
+      "narration": "Start both sessions at the same commit and confirm that their checkouts are clean. Use separate training branches or equivalent isolated copies so the first run cannot influence the second. Give both configurations the same issue, source files, and acceptance criteria. Keep their test fixtures and your review rubric fixed throughout the comparison.",
+      "durationFrames": 571,
+      "duration": 23.791666666666668
+    },
+    {
+      "id": "controls",
+      "kind": "editor",
+      "eyebrow": "EVALUATION · INPUTS",
+      "title": "Write one prompt and record each setup",
+      "body": "Record the model and provider along with the client and permissions.",
+      "code": "Task: fix zero quantity acceptance.\nScope: validator and regression test.\nEvidence: diff plus test result.\nRecord: client, model, provider, permissions.",
+      "result": "Both runs use the same task and test command.",
+      "narration": "Use one task statement and give it to both sessions. For each run, record the exact model identifier, provider, client version, effective permissions, and context. If both setups can use the same model and settings, that can help focus the experiment on the client. If the models differ, treat the result as a comparison of complete configurations.",
+      "durationFrames": 580,
+      "duration": 24.166666666666668
+    },
+    {
+      "id": "rubric",
+      "kind": "editor",
+      "eyebrow": "EVALUATION · RUBRIC",
+      "title": "Decide what counts before seeing the result",
+      "body": "Score correctness and scope before considering time.",
+      "code": "Required: regression and earlier tests pass\nRequired: only approved files changed\nRecord: human interventions\nRecord: time to verified handoff",
+      "result": "Use the same rubric for both outcomes.",
+      "narration": "Set the evaluation criteria before opening the output. First, the change needs to pass the independent tests and stay within scope. Then record how many times a person had to correct or redirect the session, and how much verification work remains. Start with measurements the reviewer can repeat, then add cost or response time if those affect your decision.",
+      "durationFrames": 588,
+      "duration": 24.5
+    },
+    {
+      "id": "run",
+      "kind": "terminal",
+      "eyebrow": "EVALUATION · OBSERVE",
+      "title": "Capture evidence instead of trusting summaries",
+      "body": "Inspect each diff and run the approved reference tests.",
+      "code": "git diff --name-only\ngit diff --stat\npython -m unittest discover -s tests -v",
+      "result": "Run A: 4 passed · 2 files\nRun B: 4 passed · 3 files",
+      "narration": "For each completed run, look at the actual diff and run the same reference tests. The simulated results show both suites passing, with one run touching an extra file. Open that file and check it against the issue. Record why the edit does or does not belong to the task. A test pass and a clean scope check are separate pieces of evidence.",
+      "durationFrames": 561,
+      "duration": 23.375
+    },
+    {
+      "id": "compare",
+      "kind": "decision",
+      "eyebrow": "EVALUATION · COMPARE",
+      "title": "Compare the work a reviewer inherits",
+      "body": "The numbers are synthetic examples used to illustrate the rubric.",
+      "code": "                     Run A   Run B\nTests passed              4       4\nOutside-scope edits       0       1\nHuman redirects           1       2\nReview time              4m      7m",
+      "result": "Both pass tests. Run A meets the full scope rubric.",
+      "narration": "Read the scorecard as a set of observations. In this synthetic example, both runs passed the tests. Run A stayed within scope and took less review time. Run B needed an extra redirect and inspection of another file. Record those observations separately, because they affect the human effort needed to reach a reviewable result.",
+      "durationFrames": 549,
+      "duration": 22.875
+    },
+    {
+      "id": "conclude",
+      "kind": "diagram",
+      "eyebrow": "EVALUATION · NEXT RUN",
+      "title": "Keep the conclusion tied to the experiment",
+      "body": "Repeat with another task before choosing a default for the team.",
+      "code": "Keep: issue, prompt, commit, configuration\nSave: diff, tests, interventions, review time\nRepeat: another representative training task",
+      "result": "Recommendations stay traceable to observed results.",
+      "narration": "Write a conclusion that identifies the actual configurations, task, and evidence. This small comparison can tell you what to investigate next. Before recommending a default to the team, repeat it with representative tasks of different shapes and discuss the outcomes with reviewers. If measurements change across runs, report the range and use it to guide your next experiment.",
+      "durationFrames": 615,
+      "duration": 25.625
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

@@ -1,0 +1,203 @@
+1
+00:00:00,340 --> 00:00:05,077
+A workflow coordinates tasks, decisions,
+and checks in a defined order.
+
+2
+00:00:05,257 --> 00:00:10,359
+In this synthetic example, the agent can
+choose how to inspect the quantity code
+
+3
+00:00:10,359 --> 00:00:15,143
+and propose a small fix, while specific
+tests measure what the change does.
+
+4
+00:00:15,323 --> 00:00:18,864
+Start by mapping the steps from issue to
+pull request.
+
+5
+00:00:19,044 --> 00:00:23,289
+Mark where the workflow waits for a person
+or for an objective check.
+
+6
+00:00:24,757 --> 00:00:28,629
+The training issue says that orders accept
+positive quantities.
+
+7
+00:00:28,809 --> 00:00:33,629
+Put the four example cases into the test
+plan before asking for a code change.
+
+8
+00:00:33,809 --> 00:00:39,137
+A deterministic unit test uses a fixed
+input and expected result, so you can
+
+9
+00:00:39,137 --> 00:00:41,170
+repeat it after another edit.
+
+10
+00:00:41,350 --> 00:00:46,481
+A short table also makes the requirement
+easier for a reviewer to evaluate.
+
+11
+00:00:47,923 --> 00:00:52,438
+In the approved environment, add the
+regression test for zero and run it
+
+12
+00:00:52,438 --> 00:00:54,695
+against the original implementation.
+
+13
+00:00:54,875 --> 00:00:57,917
+The example fails with the expected
+assertion.
+
+14
+00:00:58,097 --> 00:01:03,695
+Read the actual failure, because an import
+error or an unrelated assertion would not
+
+15
+00:01:03,695 --> 00:01:05,095
+demonstrate this bug.
+
+16
+00:01:05,275 --> 00:01:08,625
+Save the output and the source revision
+that produced it.
+
+17
+00:01:08,805 --> 00:01:12,173
+Now the author can ask the agent for the
+minimal fix.
+
+18
+00:01:13,632 --> 00:01:16,492
+At this point, the workflow has one fixed
+gate.
+
+19
+00:01:16,672 --> 00:01:21,888
+After the change, advance only when the
+required test command exits successfully
+
+20
+00:01:21,888 --> 00:01:23,713
+and the diff fits the issue.
+
+21
+00:01:23,893 --> 00:01:26,852
+A failure should lead to inspection of the
+output.
+
+22
+00:01:27,032 --> 00:01:32,525
+Keep the regression test unchanged unless
+a person approves a correction to the test
+
+23
+00:01:32,525 --> 00:01:32,983
+itself.
+
+24
+00:01:33,163 --> 00:01:36,472
+This way the evidence stays comparable
+across attempts.
+
+25
+00:01:37,923 --> 00:01:41,730
+The example uses the same command after
+the code change.
+
+26
+00:01:41,910 --> 00:01:45,792
+The regression now passes, and the
+previous cases still pass.
+
+27
+00:01:45,972 --> 00:01:49,565
+Verify the exact revision and check the
+diff yourself.
+
+28
+00:01:49,745 --> 00:01:52,990
+The passing run establishes the tested
+behavior.
+
+29
+00:01:53,170 --> 00:01:58,286
+The human review still checks whether the
+source is clear, in scope, and appropriate
+
+30
+00:01:58,286 --> 00:01:59,443
+for the repository.
+
+31
+00:02:00,923 --> 00:02:05,798
+After the human author opens the training
+pull request, inspect its configured
+
+32
+00:02:05,798 --> 00:02:08,048
+checks from the authorized terminal.
+
+33
+00:02:08,228 --> 00:02:13,241
+Continuous integration should run the
+relevant tests for the proposed revision.
+
+34
+00:02:13,421 --> 00:02:18,512
+Check names, elapsed time, and pending
+status belong to this repository's
+
+35
+00:02:18,512 --> 00:02:19,489
+configuration.
+
+36
+00:02:19,669 --> 00:02:24,881
+If a required check is pending or failed,
+wait for evidence or address the failure
+
+37
+00:02:24,881 --> 00:02:26,025
+before proceeding.
+
+38
+00:02:27,507 --> 00:02:32,238
+Give the reviewer the issue, the test
+command, the failing and passing outcomes,
+
+39
+00:02:32,238 --> 00:02:33,361
+and the final diff.
+
+40
+00:02:33,541 --> 00:02:39,017
+The reviewer uses their own account and
+GitHub CLI to verify the details and
+
+41
+00:02:39,017 --> 00:02:40,602
+record their decision.
+
+42
+00:02:40,782 --> 00:02:46,036
+This workflow stays reliable because each
+step leads to a visible result, and the
+
+43
+00:02:46,036 --> 00:02:50,317
+handoff depends on concrete evidence
+rather than an agent's claim.

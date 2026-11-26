@@ -1,0 +1,108 @@
+{
+  "id": "A05",
+  "title": "Design a Workflow with Deterministic Checks",
+  "subtitle": "Advanced · Let evidence control the next step",
+  "sources": [
+    {
+      "label": "Anthropic on workflows and agents",
+      "url": "https://www.anthropic.com/research/building-effective-agents"
+    },
+    {
+      "label": "GitHub Actions workflows",
+      "url": "https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows"
+    },
+    {
+      "label": "GitHub CLI checks",
+      "url": "https://cli.github.com/manual/gh_pr_checks"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "flow",
+      "kind": "diagram",
+      "eyebrow": "ADVANCED · WORKFLOW",
+      "title": "Map the steps and the gates",
+      "body": "Use the synthetic orders branch to show where judgment and repeatable checks belong.",
+      "code": "Issue → plan → regression → fix → diff → PR\n         human   test exit code    human",
+      "result": "The workflow carries evidence between steps.",
+      "narration": "A workflow coordinates tasks, decisions, and checks in a defined order. In this synthetic example, the agent can choose how to inspect the quantity code and propose a small fix, while specific tests measure what the change does. Start by mapping the steps from issue to pull request. Mark where the workflow waits for a person or for an objective check.",
+      "durationFrames": 586,
+      "duration": 24.416666666666668
+    },
+    {
+      "id": "contract",
+      "kind": "editor",
+      "eyebrow": "WORKFLOW · ACCEPTANCE",
+      "title": "Turn the requirement into observable outcomes",
+      "body": "Use a known issue and write down the expected behavior for each example.",
+      "code": "Quantity    1     5     0     -1\nExpected    yes   yes   no    no",
+      "result": "Four cases illustrate the acceptance criteria.",
+      "narration": "The training issue says that orders accept positive quantities. Put the four example cases into the test plan before asking for a code change. A deterministic unit test uses a fixed input and expected result, so you can repeat it after another edit. A short table also makes the requirement easier for a reviewer to evaluate.",
+      "durationFrames": 556,
+      "duration": 23.166666666666668
+    },
+    {
+      "id": "red",
+      "kind": "terminal",
+      "eyebrow": "WORKFLOW · EXPECTED FAIL",
+      "title": "Capture the failing case on the original code",
+      "body": "Run the new regression test with the original implementation still in place.",
+      "code": "python -m unittest discover -s tests -v",
+      "result": "test_rejects_zero ... FAIL\nExpected rejection; observed acceptance.",
+      "narration": "In the approved environment, add the regression test for zero and run it against the original implementation. The example fails with the expected assertion. Read the actual failure, because an import error or an unrelated assertion would not demonstrate this bug. Save the output and the source revision that produced it. Now the author can ask the agent for the minimal fix.",
+      "durationFrames": 617,
+      "duration": 25.708333333333332
+    },
+    {
+      "id": "gate",
+      "kind": "decision",
+      "eyebrow": "WORKFLOW · GATE",
+      "title": "Define what happens after the test",
+      "body": "Keep the acceptance test fixed while the implementation changes.",
+      "code": "Focused tests pass  → review diff\nFocused tests fail  → inspect output\nUnexpected files    → stop and inspect",
+      "result": "A failed check prevents the review handoff.",
+      "narration": "At this point, the workflow has one fixed gate. After the change, advance only when the required test command exits successfully and the diff fits the issue. A failure should lead to inspection of the output. Keep the regression test unchanged unless a person approves a correction to the test itself. This way the evidence stays comparable across attempts.",
+      "durationFrames": 583,
+      "duration": 24.291666666666668
+    },
+    {
+      "id": "green",
+      "kind": "terminal",
+      "eyebrow": "WORKFLOW · EXPECTED PASS",
+      "title": "Run the same test command after the fix",
+      "body": "Compare the new output with the earlier failure.",
+      "code": "git diff --stat\npython -m unittest discover -s tests -v",
+      "result": "test_rejects_zero ... ok\n4 tests passed.",
+      "narration": "The example uses the same command after the code change. The regression now passes, and the previous cases still pass. Verify the exact revision and check the diff yourself. The passing run establishes the tested behavior. The human review still checks whether the source is clear, in scope, and appropriate for the repository.",
+      "durationFrames": 552,
+      "duration": 23.0
+    },
+    {
+      "id": "ci",
+      "kind": "github",
+      "eyebrow": "WORKFLOW · GITHUB CHECKS",
+      "title": "Run independent checks on the PR",
+      "body": "Use the repository's configured workflow and observe the current status.",
+      "code": "gh pr checks 42",
+      "result": "Unit tests     pass\nFormat check   pass",
+      "narration": "After the human author opens the training pull request, inspect its configured checks from the authorized terminal. Continuous integration should run the relevant tests for the proposed revision. Check names, elapsed time, and pending status belong to this repository's configuration. If a required check is pending or failed, wait for evidence or address the failure before proceeding.",
+      "durationFrames": 638,
+      "duration": 26.583333333333332
+    },
+    {
+      "id": "review",
+      "kind": "github",
+      "eyebrow": "WORKFLOW · HUMAN DECISION",
+      "title": "Hand off evidence to the reviewer",
+      "body": "Collect the required proof in the PR so another person can make the decision.",
+      "code": "Issue: #17\nRegression: expected failure before the fix\nVerification: four pass after the fix\nRequired checks: passed",
+      "result": "Independent reviewer reads diff and records decision.",
+      "narration": "Give the reviewer the issue, the test command, the failing and passing outcomes, and the final diff. The reviewer uses their own account and GitHub CLI to verify the details and record their decision. This workflow stays reliable because each step leads to a visible result, and the handoff depends on concrete evidence rather than an agent's claim.",
+      "durationFrames": 583,
+      "duration": 24.291666666666668
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

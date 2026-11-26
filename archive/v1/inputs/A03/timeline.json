@@ -1,0 +1,120 @@
+{
+  "id": "A03",
+  "title": "Run a Multi-File Change in Stages",
+  "subtitle": "Advanced · Scoped implementation in GCP",
+  "sources": [
+    {
+      "label": "Claude Code best practices",
+      "url": "https://code.claude.com/docs/en/best-practices"
+    },
+    {
+      "label": "OpenCode agents",
+      "url": "https://opencode.ai/docs/agents/"
+    },
+    {
+      "label": "DORA on working in small batches",
+      "url": "https://dora.dev/capabilities/working-in-small-batches/"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ticket",
+      "kind": "github",
+      "eyebrow": "ADVANCED · TRAINING ISSUE",
+      "title": "Set a narrow goal",
+      "body": "This simulated refactor centralizes a quantity rule while preserving behavior.",
+      "code": "Issue #31 · Centralize the order quantity rule\nAccept a positive integer.\nReject zero and negative values.\nKeep command and API outputs the same.",
+      "result": "Approved scope: rule, two callers, tests.",
+      "narration": "For this lab, two paths in the synthetic repository each validate an order quantity. The issue asks us to centralize that rule while preserving both existing interfaces. Before opening the approved agent session in GCP, identify the parts of this work that are in scope. Our boundary is the shared rule, two callers, and their existing tests.",
+      "durationFrames": 591,
+      "duration": 24.625
+    },
+    {
+      "id": "baseline",
+      "kind": "terminal",
+      "eyebrow": "LAB · BASELINE",
+      "title": "Record the behavior before editing",
+      "body": "Check the clean branch and run the approved focused suite.",
+      "code": "git status --short --branch\npython -m unittest discover -s tests -v",
+      "result": "Example baseline: 8 tests passed.",
+      "narration": "Begin with a clean training branch and run the existing tests in the authorized environment. Confirm that both callers have a positive case and a zero or negative case. Save the result with the starting commit. A known baseline gives you a concrete way to detect an unintended change once the agent begins editing.",
+      "durationFrames": 523,
+      "duration": 21.791666666666668
+    },
+    {
+      "id": "plan",
+      "kind": "editor",
+      "eyebrow": "GCP AGENT · PLAN",
+      "title": "Ask for one stage at a time",
+      "body": "Give the agent the issue, call sites, and validation command.",
+      "code": "Stage 1: extract the shared rule and migrate the CLI.\nStage 2: migrate the API caller.\nRun the relevant tests after each stage.\nWait for my review before starting the next stage.",
+      "result": "Two reviewable diffs instead of one broad edit.",
+      "narration": "In an approved agent client, ask for a plan with an explicit stop after each stage. Have the agent identify the actual call sites and the tests it will run. Open the referenced files and check that the plan fits the issue. Once you approve the first stage, keep the second stage pending until the first stage is verified.",
+      "durationFrames": 524,
+      "duration": 21.833333333333332
+    },
+    {
+      "id": "first",
+      "kind": "terminal",
+      "eyebrow": "STAGE 1 · CHECKPOINT",
+      "title": "Inspect the first implementation",
+      "body": "Check the new shared rule and the one caller in scope.",
+      "code": "git diff --stat\ngit diff -- orders/quantity.py orders/cli.py",
+      "result": "Shared function extracted.\nCLI now calls the shared function.",
+      "narration": "After the first stage, review the diff in the affected files. Look at the comparison itself, the public behavior of the command, and the tests that demonstrate compatibility. If the agent proposes the focused test command, confirm that it is the approved command for this checkout. Keep the proof from this run before asking it to proceed.",
+      "durationFrames": 538,
+      "duration": 22.416666666666668
+    },
+    {
+      "id": "scope",
+      "kind": "decision",
+      "eyebrow": "STAGE 2 · PERMISSION",
+      "title": "Pause a change outside the issue",
+      "body": "Review the work proposed for the second caller before it runs.",
+      "code": "Proposed edit\norders/api.py           In scope\ninfra/deploy.yaml       Outside scope",
+      "result": "Decision: keep the API edit; omit infrastructure.",
+      "narration": "During the second stage, the example agent proposes touching a deployment file. The issue needs an API caller change and a check of its behavior. Pause before accepting the proposed edit. Point the agent at the approved files again and ask for a revised plan. Record the decision so the reviewer can see why the change stayed small.",
+      "durationFrames": 548,
+      "duration": 22.833333333333332
+    },
+    {
+      "id": "second",
+      "kind": "terminal",
+      "eyebrow": "STAGE 2 · VERIFY",
+      "title": "Recheck the whole change",
+      "body": "Run the same suite with both callers wired to the shared rule.",
+      "code": "git diff --name-only\npython -m unittest discover -s tests -v",
+      "result": "orders/quantity.py · orders/cli.py · orders/api.py\nExample result: 8 tests passed.",
+      "narration": "When the second diff is ready, check the list of changed files as well as the actual changes. Run the same baseline suite, and confirm the original cases still hold for both callers. Make sure the test result belongs to the current revision. A pass from an earlier stage only proves the code that existed at that stage.",
+      "durationFrames": 531,
+      "duration": 22.125
+    },
+    {
+      "id": "handoff",
+      "kind": "github",
+      "eyebrow": "LAB · PULL REQUEST",
+      "title": "Turn the checkpoints into review evidence",
+      "body": "A human author can prepare the PR after reviewing the final diff.",
+      "code": "Summary: shared quantity rule\nScope: CLI and API callers\nBaseline: 8 passed\nFinal: 8 passed\nCompatibility: public outputs preserved",
+      "result": "Handoff to an independent human reviewer via gh.",
+      "narration": "Summarize the behavior preserved, the code paths changed, and the baseline and final test results. Keep the final diff available for the author to review. The separate reviewer checks the pull request and its evidence from the approved terminal with GitHub CLI. This approach scales because each stage leaves evidence that another person can inspect.",
+      "durationFrames": 573,
+      "duration": 23.875
+    },
+    {
+      "id": "practice",
+      "kind": "diagram",
+      "eyebrow": "LAB · PRACTICE",
+      "title": "Repeat the pattern on another small refactor",
+      "body": "Choose two short stages and decide where human judgment matters.",
+      "code": "Baseline  →  Plan  →  Stage 1  →  Verify\n                    Stage 2  →  Verify  →  PR",
+      "result": "Each stage has one clear outcome.",
+      "narration": "Try the same method on another training refactor. Pick an existing behavior, identify two short stages and give each stage a verification command. Notice which decisions the agent can make within the task and which decisions belong to a person. The most useful checkpoint is the one that catches a mistake while the diff is still small.",
+      "durationFrames": 561,
+      "duration": 23.375
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

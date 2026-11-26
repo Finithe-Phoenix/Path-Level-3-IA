@@ -1,0 +1,108 @@
+{
+  "id": "A04",
+  "title": "What Is MCP? Connect One Scoped Tool",
+  "subtitle": "Advanced · An approved read-only integration",
+  "sources": [
+    {
+      "label": "MCP architecture",
+      "url": "https://modelcontextprotocol.io/docs/learn/architecture"
+    },
+    {
+      "label": "Claude Code MCP",
+      "url": "https://code.claude.com/docs/en/mcp"
+    },
+    {
+      "label": "OpenCode MCP servers",
+      "url": "https://opencode.ai/docs/mcp-servers/"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "purpose",
+      "kind": "diagram",
+      "eyebrow": "ADVANCED · MCP",
+      "title": "Trace the connection",
+      "body": "The lab exposes one mock issue through a read-only training server.",
+      "code": "Agent client → MCP server → synthetic issue fixture\n                         ↳ get_training_issue",
+      "result": "One named tool, one defined read scope.",
+      "narration": "Model Context Protocol, or M C P, is a way for a client to connect to servers that can supply tools and other context. Our simulated server exposes one tool that reads a synthetic training issue. We will follow the request from the approved GCP client, through the server, and back to the session where the result becomes evidence.",
+      "durationFrames": 586,
+      "duration": 24.416666666666668
+    },
+    {
+      "id": "scope",
+      "kind": "decision",
+      "eyebrow": "INTEGRATION · SCOPE",
+      "title": "Verify the server and the available action",
+      "body": "Review the approved integration before enabling it.",
+      "code": "Server       training-issues\nTool         get_training_issue\nData         synthetic orders issues only\nOperation    read by issue number",
+      "result": "Write operations are outside this lab scope.",
+      "narration": "Begin with the workspace's approval record for the training server. Confirm its source, environment, and available tools. The operation here reads a single issue by number, in a synthetic project only. Confirm the actual access scope with the owner or supplied lab policy. A friendly tool name only helps you identify the action, so check the effective permissions as well.",
+      "durationFrames": 633,
+      "duration": 26.375
+    },
+    {
+      "id": "config",
+      "kind": "editor",
+      "eyebrow": "GCP · INTEGRATION SETUP",
+      "title": "Inspect the approved configuration",
+      "body": "The demonstration shows the connection shape with fictitious settings.",
+      "code": "Training integration settings\nserver: training-issues\nworkspace: approved-lab\nscope: read:synthetic-issues",
+      "result": "Use managed settings from the workspace owner.",
+      "narration": "Open the approved integration settings in Claude Code or OpenCode. Configuration fields and locations vary by client and version, so read what the workspace provides. Look for the configured identity and scope. If the integration is unavailable in the training workspace, follow along with the same input and recorded result supplied as a synthetic fixture.",
+      "durationFrames": 611,
+      "duration": 25.458333333333332
+    },
+    {
+      "id": "call",
+      "kind": "terminal",
+      "eyebrow": "MCP · TOOL INVOCATION",
+      "title": "Inspect the proposed tool call",
+      "body": "Request one known practice issue and review the tool and argument.",
+      "code": "Fetch synthetic issue 17 and list its criteria.\n\nget_training_issue({\"issue_number\":17})",
+      "result": "Proposed read · tool name and input visible.",
+      "narration": "Ask the agent for the acceptance criteria of issue seventeen. Before the call runs, inspect the proposed tool and its argument. Make sure the request points to the training issue. Follow the session's permission prompt if one appears. This is the point where you verify that the planned call matches both your intent and the approved data scope.",
+      "durationFrames": 544,
+      "duration": 22.666666666666668
+    },
+    {
+      "id": "result",
+      "kind": "editor",
+      "eyebrow": "MCP · TOOL RESULT",
+      "title": "Trace the evidence into the answer",
+      "body": "Read the returned data before accepting the agent's summary.",
+      "code": "Issue #17 · Reject zero order quantities\nPositive integer quantities are accepted.\nZero and negative integers are rejected.",
+      "result": "Agent output cites the synthetic issue record.",
+      "narration": "Read the result returned from the training server. The issue provides two straightforward acceptance criteria. Check each item in the agent's summary against the response. The tool call supplies context for the model. Its text can describe the issue, but consequential actions still follow your instruction and the policy of the host.",
+      "durationFrames": 538,
+      "duration": 22.416666666666668
+    },
+    {
+      "id": "boundary",
+      "kind": "decision",
+      "eyebrow": "MCP · BOUNDARY CHECK",
+      "title": "Verify the write boundary from policy",
+      "body": "Use the supplied permission record to inspect an out-of-scope action.",
+      "code": "Read issue 17         In scope\nPost a PR comment     Outside scope\nChange issue status   Outside scope",
+      "result": "Keep the summary in the local training session.",
+      "narration": "Look at the training permission record and check what happens when a proposed follow-up would write back to the repository. The scope only covers reads, so keep the summary in the session. In the engineering workflow, a person reviews the pull request using GitHub CLI. This keeps the source of evidence and the authorization to act easy to audit.",
+      "durationFrames": 552,
+      "duration": 23.0
+    },
+    {
+      "id": "record",
+      "kind": "diagram",
+      "eyebrow": "MCP · EVIDENCE",
+      "title": "Save the smallest useful audit record",
+      "body": "Retain the verified configuration details, tool input, and expected evidence.",
+      "code": "Server    training-issues\nAction    get_training_issue(17)\nScope     read only\nEvidence  two verified criteria",
+      "result": "One successful read with an explicit boundary.",
+      "narration": "Record the server name, the tool, the issue number, and what you verified from the response. Add the client version if discovery or approvals were central to this lab. You now have a small repeatable integration with a clear boundary. The next episode adds checks that can stop a workflow when its output misses an explicit requirement.",
+      "durationFrames": 531,
+      "duration": 22.125
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

@@ -1,0 +1,108 @@
+{
+  "id": "A06",
+  "title": "RAG and Embeddings for Repository Knowledge",
+  "subtitle": "Advanced · Retrieve evidence before answering",
+  "sources": [
+    {
+      "label": "OpenAI embeddings",
+      "url": "https://developers.openai.com/api/docs/guides/embeddings"
+    },
+    {
+      "label": "OpenAI retrieval",
+      "url": "https://developers.openai.com/api/docs/guides/retrieval"
+    },
+    {
+      "label": "Microsoft Foundry RAG overview",
+      "url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "question",
+      "kind": "diagram",
+      "eyebrow": "ADVANCED · RETRIEVAL",
+      "title": "Start with a question the repository can answer",
+      "body": "The exercise uses a small synthetic index of repository documentation.",
+      "code": "Question\nCan an order have a quantity of zero?\n\nEvidence should include a file and revision.",
+      "result": "Goal: answer from the approved training repository.",
+      "narration": "This exercise asks a simple question about repository policy. Can an order have a quantity of zero? We want an answer that points to the actual rule and the revision where it appears. The training index contains only synthetic repository documents. We will trace a retrieved passage into the answer, then check that passage directly.",
+      "durationFrames": 562,
+      "duration": 23.416666666666668
+    },
+    {
+      "id": "input",
+      "kind": "editor",
+      "eyebrow": "RETRIEVAL · PREPARE SOURCES",
+      "title": "Index small passages with useful metadata",
+      "body": "Keep paths and revisions attached to each passage.",
+      "code": "docs/order-policy.md      rev 27e4ab1\n  Quantity must be a positive integer.\ndocs/shipping-policy.md   rev 27e4ab1\n  Delivery dates use the business calendar.",
+      "result": "Each passage retains its source.",
+      "narration": "Begin with a few short passages from approved files. Attach each file path and revision to the text. That metadata lets the reviewer check relevance and freshness after retrieval. Include a passage about shipping so the example has something nearby but unrelated. The size of the passage should preserve enough neighboring text to explain the rule accurately.",
+      "durationFrames": 590,
+      "duration": 24.583333333333332
+    },
+    {
+      "id": "embed",
+      "kind": "diagram",
+      "eyebrow": "RETRIEVAL · EMBEDDINGS",
+      "title": "Represent passages for similarity search",
+      "body": "An embedding is a numerical representation used to compare meaning.",
+      "code": "Passage text → embedding model → vector\nQuestion     → embedding model → vector\nCompare vectors for candidate passages.",
+      "result": "Similarity helps find evidence. Open the source to verify.",
+      "narration": "An embedding model maps text into a list of numbers that can be compared for similarity. In this example, the system embeds the question and the approved passages and compares their vectors. The point is to find useful candidate evidence. Similarity alone cannot confirm that a passage is current, applicable, or true, so keep the source metadata attached.",
+      "durationFrames": 596,
+      "duration": 24.833333333333332
+    },
+    {
+      "id": "retrieve",
+      "kind": "terminal",
+      "eyebrow": "RETRIEVAL · CANDIDATES",
+      "title": "Inspect the passages selected for this question",
+      "body": "This simulated retrieval chooses one relevant passage and one weak match.",
+      "code": "1  docs/order-policy.md@27e4ab1\n   Quantity must be a positive integer.\n2  docs/shipping-policy.md@27e4ab1\n   Delivery dates use the business calendar.",
+      "result": "Keep the order rule. Drop the unrelated passage.",
+      "narration": "Look at the results before sending them onward. The first passage addresses the quantity rule and has a source path. The second passage discusses delivery dates, so it adds no evidence for this question. A useful retrieval step returns enough detail to support the answer and trims material that would distract the model or obscure the relevant source.",
+      "durationFrames": 565,
+      "duration": 23.541666666666668
+    },
+    {
+      "id": "generate",
+      "kind": "editor",
+      "eyebrow": "RAG · GENERATION",
+      "title": "Ask for an answer grounded in the passage",
+      "body": "Retrieval-augmented generation supplies the selected evidence with the question.",
+      "code": "Question: Can quantity be zero?\nEvidence: docs/order-policy.md@27e4ab1\nRule: Quantity must be a positive integer.\nAnswer with the cited file and revision.",
+      "result": "Zero is invalid. See docs/order-policy.md@27e4ab1.",
+      "narration": "Now give the model the question and the selected passage. This combination is retrieval augmented generation, or R A G. Retrieval happens before the answer is generated. The response cites the order policy and applies the positive integer rule to zero. Open the cited file and confirm the answer against the exact text. The citation is evidence you can check.",
+      "durationFrames": 630,
+      "duration": 26.25
+    },
+    {
+      "id": "stale",
+      "kind": "decision",
+      "eyebrow": "RAG · MISSING EVIDENCE",
+      "title": "Handle a stale or missing source",
+      "body": "Ask the same question after withholding the relevant passage.",
+      "code": "Retrieved: shipping policy only\nQuestion: can quantity be zero?\nEvidence for the rule: unavailable",
+      "result": "State that the supplied sources are insufficient.",
+      "narration": "Now repeat the exercise with the order policy passage removed. The supplied material does not answer the quantity question. A good response identifies the missing evidence rather than guessing a rule. In a maintained repository, also check the revision and refresh the index when appropriate. These checks prevent an outdated or unrelated passage from becoming a confident answer.",
+      "durationFrames": 642,
+      "duration": 26.75
+    },
+    {
+      "id": "govern",
+      "kind": "decision",
+      "eyebrow": "RAG · DATA SCOPE",
+      "title": "Keep retrieval within the approved boundary",
+      "body": "Use the same authorization rules for indexing and retrieving material.",
+      "code": "Index source: training repository only\nRetrieve with authorized access\nKeep path and revision in every result\nVerify references against the checkout",
+      "result": "Traceable evidence for each supported answer.",
+      "narration": "Before adopting retrieval for an actual repository, confirm what may be indexed, where the index is stored, and which identities can retrieve it. In this course we illustrate the pattern with synthetic data. The same habit that helps a developer verify a code suggestion applies here. Record the evidence, confirm the source, and say when the available material is insufficient.",
+      "durationFrames": 619,
+      "duration": 25.791666666666668
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

@@ -1,0 +1,124 @@
+{
+  "id": "A01",
+  "title": "Start an Agent Session in GCP",
+  "subtitle": "Advanced · Claude Code and OpenCode",
+  "sources": [
+    {
+      "label": "Claude Code settings",
+      "url": "https://code.claude.com/docs/en/settings"
+    },
+    {
+      "label": "Claude Code model configuration",
+      "url": "https://code.claude.com/docs/en/model-config"
+    },
+    {
+      "label": "OpenCode providers",
+      "url": "https://opencode.ai/docs/providers/"
+    },
+    {
+      "label": "OpenCode permissions",
+      "url": "https://opencode.ai/docs/permissions/"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "lab",
+      "kind": "diagram",
+      "eyebrow": "ADVANCED · GCP",
+      "title": "Place the terminal in GCP",
+      "body": "This walkthrough uses a simulated corporate workspace and a synthetic training repository.",
+      "code": "Corporate GCP workspace\n├── Claude Code\n├── OpenCode\n└── training-orders checkout",
+      "result": "Lab data · synthetic",
+      "narration": "Start by locating the workspace where the coding agent is allowed to operate. In this course, Claude Code and OpenCode run inside the corporate Google Cloud workspace. The terminal and repository shown here are synthetic training examples. Keep your session inside the approved remote workspace. We will verify the environment before we give either agent a task.",
+      "durationFrames": 599,
+      "duration": 24.958333333333332
+    },
+    {
+      "id": "checkout",
+      "kind": "terminal",
+      "eyebrow": "WORKSPACE · REPOSITORY",
+      "title": "Check the working directory",
+      "body": "Use read-only checks to identify the checkout and its starting state.",
+      "code": "pwd\ngit status --short --branch\ngit rev-parse --short HEAD",
+      "result": "/work/training-orders\n## lab/a01\n27e4ab1",
+      "narration": "In the approved terminal, check the current directory, branch, and short commit identifier. These small checks tell you which checkout the agent can see and where to find your starting point later. The example is clean on a lab branch. If your actual checkout contains someone else's work, leave it in place and switch to an approved training checkout.",
+      "durationFrames": 532,
+      "duration": 22.166666666666668
+    },
+    {
+      "id": "clients",
+      "kind": "terminal",
+      "eyebrow": "WORKSPACE · TOOLS",
+      "title": "Identify the installed clients",
+      "body": "Keep the tool and the installed version in your lab notes.",
+      "code": "claude --version\nopencode --version",
+      "result": "Record the versions shown by your workspace.",
+      "narration": "Now check the versions of Claude Code and OpenCode that the organization has installed. Features, selectors, and available controls can change across versions. For that reason, the lab records what the terminal actually reports. A missing command is an access or setup question for the workspace owner. Use the client your organization provides for this exercise.",
+      "durationFrames": 617,
+      "duration": 25.708333333333332
+    },
+    {
+      "id": "model",
+      "kind": "decision",
+      "eyebrow": "SESSION · MODEL",
+      "title": "Record the resolved model",
+      "body": "Distinguish the client, selected model, and configured provider.",
+      "code": "Client       Claude Code or OpenCode\nModel        Value shown in the session\nProvider     Workspace configuration\nLocation     Approved GCP workspace",
+      "result": "Capture display names or IDs. Leave secrets out.",
+      "narration": "Inspect the model selection in the authorized client. Record the exact model identifier if it is available, along with the configured provider. The program that runs on the workstation, the model that interprets the task, and the service that processes the request are separate parts of the session. The workspace administrator can confirm any setting that your account cannot see.",
+      "durationFrames": 606,
+      "duration": 25.25
+    },
+    {
+      "id": "access",
+      "kind": "decision",
+      "eyebrow": "SESSION · PERMISSIONS",
+      "title": "Confirm what the session may do",
+      "body": "Read the effective policy before asking for edits or commands.",
+      "code": "Read training repository     Allowed\nEdit lab branch              Ask first\nRun approved unit tests      Ask first\nExternal integrations        Closed",
+      "result": "Illustrative policy. Verify the real settings.",
+      "narration": "This example gives the agent access to read the training repository and asks for confirmation before editing or running its tests. Other workspaces may apply a different policy. Check the effective rules in the client and the surrounding environment. Keep project guidance, tool permission, and the runtime boundary separate when you reason about what the agent can do.",
+      "durationFrames": 598,
+      "duration": 24.916666666666668
+    },
+    {
+      "id": "request",
+      "kind": "editor",
+      "eyebrow": "SESSION · FIRST REQUEST",
+      "title": "Begin with a read-only task",
+      "body": "Ask the agent to trace a small path you can verify by opening the files.",
+      "code": "Locate the quantity validator and its unit tests.\nReturn the file paths and the test case for zero.\nUse read-only inspection for this request.",
+      "result": "orders/quantity.py\n tests/test_quantity.py",
+      "narration": "Start with a small inspection. Ask the agent to find the quantity validator and the associated unit tests, then give you their file paths. This is a useful first task because you can open each file to verify the result. If the client proposes an edit or command outside the stated scope, pause and inspect the request before approving it.",
+      "durationFrames": 560,
+      "duration": 23.333333333333332
+    },
+    {
+      "id": "verify",
+      "kind": "terminal",
+      "eyebrow": "SESSION · VERIFY",
+      "title": "Verify the paths and starting state",
+      "body": "Review the evidence directly and confirm that no edits were made.",
+      "code": "git status --short --branch\nsed -n '1,24p' orders/quantity.py",
+      "result": "## lab/a01\nRead the function and compare its path.",
+      "narration": "Open the cited file yourself and confirm that it contains the relevant function. Then run the status check again. In this inspection, the working tree should look exactly as it did at the start. This final check gives you something concrete to compare with the agent's summary, and it reinforces a habit we will use before every handoff.",
+      "durationFrames": 537,
+      "duration": 22.375
+    },
+    {
+      "id": "close",
+      "kind": "diagram",
+      "eyebrow": "SESSION · HANDOFF",
+      "title": "Save a short session record",
+      "body": "Carry this information into the next Advanced lab.",
+      "code": "Workspace  →  branch  →  commit\nClient     →  model   →  provider\nScope      →  tools   →  result",
+      "result": "Ready for the versioned-instructions lab.",
+      "narration": "Before ending, write down the workspace, branch, starting commit, client version, model, and permission scope. Keep the record concise. You now have an auditable description of the environment and a verified read-only result. In the next lab, that description will help you compare how the two clients discover instructions and skills from the same repository.",
+      "durationFrames": 582,
+      "duration": 24.25
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}
