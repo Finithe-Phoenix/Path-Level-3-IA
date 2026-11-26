@@ -1,194 +1,232 @@
 1
-00:00:00,340 --> 00:00:04,085
-Before running a comparison, write down
-the practical question.
+00:00:00,429 --> 00:00:04,381
+You are deciding which of two approved
+agent setups creates a more reviewable
 
 2
-00:00:04,265 --> 00:00:09,330
-Here we want to know which approved setup
-produces a small, reviewable fix for a
+00:00:04,432 --> 00:00:05,536
+change.
 
 3
-00:00:09,330 --> 00:00:10,406
-synthetic defect.
+00:00:05,613 --> 00:00:09,898
+Give that decision a clear question:
+what happens when each setup fixes the
 
 4
-00:00:10,586 --> 00:00:16,013
-We will compare Claude Code and OpenCode
-inside the corporate GCP workspace.
+00:00:09,975 --> 00:00:11,738
+same zero-quantity defect?
 
 5
-00:00:16,193 --> 00:00:21,458
-A result will describe the tested setup,
-the task, and the evidence that a reviewer
+00:00:12,537 --> 00:00:16,284
+We'll keep the task and tests fixed,
+record the environment,
 
 6
-00:00:21,458 --> 00:00:22,155
-can verify.
+00:00:16,335 --> 00:00:19,287
+and compare what a reviewer actually
+inherits.
 
 7
-00:00:23,632 --> 00:00:28,250
-Start both sessions at the same commit and
-confirm that their checkouts are clean.
+00:00:19,338 --> 00:00:22,978
+The numbers you see are synthetic and
+explain how to read the evidence.
 
 8
-00:00:28,430 --> 00:00:33,340
-Use separate training branches or
-equivalent isolated copies so the first
+00:00:25,175 --> 00:00:29,076
+Use two authorized checkouts in the G C
+P workspace.
 
 9
-00:00:33,340 --> 00:00:35,492
-run cannot influence the second.
+00:00:29,153 --> 00:00:33,028
+In each terminal, confirm the same
+starting commit and a clean working
 
 10
-00:00:35,672 --> 00:00:41,144
-Give both configurations the same issue,
-source files, and acceptance criteria.
+00:00:33,079 --> 00:00:33,443
+tree.
 
 11
-00:00:41,324 --> 00:00:45,964
-Keep their test fixtures and your review
-rubric fixed throughout the comparison.
+00:00:34,062 --> 00:00:37,296
+That keeps the first run's edits out of
+the second run.
 
 12
-00:00:47,423 --> 00:00:50,687
-Use one task statement and give it to both
-sessions.
+00:00:37,347 --> 00:00:41,248
+Put the same issue, source files, and
+tests in scope.
 
 13
-00:00:50,867 --> 00:00:55,989
-For each run, record the exact model
-identifier, provider, client version,
+00:00:41,325 --> 00:00:46,098
+If a checkout already has extra changes,
+reset the experiment by opening a clean
 
 14
-00:00:55,989 --> 00:00:58,411
-effective permissions, and context.
+00:00:46,149 --> 00:00:47,215
+training checkout.
 
 15
-00:00:58,591 --> 00:01:03,159
-If both setups can use the same model and
-settings, that can help focus the
+00:00:49,409 --> 00:00:53,463
+Send the same task to both sessions and
+capture the settings that matter:
 
 16
-00:01:03,159 --> 00:01:04,682
-experiment on the client.
+00:00:53,540 --> 00:00:57,886
+client version, resolved model,
+provider, permissions, and context.
 
 17
-00:01:04,862 --> 00:01:10,131
-If the models differ, treat the result as
-a comparison of complete configurations.
+00:00:58,527 --> 00:01:02,325
+If the clients can use the same approved
+model and configuration,
 
 18
-00:01:11,590 --> 00:01:15,429
-Set the evaluation criteria before opening
-the output.
+00:01:02,376 --> 00:01:05,019
+that helps isolate a client difference.
 
 19
-00:01:15,609 --> 00:01:20,547
-First, the change needs to pass the
-independent tests and stay within scope.
+00:01:05,071 --> 00:01:09,051
+When the models differ, your result
+describes both complete setups.
 
 20
-00:01:20,727 --> 00:01:25,999
-Then record how many times a person had to
-correct or redirect the session, and how
+00:01:09,702 --> 00:01:13,499
+Write that down now, before the outcome
+tempts you to overinterpret it.
 
 21
-00:01:25,999 --> 00:01:27,968
-much verification work remains.
+00:01:15,659 --> 00:01:18,020
+Set the rubric before opening the diffs.
 
 22
-00:01:28,148 --> 00:01:33,010
-Start with measurements the reviewer can
-repeat, then add cost or response time if
+00:01:18,122 --> 00:01:21,320
+First, require the four reference tests
+to pass.
 
 23
-00:01:33,010 --> 00:01:34,611
-those affect your decision.
+00:01:21,422 --> 00:01:24,112
+Second, require the two approved files
+only.
 
 24
-00:01:36,090 --> 00:01:41,177
-For each completed run, look at the actual
-diff and run the same reference tests.
+00:01:24,752 --> 00:01:29,063
+Then measure how often you redirect the
+session and how long a reviewer needs to
 
 25
-00:01:41,357 --> 00:01:46,438
-The simulated results show both suites
-passing, with one run touching an extra
+00:01:29,115 --> 00:01:31,116
+reach a verified result.
 
 26
-00:01:46,438 --> 00:01:46,763
-file.
+00:01:31,168 --> 00:01:32,823
+The first two fields are gates.
 
 27
-00:01:46,943 --> 00:01:49,719
-Open that file and check it against the
-issue.
+00:01:33,449 --> 00:01:37,605
+The other fields quantify how much human
+work each complete setup leaves.
 
 28
-00:01:49,899 --> 00:01:53,610
-Record why the edit does or does not
-belong to the task.
+00:01:39,800 --> 00:01:43,680
+For each run, read the diff and run the
+reference suite yourself in the approved
 
 29
-00:01:53,790 --> 00:01:57,992
-A test pass and a clean scope check are
-separate pieces of evidence.
+00:01:43,731 --> 00:01:44,937
+workspace.
 
 30
-00:01:59,465 --> 00:02:02,482
-Read the scorecard as a set of
-observations.
+00:01:45,014 --> 00:01:47,610
+Both synthetic runs pass all four tests.
 
 31
-00:02:02,662 --> 00:02:06,022
-In this synthetic example, both runs
-passed the tests.
+00:01:48,255 --> 00:01:50,873
+Run B changes one extra file.
 
 32
-00:02:06,202 --> 00:02:09,446
-Run A stayed within scope and took less
-review time.
+00:01:50,950 --> 00:01:54,748
+Open that file and use the issue to
+decide if it belongs.
 
 33
-00:02:09,626 --> 00:02:13,977
-Run B needed an extra redirect and
-inspection of another file.
+00:01:54,825 --> 00:01:58,371
+In the illustration it doesn't, so B
+passed the test gate but missed the
 
 34
-00:02:14,157 --> 00:02:18,677
-Record those observations separately,
-because they affect the human effort
+00:01:58,422 --> 00:01:59,200
+scope gate.
 
 35
-00:02:18,677 --> 00:02:20,876
-needed to reach a reviewable result.
+00:01:59,885 --> 00:02:01,868
+Record both observations.
 
 36
-00:02:22,340 --> 00:02:27,747
-Write a conclusion that identifies the
-actual configurations, task, and evidence.
+00:02:03,993 --> 00:02:06,738
+Now read the scorecard from top to
+bottom.
 
 37
-00:02:27,927 --> 00:02:31,979
-This small comparison can tell you what to
-investigate next.
+00:02:06,815 --> 00:02:09,638
+Both runs have the same result on the
+tests.
 
 38
-00:02:32,159 --> 00:02:37,092
-Before recommending a default to the team,
-repeat it with representative tasks of
+00:02:09,715 --> 00:02:12,652
+A stays inside the scope and takes four
+minutes to review.
 
 39
-00:02:37,092 --> 00:02:40,564
-different shapes and discuss the outcomes
-with reviewers.
+00:02:13,238 --> 00:02:16,369
+B has an extra edit and takes seven
+minutes.
 
 40
-00:02:40,744 --> 00:02:45,832
-If measurements change across runs, report
-the range and use it to guide your next
+00:02:16,446 --> 00:02:19,243
+Keep the failed gate visible in the
+scorecard.
 
 41
-00:02:45,832 --> 00:02:46,515
-experiment.
+00:02:19,294 --> 00:02:23,349
+The separate rows explain why the review
+effort changed and give you a traceable
+
+42
+00:02:23,400 --> 00:02:24,069
+conclusion.
+
+43
+00:02:26,258 --> 00:02:31,149
+Write the conclusion with the task,
+commit, and two configurations attached.
+
+44
+00:02:31,226 --> 00:02:35,512
+In this worked example, A produced the
+in-scope fix and required less review
+
+45
+00:02:35,563 --> 00:02:35,984
+time.
+
+46
+00:02:36,624 --> 00:02:40,705
+A team default needs more observations,
+so repeat the test on another
+
+47
+00:02:40,756 --> 00:02:42,552
+representative task.
+
+48
+00:02:42,629 --> 00:02:45,555
+If the pattern changes, record where it
+changes.
+
+49
+00:02:46,206 --> 00:02:50,260
+That gives reviewers a useful decision
+rule based on the work they actually
+
+50
+00:02:50,337 --> 00:02:50,708
+see.

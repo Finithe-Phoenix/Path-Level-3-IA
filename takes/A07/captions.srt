@@ -1,0 +1,232 @@
+1
+00:00:00,418 --> 00:00:04,268
+You are deciding which of two approved
+agent setups creates a more reviewable
+
+2
+00:00:04,318 --> 00:00:05,393
+change.
+
+3
+00:00:05,468 --> 00:00:09,643
+Give that decision a clear question:
+what happens when each setup fixes the
+
+4
+00:00:09,718 --> 00:00:11,435
+same zero-quantity defect?
+
+5
+00:00:12,214 --> 00:00:15,864
+We'll keep the task and tests fixed,
+record the environment,
+
+6
+00:00:15,914 --> 00:00:18,789
+and compare what a reviewer actually
+inherits.
+
+7
+00:00:18,839 --> 00:00:22,385
+The numbers you see are synthetic and
+explain how to read the evidence.
+
+8
+00:00:23,872 --> 00:00:27,672
+Use two authorized checkouts in the G C
+P workspace.
+
+9
+00:00:27,747 --> 00:00:31,522
+In each terminal, confirm the same
+starting commit and a clean working
+
+10
+00:00:31,572 --> 00:00:31,927
+tree.
+
+11
+00:00:32,530 --> 00:00:35,680
+That keeps the first run's edits out of
+the second run.
+
+12
+00:00:35,730 --> 00:00:39,530
+Put the same issue, source files, and
+tests in scope.
+
+13
+00:00:39,605 --> 00:00:44,255
+If a checkout already has extra changes,
+reset the experiment by opening a clean
+
+14
+00:00:44,305 --> 00:00:45,343
+training checkout.
+
+15
+00:00:46,856 --> 00:00:50,806
+Send the same task to both sessions and
+capture the settings that matter:
+
+16
+00:00:50,881 --> 00:00:55,115
+client version, resolved model,
+provider, permissions, and context.
+
+17
+00:00:55,739 --> 00:00:59,439
+If the clients can use the same approved
+model and configuration,
+
+18
+00:00:59,489 --> 00:01:02,064
+that helps isolate a client difference.
+
+19
+00:01:02,114 --> 00:01:05,992
+When the models differ, your result
+describes both complete setups.
+
+20
+00:01:06,626 --> 00:01:10,325
+Write that down now, before the outcome
+tempts you to overinterpret it.
+
+21
+00:01:11,814 --> 00:01:14,114
+Set the rubric before opening the diffs.
+
+22
+00:01:14,214 --> 00:01:17,329
+First, require the four reference tests
+to pass.
+
+23
+00:01:17,429 --> 00:01:20,049
+Second, require the two approved files
+only.
+
+24
+00:01:20,673 --> 00:01:24,873
+Then measure how often you redirect the
+session and how long a reviewer needs to
+
+25
+00:01:24,923 --> 00:01:26,873
+reach a verified result.
+
+26
+00:01:26,923 --> 00:01:28,536
+The first two fields are gates.
+
+27
+00:01:29,145 --> 00:01:33,194
+The other fields quantify how much human
+work each complete setup leaves.
+
+28
+00:01:34,706 --> 00:01:38,486
+For each run, read the diff and run the
+reference suite yourself in the approved
+
+29
+00:01:38,536 --> 00:01:39,711
+workspace.
+
+30
+00:01:39,786 --> 00:01:42,315
+Both synthetic runs pass all four tests.
+
+31
+00:01:42,943 --> 00:01:45,493
+Run B changes one extra file.
+
+32
+00:01:45,568 --> 00:01:49,268
+Open that file and use the issue to
+decide if it belongs.
+
+33
+00:01:49,343 --> 00:01:52,798
+In the illustration it doesn't, so B
+passed the test gate but missed the
+
+34
+00:01:52,848 --> 00:01:53,606
+scope gate.
+
+35
+00:01:54,273 --> 00:01:56,205
+Record both observations.
+
+36
+00:01:57,647 --> 00:02:00,322
+Now read the scorecard from top to
+bottom.
+
+37
+00:02:00,397 --> 00:02:03,147
+Both runs have the same result on the
+tests.
+
+38
+00:02:03,222 --> 00:02:06,083
+A stays inside the scope and takes four
+minutes to review.
+
+39
+00:02:06,654 --> 00:02:09,704
+B has an extra edit and takes seven
+minutes.
+
+40
+00:02:09,779 --> 00:02:12,504
+Keep the failed gate visible in the
+scorecard.
+
+41
+00:02:12,554 --> 00:02:16,504
+The separate rows explain why the review
+effort changed and give you a traceable
+
+42
+00:02:16,554 --> 00:02:17,205
+conclusion.
+
+43
+00:02:18,706 --> 00:02:23,471
+Write the conclusion with the task,
+commit, and two configurations attached.
+
+44
+00:02:23,546 --> 00:02:27,721
+In this worked example, A produced the
+in-scope fix and required less review
+
+45
+00:02:27,771 --> 00:02:28,181
+time.
+
+46
+00:02:28,805 --> 00:02:32,780
+A team default needs more observations,
+so repeat the test on another
+
+47
+00:02:32,830 --> 00:02:34,580
+representative task.
+
+48
+00:02:34,655 --> 00:02:37,505
+If the pattern changes, record where it
+changes.
+
+49
+00:02:38,139 --> 00:02:42,089
+That gives reviewers a useful decision
+rule based on the work they actually
+
+50
+00:02:42,164 --> 00:02:42,525
+see.
