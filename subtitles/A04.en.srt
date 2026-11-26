@@ -1,191 +1,221 @@
 1
-00:00:00,340 --> 00:00:06,544
-Model Context Protocol, or M C P, is a way
-for a client to connect to servers that
+00:00:00,466 --> 00:00:04,978
+Suppose your agent needs the acceptance
+criteria from a training issue.
 
 2
-00:00:06,544 --> 00:00:09,193
-can supply tools and other context.
+00:00:05,058 --> 00:00:07,234
+How does that issue get into the
+session?
 
 3
-00:00:09,373 --> 00:00:14,536
-Our simulated server exposes one tool that
-reads a synthetic training issue.
+00:00:07,324 --> 00:00:08,368
+Follow the arrows.
 
 4
-00:00:14,716 --> 00:00:19,591
-We will follow the request from the
-approved GCP client, through the server,
+00:00:09,019 --> 00:00:11,752
+The client connects to an M C P server,
 
 5
-00:00:19,591 --> 00:00:23,311
-and back to the session where the result
-becomes evidence.
+00:00:11,805 --> 00:00:14,858
+and the server offers one read-only
+tool.
 
 6
-00:00:24,757 --> 00:00:28,811
-Begin with the workspace's approval record
-for the training server.
+00:00:14,911 --> 00:00:19,179
+When the tool is called, it reads a
+synthetic issue fixture and sends a
 
 7
-00:00:28,991 --> 00:00:32,520
-Confirm its source, environment, and
-available tools.
+00:00:19,232 --> 00:00:20,083
+result back.
 
 8
-00:00:32,700 --> 00:00:38,301
-The operation here reads a single issue by
-number, in a synthetic project only.
+00:00:20,780 --> 00:00:23,307
+Let's check the contract before calling
+it.
 
 9
-00:00:38,481 --> 00:00:43,185
-Confirm the actual access scope with the
-owner or supplied lab policy.
+00:00:25,194 --> 00:00:27,689
+Open the approved integration record.
 
 10
-00:00:43,365 --> 00:00:47,774
-A friendly tool name only helps you
-identify the action, so check the
+00:00:27,768 --> 00:00:32,179
+It names a server, training issues, and
+a tool, get training issue.
 
 11
-00:00:47,774 --> 00:00:49,691
-effective permissions as well.
+00:00:32,232 --> 00:00:35,638
+The tool takes a number and can read
+orders issues from the fixture.
 
 12
-00:00:51,132 --> 00:00:55,590
-Open the approved integration settings in
-Claude Code or OpenCode.
+00:00:36,316 --> 00:00:39,660
+Look at the operation and the data scope
+together.
 
 13
-00:00:55,770 --> 00:01:01,255
-Configuration fields and locations vary by
-client and version, so read what the
+00:00:39,766 --> 00:00:43,243
+If the workspace owner has provided the
+lab as a recording,
 
 14
-00:01:01,255 --> 00:01:02,574
-workspace provides.
+00:00:43,296 --> 00:00:47,128
+the same record tells you which action
+the captured result represents.
 
 15
-00:01:02,754 --> 00:01:05,285
-Look for the configured identity and
-scope.
+00:00:49,383 --> 00:00:52,488
+Next, inspect how the approved client
+connects.
 
 16
-00:01:05,465 --> 00:01:10,930
-If the integration is unavailable in the
-training workspace, follow along with the
+00:00:52,541 --> 00:00:57,053
+The real screen depends on whether
+you're in Claude Code or OpenCode and on
 
 17
-00:01:10,930 --> 00:01:15,130
-same input and recorded result supplied as
-a synthetic fixture.
+00:00:57,080 --> 00:00:58,271
+the installed build.
 
 18
-00:01:16,590 --> 00:01:20,920
-Ask the agent for the acceptance criteria
-of issue seventeen.
+00:00:58,971 --> 00:01:03,987
+Find the configured server identity and
+scope where the workspace exposes them.
 
 19
-00:01:21,100 --> 00:01:25,079
-Before the call runs, inspect the proposed
-tool and its argument.
+00:01:04,040 --> 00:01:06,429
+The values on this screen are fixtures.
 
 20
-00:01:25,259 --> 00:01:27,823
-Make sure the request points to the
-training issue.
+00:01:06,508 --> 00:01:10,145
+Use the approved connection as
+configured, and keep the lab on this
 
 21
-00:01:28,003 --> 00:01:31,056
-Follow the session's permission prompt if
-one appears.
+00:01:10,198 --> 00:01:11,776
+synthetic data boundary.
 
 22
-00:01:31,236 --> 00:01:36,117
-This is the point where you verify that
-the planned call matches both your intent
-
-23
-00:01:36,117 --> 00:01:37,805
-and the approved data scope.
-
-24
-00:01:39,257 --> 00:01:42,161
-Read the result returned from the training
-server.
-
-25
-00:01:42,341 --> 00:01:45,896
-The issue provides two straightforward
+00:01:13,986 --> 00:01:17,914
+Ask for issue seventeen and its
 acceptance criteria.
 
+23
+00:01:17,993 --> 00:01:22,028
+In this example, the client proposes get
+training issue with issue number
+
+24
+00:01:22,081 --> 00:01:22,805
+seventeen.
+
+25
+00:01:23,445 --> 00:01:25,621
+Check the operation and the number.
+
 26
-00:01:46,076 --> 00:01:49,820
-Check each item in the agent's summary
-against the response.
+00:01:25,674 --> 00:01:29,390
+They should match the request you made,
+and the tool should be approved for that
 
 27
-00:01:50,000 --> 00:01:52,629
-The tool call supplies context for the
-model.
+00:01:29,443 --> 00:01:30,611
+input.
 
 28
-00:01:52,809 --> 00:01:57,707
-Its text can describe the issue, but
-consequential actions still follow your
+00:01:30,691 --> 00:01:34,406
+This is the evidence you want before
+responding to any confirmation prompt
 
 29
-00:01:57,707 --> 00:02:00,221
-instruction and the policy of the host.
+00:01:34,486 --> 00:01:35,961
+shown by your workspace.
 
 30
-00:02:01,673 --> 00:02:06,362
-Look at the training permission record and
-check what happens when a proposed follow-
+00:01:38,163 --> 00:01:40,578
+The tool returns two requirements.
 
 31
-00:02:06,362 --> 00:02:08,458
-up would write back to the repository.
+00:01:40,658 --> 00:01:42,887
+Positive integers are accepted.
 
 32
-00:02:08,638 --> 00:02:12,487
-The scope only covers reads, so keep the
-summary in the session.
+00:01:42,993 --> 00:01:45,993
+Zero and negative integers are rejected.
 
 33
-00:02:12,667 --> 00:02:18,405
-In the engineering workflow, a person
-reviews the pull request using GitHub CLI.
+00:01:46,072 --> 00:01:49,369
+Now look at the agent's summary and
+check that it carries both.
 
 34
-00:02:18,585 --> 00:02:23,205
-This keeps the source of evidence and the
-authorization to act easy to audit.
+00:01:50,031 --> 00:01:55,127
+If it only says to reject zero, the
+negative case was lost in the summary.
 
 35
-00:02:24,673 --> 00:02:29,313
-Record the server name, the tool, the
-issue number, and what you verified from
+00:01:55,207 --> 00:01:59,374
+Correct the summary against the actual
+issue text so the next stage can use
 
 36
-00:02:29,313 --> 00:02:30,086
-the response.
+00:01:59,427 --> 00:02:01,120
+both acceptance criteria.
 
 37
-00:02:30,266 --> 00:02:34,831
-Add the client version if discovery or
-approvals were central to this lab.
+00:02:03,402 --> 00:02:07,993
+Imagine the next proposed action is to
+post the summary to a pull request.
 
 38
-00:02:35,011 --> 00:02:38,979
-You now have a small repeatable
-integration with a clear boundary.
+00:02:08,073 --> 00:02:10,143
+Catch that change in scope.
 
 39
-00:02:39,159 --> 00:02:44,055
-The next episode adds checks that can stop
-a workflow when its output misses an
+00:02:10,223 --> 00:02:13,943
+Reading issue seventeen and writing a
+comment are different operations.
 
 40
-00:02:44,055 --> 00:02:45,357
-explicit requirement.
+00:02:14,616 --> 00:02:17,758
+For this lab, save the summary in the
+session.
+
+41
+00:02:17,838 --> 00:02:21,872
+In the actual review workflow, the
+authorized author or reviewer decides
+
+42
+00:02:21,925 --> 00:02:25,699
+what to post using their own account and
+GitHub CLI.
+
+43
+00:02:27,962 --> 00:02:32,118
+Finish with a small record: the approved
+server, the tool and number,
+
+44
+00:02:32,304 --> 00:02:34,799
+and the two criteria you verified.
+
+45
+00:02:34,878 --> 00:02:38,430
+A teammate should see exactly what was
+read and what matched the source.
+
+46
+00:02:39,092 --> 00:02:42,569
+That is the simplest useful M C P
+workflow:
+
+47
+00:02:42,649 --> 00:02:46,285
+one authorized tool call that brings
+evidence into the task,
+
+48
+00:02:46,338 --> 00:02:48,211
+with a boundary that you can explain.
