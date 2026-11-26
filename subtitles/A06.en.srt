@@ -1,212 +1,229 @@
 1
-00:00:00,340 --> 00:00:05,183
-This exercise asks a simple question about
-repository policy.
+00:00:00,449 --> 00:00:05,172
+Suppose you ask your agent whether this
+service accepts zero-quantity orders.
 
 2
-00:00:05,363 --> 00:00:07,629
-Can an order have a quantity of zero?
+00:00:05,249 --> 00:00:08,853
+A quick answer is useful only if you can
+find the rule behind it.
 
 3
-00:00:07,809 --> 00:00:12,111
-We want an answer that points to the
-actual rule and the revision where it
+00:00:09,511 --> 00:00:13,821
+In this synthetic example, we'll trace
+one question through retrieval,
 
 4
-00:00:12,111 --> 00:00:12,576
-appears.
+00:00:13,899 --> 00:00:18,105
+answer it using a repository passage,
+then run the same question when the
 
 5
-00:00:12,756 --> 00:00:17,171
-The training index contains only synthetic
-repository documents.
+00:00:18,157 --> 00:00:19,232
+passage is missing.
 
 6
-00:00:17,351 --> 00:00:22,279
-We will trace a retrieved passage into the
-answer, then check that passage directly.
+00:00:19,898 --> 00:00:22,532
+Look for the file and revision in each
+result.
 
 7
-00:00:23,757 --> 00:00:27,053
-Begin with a few short passages from
-approved files.
+00:00:24,495 --> 00:00:28,444
+Start with two short passages from the
+approved training checkout.
 
 8
-00:00:27,233 --> 00:00:30,412
-Attach each file path and revision to the
-text.
+00:00:28,495 --> 00:00:31,876
+The first says that quantity must be a
+positive integer.
 
 9
-00:00:30,592 --> 00:00:35,531
-That metadata lets the reviewer check
-relevance and freshness after retrieval.
+00:00:31,928 --> 00:00:34,150
+The second explains shipping calendars.
 
 10
-00:00:35,711 --> 00:00:40,479
-Include a passage about shipping so the
-example has something nearby but
+00:00:34,773 --> 00:00:37,998
+Keep the path and commit next to each
+text fragment.
 
 11
-00:00:40,479 --> 00:00:41,141
-unrelated.
+00:00:38,076 --> 00:00:41,818
+Those fields travel with the retrieved
+passage so you can still find the
 
 12
-00:00:41,321 --> 00:00:45,942
-The size of the passage should preserve
-enough neighboring text to explain the
+00:00:41,869 --> 00:00:43,859
+original rule when the answer arrives.
 
 13
-00:00:45,942 --> 00:00:46,890
-rule accurately.
+00:00:46,031 --> 00:00:49,463
+An embedding represents text as a list
+of numbers.
 
 14
-00:00:48,340 --> 00:00:53,243
-An embedding model maps text into a list
-of numbers that can be compared for
+00:00:49,515 --> 00:00:53,437
+The query and the passages go through
+the matching embedding model so a
 
 15
-00:00:53,243 --> 00:00:53,953
-similarity.
+00:00:53,489 --> 00:00:55,337
+retrieval system can compare them.
 
 16
-00:00:54,133 --> 00:00:59,035
-In this example, the system embeds the
-question and the approved passages and
+00:00:55,980 --> 00:00:59,670
+The system uses similarity to rank
+candidate material.
 
 17
-00:00:59,035 --> 00:01:00,499
-compares their vectors.
+00:00:59,748 --> 00:01:02,406
+That ranking helps find a likely match.
 
 18
-00:01:00,679 --> 00:01:03,985
-The point is to find useful candidate
-evidence.
+00:01:02,483 --> 00:01:06,457
+Open the candidate text to decide
+whether it answers this question,
 
 19
-00:01:04,165 --> 00:01:09,299
-Similarity alone cannot confirm that a
-passage is current, applicable, or true,
+00:01:06,509 --> 00:01:08,567
+and check the metadata for its revision.
 
 20
-00:01:09,299 --> 00:01:11,704
-so keep the source metadata attached.
+00:01:10,448 --> 00:01:13,003
+The first candidate is the order policy.
 
 21
-00:01:13,173 --> 00:01:15,823
-Look at the results before sending them
-onward.
+00:01:13,080 --> 00:01:15,170
+Read the highlighted sentence.
 
 22
-00:01:16,003 --> 00:01:19,946
-The first passage addresses the quantity
-rule and has a source path.
+00:01:15,248 --> 00:01:17,803
+Positive integer is the rule we need.
 
 23
-00:01:20,126 --> 00:01:24,789
-The second passage discusses delivery
-dates, so it adds no evidence for this
+00:01:17,854 --> 00:01:20,280
+The second candidate is about delivery
+dates,
 
 24
-00:01:24,789 --> 00:01:25,341
-question.
+00:01:20,425 --> 00:01:22,203
+so it doesn't support either answer.
 
 25
-00:01:25,521 --> 00:01:30,627
-A useful retrieval step returns enough
-detail to support the answer and trims
+00:01:22,847 --> 00:01:24,989
+The scores here are illustrative.
 
 26
-00:01:30,627 --> 00:01:35,269
-material that would distract the model or
-obscure the relevant source.
+00:01:25,041 --> 00:01:27,286
+The important check is relevance.
 
 27
-00:01:36,715 --> 00:01:40,254
-Now give the model the question and the
-selected passage.
+00:01:27,364 --> 00:01:29,970
+Keep the useful passage with its path
+and revision,
 
 28
-00:01:40,434 --> 00:01:45,106
-This combination is retrieval augmented
-generation, or R A G.
+00:01:30,156 --> 00:01:31,891
+then feed it into the answer step.
 
 29
-00:01:45,286 --> 00:01:48,479
-Retrieval happens before the answer is
-generated.
+00:01:34,120 --> 00:01:38,791
+Now send the question with the selected
+passage and request a source reference.
 
 30
-00:01:48,659 --> 00:01:54,034
-The response cites the order policy and
-applies the positive integer rule to zero.
+00:01:38,869 --> 00:01:42,698
+Retrieval augmented generation, often
+called R A G,
 
 31
-00:01:54,214 --> 00:01:58,682
-Open the cited file and confirm the answer
-against the exact text.
+00:01:42,750 --> 00:01:44,137
+is the pattern you just saw.
 
 32
-00:01:58,862 --> 00:02:01,508
-The citation is evidence you can check.
+00:01:44,770 --> 00:01:47,583
+The system first retrieves relevant
+evidence,
 
 33
-00:02:02,965 --> 00:02:07,274
-Now repeat the exercise with the order
-policy passage removed.
+00:01:47,635 --> 00:01:50,628
+then includes it when generating the
+response.
 
 34
-00:02:07,454 --> 00:02:11,017
-The supplied material does not answer the
-quantity question.
+00:01:50,680 --> 00:01:54,319
+The answer says zero is invalid and
+cites the order policy.
 
 35
-00:02:11,197 --> 00:02:15,975
-A good response identifies the missing
-evidence rather than guessing a rule.
+00:01:54,963 --> 00:01:58,742
+Open that path at the stated revision
+and verify the sentence.
 
 36
-00:02:16,155 --> 00:02:21,432
-In a maintained repository, also check the
-revision and refresh the index when
+00:02:00,957 --> 00:02:03,177
+Now simulate an index gap.
 
 37
-00:02:21,432 --> 00:02:22,244
-appropriate.
+00:02:03,228 --> 00:02:06,145
+The same query gets only the shipping
+policy.
 
 38
-00:02:22,424 --> 00:02:27,098
-These checks prevent an outdated or
-unrelated passage from becoming a
+00:02:06,222 --> 00:02:07,409
+Read it again.
 
 39
-00:02:27,098 --> 00:02:28,249
-confident answer.
+00:02:07,461 --> 00:02:11,270
+There's no rule about order quantity,
+and the model can say that the retrieved
 
 40
-00:02:29,715 --> 00:02:34,865
-Before adopting retrieval for an actual
-repository, confirm what may be indexed,
+00:02:11,347 --> 00:02:13,226
+source has insufficient evidence.
 
 41
-00:02:34,865 --> 00:02:38,984
-where the index is stored, and which
-identities can retrieve it.
+00:02:13,874 --> 00:02:18,571
+In an actual repository, a stale index
+can produce a similar result.
 
 42
-00:02:39,164 --> 00:02:42,782
-In this course we illustrate the pattern
-with synthetic data.
+00:02:18,649 --> 00:02:22,365
+Confirm the revision and refresh the
+approved sources when your process
 
 43
-00:02:42,962 --> 00:02:48,081
-The same habit that helps a developer
-verify a code suggestion applies here.
+00:02:22,416 --> 00:02:23,088
+allows it.
 
 44
-00:02:48,261 --> 00:02:53,235
-Record the evidence, confirm the source,
-and say when the available material is
+00:02:25,255 --> 00:02:28,171
+Before using the pattern for an actual
+project,
 
 45
-00:02:53,235 --> 00:02:54,053
-insufficient.
+00:02:28,223 --> 00:02:32,319
+check the allowed source scope and which
+identities can retrieve documents.
+
+46
+00:02:32,951 --> 00:02:36,047
+Keep the path, revision, and passage
+visible.
+
+47
+00:02:36,125 --> 00:02:39,918
+Test two cases: an answer supported by a
+verified rule,
+
+48
+00:02:40,063 --> 00:02:41,866
+and a question whose rule is missing.
+
+49
+00:02:42,510 --> 00:02:46,098
+Those checks let you tell whether the
+retrieval system is giving the model
+
+50
+00:02:46,149 --> 00:02:47,413
+evidence it can use.
