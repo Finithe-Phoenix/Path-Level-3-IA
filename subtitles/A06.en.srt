@@ -1,0 +1,212 @@
+1
+00:00:00,340 --> 00:00:05,183
+This exercise asks a simple question about
+repository policy.
+
+2
+00:00:05,363 --> 00:00:07,629
+Can an order have a quantity of zero?
+
+3
+00:00:07,809 --> 00:00:12,111
+We want an answer that points to the
+actual rule and the revision where it
+
+4
+00:00:12,111 --> 00:00:12,576
+appears.
+
+5
+00:00:12,756 --> 00:00:17,171
+The training index contains only synthetic
+repository documents.
+
+6
+00:00:17,351 --> 00:00:22,279
+We will trace a retrieved passage into the
+answer, then check that passage directly.
+
+7
+00:00:23,757 --> 00:00:27,053
+Begin with a few short passages from
+approved files.
+
+8
+00:00:27,233 --> 00:00:30,412
+Attach each file path and revision to the
+text.
+
+9
+00:00:30,592 --> 00:00:35,531
+That metadata lets the reviewer check
+relevance and freshness after retrieval.
+
+10
+00:00:35,711 --> 00:00:40,479
+Include a passage about shipping so the
+example has something nearby but
+
+11
+00:00:40,479 --> 00:00:41,141
+unrelated.
+
+12
+00:00:41,321 --> 00:00:45,942
+The size of the passage should preserve
+enough neighboring text to explain the
+
+13
+00:00:45,942 --> 00:00:46,890
+rule accurately.
+
+14
+00:00:48,340 --> 00:00:53,243
+An embedding model maps text into a list
+of numbers that can be compared for
+
+15
+00:00:53,243 --> 00:00:53,953
+similarity.
+
+16
+00:00:54,133 --> 00:00:59,035
+In this example, the system embeds the
+question and the approved passages and
+
+17
+00:00:59,035 --> 00:01:00,499
+compares their vectors.
+
+18
+00:01:00,679 --> 00:01:03,985
+The point is to find useful candidate
+evidence.
+
+19
+00:01:04,165 --> 00:01:09,299
+Similarity alone cannot confirm that a
+passage is current, applicable, or true,
+
+20
+00:01:09,299 --> 00:01:11,704
+so keep the source metadata attached.
+
+21
+00:01:13,173 --> 00:01:15,823
+Look at the results before sending them
+onward.
+
+22
+00:01:16,003 --> 00:01:19,946
+The first passage addresses the quantity
+rule and has a source path.
+
+23
+00:01:20,126 --> 00:01:24,789
+The second passage discusses delivery
+dates, so it adds no evidence for this
+
+24
+00:01:24,789 --> 00:01:25,341
+question.
+
+25
+00:01:25,521 --> 00:01:30,627
+A useful retrieval step returns enough
+detail to support the answer and trims
+
+26
+00:01:30,627 --> 00:01:35,269
+material that would distract the model or
+obscure the relevant source.
+
+27
+00:01:36,715 --> 00:01:40,254
+Now give the model the question and the
+selected passage.
+
+28
+00:01:40,434 --> 00:01:45,106
+This combination is retrieval augmented
+generation, or R A G.
+
+29
+00:01:45,286 --> 00:01:48,479
+Retrieval happens before the answer is
+generated.
+
+30
+00:01:48,659 --> 00:01:54,034
+The response cites the order policy and
+applies the positive integer rule to zero.
+
+31
+00:01:54,214 --> 00:01:58,682
+Open the cited file and confirm the answer
+against the exact text.
+
+32
+00:01:58,862 --> 00:02:01,508
+The citation is evidence you can check.
+
+33
+00:02:02,965 --> 00:02:07,274
+Now repeat the exercise with the order
+policy passage removed.
+
+34
+00:02:07,454 --> 00:02:11,017
+The supplied material does not answer the
+quantity question.
+
+35
+00:02:11,197 --> 00:02:15,975
+A good response identifies the missing
+evidence rather than guessing a rule.
+
+36
+00:02:16,155 --> 00:02:21,432
+In a maintained repository, also check the
+revision and refresh the index when
+
+37
+00:02:21,432 --> 00:02:22,244
+appropriate.
+
+38
+00:02:22,424 --> 00:02:27,098
+These checks prevent an outdated or
+unrelated passage from becoming a
+
+39
+00:02:27,098 --> 00:02:28,249
+confident answer.
+
+40
+00:02:29,715 --> 00:02:34,865
+Before adopting retrieval for an actual
+repository, confirm what may be indexed,
+
+41
+00:02:34,865 --> 00:02:38,984
+where the index is stored, and which
+identities can retrieve it.
+
+42
+00:02:39,164 --> 00:02:42,782
+In this course we illustrate the pattern
+with synthetic data.
+
+43
+00:02:42,962 --> 00:02:48,081
+The same habit that helps a developer
+verify a code suggestion applies here.
+
+44
+00:02:48,261 --> 00:02:53,235
+Record the evidence, confirm the source,
+and say when the available material is
+
+45
+00:02:53,235 --> 00:02:54,053
+insufficient.

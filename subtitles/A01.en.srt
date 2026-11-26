@@ -1,0 +1,233 @@
+1
+00:00:00,340 --> 00:00:04,960
+Start by locating the workspace where the
+coding agent is allowed to operate.
+
+2
+00:00:05,140 --> 00:00:10,348
+In this course, Claude Code and OpenCode
+run inside the corporate Google Cloud
+
+3
+00:00:10,348 --> 00:00:11,016
+workspace.
+
+4
+00:00:11,196 --> 00:00:15,889
+The terminal and repository shown here are
+synthetic training examples.
+
+5
+00:00:16,069 --> 00:00:19,460
+Keep your session inside the approved
+remote workspace.
+
+6
+00:00:19,640 --> 00:00:23,831
+We will verify the environment before we
+give either agent a task.
+
+7
+00:00:25,298 --> 00:00:29,624
+In the approved terminal, check the
+current directory, branch, and short
+
+8
+00:00:29,624 --> 00:00:30,705
+commit identifier.
+
+9
+00:00:30,885 --> 00:00:35,397
+These small checks tell you which checkout
+the agent can see and where to find your
+
+10
+00:00:35,397 --> 00:00:36,539
+starting point later.
+
+11
+00:00:36,719 --> 00:00:39,174
+The example is clean on a lab branch.
+
+12
+00:00:39,354 --> 00:00:44,101
+If your actual checkout contains someone
+else's work, leave it in place and switch
+
+13
+00:00:44,101 --> 00:00:46,011
+to an approved training checkout.
+
+14
+00:00:47,465 --> 00:00:52,724
+Now check the versions of Claude Code and
+OpenCode that the organization has
+
+15
+00:00:52,724 --> 00:00:53,416
+installed.
+
+16
+00:00:53,596 --> 00:00:58,138
+Features, selectors, and available
+controls can change across versions.
+
+17
+00:00:58,318 --> 00:01:02,604
+For that reason, the lab records what the
+terminal actually reports.
+
+18
+00:01:02,784 --> 00:01:07,564
+A missing command is an access or setup
+question for the workspace owner.
+
+19
+00:01:07,744 --> 00:01:11,731
+Use the client your organization provides
+for this exercise.
+
+20
+00:01:13,173 --> 00:01:16,522
+Inspect the model selection in the
+authorized client.
+
+21
+00:01:16,702 --> 00:01:21,893
+Record the exact model identifier if it is
+available, along with the configured
+
+22
+00:01:21,893 --> 00:01:22,484
+provider.
+
+23
+00:01:22,664 --> 00:01:27,573
+The program that runs on the workstation,
+the model that interprets the task, and
+
+24
+00:01:27,573 --> 00:01:31,997
+the service that processes the request are
+separate parts of the session.
+
+25
+00:01:32,177 --> 00:01:36,978
+The workspace administrator can confirm
+any setting that your account cannot see.
+
+26
+00:01:38,423 --> 00:01:43,715
+This example gives the agent access to
+read the training repository and asks for
+
+27
+00:01:43,715 --> 00:01:46,956
+confirmation before editing or running its
+tests.
+
+28
+00:01:47,136 --> 00:01:50,125
+Other workspaces may apply a different
+policy.
+
+29
+00:01:50,305 --> 00:01:54,475
+Check the effective rules in the client
+and the surrounding environment.
+
+30
+00:01:54,655 --> 00:01:59,730
+Keep project guidance, tool permission,
+and the runtime boundary separate when you
+
+31
+00:01:59,730 --> 00:02:01,897
+reason about what the agent can do.
+
+32
+00:02:03,340 --> 00:02:05,157
+Start with a small inspection.
+
+33
+00:02:05,337 --> 00:02:10,007
+Ask the agent to find the quantity
+validator and the associated unit tests,
+
+34
+00:02:10,007 --> 00:02:11,938
+then give you their file paths.
+
+35
+00:02:12,118 --> 00:02:17,387
+This is a useful first task because you
+can open each file to verify the result.
+
+36
+00:02:17,567 --> 00:02:22,607
+If the client proposes an edit or command
+outside the stated scope, pause and
+
+37
+00:02:22,607 --> 00:02:25,226
+inspect the request before approving it.
+
+38
+00:02:26,673 --> 00:02:31,740
+Open the cited file yourself and confirm
+that it contains the relevant function.
+
+39
+00:02:31,920 --> 00:02:33,865
+Then run the status check again.
+
+40
+00:02:34,045 --> 00:02:38,323
+In this inspection, the working tree
+should look exactly as it did at the
+
+41
+00:02:38,323 --> 00:02:38,675
+start.
+
+42
+00:02:38,855 --> 00:02:43,378
+This final check gives you something
+concrete to compare with the agent's
+
+43
+00:02:43,378 --> 00:02:47,591
+summary, and it reinforces a habit we will
+use before every handoff.
+
+44
+00:02:49,048 --> 00:02:53,932
+Before ending, write down the workspace,
+branch, starting commit, client version,
+
+45
+00:02:53,932 --> 00:02:55,620
+model, and permission scope.
+
+46
+00:02:55,800 --> 00:02:57,520
+Keep the record concise.
+
+47
+00:02:57,700 --> 00:03:02,805
+You now have an auditable description of
+the environment and a verified read-only
+
+48
+00:03:02,805 --> 00:03:03,246
+result.
+
+49
+00:03:03,426 --> 00:03:08,172
+In the next lab, that description will
+help you compare how the two clients
+
+50
+00:03:08,172 --> 00:03:11,842
+discover instructions and skills from the
+same repository.

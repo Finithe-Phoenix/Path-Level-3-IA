@@ -1,0 +1,191 @@
+1
+00:00:00,340 --> 00:00:06,544
+Model Context Protocol, or M C P, is a way
+for a client to connect to servers that
+
+2
+00:00:06,544 --> 00:00:09,193
+can supply tools and other context.
+
+3
+00:00:09,373 --> 00:00:14,536
+Our simulated server exposes one tool that
+reads a synthetic training issue.
+
+4
+00:00:14,716 --> 00:00:19,591
+We will follow the request from the
+approved GCP client, through the server,
+
+5
+00:00:19,591 --> 00:00:23,311
+and back to the session where the result
+becomes evidence.
+
+6
+00:00:24,757 --> 00:00:28,811
+Begin with the workspace's approval record
+for the training server.
+
+7
+00:00:28,991 --> 00:00:32,520
+Confirm its source, environment, and
+available tools.
+
+8
+00:00:32,700 --> 00:00:38,301
+The operation here reads a single issue by
+number, in a synthetic project only.
+
+9
+00:00:38,481 --> 00:00:43,185
+Confirm the actual access scope with the
+owner or supplied lab policy.
+
+10
+00:00:43,365 --> 00:00:47,774
+A friendly tool name only helps you
+identify the action, so check the
+
+11
+00:00:47,774 --> 00:00:49,691
+effective permissions as well.
+
+12
+00:00:51,132 --> 00:00:55,590
+Open the approved integration settings in
+Claude Code or OpenCode.
+
+13
+00:00:55,770 --> 00:01:01,255
+Configuration fields and locations vary by
+client and version, so read what the
+
+14
+00:01:01,255 --> 00:01:02,574
+workspace provides.
+
+15
+00:01:02,754 --> 00:01:05,285
+Look for the configured identity and
+scope.
+
+16
+00:01:05,465 --> 00:01:10,930
+If the integration is unavailable in the
+training workspace, follow along with the
+
+17
+00:01:10,930 --> 00:01:15,130
+same input and recorded result supplied as
+a synthetic fixture.
+
+18
+00:01:16,590 --> 00:01:20,920
+Ask the agent for the acceptance criteria
+of issue seventeen.
+
+19
+00:01:21,100 --> 00:01:25,079
+Before the call runs, inspect the proposed
+tool and its argument.
+
+20
+00:01:25,259 --> 00:01:27,823
+Make sure the request points to the
+training issue.
+
+21
+00:01:28,003 --> 00:01:31,056
+Follow the session's permission prompt if
+one appears.
+
+22
+00:01:31,236 --> 00:01:36,117
+This is the point where you verify that
+the planned call matches both your intent
+
+23
+00:01:36,117 --> 00:01:37,805
+and the approved data scope.
+
+24
+00:01:39,257 --> 00:01:42,161
+Read the result returned from the training
+server.
+
+25
+00:01:42,341 --> 00:01:45,896
+The issue provides two straightforward
+acceptance criteria.
+
+26
+00:01:46,076 --> 00:01:49,820
+Check each item in the agent's summary
+against the response.
+
+27
+00:01:50,000 --> 00:01:52,629
+The tool call supplies context for the
+model.
+
+28
+00:01:52,809 --> 00:01:57,707
+Its text can describe the issue, but
+consequential actions still follow your
+
+29
+00:01:57,707 --> 00:02:00,221
+instruction and the policy of the host.
+
+30
+00:02:01,673 --> 00:02:06,362
+Look at the training permission record and
+check what happens when a proposed follow-
+
+31
+00:02:06,362 --> 00:02:08,458
+up would write back to the repository.
+
+32
+00:02:08,638 --> 00:02:12,487
+The scope only covers reads, so keep the
+summary in the session.
+
+33
+00:02:12,667 --> 00:02:18,405
+In the engineering workflow, a person
+reviews the pull request using GitHub CLI.
+
+34
+00:02:18,585 --> 00:02:23,205
+This keeps the source of evidence and the
+authorization to act easy to audit.
+
+35
+00:02:24,673 --> 00:02:29,313
+Record the server name, the tool, the
+issue number, and what you verified from
+
+36
+00:02:29,313 --> 00:02:30,086
+the response.
+
+37
+00:02:30,266 --> 00:02:34,831
+Add the client version if discovery or
+approvals were central to this lab.
+
+38
+00:02:35,011 --> 00:02:38,979
+You now have a small repeatable
+integration with a clear boundary.
+
+39
+00:02:39,159 --> 00:02:44,055
+The next episode adds checks that can stop
+a workflow when its output misses an
+
+40
+00:02:44,055 --> 00:02:45,357
+explicit requirement.
