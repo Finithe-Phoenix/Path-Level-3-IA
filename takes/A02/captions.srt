@@ -1,0 +1,268 @@
+1
+00:00:00,418 --> 00:00:04,768
+Imagine a reviewer opens a training pull
+request and sees only the words 'tests
+
+2
+00:00:04,818 --> 00:00:08,198
+passed.' Which tests, and on what files?
+
+3
+00:00:08,248 --> 00:00:11,927
+We'll give both agent clients a
+convention that answers those questions.
+
+4
+00:00:12,540 --> 00:00:16,890
+Whenever the quantity validator changes,
+the evidence should name the exact test
+
+5
+00:00:16,940 --> 00:00:20,325
+command, the outcome, and the files
+checked.
+
+6
+00:00:20,400 --> 00:00:23,912
+Those three fields give us a clear pass
+condition for this exercise.
+
+7
+00:00:25,393 --> 00:00:28,443
+Open the project instructions for each
+client.
+
+8
+00:00:28,518 --> 00:00:32,793
+In this lab, Claude Code reads the
+convention through Claude dot M D,
+
+9
+00:00:32,843 --> 00:00:35,581
+and OpenCode reads it through Agents dot
+M D.
+
+10
+00:00:36,174 --> 00:00:38,949
+The files repeat the same short
+requirement.
+
+11
+00:00:39,024 --> 00:00:42,449
+Your installed versions and workspace
+settings determine which project
+
+12
+00:00:42,499 --> 00:00:46,824
+guidance is loaded, so compare the
+actual paths before assuming that both
+
+13
+00:00:46,899 --> 00:00:48,539
+sessions received the convention.
+
+14
+00:00:50,068 --> 00:00:52,693
+Next, open Skill dot M D.
+
+15
+00:00:52,743 --> 00:00:55,643
+The description explains when the
+procedure is useful:
+
+16
+00:00:55,718 --> 00:00:58,671
+summarizing test evidence for a training
+pull request.
+
+17
+00:00:59,280 --> 00:01:02,880
+The body says which fields to return and
+in what format.
+
+18
+00:01:02,955 --> 00:01:06,855
+If you need a reusable evidence
+template, include it with the skill in a
+
+19
+00:01:06,905 --> 00:01:08,619
+location the client supports.
+
+20
+00:01:09,228 --> 00:01:12,380
+Keep the first version short so you can
+tell which part helped.
+
+21
+00:01:13,872 --> 00:01:17,467
+From the repository root, follow the
+skill path for each client.
+
+22
+00:01:17,542 --> 00:01:20,867
+Here the paths start with dot Claude and
+dot OpenCode.
+
+23
+00:01:20,917 --> 00:01:24,053
+The base filename is the same: Skill dot
+M D.
+
+24
+00:01:24,655 --> 00:01:28,380
+Compare the file contents with what the
+session reports loading and confirm
+
+25
+00:01:28,430 --> 00:01:32,055
+precedence if more than one definition
+exists.
+
+26
+00:01:32,130 --> 00:01:35,805
+A matching name on disk by itself tells
+you where the file is,
+
+27
+00:01:35,855 --> 00:01:38,172
+so take one more step and test the
+behavior.
+
+28
+00:01:39,664 --> 00:01:43,739
+Start a fresh session in each client and
+provide the same recorded run.
+
+29
+00:01:43,814 --> 00:01:46,389
+Ask for the pull request evidence
+summary.
+
+30
+00:01:46,464 --> 00:01:49,914
+The example returns the command, four
+passing tests,
+
+31
+00:01:49,964 --> 00:01:53,181
+and the validator and zero-boundary test
+as the checked scope.
+
+32
+00:01:53,773 --> 00:01:56,723
+Confirm each item against the captured
+run.
+
+33
+00:01:56,798 --> 00:01:59,198
+If the client shows the skill
+invocation,
+
+34
+00:01:59,248 --> 00:02:02,149
+note that signal alongside the behavior
+you observed.
+
+35
+00:02:03,643 --> 00:02:07,368
+Try a second prompt: explain how order
+IDs are formatted,
+
+36
+00:02:07,468 --> 00:02:09,468
+and cite the defining file.
+
+37
+00:02:09,518 --> 00:02:12,239
+The skill's test-evidence output would
+add clutter here.
+
+38
+00:02:12,888 --> 00:02:16,038
+Look for a simple explanation and a path
+instead.
+
+39
+00:02:16,113 --> 00:02:19,088
+This gives you a practical two-case test
+for the skill:
+
+40
+00:02:19,163 --> 00:02:22,070
+one matching request and one unrelated
+request.
+
+41
+00:02:22,669 --> 00:02:25,501
+Keep both examples when you revise the
+description.
+
+42
+00:02:26,960 --> 00:02:30,610
+Notice that the evidence template
+includes a test command.
+
+43
+00:02:30,685 --> 00:02:34,560
+A repository file can describe that
+command and the skill can format its
+
+44
+00:02:34,610 --> 00:02:35,139
+output.
+
+45
+00:02:35,738 --> 00:02:39,138
+The workspace controls whether the
+client may execute it and whether
+
+46
+00:02:39,188 --> 00:02:40,788
+approval is needed.
+
+47
+00:02:40,863 --> 00:02:43,520
+Read the proposed command and the actual
+policy.
+
+48
+00:02:44,088 --> 00:02:48,138
+The author can then hand the resulting
+evidence to an independent reviewer for
+
+49
+00:02:48,163 --> 00:02:48,755
+a decision.
+
+50
+00:02:50,226 --> 00:02:54,351
+Review the persistent instruction files
+and the skill files in the repository
+
+51
+00:02:54,401 --> 00:02:55,376
+diff.
+
+52
+00:02:55,451 --> 00:02:59,101
+Include the matching and unrelated
+results in the pull request,
+
+53
+00:02:59,176 --> 00:03:00,628
+along with the client versions.
+
+54
+00:03:01,287 --> 00:03:05,387
+Someone reading that evidence should be
+able to reproduce both outcomes.
+
+55
+00:03:05,437 --> 00:03:09,212
+Then one person can keep the rule
+aligned across tools while a separate
+
+56
+00:03:09,262 --> 00:03:10,853
+reviewer checks what changed.
