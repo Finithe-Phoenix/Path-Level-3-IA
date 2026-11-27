@@ -1,229 +1,209 @@
 1
-00:00:00,435 --> 00:00:05,010
+00:00:00,275 --> 00:00:04,202
 Suppose you ask your agent whether this
 service accepts zero-quantity orders.
 
 2
-00:00:05,085 --> 00:00:08,576
+00:00:04,624 --> 00:00:07,814
 A quick answer is useful only if you can
 find the rule behind it.
 
 3
-00:00:09,214 --> 00:00:13,389
+00:00:08,135 --> 00:00:11,629
 In this synthetic example, we'll trace
 one question through retrieval,
 
 4
-00:00:13,464 --> 00:00:17,539
+00:00:12,059 --> 00:00:16,098
 answer it using a repository passage,
 then run the same question when the
 
 5
-00:00:17,589 --> 00:00:18,631
+00:00:16,098 --> 00:00:17,114
 passage is missing.
 
 6
-00:00:19,276 --> 00:00:21,827
+00:00:17,475 --> 00:00:19,837
 Look for the file and revision in each
 result.
 
 7
-00:00:23,356 --> 00:00:27,181
+00:00:20,775 --> 00:00:24,071
 Start with two short passages from the
 approved training checkout.
 
 8
-00:00:27,231 --> 00:00:30,506
+00:00:24,376 --> 00:00:27,038
 The first says that quantity must be a
 positive integer.
 
 9
-00:00:30,556 --> 00:00:32,709
+00:00:27,319 --> 00:00:31,583
 The second explains shipping calendars.
+Keep the path and commit next to each
 
 10
-00:00:33,312 --> 00:00:36,437
-Keep the path and commit next to each
+00:00:31,583 --> 00:00:32,311
 text fragment.
 
 11
-00:00:36,512 --> 00:00:40,137
+00:00:32,591 --> 00:00:36,338
 Those fields travel with the retrieved
 passage so you can still find the
 
 12
-00:00:40,187 --> 00:00:42,114
+00:00:36,338 --> 00:00:38,360
 original rule when the answer arrives.
 
 13
-00:00:43,601 --> 00:00:46,926
+00:00:39,278 --> 00:00:41,707
 An embedding represents text as a list
 of numbers.
 
 14
-00:00:46,976 --> 00:00:50,776
+00:00:42,069 --> 00:00:45,793
 The query and the passages go through
 the matching embedding model so a
 
 15
-00:00:50,826 --> 00:00:52,616
+00:00:45,793 --> 00:00:47,613
 retrieval system can compare them.
 
 16
-00:00:53,239 --> 00:00:56,814
+00:00:47,934 --> 00:00:51,044
 The system uses similarity to rank
 candidate material.
 
 17
-00:00:56,889 --> 00:00:59,464
+00:00:51,326 --> 00:00:53,067
 That ranking helps find a likely match.
 
 18
-00:00:59,539 --> 00:01:03,389
+00:00:53,489 --> 00:00:56,849
 Open the candidate text to decide
 whether it answers this question,
 
 19
-00:01:03,439 --> 00:01:05,433
+00:00:57,161 --> 00:00:59,337
 and check the metadata for its revision.
 
 20
-00:01:06,893 --> 00:01:09,368
+00:01:00,235 --> 00:01:03,866
 The first candidate is the order policy.
-
-21
-00:01:09,443 --> 00:01:11,468
 Read the highlighted sentence.
 
-22
-00:01:11,543 --> 00:01:14,018
+21
+00:01:04,287 --> 00:01:08,407
 Positive integer is the rule we need.
+The second candidate is about delivery
+
+22
+00:01:08,407 --> 00:01:10,664
+dates, so it doesn't support either
+answer.
 
 23
-00:01:14,068 --> 00:01:16,418
-The second candidate is about delivery
-dates,
+00:01:11,030 --> 00:01:14,675
+The scores here are illustrative. The
+important check is relevance.
 
 24
-00:01:16,558 --> 00:01:18,281
-so it doesn't support either answer.
-
-25
-00:01:18,905 --> 00:01:20,980
-The scores here are illustrative.
-
-26
-00:01:21,030 --> 00:01:23,205
-The important check is relevance.
-
-27
-00:01:23,280 --> 00:01:25,805
+00:01:15,077 --> 00:01:17,735
 Keep the useful passage with its path
 and revision,
 
-28
-00:01:25,985 --> 00:01:27,666
+25
+00:01:17,986 --> 00:01:19,741
 then feed it into the answer step.
 
-29
-00:01:29,189 --> 00:01:33,714
+26
+00:01:20,755 --> 00:01:24,562
 Now send the question with the selected
 passage and request a source reference.
 
-30
-00:01:33,789 --> 00:01:37,499
+27
+00:01:24,983 --> 00:01:27,837
 Retrieval augmented generation, often
 called R A G,
 
-31
-00:01:37,549 --> 00:01:38,893
+28
+00:01:28,408 --> 00:01:29,560
 is the pattern you just saw.
 
-32
-00:01:39,506 --> 00:01:42,231
+29
+00:01:29,920 --> 00:01:32,240
 The system first retrieves relevant
 evidence,
 
-33
-00:01:42,281 --> 00:01:45,181
+30
+00:01:32,592 --> 00:01:34,732
 then includes it when generating the
 response.
 
-34
-00:01:45,231 --> 00:01:48,756
+31
+00:01:35,248 --> 00:01:38,446
 The answer says zero is invalid and
 cites the order policy.
 
-35
-00:01:49,380 --> 00:01:53,041
+32
+00:01:38,847 --> 00:01:42,002
 Open that path at the stated revision
 and verify the sentence.
 
-36
-00:01:54,568 --> 00:01:56,718
-Now simulate an index gap.
+33
+00:01:43,067 --> 00:01:46,983
+Now simulate an index gap. The same
+query gets only the shipping policy.
 
-37
-00:01:56,768 --> 00:01:59,593
-The same query gets only the shipping
-policy.
+34
+00:01:47,343 --> 00:01:50,458
+Read it again. There's no rule about
+order quantity,
 
-38
-00:01:59,668 --> 00:02:00,818
-Read it again.
-
-39
-00:02:00,868 --> 00:02:04,558
-There's no rule about order quantity,
+35
+00:01:50,689 --> 00:01:54,345
 and the model can say that the retrieved
-
-40
-00:02:04,633 --> 00:02:06,453
 source has insufficient evidence.
 
-41
-00:02:07,081 --> 00:02:11,631
+36
+00:01:54,875 --> 00:01:59,215
 In an actual repository, a stale index
 can produce a similar result.
 
-42
-00:02:11,706 --> 00:02:15,306
+37
+00:01:59,726 --> 00:02:03,456
 Confirm the revision and refresh the
 approved sources when your process
 
-43
-00:02:15,356 --> 00:02:16,007
+38
+00:02:03,456 --> 00:02:03,977
 allows it.
 
-44
-00:02:17,451 --> 00:02:20,276
+39
+00:02:04,818 --> 00:02:07,234
 Before using the pattern for an actual
 project,
 
-45
-00:02:20,326 --> 00:02:24,294
+40
+00:02:07,424 --> 00:02:11,403
 check the allowed source scope and which
 identities can retrieve documents.
 
-46
-00:02:24,906 --> 00:02:27,906
+41
+00:02:11,764 --> 00:02:16,000
 Keep the path, revision, and passage
-visible.
+visible. Test two cases:
 
-47
-00:02:27,981 --> 00:02:31,656
-Test two cases: an answer supported by a
-verified rule,
-
-48
-00:02:31,796 --> 00:02:33,543
+42
+00:02:16,430 --> 00:02:20,927
+an answer supported by a verified rule,
 and a question whose rule is missing.
 
-49
-00:02:34,167 --> 00:02:37,642
+43
+00:02:21,317 --> 00:02:25,299
 Those checks let you tell whether the
 retrieval system is giving the model
 
-50
-00:02:37,692 --> 00:02:38,916
+44
+00:02:25,299 --> 00:02:26,389
 evidence it can use.

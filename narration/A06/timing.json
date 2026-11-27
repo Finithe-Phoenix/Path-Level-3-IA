@@ -1,49 +1,50 @@
 {
+  "audioEdition": 3,
   "fps": 24,
-  "voiceBuild": "1350f654372638e03bcc867a170d0bd98de32d2c6041a51c5b118ed1c9acd06f",
-  "paceBuild": "a65ec856459e84cc8039493df39be6bfbdc11bca13d12d0cefcaf88a53597298",
+  "voiceBuild": "25d488314cdbbd48ea85e2ae04e1e2a4680fe1239dd8497fee1e137bb3c05c2e",
+  "paceBuild": "9b43497ae3efbca819e8c92c5474d4f20e31d2676e12df6b0b864ebd3e4bd3ba",
   "delivery": {
-    "targetWordsPerMinute": 146,
-    "inputWordsPerMinute": 154.1,
-    "tempo": 0.96872853,
-    "outputWordsPerMinute": 145.98
+    "targetWordsPerMinute": 149,
+    "inputWordsPerMinute": 167.74,
+    "tempo": 0.9086787,
+    "outputWordsPerMinute": 148.99
   },
-  "audioSha256": "dba700b765eca124eba6bc9f2356069923b7b68e4e7e37e6717df1d90e3fe681",
-  "captionsSha256": "746462f55fb43bf87f71f90e031bf16c923848beb0549795e77494ab9ebe65f0",
+  "audioSha256": "7445598a49bf77211877a4eaed62e19b33414eb504717e3c1b1458550cedf0aa",
+  "captionsSha256": "bbd2f632fb52cc3cbf97580b4d39554224cf1f2527b9a430afa0f6600ce3c115",
   "scenes": [
     {
       "id": "question",
       "scriptSha256": "e9a858b89245c56f33ec2e549e89b3dc4e8d855d1fb5ef53009c7ad4a1bcb232",
-      "durationFrames": 577,
+      "durationFrames": 551,
       "cues": [
         {
-          "start": 0.449,
-          "end": 5.172,
+          "start": 0.303,
+          "end": 4.624,
           "text": "Suppose you ask your agent whether this\nservice accepts zero-quantity orders."
         },
         {
-          "start": 5.249,
-          "end": 8.853,
+          "start": 5.089,
+          "end": 8.599,
           "text": "A quick answer is useful only if you can\nfind the rule behind it."
         },
         {
-          "start": 9.511,
-          "end": 13.821,
+          "start": 8.953,
+          "end": 12.798,
           "text": "In this synthetic example, we'll trace\none question through retrieval,"
         },
         {
-          "start": 13.899,
-          "end": 18.105,
+          "start": 13.271,
+          "end": 17.716,
           "text": "answer it using a repository passage,\nthen run the same question when the"
         },
         {
-          "start": 18.157,
-          "end": 19.232,
+          "start": 17.716,
+          "end": 18.834,
           "text": "passage is missing."
         },
         {
-          "start": 19.898,
-          "end": 22.532,
+          "start": 19.231,
+          "end": 21.831,
           "text": "Look for the file and revision in each\nresult."
         }
       ]
@@ -51,36 +52,36 @@
     {
       "id": "input",
       "scriptSha256": "946db1ddf3be9a9dcb646c245bf2cc70c7557bd4cec03fb90a4ebb17e6b55c36",
-      "durationFrames": 518,
+      "durationFrames": 505,
       "cues": [
         {
-          "start": 0.453,
-          "end": 4.402,
+          "start": 0.303,
+          "end": 3.93,
           "text": "Start with two short passages from the\napproved training checkout."
         },
         {
-          "start": 4.453,
-          "end": 7.834,
+          "start": 4.266,
+          "end": 7.195,
           "text": "The first says that quantity must be a\npositive integer."
         },
         {
-          "start": 7.886,
-          "end": 10.108,
-          "text": "The second explains shipping calendars."
+          "start": 7.504,
+          "end": 12.197,
+          "text": "The second explains shipping calendars.\nKeep the path and commit next to each"
         },
         {
-          "start": 10.731,
-          "end": 13.956,
-          "text": "Keep the path and commit next to each\ntext fragment."
+          "start": 12.197,
+          "end": 12.998,
+          "text": "text fragment."
         },
         {
-          "start": 14.034,
-          "end": 17.776,
+          "start": 13.306,
+          "end": 17.43,
           "text": "Those fields travel with the retrieved\npassage so you can still find the"
         },
         {
-          "start": 17.827,
-          "end": 19.817,
+          "start": 17.43,
+          "end": 19.655,
           "text": "original rule when the answer arrives."
         }
       ]
@@ -88,41 +89,41 @@
     {
       "id": "embed",
       "scriptSha256": "7c88a415a1ea024956183ba55d11c09ab1c897471ec3aafb6be300c78f173059",
-      "durationFrames": 586,
+      "durationFrames": 563,
       "cues": [
         {
-          "start": 0.406,
-          "end": 3.838,
+          "start": 0.26,
+          "end": 2.933,
           "text": "An embedding represents text as a list\nof numbers."
         },
         {
-          "start": 3.89,
-          "end": 7.812,
+          "start": 3.331,
+          "end": 7.429,
           "text": "The query and the passages go through\nthe matching embedding model so a"
         },
         {
-          "start": 7.864,
-          "end": 9.712,
+          "start": 7.429,
+          "end": 9.432,
           "text": "retrieval system can compare them."
         },
         {
-          "start": 10.355,
-          "end": 14.045,
+          "start": 9.786,
+          "end": 13.208,
           "text": "The system uses similarity to rank\ncandidate material."
         },
         {
-          "start": 14.123,
-          "end": 16.781,
+          "start": 13.519,
+          "end": 15.434,
           "text": "That ranking helps find a likely match."
         },
         {
-          "start": 16.858,
-          "end": 20.832,
+          "start": 15.899,
+          "end": 19.597,
           "text": "Open the candidate text to decide\nwhether it answers this question,"
         },
         {
-          "start": 20.884,
-          "end": 22.942,
+          "start": 19.94,
+          "end": 22.335,
           "text": "and check the metadata for its revision."
         }
       ]
@@ -130,51 +131,36 @@
     {
       "id": "retrieve",
       "scriptSha256": "12c52d4e7ecdb96eb550ed8a2be50a3407c480c3f65775cc0aac345dc3699e6d",
-      "durationFrames": 567,
+      "durationFrames": 557,
       "cues": [
         {
-          "start": 0.406,
-          "end": 2.961,
-          "text": "The first candidate is the order policy."
+          "start": 0.259,
+          "end": 4.255,
+          "text": "The first candidate is the order policy.\nRead the highlighted sentence."
         },
         {
-          "start": 3.038,
-          "end": 5.128,
-          "text": "Read the highlighted sentence."
+          "start": 4.718,
+          "end": 9.252,
+          "text": "Positive integer is the rule we need.\nThe second candidate is about delivery"
         },
         {
-          "start": 5.206,
-          "end": 7.761,
-          "text": "Positive integer is the rule we need."
+          "start": 9.252,
+          "end": 11.736,
+          "text": "dates, so it doesn't support either\nanswer."
         },
         {
-          "start": 7.812,
-          "end": 10.238,
-          "text": "The second candidate is about delivery\ndates,"
+          "start": 12.139,
+          "end": 16.15,
+          "text": "The scores here are illustrative. The\nimportant check is relevance."
         },
         {
-          "start": 10.383,
-          "end": 12.161,
-          "text": "so it doesn't support either answer."
-        },
-        {
-          "start": 12.805,
-          "end": 14.947,
-          "text": "The scores here are illustrative."
-        },
-        {
-          "start": 14.999,
-          "end": 17.244,
-          "text": "The important check is relevance."
-        },
-        {
-          "start": 17.322,
-          "end": 19.928,
+          "start": 16.592,
+          "end": 19.517,
           "text": "Keep the useful passage with its path\nand revision,"
         },
         {
-          "start": 20.114,
-          "end": 21.849,
+          "start": 19.794,
+          "end": 21.725,
           "text": "then feed it into the answer step."
         }
       ]
@@ -182,41 +168,41 @@
     {
       "id": "generate",
       "scriptSha256": "64e661e9f5843ea4cac4c285f47a3c09b3334e9fb8903d9ecce17d1e672ec1b4",
-      "durationFrames": 644,
+      "durationFrames": 604,
       "cues": [
         {
-          "start": 0.453,
-          "end": 5.124,
+          "start": 0.281,
+          "end": 4.47,
           "text": "Now send the question with the selected\npassage and request a source reference."
         },
         {
-          "start": 5.202,
-          "end": 9.031,
+          "start": 4.934,
+          "end": 8.074,
           "text": "Retrieval augmented generation, often\ncalled R A G,"
         },
         {
-          "start": 9.083,
-          "end": 10.47,
+          "start": 8.703,
+          "end": 9.971,
           "text": "is the pattern you just saw."
         },
         {
-          "start": 11.103,
-          "end": 13.916,
+          "start": 10.367,
+          "end": 12.92,
           "text": "The system first retrieves relevant\nevidence,"
         },
         {
-          "start": 13.968,
-          "end": 16.961,
+          "start": 13.307,
+          "end": 15.662,
           "text": "then includes it when generating the\nresponse."
         },
         {
-          "start": 17.013,
-          "end": 20.652,
+          "start": 16.23,
+          "end": 19.75,
           "text": "The answer says zero is invalid and\ncites the order policy."
         },
         {
-          "start": 21.296,
-          "end": 25.075,
+          "start": 20.191,
+          "end": 23.663,
           "text": "Open that path at the stated revision\nand verify the sentence."
         }
       ]
@@ -224,46 +210,36 @@
     {
       "id": "stale",
       "scriptSha256": "e47f2530832713b4ce08ea5eeff2bac8709ecd7214a15217cd35084d9b079121",
-      "durationFrames": 585,
+      "durationFrames": 591,
       "cues": [
         {
-          "start": 0.457,
-          "end": 2.677,
-          "text": "Now simulate an index gap."
+          "start": 0.303,
+          "end": 4.612,
+          "text": "Now simulate an index gap. The same\nquery gets only the shipping policy."
         },
         {
-          "start": 2.728,
-          "end": 5.645,
-          "text": "The same query gets only the shipping\npolicy."
+          "start": 5.008,
+          "end": 8.436,
+          "text": "Read it again. There's no rule about\norder quantity,"
         },
         {
-          "start": 5.722,
-          "end": 6.909,
-          "text": "Read it again."
+          "start": 8.691,
+          "end": 12.714,
+          "text": "and the model can say that the retrieved\nsource has insufficient evidence."
         },
         {
-          "start": 6.961,
-          "end": 10.77,
-          "text": "There's no rule about order quantity,\nand the model can say that the retrieved"
-        },
-        {
-          "start": 10.847,
-          "end": 12.726,
-          "text": "source has insufficient evidence."
-        },
-        {
-          "start": 13.374,
-          "end": 18.071,
+          "start": 13.297,
+          "end": 18.073,
           "text": "In an actual repository, a stale index\ncan produce a similar result."
         },
         {
-          "start": 18.149,
-          "end": 21.865,
+          "start": 18.636,
+          "end": 22.741,
           "text": "Confirm the revision and refresh the\napproved sources when your process"
         },
         {
-          "start": 21.916,
-          "end": 22.588,
+          "start": 22.741,
+          "end": 23.314,
           "text": "allows it."
         }
       ]
@@ -271,41 +247,36 @@
     {
       "id": "govern",
       "scriptSha256": "300eddbd7b99ff67d046ff76709244014b1975ae589e10be10541334faff014b",
-      "durationFrames": 587,
+      "durationFrames": 611,
       "cues": [
         {
-          "start": 0.38,
-          "end": 3.296,
+          "start": 0.259,
+          "end": 2.917,
           "text": "Before using the pattern for an actual\nproject,"
         },
         {
-          "start": 3.348,
-          "end": 7.444,
+          "start": 3.127,
+          "end": 7.505,
           "text": "check the allowed source scope and which\nidentities can retrieve documents."
         },
         {
-          "start": 8.076,
-          "end": 11.172,
-          "text": "Keep the path, revision, and passage\nvisible."
+          "start": 7.903,
+          "end": 12.564,
+          "text": "Keep the path, revision, and passage\nvisible. Test two cases:"
         },
         {
-          "start": 11.25,
-          "end": 15.043,
-          "text": "Test two cases: an answer supported by a\nverified rule,"
+          "start": 13.038,
+          "end": 17.987,
+          "text": "an answer supported by a verified rule,\nand a question whose rule is missing."
         },
         {
-          "start": 15.188,
-          "end": 16.991,
-          "text": "and a question whose rule is missing."
-        },
-        {
-          "start": 17.635,
-          "end": 21.223,
+          "start": 18.416,
+          "end": 22.798,
           "text": "Those checks let you tell whether the\nretrieval system is giving the model"
         },
         {
-          "start": 21.274,
-          "end": 22.538,
+          "start": 22.798,
+          "end": 23.997,
           "text": "evidence it can use."
         }
       ]
