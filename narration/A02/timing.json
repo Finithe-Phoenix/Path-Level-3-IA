@@ -1,49 +1,50 @@
 {
+  "audioEdition": 3,
   "fps": 24,
-  "voiceBuild": "875e79c5dfdf745f0205c1d7e14c2d05f121e64bfc1f70328275489f5b848f6b",
-  "paceBuild": "c1e94864760e8ab765f40828b87e039ab240182884f809edf09d199e5a5c43e2",
+  "voiceBuild": "2d365d753200f4d96565e7d03eb3c4bb51d5d774118c525ed4cbde673d60932d",
+  "paceBuild": "0da94b7ad74076f9171e375f5720c2a1ca4e97d329acbbb474f15082b63c3bc8",
   "delivery": {
-    "targetWordsPerMinute": 146,
-    "inputWordsPerMinute": 153.48,
-    "tempo": 0.9722556,
-    "outputWordsPerMinute": 145.99
+    "targetWordsPerMinute": 149,
+    "inputWordsPerMinute": 166.66,
+    "tempo": 0.91418975,
+    "outputWordsPerMinute": 149.0
   },
-  "audioSha256": "49d9b17b079933056c7daae1a45f66f27abf8f429b01e55eac1ed2e19ba7c9ee",
-  "captionsSha256": "6d535dc8da29f1b98a47c53aeceac531182048669620a598820de5c14ed17495",
+  "audioSha256": "21050fa79dff479d75bee87029c12e0f5d85c41f82f1c713f825db06e0f0b383",
+  "captionsSha256": "5ff4b8a705be4893d1d9700caab32797ffb73e7ccf23a14b291a13d0eea917aa",
   "scenes": [
     {
       "id": "example",
       "scriptSha256": "ed912cec4e7910b4eaa13a96df145d5e1ae145b3f5a0da2599cf8a541c915183",
-      "durationFrames": 626,
+      "durationFrames": 618,
       "cues": [
         {
-          "start": 0.43,
-          "end": 4.904,
+          "start": 0.301,
+          "end": 4.808,
           "text": "Imagine a reviewer opens a training pull\nrequest and sees only the words 'tests"
         },
         {
-          "start": 4.955,
-          "end": 8.432,
+          "start": 4.808,
+          "end": 7.781,
           "text": "passed.' Which tests, and on what files?"
         },
         {
-          "start": 8.483,
-          "end": 12.267,
+          "start": 8.546,
+          "end": 12.05,
           "text": "We'll give both agent clients a\nconvention that answers those questions."
         },
         {
-          "start": 12.898,
-          "end": 17.372,
+          "start": 12.423,
+          "end": 16.98,
           "text": "Whenever the quantity validator changes,\nthe evidence should name the exact test"
         },
         {
-          "start": 17.423,
-          "end": 20.905,
+          "start": 16.98,
+          "end": 20.09,
           "text": "command, the outcome, and the files\nchecked."
         },
         {
-          "start": 20.982,
-          "end": 24.594,
+          "start": 20.605,
+          "end": 24.59,
           "text": "Those three fields give us a clear pass\ncondition for this exercise."
         }
       ]
@@ -51,41 +52,41 @@
     {
       "id": "persistent",
       "scriptSha256": "0c17d525a8159ecfdd276fffdb77f4eaafaf2fb7c1e9765bb4d6a132d7d947e1",
-      "durationFrames": 624,
+      "durationFrames": 611,
       "cues": [
         {
-          "start": 0.404,
-          "end": 3.541,
+          "start": 0.323,
+          "end": 2.815,
           "text": "Open the project instructions for each\nclient."
         },
         {
-          "start": 3.618,
-          "end": 8.015,
+          "start": 3.418,
+          "end": 7.11,
           "text": "In this lab, Claude Code reads the\nconvention through Claude dot M D,"
         },
         {
-          "start": 8.067,
-          "end": 10.883,
+          "start": 7.494,
+          "end": 10.353,
           "text": "and OpenCode reads it through Agents dot\nM D."
         },
         {
-          "start": 11.493,
-          "end": 14.347,
+          "start": 10.907,
+          "end": 13.069,
           "text": "The files repeat the same short\nrequirement."
         },
         {
-          "start": 14.424,
-          "end": 17.947,
+          "start": 13.382,
+          "end": 17.519,
           "text": "Your installed versions and workspace\nsettings determine which project"
         },
         {
-          "start": 17.998,
-          "end": 22.447,
+          "start": 17.519,
+          "end": 22.182,
           "text": "guidance is loaded, so compare the\nactual paths before assuming that both"
         },
         {
-          "start": 22.524,
-          "end": 24.211,
+          "start": 22.182,
+          "end": 23.961,
           "text": "sessions received the convention."
         }
       ]
@@ -93,41 +94,36 @@
     {
       "id": "skill",
       "scriptSha256": "b6da1b601ef4c642173390e95269b4d72ddfc4d4f77569056c606affb01c84a3",
-      "durationFrames": 604,
+      "durationFrames": 593,
       "cues": [
         {
-          "start": 0.456,
-          "end": 3.156,
-          "text": "Next, open Skill dot M D."
+          "start": 0.301,
+          "end": 5.374,
+          "text": "Next, open Skill dot M D. The\ndescription explains when the procedure"
         },
         {
-          "start": 3.207,
-          "end": 6.19,
-          "text": "The description explains when the\nprocedure is useful:"
+          "start": 5.374,
+          "end": 9.701,
+          "text": "is useful: summarizing test evidence for\na training pull request."
         },
         {
-          "start": 6.267,
-          "end": 9.304,
-          "text": "summarizing test evidence for a training\npull request."
-        },
-        {
-          "start": 9.931,
-          "end": 13.633,
+          "start": 10.26,
+          "end": 13.063,
           "text": "The body says which fields to return and\nin what format."
         },
         {
-          "start": 13.71,
-          "end": 17.722,
+          "start": 13.481,
+          "end": 17.659,
           "text": "If you need a reusable evidence\ntemplate, include it with the skill in a"
         },
         {
-          "start": 17.773,
-          "end": 19.536,
+          "start": 17.659,
+          "end": 19.357,
           "text": "location the client supports."
         },
         {
-          "start": 20.162,
-          "end": 23.404,
+          "start": 19.938,
+          "end": 23.258,
           "text": "Keep the first version short so you can\ntell which part helped."
         }
       ]
@@ -135,41 +131,41 @@
     {
       "id": "paths",
       "scriptSha256": "866d582c4094dea4a7b081a527ed0df8b0acdf524998270b6a9b75ff0980811d",
-      "durationFrames": 645,
+      "durationFrames": 628,
       "cues": [
         {
-          "start": 0.426,
-          "end": 4.123,
+          "start": 0.279,
+          "end": 3.853,
           "text": "From the repository root, follow the\nskill path for each client."
         },
         {
-          "start": 4.201,
-          "end": 7.62,
+          "start": 4.204,
+          "end": 7.292,
           "text": "Here the paths start with dot Claude and\ndot OpenCode."
         },
         {
-          "start": 7.672,
-          "end": 10.897,
+          "start": 7.643,
+          "end": 10.585,
           "text": "The base filename is the same: Skill dot\nM D."
         },
         {
-          "start": 11.517,
-          "end": 15.348,
+          "start": 10.871,
+          "end": 15.094,
           "text": "Compare the file contents with what the\nsession reports loading and confirm"
         },
         {
-          "start": 15.399,
-          "end": 19.128,
+          "start": 15.149,
+          "end": 18.297,
           "text": "precedence if more than one definition\nexists."
         },
         {
-          "start": 19.205,
-          "end": 22.985,
+          "start": 18.878,
+          "end": 22.249,
           "text": "A matching name on disk by itself tells\nyou where the file is,"
         },
         {
-          "start": 23.036,
-          "end": 25.419,
+          "start": 22.678,
+          "end": 25.06,
           "text": "so take one more step and test the\nbehavior."
         }
       ]
@@ -177,83 +173,78 @@
     {
       "id": "positive",
       "scriptSha256": "113f63ae2fed59bd1a3de949543a19210b73b5d9ead16fcbcd01b98497e084df",
-      "durationFrames": 608,
+      "durationFrames": 597,
       "cues": [
         {
-          "start": 0.426,
-          "end": 4.617,
+          "start": 0.324,
+          "end": 4.401,
           "text": "Start a fresh session in each client and\nprovide the same recorded run."
         },
         {
-          "start": 4.694,
-          "end": 7.343,
+          "start": 4.752,
+          "end": 6.818,
           "text": "Ask for the pull request evidence\nsummary."
         },
         {
-          "start": 7.42,
-          "end": 10.968,
+          "start": 7.29,
+          "end": 10.609,
           "text": "The example returns the command, four\npassing tests,"
         },
         {
-          "start": 11.02,
-          "end": 14.329,
+          "start": 10.928,
+          "end": 14.38,
           "text": "and the validator and zero-boundary test\nas the checked scope."
         },
         {
-          "start": 14.937,
-          "end": 17.972,
-          "text": "Confirm each item against the captured\nrun."
+          "start": 14.796,
+          "end": 19.207,
+          "text": "Confirm each item against the captured\nrun. If the client shows the skill"
         },
         {
-          "start": 18.049,
-          "end": 20.517,
-          "text": "If the client shows the skill\ninvocation,"
-        },
-        {
-          "start": 20.569,
-          "end": 23.552,
-          "text": "note that signal alongside the behavior\nyou observed."
+          "start": 19.207,
+          "end": 23.4,
+          "text": "invocation, note that signal alongside\nthe behavior you observed."
         }
       ]
     },
     {
       "id": "unrelated",
       "scriptSha256": "2f3237b13e6b23b22ddd4058cda5a24b742532f20a19406cc36e5ff762d34534",
-      "durationFrames": 591,
+      "durationFrames": 579,
       "cues": [
         {
-          "start": 0.404,
-          "end": 4.236,
+          "start": 0.279,
+          "end": 4.153,
           "text": "Try a second prompt: explain how order\nIDs are formatted,"
         },
         {
-          "start": 4.338,
-          "end": 6.395,
+          "start": 4.517,
+          "end": 6.151,
           "text": "and cite the defining file."
         },
         {
-          "start": 6.447,
-          "end": 9.246,
+          "start": 6.644,
+          "end": 9.728,
           "text": "The skill's test-evidence output would\nadd clutter here."
         },
         {
-          "start": 9.913,
-          "end": 13.153,
+          "start": 10.177,
+          "end": 13.217,
           "text": "Look for a simple explanation and a path\ninstead."
         },
         {
-          "start": 13.23,
-          "end": 16.29,
+          "start": 13.666,
+          "end": 16.445,
           "text": "This gives you a practical two-case test\nfor the skill:"
         },
         {
-          "start": 16.367,
-          "end": 19.357,
+          "start": 16.918,
+          "end": 19.542,
           "text": "one matching request and one unrelated\nrequest."
         },
         {
-          "start": 19.973,
-          "end": 22.886,
+          "start": 19.916,
+          "end": 22.723,
           "text": "Keep both examples when you revise the\ndescription."
         }
       ]
@@ -261,46 +252,47 @@
     {
       "id": "authority",
       "scriptSha256": "456cba44ce549ce99c20a14d6bc48326962852af93e22cfd9873ca179724a884",
-      "durationFrames": 591,
+      "durationFrames": 577,
       "cues": [
         {
-          "start": 0.43,
-          "end": 4.184,
+          "start": 0.324,
+          "end": 3.564,
           "text": "Notice that the evidence template\nincludes a test command."
         },
         {
-          "start": 4.261,
-          "end": 8.247,
+          "start": 4.057,
+          "end": 8.317,
           "text": "A repository file can describe that\ncommand and the skill can format its"
         },
         {
-          "start": 8.298,
-          "end": 8.842,
-          "text": "output."
+          "start": 8.317,
+          "end": 8.967,
+          "text": "output.",
+          "speechEnd": 8.805
         },
         {
-          "start": 9.458,
-          "end": 12.955,
+          "start": 9.155,
+          "end": 12.688,
           "text": "The workspace controls whether the\nclient may execute it and whether"
         },
         {
-          "start": 13.007,
-          "end": 14.653,
+          "start": 12.688,
+          "end": 13.963,
           "text": "approval is needed."
         },
         {
-          "start": 14.73,
-          "end": 17.462,
+          "start": 14.314,
+          "end": 17.051,
           "text": "Read the proposed command and the actual\npolicy."
         },
         {
-          "start": 18.047,
-          "end": 22.212,
+          "start": 17.544,
+          "end": 21.946,
           "text": "The author can then hand the resulting\nevidence to an independent reviewer for"
         },
         {
-          "start": 22.238,
-          "end": 22.847,
+          "start": 21.946,
+          "end": 22.62,
           "text": "a decision."
         }
       ]
@@ -308,41 +300,42 @@
     {
       "id": "review",
       "scriptSha256": "55857df3bd6fb0b5940bfcf16c07f466274f87bb49358fcb8171e059a824afae",
-      "durationFrames": 564,
+      "durationFrames": 552,
       "cues": [
         {
-          "start": 0.404,
-          "end": 4.647,
+          "start": 0.301,
+          "end": 4.798,
           "text": "Review the persistent instruction files\nand the skill files in the repository"
         },
         {
-          "start": 4.698,
-          "end": 5.701,
-          "text": "diff."
+          "start": 4.798,
+          "end": 5.448,
+          "text": "diff.",
+          "speechEnd": 5.088
         },
         {
-          "start": 5.778,
-          "end": 9.532,
+          "start": 5.526,
+          "end": 9.162,
           "text": "Include the matching and unrelated\nresults in the pull request,"
         },
         {
-          "start": 9.61,
-          "end": 11.103,
+          "start": 9.262,
+          "end": 10.854,
           "text": "along with the client versions."
         },
         {
-          "start": 11.781,
-          "end": 15.998,
+          "start": 11.315,
+          "end": 15.292,
           "text": "Someone reading that evidence should be\nable to reproduce both outcomes."
         },
         {
-          "start": 16.049,
-          "end": 19.932,
+          "start": 15.873,
+          "end": 19.886,
           "text": "Then one person can keep the rule\naligned across tools while a separate"
         },
         {
-          "start": 19.983,
-          "end": 21.62,
+          "start": 19.886,
+          "end": 21.535,
           "text": "reviewer checks what changed."
         }
       ]

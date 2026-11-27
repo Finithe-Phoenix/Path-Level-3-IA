@@ -36,37 +36,37 @@
       "narration": "Imagine a reviewer opens a training pull request and sees only the words 'tests passed.' Which tests, and on what files? We'll give both agent clients a convention that answers those questions. Whenever the quantity validator changes, the evidence should name the exact test command, the outcome, and the files checked. Those three fields give us a clear pass condition for this exercise.",
       "focus": "Three evidence fields reviewers can check",
       "action": "Choose a convention with observable output.",
-      "durationFrames": 600,
-      "duration": 25.0,
+      "durationFrames": 557,
+      "duration": 23.208333333333332,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.768,
+          "start": 0.275,
+          "end": 4.395,
           "text": "Imagine a reviewer opens a training pull\nrequest and sees only the words 'tests"
         },
         {
-          "start": 4.818,
-          "end": 8.198,
+          "start": 4.395,
+          "end": 7.113,
           "text": "passed.' Which tests, and on what files?"
         },
         {
-          "start": 8.248,
-          "end": 11.927,
+          "start": 7.813,
+          "end": 11.016,
           "text": "We'll give both agent clients a\nconvention that answers those questions."
         },
         {
-          "start": 12.54,
-          "end": 16.89,
+          "start": 11.357,
+          "end": 15.523,
           "text": "Whenever the quantity validator changes,\nthe evidence should name the exact test"
         },
         {
-          "start": 16.94,
-          "end": 20.325,
+          "start": 15.523,
+          "end": 18.366,
           "text": "command, the outcome, and the files\nchecked."
         },
         {
-          "start": 20.4,
-          "end": 23.912,
+          "start": 18.837,
+          "end": 22.48,
           "text": "Those three fields give us a clear pass\ncondition for this exercise."
         }
       ]
@@ -82,42 +82,42 @@
       "narration": "Open the project instructions for each client. In this lab, Claude Code reads the convention through Claude dot M D, and OpenCode reads it through Agents dot M D. The files repeat the same short requirement. Your installed versions and workspace settings determine which project guidance is loaded, so compare the actual paths before assuming that both sessions received the convention.",
       "focus": "The test convention lives with the repository",
       "action": "Open the effective project instruction in each client.",
-      "durationFrames": 591,
-      "duration": 24.625,
+      "durationFrames": 544,
+      "duration": 22.666666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.443,
+          "start": 0.295,
+          "end": 2.573,
           "text": "Open the project instructions for each\nclient."
         },
         {
-          "start": 3.518,
-          "end": 7.793,
+          "start": 3.125,
+          "end": 6.5,
           "text": "In this lab, Claude Code reads the\nconvention through Claude dot M D,"
         },
         {
-          "start": 7.843,
-          "end": 10.581,
+          "start": 6.851,
+          "end": 9.465,
           "text": "and OpenCode reads it through Agents dot\nM D."
         },
         {
-          "start": 11.174,
-          "end": 13.949,
+          "start": 9.971,
+          "end": 11.948,
           "text": "The files repeat the same short\nrequirement."
         },
         {
-          "start": 14.024,
-          "end": 17.449,
+          "start": 12.234,
+          "end": 16.016,
           "text": "Your installed versions and workspace\nsettings determine which project"
         },
         {
-          "start": 17.499,
-          "end": 21.824,
+          "start": 16.016,
+          "end": 20.279,
           "text": "guidance is loaded, so compare the\nactual paths before assuming that both"
         },
         {
-          "start": 21.899,
-          "end": 23.539,
+          "start": 20.279,
+          "end": 21.905,
           "text": "sessions received the convention."
         }
       ]
@@ -133,42 +133,37 @@
       "narration": "Next, open Skill dot M D. The description explains when the procedure is useful: summarizing test evidence for a training pull request. The body says which fields to return and in what format. If you need a reusable evidence template, include it with the skill in a location the client supports. Keep the first version short so you can tell which part helped.",
       "focus": "The description names a specific task",
       "action": "Read the trigger and evidence steps in SKILL.md.",
-      "durationFrames": 572,
-      "duration": 23.833333333333332,
+      "durationFrames": 528,
+      "duration": 22.0,
       "cues": [
         {
-          "start": 0.443,
-          "end": 3.068,
-          "text": "Next, open Skill dot M D."
+          "start": 0.275,
+          "end": 4.913,
+          "text": "Next, open Skill dot M D. The\ndescription explains when the procedure"
         },
         {
-          "start": 3.118,
-          "end": 6.018,
-          "text": "The description explains when the\nprocedure is useful:"
+          "start": 4.913,
+          "end": 8.869,
+          "text": "is useful: summarizing test evidence for\na training pull request."
         },
         {
-          "start": 6.093,
-          "end": 9.046,
-          "text": "summarizing test evidence for a training\npull request."
-        },
-        {
-          "start": 9.655,
-          "end": 13.255,
+          "start": 9.38,
+          "end": 11.942,
           "text": "The body says which fields to return and\nin what format."
         },
         {
-          "start": 13.33,
-          "end": 17.23,
+          "start": 12.324,
+          "end": 16.144,
           "text": "If you need a reusable evidence\ntemplate, include it with the skill in a"
         },
         {
-          "start": 17.28,
-          "end": 18.994,
+          "start": 16.144,
+          "end": 17.696,
           "text": "location the client supports."
         },
         {
-          "start": 19.603,
-          "end": 22.755,
+          "start": 18.227,
+          "end": 21.262,
           "text": "Keep the first version short so you can\ntell which part helped."
         }
       ]
@@ -184,42 +179,42 @@
       "narration": "From the repository root, follow the skill path for each client. Here the paths start with dot Claude and dot OpenCode. The base filename is the same: Skill dot M D. Compare the file contents with what the session reports loading and confirm precedence if more than one definition exists. A matching name on disk by itself tells you where the file is, so take one more step and test the behavior.",
       "focus": "Check both discovery paths from the repo root",
       "action": "Locate the skill file in both client paths.",
-      "durationFrames": 619,
-      "duration": 25.791666666666668,
+      "durationFrames": 566,
+      "duration": 23.583333333333332,
       "cues": [
         {
-          "start": 0.414,
-          "end": 4.009,
+          "start": 0.255,
+          "end": 3.522,
           "text": "From the repository root, follow the\nskill path for each client."
         },
         {
-          "start": 4.084,
-          "end": 7.409,
+          "start": 3.843,
+          "end": 6.666,
           "text": "Here the paths start with dot Claude and\ndot OpenCode."
         },
         {
-          "start": 7.459,
-          "end": 10.595,
+          "start": 6.987,
+          "end": 9.677,
           "text": "The base filename is the same: Skill dot\nM D."
         },
         {
-          "start": 11.197,
-          "end": 14.922,
+          "start": 9.938,
+          "end": 13.799,
           "text": "Compare the file contents with what the\nsession reports loading and confirm"
         },
         {
-          "start": 14.972,
-          "end": 18.597,
+          "start": 13.849,
+          "end": 16.727,
           "text": "precedence if more than one definition\nexists."
         },
         {
-          "start": 18.672,
-          "end": 22.347,
+          "start": 17.258,
+          "end": 20.34,
           "text": "A matching name on disk by itself tells\nyou where the file is,"
         },
         {
-          "start": 22.397,
-          "end": 24.714,
+          "start": 20.732,
+          "end": 22.91,
           "text": "so take one more step and test the\nbehavior."
         }
       ]
@@ -235,43 +230,38 @@
       "narration": "Start a fresh session in each client and provide the same recorded run. Ask for the pull request evidence summary. The example returns the command, four passing tests, and the validator and zero-boundary test as the checked scope. Confirm each item against the captured run. If the client shows the skill invocation, note that signal alongside the behavior you observed.",
       "focus": "Output contains command, outcome, and scope",
       "action": "Run the same matching request in each client.",
-      "durationFrames": 576,
-      "duration": 24.0,
+      "durationFrames": 531,
+      "duration": 22.125,
       "cues": [
         {
-          "start": 0.414,
-          "end": 4.489,
+          "start": 0.296,
+          "end": 4.023,
           "text": "Start a fresh session in each client and\nprovide the same recorded run."
         },
         {
-          "start": 4.564,
-          "end": 7.139,
+          "start": 4.344,
+          "end": 6.233,
           "text": "Ask for the pull request evidence\nsummary."
         },
         {
-          "start": 7.214,
-          "end": 10.664,
+          "start": 6.664,
+          "end": 9.699,
           "text": "The example returns the command, four\npassing tests,"
         },
         {
-          "start": 10.714,
-          "end": 13.931,
+          "start": 9.99,
+          "end": 13.146,
           "text": "and the validator and zero-boundary test\nas the checked scope."
         },
         {
-          "start": 14.523,
-          "end": 17.473,
-          "text": "Confirm each item against the captured\nrun."
+          "start": 13.526,
+          "end": 17.559,
+          "text": "Confirm each item against the captured\nrun. If the client shows the skill"
         },
         {
-          "start": 17.548,
-          "end": 19.948,
-          "text": "If the client shows the skill\ninvocation,"
-        },
-        {
-          "start": 19.998,
-          "end": 22.899,
-          "text": "note that signal alongside the behavior\nyou observed."
+          "start": 17.559,
+          "end": 21.392,
+          "text": "invocation, note that signal alongside\nthe behavior you observed."
         }
       ]
     },
@@ -286,42 +276,42 @@
       "narration": "Try a second prompt: explain how order IDs are formatted, and cite the defining file. The skill's test-evidence output would add clutter here. Look for a simple explanation and a path instead. This gives you a practical two-case test for the skill: one matching request and one unrelated request. Keep both examples when you revise the description.",
       "focus": "An order-ID question needs a source citation",
       "action": "Try a request outside the skill's description.",
-      "durationFrames": 559,
-      "duration": 23.291666666666668,
+      "durationFrames": 515,
+      "duration": 21.458333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.118,
+          "start": 0.255,
+          "end": 3.797,
           "text": "Try a second prompt: explain how order\nIDs are formatted,"
         },
         {
-          "start": 4.218,
-          "end": 6.218,
+          "start": 4.129,
+          "end": 5.623,
           "text": "and cite the defining file."
         },
         {
-          "start": 6.268,
-          "end": 8.989,
+          "start": 6.074,
+          "end": 8.893,
           "text": "The skill's test-evidence output would\nadd clutter here."
         },
         {
-          "start": 9.638,
-          "end": 12.788,
+          "start": 9.304,
+          "end": 12.083,
           "text": "Look for a simple explanation and a path\ninstead."
         },
         {
-          "start": 12.863,
-          "end": 15.838,
+          "start": 12.493,
+          "end": 15.034,
           "text": "This gives you a practical two-case test\nfor the skill:"
         },
         {
-          "start": 15.913,
-          "end": 18.82,
+          "start": 15.466,
+          "end": 17.865,
           "text": "one matching request and one unrelated\nrequest."
         },
         {
-          "start": 19.419,
-          "end": 22.251,
+          "start": 18.207,
+          "end": 20.773,
           "text": "Keep both examples when you revise the\ndescription."
         }
       ]
@@ -337,47 +327,47 @@
       "narration": "Notice that the evidence template includes a test command. A repository file can describe that command and the skill can format its output. The workspace controls whether the client may execute it and whether approval is needed. Read the proposed command and the actual policy. The author can then hand the resulting evidence to an independent reviewer for a decision.",
       "focus": "Command approval is a workspace control",
       "action": "Check permission before any proposed test command.",
-      "durationFrames": 559,
-      "duration": 23.291666666666668,
+      "durationFrames": 513,
+      "duration": 21.375,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.068,
+          "start": 0.296,
+          "end": 3.258,
           "text": "Notice that the evidence template\nincludes a test command."
         },
         {
-          "start": 4.143,
-          "end": 8.018,
+          "start": 3.709,
+          "end": 7.603,
           "text": "A repository file can describe that\ncommand and the skill can format its"
         },
         {
-          "start": 8.068,
-          "end": 8.597,
+          "start": 7.603,
+          "end": 8.049,
           "text": "output."
         },
         {
-          "start": 9.196,
-          "end": 12.596,
+          "start": 8.369,
+          "end": 11.599,
           "text": "The workspace controls whether the\nclient may execute it and whether"
         },
         {
-          "start": 12.646,
-          "end": 14.246,
+          "start": 11.599,
+          "end": 12.765,
           "text": "approval is needed."
         },
         {
-          "start": 14.321,
-          "end": 16.978,
+          "start": 13.086,
+          "end": 15.588,
           "text": "Read the proposed command and the actual\npolicy."
         },
         {
-          "start": 17.546,
-          "end": 21.596,
+          "start": 16.039,
+          "end": 20.063,
           "text": "The author can then hand the resulting\nevidence to an independent reviewer for"
         },
         {
-          "start": 21.621,
-          "end": 22.213,
+          "start": 20.063,
+          "end": 20.679,
           "text": "a decision."
         }
       ]
@@ -393,42 +383,42 @@
       "narration": "Review the persistent instruction files and the skill files in the repository diff. Include the matching and unrelated results in the pull request, along with the client versions. Someone reading that evidence should be able to reproduce both outcomes. Then one person can keep the rule aligned across tools while a separate reviewer checks what changed.",
       "focus": "One test pair plus the versioned files",
       "action": "Review both instruction files and both skill copies.",
-      "durationFrames": 540,
-      "duration": 22.5,
+      "durationFrames": 497,
+      "duration": 20.708333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.518,
+          "start": 0.275,
+          "end": 4.386,
           "text": "Review the persistent instruction files\nand the skill files in the repository"
         },
         {
-          "start": 4.568,
-          "end": 5.543,
+          "start": 4.386,
+          "end": 4.651,
           "text": "diff."
         },
         {
-          "start": 5.618,
-          "end": 9.268,
+          "start": 5.052,
+          "end": 8.376,
           "text": "Include the matching and unrelated\nresults in the pull request,"
         },
         {
-          "start": 9.343,
-          "end": 10.795,
+          "start": 8.467,
+          "end": 9.923,
           "text": "along with the client versions."
         },
         {
-          "start": 11.454,
-          "end": 15.554,
+          "start": 10.344,
+          "end": 13.98,
           "text": "Someone reading that evidence should be\nable to reproduce both outcomes."
         },
         {
-          "start": 15.604,
-          "end": 19.379,
+          "start": 14.511,
+          "end": 18.18,
           "text": "Then one person can keep the rule\naligned across tools while a separate"
         },
         {
-          "start": 19.429,
-          "end": 21.02,
+          "start": 18.18,
+          "end": 19.687,
           "text": "reviewer checks what changed."
         }
       ]
@@ -437,6 +427,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 4616,
-  "voiceBuild": "875e79c5dfdf745f0205c1d7e14c2d05f121e64bfc1f70328275489f5b848f6b"
+  "durationFrames": 4251,
+  "voiceBuild": "2d365d753200f4d96565e7d03eb3c4bb51d5d774118c525ed4cbde673d60932d"
 }
