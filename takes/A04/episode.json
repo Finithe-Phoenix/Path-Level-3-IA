@@ -28,47 +28,42 @@
       "narration": "Suppose your agent needs the acceptance criteria from a training issue. How does that issue get into the session? Follow the arrows. The client connects to an M C P server, and the server offers one read-only tool. When the tool is called, it reads a synthetic issue fixture and sends a result back. Let's check the contract before calling it.",
       "focus": "One client, one server, one read action",
       "action": "Trace how a synthetic issue reaches the agent.",
-      "durationFrames": 551,
-      "duration": 22.958333333333332,
+      "durationFrames": 515,
+      "duration": 21.458333333333332,
       "cues": [
         {
-          "start": 0.439,
-          "end": 4.689,
+          "start": 0.275,
+          "end": 4.015,
           "text": "Suppose your agent needs the acceptance\ncriteria from a training issue."
         },
         {
-          "start": 4.764,
-          "end": 6.814,
+          "start": 4.355,
+          "end": 6.23,
           "text": "How does that issue get into the\nsession?"
         },
         {
-          "start": 6.899,
-          "end": 7.882,
-          "text": "Follow the arrows."
+          "start": 6.911,
+          "end": 10.431,
+          "text": "Follow the arrows. The client connects\nto an M C P server,"
         },
         {
-          "start": 8.495,
-          "end": 11.07,
-          "text": "The client connects to an M C P server,"
-        },
-        {
-          "start": 11.12,
-          "end": 13.995,
+          "start": 10.662,
+          "end": 13.179,
           "text": "and the server offers one read-only\ntool."
         },
         {
-          "start": 14.045,
-          "end": 18.065,
+          "start": 13.65,
+          "end": 17.774,
           "text": "When the tool is called, it reads a\nsynthetic issue fixture and sends a"
         },
         {
-          "start": 18.115,
-          "end": 18.917,
+          "start": 17.774,
+          "end": 18.441,
           "text": "result back."
         },
         {
-          "start": 19.573,
-          "end": 21.954,
+          "start": 18.993,
+          "end": 20.862,
           "text": "Let's check the contract before calling\nit."
         }
       ]
@@ -84,37 +79,37 @@
       "narration": "Open the approved integration record. It names a server, training issues, and a tool, get training issue. The tool takes a number and can read orders issues from the fixture. Look at the operation and the data scope together. If the workspace owner has provided the lab as a recording, the same record tells you which action the captured result represents.",
       "focus": "get_training_issue reads only training issues",
       "action": "Inspect the approved server and the tool's data scope.",
-      "durationFrames": 532,
-      "duration": 22.166666666666668,
+      "durationFrames": 520,
+      "duration": 21.666666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 2.768,
-          "text": "Open the approved integration record."
+          "start": 0.295,
+          "end": 4.493,
+          "text": "Open the approved integration record. It\nnames a server, training issues,"
         },
         {
-          "start": 2.843,
-          "end": 6.998,
-          "text": "It names a server, training issues, and\na tool, get training issue."
+          "start": 4.703,
+          "end": 6.576,
+          "text": "and a tool, get training issue."
         },
         {
-          "start": 7.048,
-          "end": 10.256,
+          "start": 7.027,
+          "end": 10.738,
           "text": "The tool takes a number and can read\norders issues from the fixture."
         },
         {
-          "start": 10.894,
-          "end": 14.044,
+          "start": 11.019,
+          "end": 13.414,
           "text": "Look at the operation and the data scope\ntogether."
         },
         {
-          "start": 14.144,
-          "end": 17.419,
+          "start": 13.864,
+          "end": 17.024,
           "text": "If the workspace owner has provided the\nlab as a recording,"
         },
         {
-          "start": 17.469,
-          "end": 21.079,
+          "start": 17.276,
+          "end": 20.917,
           "text": "the same record tells you which action\nthe captured result represents."
         }
       ]
@@ -130,43 +125,38 @@
       "narration": "Next, inspect how the approved client connects. The real screen depends on whether you're in Claude Code or OpenCode and on the installed build. Find the configured server identity and scope where the workspace exposes them. The values on this screen are fixtures. Use the approved connection as configured, and keep the lab on this synthetic data boundary.",
       "focus": "The managed identity has read scope",
       "action": "Find the connection settings in the approved client.",
-      "durationFrames": 542,
-      "duration": 22.583333333333332,
+      "durationFrames": 510,
+      "duration": 21.25,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.364,
+          "start": 0.275,
+          "end": 2.514,
           "text": "Next, inspect how the approved client\nconnects."
         },
         {
-          "start": 3.414,
-          "end": 7.664,
+          "start": 2.875,
+          "end": 6.774,
           "text": "The real screen depends on whether\nyou're in Claude Code or OpenCode and on"
         },
         {
-          "start": 7.689,
-          "end": 8.811,
+          "start": 6.774,
+          "end": 7.662,
           "text": "the installed build."
         },
         {
-          "start": 9.47,
-          "end": 14.195,
+          "start": 8.063,
+          "end": 12.363,
           "text": "Find the configured server identity and\nscope where the workspace exposes them."
         },
         {
-          "start": 14.245,
-          "end": 16.495,
-          "text": "The values on this screen are fixtures."
+          "start": 12.854,
+          "end": 17.069,
+          "text": "The values on this screen are fixtures.\nUse the approved connection as"
         },
         {
-          "start": 16.57,
-          "end": 19.995,
-          "text": "Use the approved connection as\nconfigured, and keep the lab on this"
-        },
-        {
-          "start": 20.045,
-          "end": 21.532,
-          "text": "synthetic data boundary."
+          "start": 17.069,
+          "end": 20.624,
+          "text": "configured, and keep the lab on this\nsynthetic data boundary."
         }
       ]
     },
@@ -181,47 +171,42 @@
       "narration": "Ask for issue seventeen and its acceptance criteria. In this example, the client proposes get training issue with issue number seventeen. Check the operation and the number. They should match the request you made, and the tool should be approved for that input. This is the evidence you want before responding to any confirmation prompt shown by your workspace.",
       "focus": "The proposed argument is issue number 17",
       "action": "Ask for the issue and inspect the read request.",
-      "durationFrames": 532,
-      "duration": 22.166666666666668,
+      "durationFrames": 520,
+      "duration": 21.666666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.118,
+          "start": 0.315,
+          "end": 3.194,
           "text": "Ask for issue seventeen and its\nacceptance criteria."
         },
         {
-          "start": 4.193,
-          "end": 7.993,
+          "start": 3.585,
+          "end": 7.345,
           "text": "In this example, the client proposes get\ntraining issue with issue number"
         },
         {
-          "start": 8.043,
-          "end": 8.725,
+          "start": 7.345,
+          "end": 8.033,
           "text": "seventeen."
         },
         {
-          "start": 9.328,
-          "end": 11.378,
-          "text": "Check the operation and the number."
+          "start": 8.313,
+          "end": 12.435,
+          "text": "Check the operation and the number. They\nshould match the request you made,"
         },
         {
-          "start": 11.428,
-          "end": 14.928,
-          "text": "They should match the request you made,\nand the tool should be approved for that"
+          "start": 12.806,
+          "end": 15.082,
+          "text": "and the tool should be approved for that\ninput."
         },
         {
-          "start": 14.978,
-          "end": 16.078,
-          "text": "input."
-        },
-        {
-          "start": 16.153,
-          "end": 19.653,
+          "start": 15.553,
+          "end": 19.423,
           "text": "This is the evidence you want before\nresponding to any confirmation prompt"
         },
         {
-          "start": 19.728,
-          "end": 21.117,
+          "start": 19.423,
+          "end": 20.91,
           "text": "shown by your workspace."
         }
       ]
@@ -237,42 +222,37 @@
       "narration": "The tool returns two requirements. Positive integers are accepted. Zero and negative integers are rejected. Now look at the agent's summary and check that it carries both. If it only says to reject zero, the negative case was lost in the summary. Correct the summary against the actual issue text so the next stage can use both acceptance criteria.",
       "focus": "Both acceptance criteria come from issue 17",
       "action": "Compare the response with the returned issue.",
-      "durationFrames": 555,
-      "duration": 23.125,
+      "durationFrames": 493,
+      "duration": 20.541666666666668,
       "cues": [
         {
-          "start": 0.389,
-          "end": 2.664,
-          "text": "The tool returns two requirements."
+          "start": 0.235,
+          "end": 3.819,
+          "text": "The tool returns two requirements.\nPositive integers are accepted."
         },
         {
-          "start": 2.739,
-          "end": 4.839,
-          "text": "Positive integers are accepted."
+          "start": 4.179,
+          "end": 8.512,
+          "text": "Zero and negative integers are rejected.\nNow look at the agent's summary and"
         },
         {
-          "start": 4.939,
-          "end": 7.764,
-          "text": "Zero and negative integers are rejected."
+          "start": 8.512,
+          "end": 9.76,
+          "text": "check that it carries both."
         },
         {
-          "start": 7.839,
-          "end": 10.944,
-          "text": "Now look at the agent's summary and\ncheck that it carries both."
-        },
-        {
-          "start": 11.568,
-          "end": 16.368,
+          "start": 10.16,
+          "end": 13.98,
           "text": "If it only says to reject zero, the\nnegative case was lost in the summary."
         },
         {
-          "start": 16.443,
-          "end": 20.368,
+          "start": 14.3,
+          "end": 18.353,
           "text": "Correct the summary against the actual\nissue text so the next stage can use"
         },
         {
-          "start": 20.418,
-          "end": 22.013,
+          "start": 18.353,
+          "end": 19.781,
           "text": "both acceptance criteria."
         }
       ]
@@ -288,37 +268,37 @@
       "narration": "Imagine the next proposed action is to post the summary to a pull request. Catch that change in scope. Reading issue seventeen and writing a comment are different operations. For this lab, save the summary in the session. In the actual review workflow, the authorized author or reviewer decides what to post using their own account and GitHub CLI.",
       "focus": "Posting a PR comment would require a different grant",
       "action": "Check the requested operation against the verified policy.",
-      "durationFrames": 540,
-      "duration": 22.5,
+      "durationFrames": 508,
+      "duration": 21.166666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.743,
+          "start": 0.275,
+          "end": 4.031,
           "text": "Imagine the next proposed action is to\npost the summary to a pull request."
         },
         {
-          "start": 4.818,
-          "end": 6.768,
-          "text": "Catch that change in scope."
+          "start": 4.411,
+          "end": 8.389,
+          "text": "Catch that change in scope. Reading\nissue seventeen and writing a comment"
         },
         {
-          "start": 6.843,
-          "end": 10.347,
-          "text": "Reading issue seventeen and writing a\ncomment are different operations."
+          "start": 8.52,
+          "end": 9.692,
+          "text": "are different operations."
         },
         {
-          "start": 10.981,
-          "end": 13.941,
+          "start": 10.073,
+          "end": 12.375,
           "text": "For this lab, save the summary in the\nsession."
         },
         {
-          "start": 14.016,
-          "end": 17.816,
+          "start": 12.696,
+          "end": 16.869,
           "text": "In the actual review workflow, the\nauthorized author or reviewer decides"
         },
         {
-          "start": 17.866,
-          "end": 21.421,
+          "start": 16.869,
+          "end": 20.401,
           "text": "what to post using their own account and\nGitHub CLI."
         }
       ]
@@ -334,37 +314,37 @@
       "narration": "Finish with a small record: the approved server, the tool and number, and the two criteria you verified. A teammate should see exactly what was read and what matched the source. That is the simplest useful M C P workflow: one authorized tool call that brings evidence into the task, with a boundary that you can explain.",
       "focus": "A tool input and its source make the read reproducible",
       "action": "Record the tool, input, scope, and checked result.",
-      "durationFrames": 504,
-      "duration": 21.0,
+      "durationFrames": 493,
+      "duration": 20.541666666666668,
       "cues": [
         {
-          "start": 0.435,
-          "end": 4.35,
+          "start": 0.275,
+          "end": 4.134,
           "text": "Finish with a small record: the approved\nserver, the tool and number,"
         },
         {
-          "start": 4.525,
-          "end": 6.875,
+          "start": 4.546,
+          "end": 6.52,
           "text": "and the two criteria you verified."
         },
         {
-          "start": 6.95,
-          "end": 10.295,
+          "start": 6.801,
+          "end": 10.34,
           "text": "A teammate should see exactly what was\nread and what matched the source."
         },
         {
-          "start": 10.919,
-          "end": 14.194,
+          "start": 10.761,
+          "end": 13.696,
           "text": "That is the simplest useful M C P\nworkflow:"
         },
         {
-          "start": 14.269,
-          "end": 17.694,
+          "start": 14.147,
+          "end": 17.323,
           "text": "one authorized tool call that brings\nevidence into the task,"
         },
         {
-          "start": 17.744,
-          "end": 19.508,
+          "start": 17.674,
+          "end": 19.627,
           "text": "with a boundary that you can explain."
         }
       ]
@@ -373,6 +353,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3756,
-  "voiceBuild": "f7cbcf40d8bb508fd26c8e33ad4ea5ecde5a26198c96fe6f36d8ab9202d1cd0e"
+  "durationFrames": 3559,
+  "voiceBuild": "0eaa9aa8db857826db4e97d10426b733635fc7332471ba2f8412bd497b528a16"
 }

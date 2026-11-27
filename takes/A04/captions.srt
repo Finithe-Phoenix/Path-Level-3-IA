@@ -1,221 +1,209 @@
 1
-00:00:00,439 --> 00:00:04,689
+00:00:00,275 --> 00:00:04,015
 Suppose your agent needs the acceptance
 criteria from a training issue.
 
 2
-00:00:04,764 --> 00:00:06,814
+00:00:04,355 --> 00:00:06,230
 How does that issue get into the
 session?
 
 3
-00:00:06,899 --> 00:00:07,882
-Follow the arrows.
+00:00:06,911 --> 00:00:10,431
+Follow the arrows. The client connects
+to an M C P server,
 
 4
-00:00:08,495 --> 00:00:11,070
-The client connects to an M C P server,
-
-5
-00:00:11,120 --> 00:00:13,995
+00:00:10,662 --> 00:00:13,179
 and the server offers one read-only
 tool.
 
-6
-00:00:14,045 --> 00:00:18,065
+5
+00:00:13,650 --> 00:00:17,774
 When the tool is called, it reads a
 synthetic issue fixture and sends a
 
-7
-00:00:18,115 --> 00:00:18,917
+6
+00:00:17,774 --> 00:00:18,441
 result back.
 
-8
-00:00:19,573 --> 00:00:21,954
+7
+00:00:18,993 --> 00:00:20,862
 Let's check the contract before calling
 it.
 
+8
+00:00:21,753 --> 00:00:25,951
+Open the approved integration record. It
+names a server, training issues,
+
 9
-00:00:23,376 --> 00:00:25,726
-Open the approved integration record.
+00:00:26,161 --> 00:00:28,034
+and a tool, get training issue.
 
 10
-00:00:25,801 --> 00:00:29,956
-It names a server, training issues, and
-a tool, get training issue.
-
-11
-00:00:30,006 --> 00:00:33,214
+00:00:28,485 --> 00:00:32,196
 The tool takes a number and can read
 orders issues from the fixture.
 
-12
-00:00:33,852 --> 00:00:37,002
+11
+00:00:32,477 --> 00:00:34,872
 Look at the operation and the data scope
 together.
 
-13
-00:00:37,102 --> 00:00:40,377
+12
+00:00:35,322 --> 00:00:38,482
 If the workspace owner has provided the
 lab as a recording,
 
-14
-00:00:40,427 --> 00:00:44,037
+13
+00:00:38,734 --> 00:00:42,375
 the same record tells you which action
 the captured result represents.
 
-15
-00:00:45,564 --> 00:00:48,489
+14
+00:00:43,400 --> 00:00:45,639
 Next, inspect how the approved client
 connects.
 
-16
-00:00:48,539 --> 00:00:52,789
+15
+00:00:46,000 --> 00:00:49,899
 The real screen depends on whether
 you're in Claude Code or OpenCode and on
 
-17
-00:00:52,814 --> 00:00:53,936
+16
+00:00:49,899 --> 00:00:50,787
 the installed build.
 
-18
-00:00:54,595 --> 00:00:59,320
+17
+00:00:51,188 --> 00:00:55,488
 Find the configured server identity and
 scope where the workspace exposes them.
 
-19
-00:00:59,370 --> 00:01:01,620
+18
+00:00:55,979 --> 00:01:00,194
 The values on this screen are fixtures.
-
-20
-00:01:01,695 --> 00:01:05,120
 Use the approved connection as
-configured, and keep the lab on this
 
-21
-00:01:05,170 --> 00:01:06,657
+19
+00:01:00,194 --> 00:01:03,749
+configured, and keep the lab on this
 synthetic data boundary.
 
-22
-00:01:08,126 --> 00:01:11,826
+20
+00:01:04,690 --> 00:01:07,569
 Ask for issue seventeen and its
 acceptance criteria.
 
-23
-00:01:11,901 --> 00:01:15,701
+21
+00:01:07,960 --> 00:01:11,720
 In this example, the client proposes get
 training issue with issue number
 
-24
-00:01:15,751 --> 00:01:16,433
+22
+00:01:11,720 --> 00:01:12,408
 seventeen.
 
-25
-00:01:17,036 --> 00:01:19,086
-Check the operation and the number.
+23
+00:01:12,688 --> 00:01:16,810
+Check the operation and the number. They
+should match the request you made,
 
-26
-00:01:19,136 --> 00:01:22,636
-They should match the request you made,
+24
+00:01:17,181 --> 00:01:19,457
 and the tool should be approved for that
-
-27
-00:01:22,686 --> 00:01:23,786
 input.
 
-28
-00:01:23,861 --> 00:01:27,361
+25
+00:01:19,928 --> 00:01:23,798
 This is the evidence you want before
 responding to any confirmation prompt
 
-29
-00:01:27,436 --> 00:01:28,825
+26
+00:01:23,798 --> 00:01:25,285
 shown by your workspace.
 
-30
-00:01:30,264 --> 00:01:32,539
+27
+00:01:26,277 --> 00:01:29,861
 The tool returns two requirements.
-
-31
-00:01:32,614 --> 00:01:34,714
 Positive integers are accepted.
 
-32
-00:01:34,814 --> 00:01:37,639
+28
+00:01:30,221 --> 00:01:34,554
 Zero and negative integers are rejected.
-
-33
-00:01:37,714 --> 00:01:40,819
 Now look at the agent's summary and
+
+29
+00:01:34,554 --> 00:01:35,802
 check that it carries both.
 
-34
-00:01:41,443 --> 00:01:46,243
+30
+00:01:36,202 --> 00:01:40,022
 If it only says to reject zero, the
 negative case was lost in the summary.
 
-35
-00:01:46,318 --> 00:01:50,243
+31
+00:01:40,342 --> 00:01:44,395
 Correct the summary against the actual
 issue text so the next stage can use
 
-36
-00:01:50,293 --> 00:01:51,888
+32
+00:01:44,395 --> 00:01:45,823
 both acceptance criteria.
 
-37
-00:01:53,418 --> 00:01:57,743
+33
+00:01:46,858 --> 00:01:50,614
 Imagine the next proposed action is to
 post the summary to a pull request.
 
-38
-00:01:57,818 --> 00:01:59,768
-Catch that change in scope.
+34
+00:01:50,994 --> 00:01:54,972
+Catch that change in scope. Reading
+issue seventeen and writing a comment
 
-39
-00:01:59,843 --> 00:02:03,347
-Reading issue seventeen and writing a
-comment are different operations.
+35
+00:01:55,103 --> 00:01:56,275
+are different operations.
 
-40
-00:02:03,981 --> 00:02:06,941
+36
+00:01:56,656 --> 00:01:58,958
 For this lab, save the summary in the
 session.
 
-41
-00:02:07,016 --> 00:02:10,816
+37
+00:01:59,279 --> 00:02:03,452
 In the actual review workflow, the
 authorized author or reviewer decides
 
-42
-00:02:10,866 --> 00:02:14,421
+38
+00:02:03,452 --> 00:02:06,984
 what to post using their own account and
 GitHub CLI.
 
-43
-00:02:15,935 --> 00:02:19,850
+39
+00:02:08,025 --> 00:02:11,884
 Finish with a small record: the approved
 server, the tool and number,
 
-44
-00:02:20,025 --> 00:02:22,375
+40
+00:02:12,296 --> 00:02:14,270
 and the two criteria you verified.
 
-45
-00:02:22,450 --> 00:02:25,795
+41
+00:02:14,551 --> 00:02:18,090
 A teammate should see exactly what was
 read and what matched the source.
 
-46
-00:02:26,419 --> 00:02:29,694
+42
+00:02:18,511 --> 00:02:21,446
 That is the simplest useful M C P
 workflow:
 
-47
-00:02:29,769 --> 00:02:33,194
+43
+00:02:21,897 --> 00:02:25,073
 one authorized tool call that brings
 evidence into the task,
 
-48
-00:02:33,244 --> 00:02:35,008
+44
+00:02:25,424 --> 00:02:27,377
 with a boundary that you can explain.
