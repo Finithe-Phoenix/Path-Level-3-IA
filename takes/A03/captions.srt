@@ -1,242 +1,230 @@
 1
-00:00:00,393 --> 00:00:05,468
+00:00:00,235 --> 00:00:05,460
 The CLI and API in this synthetic order
 service both validate quantity,
 
 2
-00:00:05,543 --> 00:00:07,718
+00:00:05,711 --> 00:00:07,064
 and the rule is duplicated.
 
 3
-00:00:07,793 --> 00:00:11,968
+00:00:07,405 --> 00:00:11,506
 Issue thirty-one asks us to share the
 validator and keep the behavior of both
 
 4
-00:00:12,018 --> 00:00:12,544
+00:00:11,506 --> 00:00:12,001
 callers.
 
 5
-00:00:13,147 --> 00:00:17,772
+00:00:12,402 --> 00:00:16,465
 Open the issue and point to the expected
 outputs before asking for edits.
 
 6
-00:00:17,822 --> 00:00:21,629
+00:00:16,916 --> 00:00:20,747
 We want a small structural change with
 the same results for the same inputs.
 
 7
-00:00:23,147 --> 00:00:25,197
-Run the existing suite first.
+00:00:21,775 --> 00:00:26,123
+Run the existing suite first. The
+synthetic baseline shows eight passing
 
 8
-00:00:25,247 --> 00:00:28,197
-The synthetic baseline shows eight
-passing tests,
+00:00:26,123 --> 00:00:30,009
+tests, including normal and boundary
+cases around the two callers.
 
 9
-00:00:28,247 --> 00:00:31,241
-including normal and boundary cases
-around the two callers.
-
-10
-00:00:31,864 --> 00:00:35,214
+00:00:30,440 --> 00:00:33,455
 Capture the starting commit and command
 with that result.
 
-11
-00:00:35,289 --> 00:00:38,439
+10
+00:00:34,006 --> 00:00:36,560
 This gives us a comparison point after
 each stage.
 
-12
-00:00:38,514 --> 00:00:42,214
+11
+00:00:36,961 --> 00:00:40,781
 If a boundary isn't already covered,
 agree on how to capture it before you
 
-13
-00:00:42,264 --> 00:00:43,845
+12
+00:00:40,812 --> 00:00:42,285
 ask the agent to move the rule.
 
-14
-00:00:45,335 --> 00:00:50,335
+13
+00:00:43,317 --> 00:00:47,501
 Ask the agent to map the two callers and
 propose one stage for each migration.
 
-15
-00:00:50,385 --> 00:00:53,941
+14
+00:00:47,956 --> 00:00:51,991
 The first stage extracts the rule and
 points the CLI at it.
 
+15
+00:00:52,252 --> 00:00:56,565
+The second stage changes the API. Check
+that the agent can name the files and
+
 16
-00:00:54,540 --> 00:00:57,190
-The second stage changes the API.
+00:00:56,565 --> 00:00:57,624
+validation command.
 
 17
-00:00:57,265 --> 00:01:01,040
-Check that the agent can name the files
-and validation command.
-
-18
-00:01:01,115 --> 00:01:04,915
+00:00:57,965 --> 00:01:02,086
 Then approve the first stage and leave
 the second stage waiting for the diff
 
-19
-00:01:04,990 --> 00:01:06,055
+18
+00:01:02,117 --> 00:01:03,009
 and test evidence.
 
-20
-00:01:07,543 --> 00:01:11,518
+19
+00:01:04,068 --> 00:01:07,488
 Look at Git status first so a newly
 created file is visible.
 
-21
-00:01:11,593 --> 00:01:16,490
+20
+00:01:07,918 --> 00:01:13,150
 In the example, the shared validator and
 the CLI are the only files changed.
 
-22
-00:01:17,093 --> 00:01:20,968
+21
+00:01:13,551 --> 00:01:15,765
 Open the validator and check the
-comparison, then follow the call in the
+comparison,
+
+22
+00:01:16,056 --> 00:01:18,531
+then follow the call in the CLI.
 
 23
-00:01:21,043 --> 00:01:22,493
-CLI.
-
-24
-00:01:22,543 --> 00:01:26,353
+00:01:19,147 --> 00:01:22,605
 The tests should still show the same
 behavior for quantity one, zero,
 
-25
-00:01:26,403 --> 00:01:27,526
+24
+00:01:22,716 --> 00:01:23,850
 and negative values.
 
-26
-00:01:28,172 --> 00:01:30,787
+25
+00:01:24,251 --> 00:01:26,413
 Review that evidence before the API
 stage.
 
-27
-00:01:32,226 --> 00:01:34,026
-Here's the staged handoff.
+26
+00:01:27,402 --> 00:01:31,042
+Here's the staged handoff. The agent
+proposes opening the API and a
 
-28
-00:01:34,076 --> 00:01:37,826
-The agent proposes opening the API and a
+27
+00:01:31,042 --> 00:01:31,938
 deployment file.
 
+28
+00:01:32,219 --> 00:01:36,833
+Pause on the deployment entry. The issue
+names an API caller and a behavior
+
 29
-00:01:37,901 --> 00:01:40,026
-Pause on the deployment entry.
+00:01:36,833 --> 00:01:40,585
+check, so there is no reason to approve
+that file in this step.
 
 30
-00:01:40,076 --> 00:01:43,026
-The issue names an API caller and a
-behavior check,
-
-31
-00:01:43,076 --> 00:01:45,742
-so there is no reason to approve that
-file in this step.
-
-32
-00:01:46,355 --> 00:01:50,955
+00:01:41,035 --> 00:01:44,973
 Tell the agent which call site belongs
 to the scope and ask for a revised plan
 
-33
-00:01:51,005 --> 00:01:52,725
+31
+00:01:45,223 --> 00:01:46,976
 before it edits anything further.
 
-34
-00:01:54,247 --> 00:01:58,822
+32
+00:01:47,940 --> 00:01:52,201
 After the API stage, confirm the names
 of all three changed files and inspect
 
-35
-00:01:58,847 --> 00:02:00,147
+33
+00:01:52,201 --> 00:01:52,857
 the new call.
 
-36
-00:02:00,222 --> 00:02:03,220
+34
+00:01:53,217 --> 00:01:56,164
 Run the same test command again, on the
 final state.
 
+35
+00:01:56,615 --> 00:02:00,860
+Here all eight tests still pass. Compare
+the observed boundary cases with the
+
+36
+00:02:00,860 --> 00:02:02,940
+baseline and check the public outputs.
+
 37
-00:02:03,844 --> 00:02:06,069
-Here all eight tests still pass.
-
-38
-00:02:06,119 --> 00:02:09,669
-Compare the observed boundary cases with
-the baseline and check the public
-
-39
-00:02:09,719 --> 00:02:10,844
-outputs.
-
-40
-00:02:10,894 --> 00:02:13,840
+00:02:03,300 --> 00:02:05,799
 The final run is the one that supports
 this exact diff.
 
-41
-00:02:15,306 --> 00:02:19,556
+38
+00:02:06,818 --> 00:02:10,333
 The pull request can now explain what
 changed, what stayed compatible,
 
-42
-00:02:19,656 --> 00:02:21,181
+39
+00:02:10,563 --> 00:02:11,514
 and how we checked it.
 
-43
-00:02:21,256 --> 00:02:24,780
+40
+00:02:11,855 --> 00:02:15,126
 Include both runs and the scope decision
 about the deployment file.
 
-44
-00:02:25,393 --> 00:02:29,693
+41
+00:02:15,447 --> 00:02:19,971
 A separate human reviewer can inspect
 the diff and check status using GitHub
 
-45
-00:02:29,768 --> 00:02:32,818
+42
+00:02:19,981 --> 00:02:22,780
 CLI from the authorized terminal.
 
-46
-00:02:32,868 --> 00:02:36,468
+43
+00:02:23,086 --> 00:02:26,775
 They can follow the same evidence trail
 without having to watch your agent
 
-47
-00:02:36,518 --> 00:02:36,947
+44
+00:02:26,775 --> 00:02:27,252
 session.
 
-48
-00:02:38,456 --> 00:02:42,591
+45
+00:02:28,152 --> 00:02:31,792
 For practice, find a second repeated
 rule in the training checkout.
 
-49
-00:02:42,666 --> 00:02:46,166
+46
+00:02:32,072 --> 00:02:35,531
 Decide what the first stage proves and
 what the second stage proves.
 
-50
-00:02:46,789 --> 00:02:50,364
+47
+00:02:35,872 --> 00:02:38,711
 Keep both stages small enough to explain
 in a sentence.
 
-51
-00:02:50,439 --> 00:02:55,034
+48
+00:02:39,202 --> 00:02:42,838
 If you can point to a baseline, a stop
 point, and a final independent check,
 
-52
-00:02:55,084 --> 00:02:57,410
+49
+00:02:43,069 --> 00:02:45,403
 you have a refactoring workflow you can
 reuse.

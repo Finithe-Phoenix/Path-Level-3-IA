@@ -1,49 +1,51 @@
 {
+  "audioEdition": 3,
   "fps": 24,
-  "voiceBuild": "b3dacb7b6028062869d8740b545e1c18b946196afa65b64f482dc75a054bd763",
-  "paceBuild": "f05ca89d6a4e80903101078b51c1f1c4b5b278364542eb6fb5a5620a99a13127",
+  "voiceBuild": "a6629a0f6b1cf2c25b99a5a3bd49dbb2c6a842d60fa288aeef0539e04f1ebbc8",
+  "paceBuild": "368b92a891eeaa3ba402c94eb831ee543ea491d73fc75dcf61dc65f6edba53f9",
   "delivery": {
-    "targetWordsPerMinute": 146,
-    "inputWordsPerMinute": 159.63,
-    "tempo": 0.9355294,
-    "outputWordsPerMinute": 145.99
+    "targetWordsPerMinute": 149,
+    "inputWordsPerMinute": 171.62,
+    "tempo": 0.88846604,
+    "outputWordsPerMinute": 149.01
   },
-  "audioSha256": "65bdf4a790e8da34f5c63ac7b494c473b55a270c9e4b1e35cb50ffa1435a8fdf",
-  "captionsSha256": "4f7ccdf75eae74bfd2ef9b2948c573de41ec37fa3786c8afcc6a6392a4149a7d",
+  "audioSha256": "2645c45c1e8ab24f983ebad0375d2cb609c09e5b985405ccc14b4796967fc70d",
+  "captionsSha256": "39a664bbc8380defb054cd7e062ecd3c7b68ad550f136c9a4df40177e8195187",
   "scenes": [
     {
       "id": "ticket",
       "scriptSha256": "056b35a0d251e4a6f9ecd637de554fa83f98637ab5958132057d9f5a9b1f0150",
-      "durationFrames": 592,
+      "durationFrames": 590,
       "cues": [
         {
-          "start": 0.42,
-          "end": 5.845,
+          "start": 0.265,
+          "end": 6.145,
           "text": "The CLI and API in this synthetic order\nservice both validate quantity,"
         },
         {
-          "start": 5.925,
-          "end": 8.25,
+          "start": 6.428,
+          "end": 7.951,
           "text": "and the rule is duplicated."
         },
         {
-          "start": 8.33,
-          "end": 12.793,
+          "start": 8.335,
+          "end": 12.95,
           "text": "Issue thirty-one asks us to share the\nvalidator and keep the behavior of both"
         },
         {
-          "start": 12.846,
-          "end": 13.408,
-          "text": "callers."
+          "start": 12.95,
+          "end": 13.6,
+          "text": "callers.",
+          "speechEnd": 13.508
         },
         {
-          "start": 14.053,
-          "end": 18.997,
+          "start": 13.959,
+          "end": 18.532,
           "text": "Open the issue and point to the expected\noutputs before asking for edits."
         },
         {
-          "start": 19.05,
-          "end": 23.12,
+          "start": 19.04,
+          "end": 23.351,
           "text": "We want a small structural change with\nthe same results for the same inputs."
         }
       ]
@@ -51,41 +53,36 @@
     {
       "id": "baseline",
       "scriptSha256": "4d6ecaa088a4c97a39e34f1db32561632ef0d9c77d8a1e4ee5c5b863594147a5",
-      "durationFrames": 585,
+      "durationFrames": 597,
       "cues": [
         {
-          "start": 0.469,
-          "end": 2.661,
-          "text": "Run the existing suite first."
+          "start": 0.31,
+          "end": 5.203,
+          "text": "Run the existing suite first. The\nsynthetic baseline shows eight passing"
         },
         {
-          "start": 2.714,
-          "end": 5.867,
-          "text": "The synthetic baseline shows eight\npassing tests,"
+          "start": 5.203,
+          "end": 9.577,
+          "text": "tests, including normal and boundary\ncases around the two callers."
         },
         {
-          "start": 5.921,
-          "end": 9.121,
-          "text": "including normal and boundary cases\naround the two callers."
-        },
-        {
-          "start": 9.787,
-          "end": 13.368,
+          "start": 10.062,
+          "end": 13.456,
           "text": "Capture the starting commit and command\nwith that result."
         },
         {
-          "start": 13.448,
-          "end": 16.815,
+          "start": 14.076,
+          "end": 16.951,
           "text": "This gives us a comparison point after\neach stage."
         },
         {
-          "start": 16.895,
-          "end": 20.85,
+          "start": 17.402,
+          "end": 21.701,
           "text": "If a boundary isn't already covered,\nagree on how to capture it before you"
         },
         {
-          "start": 20.904,
-          "end": 22.594,
+          "start": 21.736,
+          "end": 23.394,
           "text": "ask the agent to move the rule."
         }
       ]
@@ -93,36 +90,36 @@
     {
       "id": "plan",
       "scriptSha256": "f6fdb87ad36ece8599c6217c43be96487546dc8599ba4c55d5153169964c023f",
-      "durationFrames": 585,
+      "durationFrames": 578,
       "cues": [
         {
-          "start": 0.447,
-          "end": 5.791,
+          "start": 0.31,
+          "end": 5.019,
           "text": "Ask the agent to map the two callers and\npropose one stage for each migration."
         },
         {
-          "start": 5.845,
-          "end": 9.646,
+          "start": 5.531,
+          "end": 10.072,
           "text": "The first stage extracts the rule and\npoints the CLI at it."
         },
         {
-          "start": 10.286,
-          "end": 13.119,
-          "text": "The second stage changes the API."
+          "start": 10.366,
+          "end": 15.221,
+          "text": "The second stage changes the API. Check\nthat the agent can name the files and"
         },
         {
-          "start": 13.199,
-          "end": 17.234,
-          "text": "Check that the agent can name the files\nand validation command."
+          "start": 15.221,
+          "end": 16.413,
+          "text": "validation command."
         },
         {
-          "start": 17.314,
-          "end": 21.376,
+          "start": 16.796,
+          "end": 21.435,
           "text": "Then approve the first stage and leave\nthe second stage waiting for the diff"
         },
         {
-          "start": 21.456,
-          "end": 22.595,
+          "start": 21.47,
+          "end": 22.474,
           "text": "and test evidence."
         }
       ]
@@ -130,41 +127,41 @@
     {
       "id": "first",
       "scriptSha256": "9f9f0bbcb2ed48591e5a51a830313481acfe0b8a6c573b5bd07abb8b2e9392c1",
-      "durationFrames": 650,
+      "durationFrames": 646,
       "cues": [
         {
-          "start": 0.447,
-          "end": 4.696,
+          "start": 0.265,
+          "end": 4.114,
           "text": "Look at Git status first so a newly\ncreated file is visible."
         },
         {
-          "start": 4.776,
-          "end": 10.01,
+          "start": 4.598,
+          "end": 10.487,
           "text": "In the example, the shared validator and\nthe CLI are the only files changed."
         },
         {
-          "start": 10.655,
-          "end": 14.797,
-          "text": "Open the validator and check the\ncomparison, then follow the call in the"
+          "start": 10.938,
+          "end": 13.43,
+          "text": "Open the validator and check the\ncomparison,"
         },
         {
-          "start": 14.877,
-          "end": 16.427,
-          "text": "CLI."
+          "start": 13.757,
+          "end": 16.543,
+          "text": "then follow the call in the CLI."
         },
         {
-          "start": 16.481,
-          "end": 20.553,
+          "start": 17.236,
+          "end": 21.129,
           "text": "The tests should still show the same\nbehavior for quantity one, zero,"
         },
         {
-          "start": 20.607,
-          "end": 21.807,
+          "start": 21.253,
+          "end": 22.53,
           "text": "and negative values."
         },
         {
-          "start": 22.497,
-          "end": 25.293,
+          "start": 22.981,
+          "end": 25.415,
           "text": "Review that evidence before the API\nstage."
         }
       ]
@@ -172,41 +169,36 @@
     {
       "id": "scope",
       "scriptSha256": "c1504f1d02f94cd2b61b0e66b239b73fe0cb13ba2830229d828aaee0b050c605",
-      "durationFrames": 580,
+      "durationFrames": 568,
       "cues": [
         {
-          "start": 0.42,
-          "end": 2.344,
-          "text": "Here's the staged handoff."
+          "start": 0.265,
+          "end": 4.361,
+          "text": "Here's the staged handoff. The agent\nproposes opening the API and a"
         },
         {
-          "start": 2.398,
-          "end": 6.406,
-          "text": "The agent proposes opening the API and a\ndeployment file."
+          "start": 4.361,
+          "end": 5.37,
+          "text": "deployment file."
         },
         {
-          "start": 6.486,
-          "end": 8.758,
-          "text": "Pause on the deployment entry."
+          "start": 5.686,
+          "end": 10.879,
+          "text": "Pause on the deployment entry. The issue\nnames an API caller and a behavior"
         },
         {
-          "start": 8.811,
-          "end": 11.964,
-          "text": "The issue names an API caller and a\nbehavior check,"
+          "start": 10.879,
+          "end": 15.102,
+          "text": "check, so there is no reason to approve\nthat file in this step."
         },
         {
-          "start": 12.018,
-          "end": 14.868,
-          "text": "so there is no reason to approve that\nfile in this step."
-        },
-        {
-          "start": 15.523,
-          "end": 20.44,
+          "start": 15.609,
+          "end": 20.041,
           "text": "Tell the agent which call site belongs\nto the scope and ask for a revised plan"
         },
         {
-          "start": 20.493,
-          "end": 22.332,
+          "start": 20.323,
+          "end": 22.296,
           "text": "before it edits anything further."
         }
       ]
@@ -214,41 +206,36 @@
     {
       "id": "second",
       "scriptSha256": "d5f8fcbdf94d6e1b77887953958ffe47da2cf0574da07850cc4058e93dd6d40e",
-      "durationFrames": 556,
+      "durationFrames": 527,
       "cues": [
         {
-          "start": 0.443,
-          "end": 5.333,
+          "start": 0.355,
+          "end": 5.15,
           "text": "After the API stage, confirm the names\nof all three changed files and inspect"
         },
         {
-          "start": 5.36,
-          "end": 6.749,
+          "start": 5.15,
+          "end": 5.889,
           "text": "the new call."
         },
         {
-          "start": 6.829,
-          "end": 10.034,
+          "start": 6.294,
+          "end": 9.611,
           "text": "Run the same test command again, on the\nfinal state."
         },
         {
-          "start": 10.701,
-          "end": 13.079,
-          "text": "Here all eight tests still pass."
+          "start": 10.119,
+          "end": 14.896,
+          "text": "Here all eight tests still pass. Compare\nthe observed boundary cases with the"
         },
         {
-          "start": 13.133,
-          "end": 16.927,
-          "text": "Compare the observed boundary cases with\nthe baseline and check the public"
+          "start": 14.896,
+          "end": 17.238,
+          "text": "baseline and check the public outputs."
         },
         {
-          "start": 16.981,
-          "end": 18.183,
-          "text": "outputs."
-        },
-        {
-          "start": 18.237,
-          "end": 21.386,
+          "start": 17.643,
+          "end": 20.455,
           "text": "The final run is the one that supports\nthis exact diff."
         }
       ]
@@ -256,73 +243,74 @@
     {
       "id": "handoff",
       "scriptSha256": "8345aa4e7443a8875d30f732f6678cef0f07a0437d0826af12e1bcf9809b528f",
-      "durationFrames": 603,
+      "durationFrames": 586,
       "cues": [
         {
-          "start": 0.416,
-          "end": 4.959,
+          "start": 0.265,
+          "end": 4.221,
           "text": "The pull request can now explain what\nchanged, what stayed compatible,"
         },
         {
-          "start": 5.066,
-          "end": 6.696,
+          "start": 4.48,
+          "end": 5.55,
           "text": "and how we checked it."
         },
         {
-          "start": 6.776,
-          "end": 10.543,
+          "start": 5.934,
+          "end": 9.615,
           "text": "Include both runs and the scope decision\nabout the deployment file."
         },
         {
-          "start": 11.198,
-          "end": 15.794,
+          "start": 9.977,
+          "end": 15.069,
           "text": "A separate human reviewer can inspect\nthe diff and check status using GitHub"
         },
         {
-          "start": 15.874,
-          "end": 19.135,
+          "start": 15.08,
+          "end": 18.23,
           "text": "CLI from the authorized terminal."
         },
         {
-          "start": 19.188,
-          "end": 23.036,
+          "start": 18.575,
+          "end": 22.727,
           "text": "They can follow the same evidence trail\nwithout having to watch your agent"
         },
         {
-          "start": 23.09,
-          "end": 23.548,
-          "text": "session."
+          "start": 22.727,
+          "end": 23.377,
+          "text": "session.",
+          "speechEnd": 23.264
         }
       ]
     },
     {
       "id": "practice",
       "scriptSha256": "1eb67dad3b022e396d88a9467bfc595d5b6d364b4460915ce75e51652594c9d0",
-      "durationFrames": 544,
+      "durationFrames": 508,
       "cues": [
         {
-          "start": 0.443,
-          "end": 4.862,
+          "start": 0.265,
+          "end": 4.361,
           "text": "For practice, find a second repeated\nrule in the training checkout."
         },
         {
-          "start": 4.943,
-          "end": 8.684,
+          "start": 4.677,
+          "end": 8.57,
           "text": "Decide what the first stage proves and\nwhat the second stage proves."
         },
         {
-          "start": 9.35,
-          "end": 13.171,
+          "start": 8.954,
+          "end": 12.149,
           "text": "Keep both stages small enough to explain\nin a sentence."
         },
         {
-          "start": 13.251,
-          "end": 18.163,
+          "start": 12.702,
+          "end": 16.794,
           "text": "If you can point to a baseline, a stop\npoint, and a final independent check,"
         },
         {
-          "start": 18.216,
-          "end": 20.703,
+          "start": 17.054,
+          "end": 19.681,
           "text": "you have a refactoring workflow you can\nreuse."
         }
       ]

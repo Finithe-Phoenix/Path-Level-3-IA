@@ -28,37 +28,37 @@
       "narration": "The CLI and API in this synthetic order service both validate quantity, and the rule is duplicated. Issue thirty-one asks us to share the validator and keep the behavior of both callers. Open the issue and point to the expected outputs before asking for edits. We want a small structural change with the same results for the same inputs.",
       "focus": "Preserve the CLI and API behavior",
       "action": "Read issue 31 and mark the allowed files.",
-      "durationFrames": 545,
-      "duration": 22.708333333333332,
+      "durationFrames": 516,
+      "duration": 21.5,
       "cues": [
         {
-          "start": 0.393,
-          "end": 5.468,
+          "start": 0.235,
+          "end": 5.46,
           "text": "The CLI and API in this synthetic order\nservice both validate quantity,"
         },
         {
-          "start": 5.543,
-          "end": 7.718,
+          "start": 5.711,
+          "end": 7.064,
           "text": "and the rule is duplicated."
         },
         {
-          "start": 7.793,
-          "end": 11.968,
+          "start": 7.405,
+          "end": 11.506,
           "text": "Issue thirty-one asks us to share the\nvalidator and keep the behavior of both"
         },
         {
-          "start": 12.018,
-          "end": 12.544,
+          "start": 11.506,
+          "end": 12.001,
           "text": "callers."
         },
         {
-          "start": 13.147,
-          "end": 17.772,
+          "start": 12.402,
+          "end": 16.465,
           "text": "Open the issue and point to the expected\noutputs before asking for edits."
         },
         {
-          "start": 17.822,
-          "end": 21.629,
+          "start": 16.916,
+          "end": 20.747,
           "text": "We want a small structural change with\nthe same results for the same inputs."
         }
       ]
@@ -74,42 +74,37 @@
       "narration": "Run the existing suite first. The synthetic baseline shows eight passing tests, including normal and boundary cases around the two callers. Capture the starting commit and command with that result. This gives us a comparison point after each stage. If a boundary isn't already covered, agree on how to capture it before you ask the agent to move the rule.",
       "focus": "Eight tests pass before any edit",
       "action": "Check the branch and save the starting test run.",
-      "durationFrames": 533,
-      "duration": 22.208333333333332,
+      "durationFrames": 517,
+      "duration": 21.541666666666668,
       "cues": [
         {
-          "start": 0.439,
-          "end": 2.489,
-          "text": "Run the existing suite first."
+          "start": 0.275,
+          "end": 4.623,
+          "text": "Run the existing suite first. The\nsynthetic baseline shows eight passing"
         },
         {
-          "start": 2.539,
-          "end": 5.489,
-          "text": "The synthetic baseline shows eight\npassing tests,"
+          "start": 4.623,
+          "end": 8.509,
+          "text": "tests, including normal and boundary\ncases around the two callers."
         },
         {
-          "start": 5.539,
-          "end": 8.533,
-          "text": "including normal and boundary cases\naround the two callers."
-        },
-        {
-          "start": 9.156,
-          "end": 12.506,
+          "start": 8.94,
+          "end": 11.955,
           "text": "Capture the starting commit and command\nwith that result."
         },
         {
-          "start": 12.581,
-          "end": 15.731,
+          "start": 12.506,
+          "end": 15.06,
           "text": "This gives us a comparison point after\neach stage."
         },
         {
-          "start": 15.806,
-          "end": 19.506,
+          "start": 15.461,
+          "end": 19.281,
           "text": "If a boundary isn't already covered,\nagree on how to capture it before you"
         },
         {
-          "start": 19.556,
-          "end": 21.137,
+          "start": 19.312,
+          "end": 20.785,
           "text": "ask the agent to move the rule."
         }
       ]
@@ -125,37 +120,37 @@
       "narration": "Ask the agent to map the two callers and propose one stage for each migration. The first stage extracts the rule and points the CLI at it. The second stage changes the API. Check that the agent can name the files and validation command. Then approve the first stage and leave the second stage waiting for the diff and test evidence.",
       "focus": "Stage 1 changes the CLI; stage 2 changes the API",
       "action": "Ask for the plan and confirm the first stage only.",
-      "durationFrames": 533,
-      "duration": 22.208333333333332,
+      "durationFrames": 499,
+      "duration": 20.791666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 5.418,
+          "start": 0.275,
+          "end": 4.459,
           "text": "Ask the agent to map the two callers and\npropose one stage for each migration."
         },
         {
-          "start": 5.468,
-          "end": 9.024,
+          "start": 4.914,
+          "end": 8.949,
           "text": "The first stage extracts the rule and\npoints the CLI at it."
         },
         {
-          "start": 9.623,
-          "end": 12.273,
-          "text": "The second stage changes the API."
+          "start": 9.21,
+          "end": 13.523,
+          "text": "The second stage changes the API. Check\nthat the agent can name the files and"
         },
         {
-          "start": 12.348,
-          "end": 16.123,
-          "text": "Check that the agent can name the files\nand validation command."
+          "start": 13.523,
+          "end": 14.582,
+          "text": "validation command."
         },
         {
-          "start": 16.198,
-          "end": 19.998,
+          "start": 14.923,
+          "end": 19.044,
           "text": "Then approve the first stage and leave\nthe second stage waiting for the diff"
         },
         {
-          "start": 20.073,
-          "end": 21.138,
+          "start": 19.075,
+          "end": 19.967,
           "text": "and test evidence."
         }
       ]
@@ -171,42 +166,42 @@
       "narration": "Look at Git status first so a newly created file is visible. In the example, the shared validator and the CLI are the only files changed. Open the validator and check the comparison, then follow the call in the CLI. The tests should still show the same behavior for quantity one, zero, and negative values. Review that evidence before the API stage.",
       "focus": "The shared validator and CLI are the only changes",
       "action": "Open the shared rule and CLI diff.",
-      "durationFrames": 593,
-      "duration": 24.708333333333332,
+      "durationFrames": 560,
+      "duration": 23.333333333333332,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.393,
+          "start": 0.235,
+          "end": 3.655,
           "text": "Look at Git status first so a newly\ncreated file is visible."
         },
         {
-          "start": 4.468,
-          "end": 9.365,
+          "start": 4.085,
+          "end": 9.317,
           "text": "In the example, the shared validator and\nthe CLI are the only files changed."
         },
         {
-          "start": 9.968,
-          "end": 13.843,
-          "text": "Open the validator and check the\ncomparison, then follow the call in the"
+          "start": 9.718,
+          "end": 11.932,
+          "text": "Open the validator and check the\ncomparison,"
         },
         {
-          "start": 13.918,
-          "end": 15.368,
-          "text": "CLI."
+          "start": 12.223,
+          "end": 14.698,
+          "text": "then follow the call in the CLI."
         },
         {
-          "start": 15.418,
-          "end": 19.228,
+          "start": 15.314,
+          "end": 18.772,
           "text": "The tests should still show the same\nbehavior for quantity one, zero,"
         },
         {
-          "start": 19.278,
-          "end": 20.401,
+          "start": 18.883,
+          "end": 20.017,
           "text": "and negative values."
         },
         {
-          "start": 21.047,
-          "end": 23.662,
+          "start": 20.418,
+          "end": 22.58,
           "text": "Review that evidence before the API\nstage."
         }
       ]
@@ -222,42 +217,37 @@
       "narration": "Here's the staged handoff. The agent proposes opening the API and a deployment file. Pause on the deployment entry. The issue names an API caller and a behavior check, so there is no reason to approve that file in this step. Tell the agent which call site belongs to the scope and ask for a revised plan before it edits anything further.",
       "focus": "infra/deploy.yaml is outside the approved scope",
       "action": "Stop and ask for a narrower API proposal.",
-      "durationFrames": 528,
-      "duration": 22.0,
+      "durationFrames": 491,
+      "duration": 20.458333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.193,
-          "text": "Here's the staged handoff."
+          "start": 0.235,
+          "end": 3.875,
+          "text": "Here's the staged handoff. The agent\nproposes opening the API and a"
         },
         {
-          "start": 2.243,
-          "end": 5.993,
-          "text": "The agent proposes opening the API and a\ndeployment file."
+          "start": 3.875,
+          "end": 4.771,
+          "text": "deployment file."
         },
         {
-          "start": 6.068,
-          "end": 8.193,
-          "text": "Pause on the deployment entry."
+          "start": 5.052,
+          "end": 9.666,
+          "text": "Pause on the deployment entry. The issue\nnames an API caller and a behavior"
         },
         {
-          "start": 8.243,
-          "end": 11.193,
-          "text": "The issue names an API caller and a\nbehavior check,"
+          "start": 9.666,
+          "end": 13.418,
+          "text": "check, so there is no reason to approve\nthat file in this step."
         },
         {
-          "start": 11.243,
-          "end": 13.909,
-          "text": "so there is no reason to approve that\nfile in this step."
-        },
-        {
-          "start": 14.522,
-          "end": 19.122,
+          "start": 13.868,
+          "end": 17.806,
           "text": "Tell the agent which call site belongs\nto the scope and ask for a revised plan"
         },
         {
-          "start": 19.172,
-          "end": 20.892,
+          "start": 18.056,
+          "end": 19.809,
           "text": "before it edits anything further."
         }
       ]
@@ -273,42 +263,37 @@
       "narration": "After the API stage, confirm the names of all three changed files and inspect the new call. Run the same test command again, on the final state. Here all eight tests still pass. Compare the observed boundary cases with the baseline and check the public outputs. The final run is the one that supports this exact diff.",
       "focus": "Three expected files; the same eight tests pass",
       "action": "Review status, then rerun the baseline suite.",
-      "durationFrames": 506,
-      "duration": 21.083333333333332,
+      "durationFrames": 455,
+      "duration": 18.958333333333332,
       "cues": [
         {
-          "start": 0.414,
-          "end": 4.989,
+          "start": 0.315,
+          "end": 4.576,
           "text": "After the API stage, confirm the names\nof all three changed files and inspect"
         },
         {
-          "start": 5.014,
-          "end": 6.314,
+          "start": 4.576,
+          "end": 5.232,
           "text": "the new call."
         },
         {
-          "start": 6.389,
-          "end": 9.387,
+          "start": 5.592,
+          "end": 8.539,
           "text": "Run the same test command again, on the\nfinal state."
         },
         {
-          "start": 10.011,
-          "end": 12.236,
-          "text": "Here all eight tests still pass."
+          "start": 8.99,
+          "end": 13.235,
+          "text": "Here all eight tests still pass. Compare\nthe observed boundary cases with the"
         },
         {
-          "start": 12.286,
-          "end": 15.836,
-          "text": "Compare the observed boundary cases with\nthe baseline and check the public"
+          "start": 13.235,
+          "end": 15.315,
+          "text": "baseline and check the public outputs."
         },
         {
-          "start": 15.886,
-          "end": 17.011,
-          "text": "outputs."
-        },
-        {
-          "start": 17.061,
-          "end": 20.007,
+          "start": 15.675,
+          "end": 18.174,
           "text": "The final run is the one that supports\nthis exact diff."
         }
       ]
@@ -324,42 +309,42 @@
       "narration": "The pull request can now explain what changed, what stayed compatible, and how we checked it. Include both runs and the scope decision about the deployment file. A separate human reviewer can inspect the diff and check status using GitHub CLI from the authorized terminal. They can follow the same evidence trail without having to watch your agent session.",
       "focus": "The reviewer can connect both test runs to the diff",
       "action": "Prepare the PR summary with the stage evidence.",
-      "durationFrames": 555,
-      "duration": 23.125,
+      "durationFrames": 512,
+      "duration": 21.333333333333332,
       "cues": [
         {
-          "start": 0.389,
-          "end": 4.639,
+          "start": 0.235,
+          "end": 3.75,
           "text": "The pull request can now explain what\nchanged, what stayed compatible,"
         },
         {
-          "start": 4.739,
-          "end": 6.264,
+          "start": 3.98,
+          "end": 4.931,
           "text": "and how we checked it."
         },
         {
-          "start": 6.339,
-          "end": 9.863,
+          "start": 5.272,
+          "end": 8.543,
           "text": "Include both runs and the scope decision\nabout the deployment file."
         },
         {
-          "start": 10.476,
-          "end": 14.776,
+          "start": 8.864,
+          "end": 13.388,
           "text": "A separate human reviewer can inspect\nthe diff and check status using GitHub"
         },
         {
-          "start": 14.851,
-          "end": 17.901,
+          "start": 13.398,
+          "end": 16.197,
           "text": "CLI from the authorized terminal."
         },
         {
-          "start": 17.951,
-          "end": 21.551,
+          "start": 16.503,
+          "end": 20.192,
           "text": "They can follow the same evidence trail\nwithout having to watch your agent"
         },
         {
-          "start": 21.601,
-          "end": 22.03,
+          "start": 20.192,
+          "end": 20.669,
           "text": "session."
         }
       ]
@@ -375,32 +360,32 @@
       "narration": "For practice, find a second repeated rule in the training checkout. Decide what the first stage proves and what the second stage proves. Keep both stages small enough to explain in a sentence. If you can point to a baseline, a stop point, and a final independent check, you have a refactoring workflow you can reuse.",
       "focus": "Each stage has one testable outcome",
       "action": "Repeat the pattern with two small callers.",
-      "durationFrames": 501,
-      "duration": 20.875,
+      "durationFrames": 444,
+      "duration": 18.5,
       "cues": [
         {
-          "start": 0.414,
-          "end": 4.549,
+          "start": 0.235,
+          "end": 3.875,
           "text": "For practice, find a second repeated\nrule in the training checkout."
         },
         {
-          "start": 4.624,
-          "end": 8.124,
+          "start": 4.155,
+          "end": 7.614,
           "text": "Decide what the first stage proves and\nwhat the second stage proves."
         },
         {
-          "start": 8.747,
-          "end": 12.322,
+          "start": 7.955,
+          "end": 10.794,
           "text": "Keep both stages small enough to explain\nin a sentence."
         },
         {
-          "start": 12.397,
-          "end": 16.992,
+          "start": 11.285,
+          "end": 14.921,
           "text": "If you can point to a baseline, a stop\npoint, and a final independent check,"
         },
         {
-          "start": 17.042,
-          "end": 19.368,
+          "start": 15.152,
+          "end": 17.486,
           "text": "you have a refactoring workflow you can\nreuse."
         }
       ]
@@ -409,6 +394,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 4294,
-  "voiceBuild": "b3dacb7b6028062869d8740b545e1c18b946196afa65b64f482dc75a054bd763"
+  "durationFrames": 3994,
+  "voiceBuild": "a6629a0f6b1cf2c25b99a5a3bd49dbb2c6a842d60fa288aeef0539e04f1ebbc8"
 }
