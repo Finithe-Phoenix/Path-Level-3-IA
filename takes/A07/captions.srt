@@ -1,232 +1,228 @@
 1
-00:00:00,418 --> 00:00:04,268
+00:00:00,255 --> 00:00:04,086
 You are deciding which of two approved
 agent setups creates a more reviewable
 
 2
-00:00:04,318 --> 00:00:05,393
+00:00:04,086 --> 00:00:04,471
 change.
 
 3
-00:00:05,468 --> 00:00:09,643
+00:00:04,796 --> 00:00:08,871
 Give that decision a clear question:
 what happens when each setup fixes the
 
 4
-00:00:09,718 --> 00:00:11,435
+00:00:08,871 --> 00:00:10,588
 same zero-quantity defect?
 
 5
-00:00:12,214 --> 00:00:15,864
+00:00:11,214 --> 00:00:14,182
 We'll keep the task and tests fixed,
 record the environment,
 
 6
-00:00:15,914 --> 00:00:18,789
+00:00:14,533 --> 00:00:16,625
 and compare what a reviewer actually
 inherits.
 
 7
-00:00:18,839 --> 00:00:22,385
+00:00:17,111 --> 00:00:20,716
 The numbers you see are synthetic and
 explain how to read the evidence.
 
 8
-00:00:23,872 --> 00:00:27,672
+00:00:21,795 --> 00:00:24,894
 Use two authorized checkouts in the G C
 P workspace.
 
 9
-00:00:27,747 --> 00:00:31,522
+00:00:25,405 --> 00:00:28,900
 In each terminal, confirm the same
 starting commit and a clean working
 
 10
-00:00:31,572 --> 00:00:31,927
+00:00:28,900 --> 00:00:29,196
 tree.
 
 11
-00:00:32,530 --> 00:00:35,680
+00:00:29,517 --> 00:00:31,892
 That keeps the first run's edits out of
 the second run.
 
 12
-00:00:35,730 --> 00:00:39,530
+00:00:32,173 --> 00:00:34,895
 Put the same issue, source files, and
 tests in scope.
 
 13
-00:00:39,605 --> 00:00:44,255
+00:00:35,256 --> 00:00:39,724
 If a checkout already has extra changes,
 reset the experiment by opening a clean
 
 14
-00:00:44,305 --> 00:00:45,343
+00:00:39,735 --> 00:00:40,628
 training checkout.
 
 15
-00:00:46,856 --> 00:00:50,806
+00:00:41,608 --> 00:00:45,263
 Send the same task to both sessions and
 capture the settings that matter:
 
 16
-00:00:50,881 --> 00:00:55,115
+00:00:45,614 --> 00:00:50,231
 client version, resolved model,
 provider, permissions, and context.
 
 17
-00:00:55,739 --> 00:00:59,439
+00:00:50,591 --> 00:00:53,805
 If the clients can use the same approved
 model and configuration,
 
 18
-00:00:59,489 --> 00:01:02,064
+00:00:54,095 --> 00:00:56,028
 that helps isolate a client difference.
 
 19
-00:01:02,114 --> 00:01:05,992
+00:00:56,428 --> 00:00:59,675
 When the models differ, your result
 describes both complete setups.
 
 20
-00:01:06,626 --> 00:01:10,325
+00:01:00,186 --> 00:01:03,601
 Write that down now, before the outcome
 tempts you to overinterpret it.
 
 21
-00:01:11,814 --> 00:01:14,114
+00:01:04,503 --> 00:01:07,123
 Set the rubric before opening the diffs.
+First,
 
 22
-00:01:14,214 --> 00:01:17,329
-First, require the four reference tests
-to pass.
+00:01:07,334 --> 00:01:09,271
+require the four reference tests to
+pass.
 
 23
-00:01:17,429 --> 00:01:20,049
+00:01:09,782 --> 00:01:11,940
 Second, require the two approved files
 only.
 
 24
-00:01:20,673 --> 00:01:24,873
+00:01:12,281 --> 00:01:16,744
 Then measure how often you redirect the
 session and how long a reviewer needs to
 
 25
-00:01:24,923 --> 00:01:26,873
+00:01:16,744 --> 00:01:18,073
 reach a verified result.
 
 26
-00:01:26,923 --> 00:01:28,536
-The first two fields are gates.
+00:01:18,585 --> 00:01:22,184
+The first two fields are gates. The
+other fields quantify how much human
 
 27
-00:01:29,145 --> 00:01:33,194
-The other fields quantify how much human
+00:01:22,184 --> 00:01:23,957
 work each complete setup leaves.
 
 28
-00:01:34,706 --> 00:01:38,486
+00:01:24,942 --> 00:01:29,063
 For each run, read the diff and run the
 reference suite yourself in the approved
 
 29
-00:01:38,536 --> 00:01:39,711
+00:01:29,063 --> 00:01:29,670
 workspace.
 
 30
-00:01:39,786 --> 00:01:42,315
+00:01:30,056 --> 00:01:34,111
 Both synthetic runs pass all four tests.
-
-31
-00:01:42,943 --> 00:01:45,493
 Run B changes one extra file.
 
-32
-00:01:45,568 --> 00:01:49,268
+31
+00:01:34,491 --> 00:01:37,450
 Open that file and use the issue to
 decide if it belongs.
 
-33
-00:01:49,343 --> 00:01:52,798
+32
+00:01:37,921 --> 00:01:41,494
 In the illustration it doesn't, so B
 passed the test gate but missed the
 
-34
-00:01:52,848 --> 00:01:53,606
+33
+00:01:41,494 --> 00:01:42,072
 scope gate.
 
-35
-00:01:54,273 --> 00:01:56,205
+34
+00:01:42,434 --> 00:01:43,782
 Record both observations.
 
-36
-00:01:57,647 --> 00:02:00,322
+35
+00:01:44,713 --> 00:01:48,909
 Now read the scorecard from top to
-bottom.
+bottom. Both runs have the same result
+
+36
+00:01:48,919 --> 00:01:49,590
+on the tests.
 
 37
-00:02:00,397 --> 00:02:03,147
-Both runs have the same result on the
-tests.
-
-38
-00:02:03,222 --> 00:02:06,083
+00:01:50,140 --> 00:01:53,171
 A stays inside the scope and takes four
 minutes to review.
 
-39
-00:02:06,654 --> 00:02:09,704
+38
+00:01:53,452 --> 00:01:57,842
 B has an extra edit and takes seven
-minutes.
+minutes. Keep the failed gate visible in
+
+39
+00:01:57,842 --> 00:01:58,580
+the scorecard.
 
 40
-00:02:09,779 --> 00:02:12,504
-Keep the failed gate visible in the
-scorecard.
-
-41
-00:02:12,554 --> 00:02:16,504
+00:01:58,860 --> 00:02:03,014
 The separate rows explain why the review
 effort changed and give you a traceable
 
-42
-00:02:16,554 --> 00:02:17,205
+41
+00:02:03,014 --> 00:02:03,601
 conclusion.
 
-43
-00:02:18,706 --> 00:02:23,471
+42
+00:02:04,588 --> 00:02:08,644
 Write the conclusion with the task,
 commit, and two configurations attached.
 
-44
-00:02:23,546 --> 00:02:27,721
+43
+00:02:09,004 --> 00:02:13,140
 In this worked example, A produced the
 in-scope fix and required less review
 
-45
-00:02:27,771 --> 00:02:28,181
+44
+00:02:13,150 --> 00:02:13,581
 time.
 
-46
-00:02:28,805 --> 00:02:32,780
+45
+00:02:13,921 --> 00:02:17,727
 A team default needs more observations,
 so repeat the test on another
 
-47
-00:02:32,830 --> 00:02:34,580
+46
+00:02:17,727 --> 00:02:18,705
 representative task.
 
-48
-00:02:34,655 --> 00:02:37,505
+47
+00:02:19,086 --> 00:02:21,332
 If the pattern changes, record where it
 changes.
 
-49
-00:02:38,139 --> 00:02:42,089
+48
+00:02:21,633 --> 00:02:25,641
 That gives reviewers a useful decision
 rule based on the work they actually
 
-50
-00:02:42,164 --> 00:02:42,525
+49
+00:02:25,641 --> 00:02:26,037
 see.

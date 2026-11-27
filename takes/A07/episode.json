@@ -28,42 +28,42 @@
       "narration": "You are deciding which of two approved agent setups creates a more reviewable change. Give that decision a clear question: what happens when each setup fixes the same zero-quantity defect? We'll keep the task and tests fixed, record the environment, and compare what a reviewer actually inherits. The numbers you see are synthetic and explain how to read the evidence.",
       "focus": "Compare review effort after correctness and scope",
       "action": "Write a question the evaluation can answer.",
-      "durationFrames": 563,
-      "duration": 23.458333333333332,
+      "durationFrames": 516,
+      "duration": 21.5,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.268,
+          "start": 0.255,
+          "end": 4.086,
           "text": "You are deciding which of two approved\nagent setups creates a more reviewable"
         },
         {
-          "start": 4.318,
-          "end": 5.393,
+          "start": 4.086,
+          "end": 4.471,
           "text": "change."
         },
         {
-          "start": 5.468,
-          "end": 9.643,
+          "start": 4.796,
+          "end": 8.871,
           "text": "Give that decision a clear question:\nwhat happens when each setup fixes the"
         },
         {
-          "start": 9.718,
-          "end": 11.435,
+          "start": 8.871,
+          "end": 10.588,
           "text": "same zero-quantity defect?"
         },
         {
-          "start": 12.214,
-          "end": 15.864,
+          "start": 11.214,
+          "end": 14.182,
           "text": "We'll keep the task and tests fixed,\nrecord the environment,"
         },
         {
-          "start": 15.914,
-          "end": 18.789,
+          "start": 14.533,
+          "end": 16.625,
           "text": "and compare what a reviewer actually\ninherits."
         },
         {
-          "start": 18.839,
-          "end": 22.385,
+          "start": 17.111,
+          "end": 20.716,
           "text": "The numbers you see are synthetic and\nexplain how to read the evidence."
         }
       ]
@@ -79,42 +79,42 @@
       "narration": "Use two authorized checkouts in the G C P workspace. In each terminal, confirm the same starting commit and a clean working tree. That keeps the first run's edits out of the second run. Put the same issue, source files, and tests in scope. If a checkout already has extra changes, reset the experiment by opening a clean training checkout.",
       "focus": "Both sessions start clean at 27e4ab1",
       "action": "Check the commit and status in each training checkout.",
-      "durationFrames": 551,
-      "duration": 22.958333333333332,
+      "durationFrames": 476,
+      "duration": 19.833333333333332,
       "cues": [
         {
-          "start": 0.414,
-          "end": 4.214,
+          "start": 0.295,
+          "end": 3.394,
           "text": "Use two authorized checkouts in the G C\nP workspace."
         },
         {
-          "start": 4.289,
-          "end": 8.064,
+          "start": 3.905,
+          "end": 7.4,
           "text": "In each terminal, confirm the same\nstarting commit and a clean working"
         },
         {
-          "start": 8.114,
-          "end": 8.469,
+          "start": 7.4,
+          "end": 7.696,
           "text": "tree."
         },
         {
-          "start": 9.072,
-          "end": 12.222,
+          "start": 8.017,
+          "end": 10.392,
           "text": "That keeps the first run's edits out of\nthe second run."
         },
         {
-          "start": 12.272,
-          "end": 16.072,
+          "start": 10.673,
+          "end": 13.395,
           "text": "Put the same issue, source files, and\ntests in scope."
         },
         {
-          "start": 16.147,
-          "end": 20.797,
+          "start": 13.756,
+          "end": 18.224,
           "text": "If a checkout already has extra changes,\nreset the experiment by opening a clean"
         },
         {
-          "start": 20.847,
-          "end": 21.885,
+          "start": 18.235,
+          "end": 19.128,
           "text": "training checkout."
         }
       ]
@@ -130,37 +130,37 @@
       "narration": "Send the same task to both sessions and capture the settings that matter: client version, resolved model, provider, permissions, and context. If the clients can use the same approved model and configuration, that helps isolate a client difference. When the models differ, your result describes both complete setups. Write that down now, before the outcome tempts you to overinterpret it.",
       "focus": "The prompt and starting evidence match",
       "action": "Give both sessions the same task and requirements.",
-      "durationFrames": 599,
-      "duration": 24.958333333333332,
+      "durationFrames": 549,
+      "duration": 22.875,
       "cues": [
         {
-          "start": 0.439,
-          "end": 4.389,
+          "start": 0.275,
+          "end": 3.93,
           "text": "Send the same task to both sessions and\ncapture the settings that matter:"
         },
         {
-          "start": 4.464,
-          "end": 8.698,
+          "start": 4.281,
+          "end": 8.898,
           "text": "client version, resolved model,\nprovider, permissions, and context."
         },
         {
-          "start": 9.322,
-          "end": 13.022,
+          "start": 9.258,
+          "end": 12.472,
           "text": "If the clients can use the same approved\nmodel and configuration,"
         },
         {
-          "start": 13.072,
-          "end": 15.647,
+          "start": 12.762,
+          "end": 14.695,
           "text": "that helps isolate a client difference."
         },
         {
-          "start": 15.697,
-          "end": 19.575,
+          "start": 15.095,
+          "end": 18.342,
           "text": "When the models differ, your result\ndescribes both complete setups."
         },
         {
-          "start": 20.209,
-          "end": 23.908,
+          "start": 18.853,
+          "end": 22.268,
           "text": "Write that down now, before the outcome\ntempts you to overinterpret it."
         }
       ]
@@ -176,43 +176,43 @@
       "narration": "Set the rubric before opening the diffs. First, require the four reference tests to pass. Second, require the two approved files only. Then measure how often you redirect the session and how long a reviewer needs to reach a verified result. The first two fields are gates. The other fields quantify how much human work each complete setup leaves.",
       "focus": "The required criteria are fixed before the runs",
       "action": "Agree on the two gates and the review measurements.",
-      "durationFrames": 550,
-      "duration": 22.916666666666668,
+      "durationFrames": 491,
+      "duration": 20.458333333333332,
       "cues": [
         {
-          "start": 0.439,
-          "end": 2.739,
-          "text": "Set the rubric before opening the diffs."
+          "start": 0.295,
+          "end": 2.915,
+          "text": "Set the rubric before opening the diffs.\nFirst,"
         },
         {
-          "start": 2.839,
-          "end": 5.954,
-          "text": "First, require the four reference tests\nto pass."
+          "start": 3.126,
+          "end": 5.063,
+          "text": "require the four reference tests to\npass."
         },
         {
-          "start": 6.054,
-          "end": 8.674,
+          "start": 5.574,
+          "end": 7.732,
           "text": "Second, require the two approved files\nonly."
         },
         {
-          "start": 9.298,
-          "end": 13.498,
+          "start": 8.073,
+          "end": 12.536,
           "text": "Then measure how often you redirect the\nsession and how long a reviewer needs to"
         },
         {
-          "start": 13.548,
-          "end": 15.498,
+          "start": 12.536,
+          "end": 13.865,
           "text": "reach a verified result."
         },
         {
-          "start": 15.548,
-          "end": 17.161,
-          "text": "The first two fields are gates."
+          "start": 14.377,
+          "end": 17.976,
+          "text": "The first two fields are gates. The\nother fields quantify how much human"
         },
         {
-          "start": 17.77,
-          "end": 21.819,
-          "text": "The other fields quantify how much human\nwork each complete setup leaves."
+          "start": 17.976,
+          "end": 19.749,
+          "text": "work each complete setup leaves."
         }
       ]
     },
@@ -227,47 +227,42 @@
       "narration": "For each run, read the diff and run the reference suite yourself in the approved workspace. Both synthetic runs pass all four tests. Run B changes one extra file. Open that file and use the issue to decide if it belongs. In the illustration it doesn't, so B passed the test gate but missed the scope gate. Record both observations.",
       "focus": "Observe the two diffs and run the reference suite",
       "action": "Check changed files and tests in both checkouts.",
-      "durationFrames": 550,
-      "duration": 22.916666666666668,
+      "durationFrames": 475,
+      "duration": 19.791666666666668,
       "cues": [
         {
-          "start": 0.414,
-          "end": 4.194,
+          "start": 0.275,
+          "end": 4.396,
           "text": "For each run, read the diff and run the\nreference suite yourself in the approved"
         },
         {
-          "start": 4.244,
-          "end": 5.419,
+          "start": 4.396,
+          "end": 5.003,
           "text": "workspace."
         },
         {
-          "start": 5.494,
-          "end": 8.023,
-          "text": "Both synthetic runs pass all four tests."
+          "start": 5.389,
+          "end": 9.444,
+          "text": "Both synthetic runs pass all four tests.\nRun B changes one extra file."
         },
         {
-          "start": 8.651,
-          "end": 11.201,
-          "text": "Run B changes one extra file."
-        },
-        {
-          "start": 11.276,
-          "end": 14.976,
+          "start": 9.824,
+          "end": 12.783,
           "text": "Open that file and use the issue to\ndecide if it belongs."
         },
         {
-          "start": 15.051,
-          "end": 18.506,
+          "start": 13.254,
+          "end": 16.827,
           "text": "In the illustration it doesn't, so B\npassed the test gate but missed the"
         },
         {
-          "start": 18.556,
-          "end": 19.314,
+          "start": 16.827,
+          "end": 17.405,
           "text": "scope gate."
         },
         {
-          "start": 19.981,
-          "end": 21.913,
+          "start": 17.767,
+          "end": 19.115,
           "text": "Record both observations."
         }
       ]
@@ -283,42 +278,42 @@
       "narration": "Now read the scorecard from top to bottom. Both runs have the same result on the tests. A stays inside the scope and takes four minutes to review. B has an extra edit and takes seven minutes. Keep the failed gate visible in the scorecard. The separate rows explain why the review effort changed and give you a traceable conclusion.",
       "focus": "Both pass tests; only A passes the scope gate",
       "action": "Compare the evidence row by row.",
-      "durationFrames": 506,
-      "duration": 21.083333333333332,
+      "durationFrames": 477,
+      "duration": 19.875,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.114,
-          "text": "Now read the scorecard from top to\nbottom."
+          "start": 0.255,
+          "end": 4.451,
+          "text": "Now read the scorecard from top to\nbottom. Both runs have the same result"
         },
         {
-          "start": 3.189,
-          "end": 5.939,
-          "text": "Both runs have the same result on the\ntests."
+          "start": 4.461,
+          "end": 5.132,
+          "text": "on the tests."
         },
         {
-          "start": 6.014,
-          "end": 8.875,
+          "start": 5.682,
+          "end": 8.713,
           "text": "A stays inside the scope and takes four\nminutes to review."
         },
         {
-          "start": 9.446,
-          "end": 12.496,
-          "text": "B has an extra edit and takes seven\nminutes."
+          "start": 8.994,
+          "end": 13.384,
+          "text": "B has an extra edit and takes seven\nminutes. Keep the failed gate visible in"
         },
         {
-          "start": 12.571,
-          "end": 15.296,
-          "text": "Keep the failed gate visible in the\nscorecard."
+          "start": 13.384,
+          "end": 14.122,
+          "text": "the scorecard."
         },
         {
-          "start": 15.346,
-          "end": 19.296,
+          "start": 14.402,
+          "end": 18.556,
           "text": "The separate rows explain why the review\neffort changed and give you a traceable"
         },
         {
-          "start": 19.346,
-          "end": 19.997,
+          "start": 18.556,
+          "end": 19.143,
           "text": "conclusion."
         }
       ]
@@ -334,47 +329,47 @@
       "narration": "Write the conclusion with the task, commit, and two configurations attached. In this worked example, A produced the in-scope fix and required less review time. A team default needs more observations, so repeat the test on another representative task. If the pattern changes, record where it changes. That gives reviewers a useful decision rule based on the work they actually see.",
       "focus": "The conclusion names the task and both settings",
       "action": "Save the comparisons, then choose another test task.",
-      "durationFrames": 617,
-      "duration": 25.708333333333332,
+      "durationFrames": 542,
+      "duration": 22.583333333333332,
       "cues": [
         {
-          "start": 0.414,
-          "end": 5.179,
+          "start": 0.255,
+          "end": 4.311,
           "text": "Write the conclusion with the task,\ncommit, and two configurations attached."
         },
         {
-          "start": 5.254,
-          "end": 9.429,
+          "start": 4.671,
+          "end": 8.807,
           "text": "In this worked example, A produced the\nin-scope fix and required less review"
         },
         {
-          "start": 9.479,
-          "end": 9.889,
+          "start": 8.817,
+          "end": 9.248,
           "text": "time."
         },
         {
-          "start": 10.513,
-          "end": 14.488,
+          "start": 9.588,
+          "end": 13.394,
           "text": "A team default needs more observations,\nso repeat the test on another"
         },
         {
-          "start": 14.538,
-          "end": 16.288,
+          "start": 13.394,
+          "end": 14.372,
           "text": "representative task."
         },
         {
-          "start": 16.363,
-          "end": 19.213,
+          "start": 14.753,
+          "end": 16.999,
           "text": "If the pattern changes, record where it\nchanges."
         },
         {
-          "start": 19.847,
-          "end": 23.797,
+          "start": 17.3,
+          "end": 21.308,
           "text": "That gives reviewers a useful decision\nrule based on the work they actually"
         },
         {
-          "start": 23.872,
-          "end": 24.233,
+          "start": 21.308,
+          "end": 21.704,
           "text": "see."
         }
       ]
@@ -383,6 +378,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3936,
-  "voiceBuild": "74958bd08606b0837463031cc1deff8e783eb47148e1fc14214feacd2731d9aa"
+  "durationFrames": 3526,
+  "voiceBuild": "4278110dff73f9049edebfd0f2cc704df686155f784fe4d919711f9b908ff6c9"
 }
