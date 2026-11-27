@@ -1,0 +1,388 @@
+{
+  "id": "A06",
+  "title": "RAG and Embeddings for Repository Knowledge",
+  "subtitle": "Advanced · Retrieve evidence before answering",
+  "sources": [
+    {
+      "label": "OpenAI embeddings",
+      "url": "https://developers.openai.com/api/docs/guides/embeddings"
+    },
+    {
+      "label": "OpenAI retrieval",
+      "url": "https://developers.openai.com/api/docs/guides/retrieval"
+    },
+    {
+      "label": "Microsoft Foundry RAG overview",
+      "url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "question",
+      "kind": "diagram",
+      "eyebrow": "ADVANCED · RETRIEVAL",
+      "title": "Start with a question the repository can answer",
+      "body": "The training index consists of synthetic policy documents.",
+      "code": "Can an order have quantity zero?\nReturn a source file and revision.",
+      "result": "The claim should be checkable in the approved checkout.",
+      "narration": "Suppose you ask your agent whether this service accepts zero-quantity orders. A quick answer is useful only if you can find the rule behind it. In this synthetic example, we'll trace one question through retrieval, answer it using a repository passage, then run the same question when the passage is missing. Look for the file and revision in each result.",
+      "focus": "Answer from a file and a revision",
+      "action": "Start with the exact repository question.",
+      "durationFrames": 550,
+      "duration": 22.916666666666668,
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 5.01,
+          "text": "Suppose you ask your agent whether this\nservice accepts zero-quantity orders."
+        },
+        {
+          "start": 5.085,
+          "end": 8.576,
+          "text": "A quick answer is useful only if you can\nfind the rule behind it."
+        },
+        {
+          "start": 9.214,
+          "end": 13.389,
+          "text": "In this synthetic example, we'll trace\none question through retrieval,"
+        },
+        {
+          "start": 13.464,
+          "end": 17.539,
+          "text": "answer it using a repository passage,\nthen run the same question when the"
+        },
+        {
+          "start": 17.589,
+          "end": 18.631,
+          "text": "passage is missing."
+        },
+        {
+          "start": 19.276,
+          "end": 21.827,
+          "text": "Look for the file and revision in each\nresult."
+        }
+      ]
+    },
+    {
+      "id": "input",
+      "kind": "editor",
+      "eyebrow": "RETRIEVAL · PREPARE SOURCES",
+      "title": "Index small passages with useful metadata",
+      "body": "Document fragments carry metadata to retrieval.",
+      "code": "docs/order-policy.md @ 27e4ab1\n  Quantity must be a positive integer.\ndocs/shipping-policy.md @ 27e4ab1\n  Delivery dates use the business calendar.",
+      "result": "Two synthetic documents, one order-quantity rule.",
+      "narration": "Start with two short passages from the approved training checkout. The first says that quantity must be a positive integer. The second explains shipping calendars. Keep the path and commit next to each text fragment. Those fields travel with the retrieved passage so you can still find the original rule when the answer arrives.",
+      "focus": "Each passage retains a source path and commit",
+      "action": "Inspect the two text passages before indexing.",
+      "durationFrames": 487,
+      "duration": 20.291666666666668,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 4.264,
+          "text": "Start with two short passages from the\napproved training checkout."
+        },
+        {
+          "start": 4.314,
+          "end": 7.589,
+          "text": "The first says that quantity must be a\npositive integer."
+        },
+        {
+          "start": 7.639,
+          "end": 9.792,
+          "text": "The second explains shipping calendars."
+        },
+        {
+          "start": 10.395,
+          "end": 13.52,
+          "text": "Keep the path and commit next to each\ntext fragment."
+        },
+        {
+          "start": 13.595,
+          "end": 17.22,
+          "text": "Those fields travel with the retrieved\npassage so you can still find the"
+        },
+        {
+          "start": 17.27,
+          "end": 19.197,
+          "text": "original rule when the answer arrives."
+        }
+      ]
+    },
+    {
+      "id": "embed",
+      "kind": "diagram",
+      "eyebrow": "RETRIEVAL · EMBEDDINGS",
+      "title": "Represent passages for similarity search",
+      "body": "The embedding model supplies vectors for comparison.",
+      "code": "Question → embedding model → query vector\nPassages → matching embedding model → vectors\nCompare candidates by similarity",
+      "result": "Similarity helps locate a passage. Verify the actual text.",
+      "narration": "An embedding represents text as a list of numbers. The query and the passages go through the matching embedding model so a retrieval system can compare them. The system uses similarity to rank candidate material. That ranking helps find a likely match. Open the candidate text to decide whether it answers this question, and check the metadata for its revision.",
+      "focus": "Similarity ranks candidates",
+      "action": "Follow the query and each passage into the same index.",
+      "durationFrames": 559,
+      "duration": 23.291666666666668,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 3.718,
+          "text": "An embedding represents text as a list\nof numbers."
+        },
+        {
+          "start": 3.768,
+          "end": 7.568,
+          "text": "The query and the passages go through\nthe matching embedding model so a"
+        },
+        {
+          "start": 7.618,
+          "end": 9.408,
+          "text": "retrieval system can compare them."
+        },
+        {
+          "start": 10.031,
+          "end": 13.606,
+          "text": "The system uses similarity to rank\ncandidate material."
+        },
+        {
+          "start": 13.681,
+          "end": 16.256,
+          "text": "That ranking helps find a likely match."
+        },
+        {
+          "start": 16.331,
+          "end": 20.181,
+          "text": "Open the candidate text to decide\nwhether it answers this question,"
+        },
+        {
+          "start": 20.231,
+          "end": 22.225,
+          "text": "and check the metadata for its revision."
+        }
+      ]
+    },
+    {
+      "id": "retrieve",
+      "kind": "terminal",
+      "eyebrow": "RETRIEVAL · CANDIDATES",
+      "title": "Inspect the passages selected for this question",
+      "body": "Synthetic scores illustrate the ranking.",
+      "code": "1  order-policy.md@27e4ab1      score 0.86\n   Quantity must be a positive integer.\n2  shipping-policy.md@27e4ab1   score 0.24\n   Delivery dates use the business calendar.",
+      "result": "Illustrative scores. Use the order rule as evidence.",
+      "narration": "The first candidate is the order policy. Read the highlighted sentence. Positive integer is the rule we need. The second candidate is about delivery dates, so it doesn't support either answer. The scores here are illustrative. The important check is relevance. Keep the useful passage with its path and revision, then feed it into the answer step.",
+      "focus": "The order policy addresses quantity",
+      "action": "Compare the retrieved candidates with the actual question.",
+      "durationFrames": 534,
+      "duration": 22.25,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 2.868,
+          "text": "The first candidate is the order policy."
+        },
+        {
+          "start": 2.943,
+          "end": 4.968,
+          "text": "Read the highlighted sentence."
+        },
+        {
+          "start": 5.043,
+          "end": 7.518,
+          "text": "Positive integer is the rule we need."
+        },
+        {
+          "start": 7.568,
+          "end": 9.918,
+          "text": "The second candidate is about delivery\ndates,"
+        },
+        {
+          "start": 10.058,
+          "end": 11.781,
+          "text": "so it doesn't support either answer."
+        },
+        {
+          "start": 12.405,
+          "end": 14.48,
+          "text": "The scores here are illustrative."
+        },
+        {
+          "start": 14.53,
+          "end": 16.705,
+          "text": "The important check is relevance."
+        },
+        {
+          "start": 16.78,
+          "end": 19.305,
+          "text": "Keep the useful passage with its path\nand revision,"
+        },
+        {
+          "start": 19.485,
+          "end": 21.166,
+          "text": "then feed it into the answer step."
+        }
+      ]
+    },
+    {
+      "id": "generate",
+      "kind": "editor",
+      "eyebrow": "RAG · GENERATION",
+      "title": "Ask for an answer grounded in the passage",
+      "body": "The cited positive-integer rule excludes zero.",
+      "code": "Question: Is zero an allowed order quantity?\nEvidence: docs/order-policy.md@27e4ab1\nRule: Quantity must be a positive integer.\nAnswer with the cited file and revision.",
+      "result": "Zero is invalid. See docs/order-policy.md@27e4ab1.",
+      "narration": "Now send the question with the selected passage and request a source reference. Retrieval augmented generation, often called R A G, is the pattern you just saw. The system first retrieves relevant evidence, then includes it when generating the response. The answer says zero is invalid and cites the order policy. Open that path at the stated revision and verify the sentence.",
+      "focus": "The answer cites the rule that supports it",
+      "action": "Generate from the retrieved passage and open its source.",
+      "durationFrames": 609,
+      "duration": 25.375,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 4.964,
+          "text": "Now send the question with the selected\npassage and request a source reference."
+        },
+        {
+          "start": 5.039,
+          "end": 8.749,
+          "text": "Retrieval augmented generation, often\ncalled R A G,"
+        },
+        {
+          "start": 8.799,
+          "end": 10.143,
+          "text": "is the pattern you just saw."
+        },
+        {
+          "start": 10.756,
+          "end": 13.481,
+          "text": "The system first retrieves relevant\nevidence,"
+        },
+        {
+          "start": 13.531,
+          "end": 16.431,
+          "text": "then includes it when generating the\nresponse."
+        },
+        {
+          "start": 16.481,
+          "end": 20.006,
+          "text": "The answer says zero is invalid and\ncites the order policy."
+        },
+        {
+          "start": 20.63,
+          "end": 24.291,
+          "text": "Open that path at the stated revision\nand verify the sentence."
+        }
+      ]
+    },
+    {
+      "id": "stale",
+      "kind": "decision",
+      "eyebrow": "RAG · MISSING EVIDENCE",
+      "title": "Handle a stale or missing source",
+      "body": "An insufficient-evidence response is an observable check.",
+      "code": "Retrieved source: shipping-policy.md\nQuestion: is zero quantity allowed?\nEvidence for the rule: missing",
+      "result": "The retrieved source has insufficient evidence.",
+      "narration": "Now simulate an index gap. The same query gets only the shipping policy. Read it again. There's no rule about order quantity, and the model can say that the retrieved source has insufficient evidence. In an actual repository, a stale index can produce a similar result. Confirm the revision and refresh the approved sources when your process allows it.",
+      "focus": "Shipping policy contains no quantity rule",
+      "action": "Repeat the query with the supporting passage removed.",
+      "durationFrames": 551,
+      "duration": 22.958333333333332,
+      "cues": [
+        {
+          "start": 0.443,
+          "end": 2.593,
+          "text": "Now simulate an index gap."
+        },
+        {
+          "start": 2.643,
+          "end": 5.468,
+          "text": "The same query gets only the shipping\npolicy."
+        },
+        {
+          "start": 5.543,
+          "end": 6.693,
+          "text": "Read it again."
+        },
+        {
+          "start": 6.743,
+          "end": 10.433,
+          "text": "There's no rule about order quantity,\nand the model can say that the retrieved"
+        },
+        {
+          "start": 10.508,
+          "end": 12.328,
+          "text": "source has insufficient evidence."
+        },
+        {
+          "start": 12.956,
+          "end": 17.506,
+          "text": "In an actual repository, a stale index\ncan produce a similar result."
+        },
+        {
+          "start": 17.581,
+          "end": 21.181,
+          "text": "Confirm the revision and refresh the\napproved sources when your process"
+        },
+        {
+          "start": 21.231,
+          "end": 21.882,
+          "text": "allows it."
+        }
+      ]
+    },
+    {
+      "id": "govern",
+      "kind": "decision",
+      "eyebrow": "RAG · DATA SCOPE",
+      "title": "Keep retrieval within the approved boundary",
+      "body": "Keep source authorization and freshness with the pipeline.",
+      "code": "Approved source → index → authorized retrieval\nEvidence: file path, revision, passage\nVerification: open the source in the checkout",
+      "result": "Both supported-answer and missing-source cases tested.",
+      "narration": "Before using the pattern for an actual project, check the allowed source scope and which identities can retrieve documents. Keep the path, revision, and passage visible. Test two cases: an answer supported by a verified rule, and a question whose rule is missing. Those checks let you tell whether the retrieval system is giving the model evidence it can use.",
+      "focus": "Check the index's scope and revision",
+      "action": "Verify which sources and identities the index serves.",
+      "durationFrames": 560,
+      "duration": 23.333333333333332,
+      "cues": [
+        {
+          "start": 0.368,
+          "end": 3.193,
+          "text": "Before using the pattern for an actual\nproject,"
+        },
+        {
+          "start": 3.243,
+          "end": 7.211,
+          "text": "check the allowed source scope and which\nidentities can retrieve documents."
+        },
+        {
+          "start": 7.823,
+          "end": 10.823,
+          "text": "Keep the path, revision, and passage\nvisible."
+        },
+        {
+          "start": 10.898,
+          "end": 14.573,
+          "text": "Test two cases: an answer supported by a\nverified rule,"
+        },
+        {
+          "start": 14.713,
+          "end": 16.46,
+          "text": "and a question whose rule is missing."
+        },
+        {
+          "start": 17.084,
+          "end": 20.559,
+          "text": "Those checks let you tell whether the\nretrieval system is giving the model"
+        },
+        {
+          "start": 20.609,
+          "end": 21.833,
+          "text": "evidence it can use."
+        }
+      ]
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 3850,
+  "voiceBuild": "1350f654372638e03bcc867a170d0bd98de32d2c6041a51c5b118ed1c9acd06f"
+}

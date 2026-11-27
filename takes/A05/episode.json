@@ -1,0 +1,373 @@
+{
+  "id": "A05",
+  "title": "Design a Workflow with Deterministic Checks",
+  "subtitle": "Advanced · Let evidence control the next step",
+  "sources": [
+    {
+      "label": "Anthropic on workflows and agents",
+      "url": "https://www.anthropic.com/research/building-effective-agents"
+    },
+    {
+      "label": "GitHub Actions workflows",
+      "url": "https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows"
+    },
+    {
+      "label": "GitHub CLI checks",
+      "url": "https://cli.github.com/manual/gh_pr_checks"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "flow",
+      "kind": "diagram",
+      "eyebrow": "ADVANCED · WORKFLOW",
+      "title": "Map the steps and the gates",
+      "body": "The synthetic issue starts with a known defect.",
+      "code": "Issue → review plan → prove failure\nFix → rerun tests → inspect diff → PR\n                            ↳ human review",
+      "result": "The agent may choose its approach inside scope.",
+      "narration": "Put yourself at the moment before a fix is handed off. How do you know it solves the right problem? We will use a fixed regression test and an independent human review. In this order service, the agent can choose how to inspect and edit the validator inside the planned scope. Each transition in the workflow depends on a visible result.",
+      "focus": "Two test gates and a human review checkpoint",
+      "action": "Mark which evidence controls each transition.",
+      "durationFrames": 503,
+      "duration": 20.958333333333332,
+      "cues": [
+        {
+          "start": 0.389,
+          "end": 3.539,
+          "text": "Put yourself at the moment before a fix\nis handed off."
+        },
+        {
+          "start": 3.614,
+          "end": 5.939,
+          "text": "How do you know it solves the right\nproblem?"
+        },
+        {
+          "start": 5.989,
+          "end": 9.536,
+          "text": "We will use a fixed regression test and\nan independent human review."
+        },
+        {
+          "start": 10.164,
+          "end": 13.864,
+          "text": "In this order service, the agent can\nchoose how to inspect and edit the"
+        },
+        {
+          "start": 13.914,
+          "end": 16.514,
+          "text": "validator inside the planned scope."
+        },
+        {
+          "start": 16.589,
+          "end": 19.858,
+          "text": "Each transition in the workflow depends\non a visible result."
+        }
+      ]
+    },
+    {
+      "id": "contract",
+      "kind": "editor",
+      "eyebrow": "WORKFLOW · ACCEPTANCE",
+      "title": "Turn the requirement into observable outcomes",
+      "body": "Write the expected result before changing the validator.",
+      "code": "Quantity     1      5      0      -1\nAccept?      yes    yes    no     no\n\nRule: positive integers only.",
+      "result": "The expected answers stay fixed across runs.",
+      "narration": "Read the issue and write down the expected answer for each example. One and five should be accepted. Zero and negative one should be rejected. Use the zero case for the regression test, and keep the earlier cases in the suite. These fixed inputs give us something concrete to check before and after the edit.",
+      "focus": "The zero case is the required regression",
+      "action": "Turn the issue into a table of expected results.",
+      "durationFrames": 465,
+      "duration": 19.375,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 4.293,
+          "text": "Read the issue and write down the\nexpected answer for each example."
+        },
+        {
+          "start": 4.368,
+          "end": 6.268,
+          "text": "One and five should be accepted."
+        },
+        {
+          "start": 6.368,
+          "end": 8.555,
+          "text": "Zero and negative one should be\nrejected."
+        },
+        {
+          "start": 9.192,
+          "end": 13.267,
+          "text": "Use the zero case for the regression\ntest, and keep the earlier cases in the"
+        },
+        {
+          "start": 13.342,
+          "end": 14.292,
+          "text": "suite."
+        },
+        {
+          "start": 14.367,
+          "end": 17.817,
+          "text": "These fixed inputs give us something\nconcrete to check before and after the"
+        },
+        {
+          "start": 17.867,
+          "end": 18.268,
+          "text": "edit."
+        }
+      ]
+    },
+    {
+      "id": "red",
+      "kind": "terminal",
+      "eyebrow": "WORKFLOW · EXPECTED FAIL",
+      "title": "Capture the failing case on the original code",
+      "body": "An expected failure supplies stronger evidence than an error.",
+      "code": "python -m unittest discover -s tests -v",
+      "result": "test_rejects_zero ... FAIL\nAssertion: expected False, got True",
+      "narration": "Run the suite with the regression in place and the original code still present. Pause at the failure. It's the zero-case assertion, and the validator returned true even though we expected false. An import error would tell a different story. Capture the assertion and its revision. Now we have evidence that the new test actually detects the defect.",
+      "focus": "The assertion reveals the exact defect",
+      "action": "Run the regression against the original implementation.",
+      "durationFrames": 523,
+      "duration": 21.791666666666668,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 3.793,
+          "text": "Run the suite with the regression in\nplace and the original code still"
+        },
+        {
+          "start": 3.843,
+          "end": 4.868,
+          "text": "present."
+        },
+        {
+          "start": 4.943,
+          "end": 6.418,
+          "text": "Pause at the failure."
+        },
+        {
+          "start": 6.493,
+          "end": 10.568,
+          "text": "It's the zero-case assertion, and the\nvalidator returned true even though we"
+        },
+        {
+          "start": 10.618,
+          "end": 11.627,
+          "text": "expected false."
+        },
+        {
+          "start": 12.239,
+          "end": 14.739,
+          "text": "An import error would tell a different\nstory."
+        },
+        {
+          "start": 14.814,
+          "end": 17.139,
+          "text": "Capture the assertion and its revision."
+        },
+        {
+          "start": 17.214,
+          "end": 20.7,
+          "text": "Now we have evidence that the new test\nactually detects the defect."
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "kind": "decision",
+      "eyebrow": "WORKFLOW · GATE",
+      "title": "Define what happens after the test",
+      "body": "Separate the known initial failure from the post-fix gate.",
+      "code": "After the fix:\nTest exit code 0 + expected diff → ready for review\nAny assertion failure           → inspect and repair\nUnexpected files                → inspect scope",
+      "result": "Gate evaluation uses the current revision.",
+      "narration": "Before asking for the edit, agree on a gate. The post-fix tests must pass, and the files must fit the task. If an assertion fails, inspect it. If the diff includes an unrelated file, follow up before handing it to review. Keep the regression's expected result fixed while trying a repair, so the passing result still answers the original question.",
+      "focus": "A failed post-fix test stops the handoff",
+      "action": "Set the pass condition before applying the fix.",
+      "durationFrames": 537,
+      "duration": 22.375,
+      "cues": [
+        {
+          "start": 0.368,
+          "end": 3.118,
+          "text": "Before asking for the edit, agree on a\ngate."
+        },
+        {
+          "start": 3.168,
+          "end": 6.893,
+          "text": "The post-fix tests must pass, and the\nfiles must fit the task."
+        },
+        {
+          "start": 6.968,
+          "end": 8.939,
+          "text": "If an assertion fails, inspect it."
+        },
+        {
+          "start": 9.532,
+          "end": 14.532,
+          "text": "If the diff includes an unrelated file,\nfollow up before handing it to review."
+        },
+        {
+          "start": 14.607,
+          "end": 18.257,
+          "text": "Keep the regression's expected result\nfixed while trying a repair,"
+        },
+        {
+          "start": 18.307,
+          "end": 21.299,
+          "text": "so the passing result still answers the\noriginal question."
+        }
+      ]
+    },
+    {
+      "id": "green",
+      "kind": "terminal",
+      "eyebrow": "WORKFLOW · EXPECTED PASS",
+      "title": "Run the same test command after the fix",
+      "body": "Compare the current run with the observed failure.",
+      "code": "git diff --stat\npython -m unittest discover -s tests -v",
+      "result": "test_rejects_zero ... ok\nSynthetic run: 4 tests pass.",
+      "narration": "Run the same command again, this time on the edited revision. The zero-case test now passes, along with the three existing cases. Check the diff and save this output beside the first run. You've just shown a behavior change: the same test observed acceptance before the fix and rejection after it. The reviewer can now evaluate the implementation and scope.",
+      "focus": "The same assertion now passes",
+      "action": "Rerun exactly the same test command after the edit.",
+      "durationFrames": 554,
+      "duration": 23.083333333333332,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 4.314,
+          "text": "Run the same command again, this time on\nthe edited revision."
+        },
+        {
+          "start": 4.364,
+          "end": 8.319,
+          "text": "The zero-case test now passes, along\nwith the three existing cases."
+        },
+        {
+          "start": 8.921,
+          "end": 12.171,
+          "text": "Check the diff and save this output\nbeside the first run."
+        },
+        {
+          "start": 12.246,
+          "end": 16.621,
+          "text": "You've just shown a behavior change: the\nsame test observed acceptance before the"
+        },
+        {
+          "start": 16.696,
+          "end": 18.193,
+          "text": "fix and rejection after it."
+        },
+        {
+          "start": 18.802,
+          "end": 21.997,
+          "text": "The reviewer can now evaluate the\nimplementation and scope."
+        }
+      ]
+    },
+    {
+      "id": "ci",
+      "kind": "github",
+      "eyebrow": "WORKFLOW · GITHUB CHECKS",
+      "title": "Run independent checks on the PR",
+      "body": "Look for a check still pending on the current PR revision.",
+      "code": "gh pr checks 42",
+      "result": "Unit tests     pass\nFormat check   pass",
+      "narration": "Once the human author has opened the training pull request, use G H P R checks to see what continuous integration observed. This sample has two completed checks. In your repo, check the required set and what each result belongs to. If a required check is still pending, stay at that gate until it finishes and you can inspect the result.",
+      "focus": "Verify the required checks on PR 42",
+      "action": "Inspect the actual check statuses in the approved terminal.",
+      "durationFrames": 532,
+      "duration": 22.166666666666668,
+      "cues": [
+        {
+          "start": 0.414,
+          "end": 3.839,
+          "text": "Once the human author has opened the\ntraining pull request,"
+        },
+        {
+          "start": 3.914,
+          "end": 8.021,
+          "text": "use G H P R checks to see what\ncontinuous integration observed."
+        },
+        {
+          "start": 8.634,
+          "end": 11.134,
+          "text": "This sample has two completed checks."
+        },
+        {
+          "start": 11.209,
+          "end": 15.604,
+          "text": "In your repo, check the required set and\nwhat each result belongs to."
+        },
+        {
+          "start": 15.679,
+          "end": 19.729,
+          "text": "If a required check is still pending,\nstay at that gate until it finishes and"
+        },
+        {
+          "start": 19.779,
+          "end": 21.069,
+          "text": "you can inspect the result."
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "kind": "github",
+      "eyebrow": "WORKFLOW · HUMAN DECISION",
+      "title": "Hand off evidence to the reviewer",
+      "body": "GitHub CLI is the authorized review path for this lab.",
+      "code": "Issue #17 · diff · exact test command\nBefore: zero assertion fails as expected\nAfter: 4 pass · required checks passed",
+      "result": "Independent human review via GitHub CLI.",
+      "narration": "Now hand over the issue reference, diff, test command, both outputs, and the pull request checks. The reviewer opens the actual change and records their own decision with GitHub CLI. Give them enough to question the result: which assertion failed, what changed, and what was verified. That's the value of a deterministic checkpoint in a workflow that also requires judgment.",
+      "focus": "The author hands over evidence, the reviewer decides",
+      "action": "Send the issue, diff, and both runs for independent review.",
+      "durationFrames": 600,
+      "duration": 25.0,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 4.598,
+          "text": "Now hand over the issue reference, diff,\ntest command, both outputs,"
+        },
+        {
+          "start": 4.658,
+          "end": 6.558,
+          "text": "and the pull request checks."
+        },
+        {
+          "start": 6.633,
+          "end": 11.058,
+          "text": "The reviewer opens the actual change and\nrecords their own decision with GitHub"
+        },
+        {
+          "start": 11.133,
+          "end": 11.916,
+          "text": "CLI."
+        },
+        {
+          "start": 12.529,
+          "end": 17.054,
+          "text": "Give them enough to question the result:\nwhich assertion failed, what changed,"
+        },
+        {
+          "start": 17.134,
+          "end": 18.784,
+          "text": "and what was verified."
+        },
+        {
+          "start": 18.859,
+          "end": 22.334,
+          "text": "That's the value of a deterministic\ncheckpoint in a workflow that also"
+        },
+        {
+          "start": 22.384,
+          "end": 23.494,
+          "text": "requires judgment."
+        }
+      ]
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 3714,
+  "voiceBuild": "cb55217168f77f3a2c9a3ca61c06dade08efc0e2c5856d62b1e41f690e2a4b0f"
+}

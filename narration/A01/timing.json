@@ -1,0 +1,351 @@
+{
+  "fps": 24,
+  "voiceBuild": "70119234fa469b46f1df16870a29ef9884d45423b26e866b558fde8a5dc0d780",
+  "paceBuild": "6af02cc9a36f3068d40e33d6b04982fad0f86fbfc19d1e679a3593a1c4b54622",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 158.38,
+    "tempo": 0.94361774,
+    "outputWordsPerMinute": 146.0
+  },
+  "audioSha256": "ea7b8e6acae11808806e5775a6c9be29c4116d9126b16709a62b00415e58fda1",
+  "captionsSha256": "b6f8ffff1efc0d371746e7d2f73acca2df3f342b14ccc1511d903af276c85198",
+  "scenes": [
+    {
+      "id": "lab",
+      "scriptSha256": "21497dd645e8ad420a91a8bcdbf3fff3f6ceae6ce6b7860fbd3f0ac2f976616a",
+      "durationFrames": 589,
+      "cues": [
+        {
+          "start": 0.39,
+          "end": 3.993,
+          "text": "Before we launch either agent, look at\nthe workspace badge."
+        },
+        {
+          "start": 4.073,
+          "end": 8.546,
+          "text": "It says Corporate G C P, and the\nterminal is open in that workspace."
+        },
+        {
+          "start": 9.195,
+          "end": 12.057,
+          "text": "That's the operating boundary for this\nseries."
+        },
+        {
+          "start": 12.11,
+          "end": 15.686,
+          "text": "The repository in the demo is a\nsynthetic order service."
+        },
+        {
+          "start": 15.739,
+          "end": 20.482,
+          "text": "We'll start with a read-only task, so by\nthe end you can compare exactly what the"
+        },
+        {
+          "start": 20.535,
+          "end": 23.0,
+          "text": "agent explored with what changed on\ndisk."
+        }
+      ]
+    },
+    {
+      "id": "checkout",
+      "scriptSha256": "6a0297cfdd5138739006598392fefa6f8f3cc6e09968750d9e55dc2cd3d3ab78",
+      "durationFrames": 592,
+      "cues": [
+        {
+          "start": 0.443,
+          "end": 5.477,
+          "text": "In the terminal, run P W D, then Git\nstatus and Git rev-parse."
+        },
+        {
+          "start": 5.53,
+          "end": 7.835,
+          "text": "The path ends in training-orders."
+        },
+        {
+          "start": 7.941,
+          "end": 11.782,
+          "text": "Status displays the lab branch and no\nfile entries beneath it,"
+        },
+        {
+          "start": 11.835,
+          "end": 13.655,
+          "text": "so we have a clean starting point."
+        },
+        {
+          "start": 14.327,
+          "end": 17.559,
+          "text": "The short commit is twenty-seven E four\nA B one."
+        },
+        {
+          "start": 17.638,
+          "end": 19.97,
+          "text": "Copy the commit from your own terminal."
+        },
+        {
+          "start": 20.023,
+          "end": 22.864,
+          "text": "You can use it later to reproduce the\nsame inspection."
+        }
+      ]
+    },
+    {
+      "id": "clients",
+      "scriptSha256": "f54a651851fcd54499e7913bf9913d0842de4732a59fa7e93c7dcd028573498b",
+      "durationFrames": 587,
+      "cues": [
+        {
+          "start": 0.465,
+          "end": 3.088,
+          "text": "Now ask each client for its version."
+        },
+        {
+          "start": 3.168,
+          "end": 7.089,
+          "text": "This is much faster than guessing from\nthe menu or from a video."
+        },
+        {
+          "start": 7.168,
+          "end": 9.902,
+          "text": "Record the two values your workspace\nreports."
+        },
+        {
+          "start": 10.568,
+          "end": 14.436,
+          "text": "If one command is missing, you can\nfinish the first inspection with the"
+        },
+        {
+          "start": 14.489,
+          "end": 16.449,
+          "text": "other approved client."
+        },
+        {
+          "start": 16.529,
+          "end": 21.006,
+          "text": "Use those version numbers when you look\nup configuration, model selection,"
+        },
+        {
+          "start": 21.059,
+          "end": 22.627,
+          "text": "or skill discovery later."
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "scriptSha256": "1a1c37b4d3189b9a64e72fd971ecfff8b3c63a1ff8d8f96dda0996a1e89f495d",
+      "durationFrames": 696,
+      "cues": [
+        {
+          "start": 0.42,
+          "end": 4.5,
+          "text": "Open the existing session's model\nselector or status view."
+        },
+        {
+          "start": 4.579,
+          "end": 7.732,
+          "text": "Suppose the client shows a friendly\nmodel label."
+        },
+        {
+          "start": 7.811,
+          "end": 11.785,
+          "text": "Record the resolved identifier when the\nworkspace makes it visible,"
+        },
+        {
+          "start": 11.865,
+          "end": 14.492,
+          "text": "since the same label can point to\ndifferent versions."
+        },
+        {
+          "start": 15.164,
+          "end": 17.495,
+          "text": "Then check the configured provider."
+        },
+        {
+          "start": 17.548,
+          "end": 22.264,
+          "text": "The terminal runs in G C P, while the\nconfigured provider determines where"
+        },
+        {
+          "start": 22.317,
+          "end": 24.062,
+          "text": "model requests are processed."
+        },
+        {
+          "start": 24.73,
+          "end": 27.235,
+          "text": "Keep both facts in the session record."
+        }
+      ]
+    },
+    {
+      "id": "access",
+      "scriptSha256": "e3f8b9916cfcb1a0f8a3c70263d1514fccd0c36714e6480cb8dbdd8cdf57c308",
+      "durationFrames": 590,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 3.486,
+          "text": "Here is the effective policy for our\nexample:"
+        },
+        {
+          "start": 3.565,
+          "end": 8.016,
+          "text": "reading the training files is allowed,\nand edits or unit-test runs ask for"
+        },
+        {
+          "start": 8.069,
+          "end": 8.885,
+          "text": "confirmation."
+        },
+        {
+          "start": 9.55,
+          "end": 12.597,
+          "text": "Look up the effective policy for your\nown session."
+        },
+        {
+          "start": 12.677,
+          "end": 15.353,
+          "text": "This matters even for a simple prompt."
+        },
+        {
+          "start": 15.432,
+          "end": 17.896,
+          "text": "You can tell an agent to inspect a file,"
+        },
+        {
+          "start": 17.949,
+          "end": 21.605,
+          "text": "but a proposed command is still a\nseparate action that needs to fit the"
+        },
+        {
+          "start": 21.658,
+          "end": 22.786,
+          "text": "session's permissions."
+        }
+      ]
+    },
+    {
+      "id": "request",
+      "scriptSha256": "f68e0da1face9e30ba1470d26c996aee361059ab11ae4b0e30f3455228dd0a52",
+      "durationFrames": 566,
+      "cues": [
+        {
+          "start": 0.443,
+          "end": 5.159,
+          "text": "Ask the agent for two paths and one\nconcrete case: the quantity validator,"
+        },
+        {
+          "start": 5.371,
+          "end": 7.914,
+          "text": "its test file, and the test for zero."
+        },
+        {
+          "start": 7.994,
+          "end": 9.632,
+          "text": "Watch it inspect the checkout."
+        },
+        {
+          "start": 10.27,
+          "end": 15.198,
+          "text": "The example points to the validator in\norders slash quantity dot P Y and to"
+        },
+        {
+          "start": 15.251,
+          "end": 17.495,
+          "text": "test rejects zero in the test suite."
+        },
+        {
+          "start": 18.12,
+          "end": 21.822,
+          "text": "Those names give us a simple way to\nconfirm the answer ourselves."
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "scriptSha256": "de0c63ad31789ea5ee90528c588fa9a3739e404cede3367ccff00c909778c2bc",
+      "durationFrames": 610,
+      "cues": [
+        {
+          "start": 0.416,
+          "end": 3.437,
+          "text": "Open the reported validator and the\ntest."
+        },
+        {
+          "start": 3.516,
+          "end": 7.967,
+          "text": "Check that the test actually passes zero\nto the validator and expects a"
+        },
+        {
+          "start": 8.02,
+          "end": 8.704,
+          "text": "rejection."
+        },
+        {
+          "start": 9.365,
+          "end": 12.094,
+          "text": "Then run the branch and commit checks\nagain."
+        },
+        {
+          "start": 12.173,
+          "end": 16.174,
+          "text": "In the demonstration the branch header\nis still the only status line,"
+        },
+        {
+          "start": 16.227,
+          "end": 17.902,
+          "text": "and the commit is unchanged."
+        },
+        {
+          "start": 18.574,
+          "end": 21.621,
+          "text": "That gives us direct evidence about the\ncheckout,"
+        },
+        {
+          "start": 21.674,
+          "end": 23.629,
+          "text": "independent of the agent's summary."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "scriptSha256": "3b5caec3434ce7bc29cc46da04006950eb8b5d2758d63c5cbb7e7768df118f03",
+      "durationFrames": 593,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 5.197,
+          "text": "Finish by saving the workspace, commit,\nclient version, model, provider,"
+        },
+        {
+          "start": 5.372,
+          "end": 8.763,
+          "text": "and permissions next to the two verified\npaths."
+        },
+        {
+          "start": 8.843,
+          "end": 11.48,
+          "text": "That's the minimum useful record for the\nnext lab."
+        },
+        {
+          "start": 12.131,
+          "end": 16.29,
+          "text": "You can now start a session with a clear\nboundary, ask a small question,"
+        },
+        {
+          "start": 16.418,
+          "end": 18.511,
+          "text": "and verify the answer."
+        },
+        {
+          "start": 18.617,
+          "end": 22.732,
+          "text": "Next, we'll check how both clients pick\nup the same repository convention."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "fps": 24,
+  "voiceBuild": "74958bd08606b0837463031cc1deff8e783eb47148e1fc14214feacd2731d9aa",
+  "paceBuild": "b5a04271a0a6f6189af339b32e37fceedd665a8ef6f824af165f1adeef2deda2",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 153.66,
+    "tempo": 0.97420299,
+    "outputWordsPerMinute": 146.02
+  },
+  "audioSha256": "4b6fff049a728ddc198b990ad1c6514e19a2724f6a050957c975fc6d0931a8f4",
+  "captionsSha256": "06a090cbf2ac351f873c8f28701067cab5c253270e2d020adf5c99afe939dd1a",
+  "scenes": [
+    {
+      "id": "question",
+      "scriptSha256": "9afd3ce79791dd1c2643f9fd5fe15b97e095802ef04d33c85497ba3b0966c9f0",
+      "durationFrames": 594,
+      "cues": [
+        {
+          "start": 0.429,
+          "end": 4.381,
+          "text": "You are deciding which of two approved\nagent setups creates a more reviewable"
+        },
+        {
+          "start": 4.432,
+          "end": 5.536,
+          "text": "change."
+        },
+        {
+          "start": 5.613,
+          "end": 9.898,
+          "text": "Give that decision a clear question:\nwhat happens when each setup fixes the"
+        },
+        {
+          "start": 9.975,
+          "end": 11.738,
+          "text": "same zero-quantity defect?"
+        },
+        {
+          "start": 12.537,
+          "end": 16.284,
+          "text": "We'll keep the task and tests fixed,\nrecord the environment,"
+        },
+        {
+          "start": 16.335,
+          "end": 19.287,
+          "text": "and compare what a reviewer actually\ninherits."
+        },
+        {
+          "start": 19.338,
+          "end": 22.978,
+          "text": "The numbers you see are synthetic and\nexplain how to read the evidence."
+        }
+      ]
+    },
+    {
+      "id": "baseline",
+      "scriptSha256": "74f6bba5b257901cead3ad0a697de9ac07cfd65c60dbb266f2086ad61ca6106f",
+      "durationFrames": 581,
+      "cues": [
+        {
+          "start": 0.425,
+          "end": 4.326,
+          "text": "Use two authorized checkouts in the G C\nP workspace."
+        },
+        {
+          "start": 4.403,
+          "end": 8.278,
+          "text": "In each terminal, confirm the same\nstarting commit and a clean working"
+        },
+        {
+          "start": 8.329,
+          "end": 8.693,
+          "text": "tree."
+        },
+        {
+          "start": 9.312,
+          "end": 12.546,
+          "text": "That keeps the first run's edits out of\nthe second run."
+        },
+        {
+          "start": 12.597,
+          "end": 16.498,
+          "text": "Put the same issue, source files, and\ntests in scope."
+        },
+        {
+          "start": 16.575,
+          "end": 21.348,
+          "text": "If a checkout already has extra changes,\nreset the experiment by opening a clean"
+        },
+        {
+          "start": 21.399,
+          "end": 22.465,
+          "text": "training checkout."
+        }
+      ]
+    },
+    {
+      "id": "controls",
+      "scriptSha256": "93aef9a14cd707116f5dabf74fe28c09c965f80831f6196b6b3709f55ce27d0f",
+      "durationFrames": 630,
+      "cues": [
+        {
+          "start": 0.451,
+          "end": 4.505,
+          "text": "Send the same task to both sessions and\ncapture the settings that matter:"
+        },
+        {
+          "start": 4.582,
+          "end": 8.928,
+          "text": "client version, resolved model,\nprovider, permissions, and context."
+        },
+        {
+          "start": 9.569,
+          "end": 13.367,
+          "text": "If the clients can use the same approved\nmodel and configuration,"
+        },
+        {
+          "start": 13.418,
+          "end": 16.061,
+          "text": "that helps isolate a client difference."
+        },
+        {
+          "start": 16.113,
+          "end": 20.093,
+          "text": "When the models differ, your result\ndescribes both complete setups."
+        },
+        {
+          "start": 20.744,
+          "end": 24.541,
+          "text": "Write that down now, before the outcome\ntempts you to overinterpret it."
+        }
+      ]
+    },
+    {
+      "id": "rubric",
+      "scriptSha256": "aaf2abaf4cc013a218cb77be637bfb4dcef5b6402ed9800731a016f665333471",
+      "durationFrames": 580,
+      "cues": [
+        {
+          "start": 0.451,
+          "end": 2.812,
+          "text": "Set the rubric before opening the diffs."
+        },
+        {
+          "start": 2.914,
+          "end": 6.112,
+          "text": "First, require the four reference tests\nto pass."
+        },
+        {
+          "start": 6.214,
+          "end": 8.904,
+          "text": "Second, require the two approved files\nonly."
+        },
+        {
+          "start": 9.544,
+          "end": 13.855,
+          "text": "Then measure how often you redirect the\nsession and how long a reviewer needs to"
+        },
+        {
+          "start": 13.907,
+          "end": 15.908,
+          "text": "reach a verified result."
+        },
+        {
+          "start": 15.96,
+          "end": 17.615,
+          "text": "The first two fields are gates."
+        },
+        {
+          "start": 18.241,
+          "end": 22.397,
+          "text": "The other fields quantify how much human\nwork each complete setup leaves."
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "scriptSha256": "153475a744147183c4829014f9ee4cb0cad2c9b4656267e16e6769a8ca95e416",
+      "durationFrames": 580,
+      "cues": [
+        {
+          "start": 0.425,
+          "end": 4.305,
+          "text": "For each run, read the diff and run the\nreference suite yourself in the approved"
+        },
+        {
+          "start": 4.356,
+          "end": 5.562,
+          "text": "workspace."
+        },
+        {
+          "start": 5.639,
+          "end": 8.235,
+          "text": "Both synthetic runs pass all four tests."
+        },
+        {
+          "start": 8.88,
+          "end": 11.498,
+          "text": "Run B changes one extra file."
+        },
+        {
+          "start": 11.575,
+          "end": 15.373,
+          "text": "Open that file and use the issue to\ndecide if it belongs."
+        },
+        {
+          "start": 15.45,
+          "end": 18.996,
+          "text": "In the illustration it doesn't, so B\npassed the test gate but missed the"
+        },
+        {
+          "start": 19.047,
+          "end": 19.825,
+          "text": "scope gate."
+        },
+        {
+          "start": 20.51,
+          "end": 22.493,
+          "text": "Record both observations."
+        }
+      ]
+    },
+    {
+      "id": "compare",
+      "scriptSha256": "855d852e936c1d34eec5e3eaa142565077fa8f2d8422af6ee3304bdf63641b71",
+      "durationFrames": 535,
+      "cues": [
+        {
+          "start": 0.451,
+          "end": 3.196,
+          "text": "Now read the scorecard from top to\nbottom."
+        },
+        {
+          "start": 3.273,
+          "end": 6.096,
+          "text": "Both runs have the same result on the\ntests."
+        },
+        {
+          "start": 6.173,
+          "end": 9.11,
+          "text": "A stays inside the scope and takes four\nminutes to review."
+        },
+        {
+          "start": 9.696,
+          "end": 12.827,
+          "text": "B has an extra edit and takes seven\nminutes."
+        },
+        {
+          "start": 12.904,
+          "end": 15.701,
+          "text": "Keep the failed gate visible in the\nscorecard."
+        },
+        {
+          "start": 15.752,
+          "end": 19.807,
+          "text": "The separate rows explain why the review\neffort changed and give you a traceable"
+        },
+        {
+          "start": 19.858,
+          "end": 20.527,
+          "text": "conclusion."
+        }
+      ]
+    },
+    {
+      "id": "conclude",
+      "scriptSha256": "2c9234b582eb94d74fef22433ae740007769174165074bf5f44ec9e6084e6ca6",
+      "durationFrames": 642,
+      "cues": [
+        {
+          "start": 0.425,
+          "end": 5.316,
+          "text": "Write the conclusion with the task,\ncommit, and two configurations attached."
+        },
+        {
+          "start": 5.393,
+          "end": 9.679,
+          "text": "In this worked example, A produced the\nin-scope fix and required less review"
+        },
+        {
+          "start": 9.73,
+          "end": 10.151,
+          "text": "time."
+        },
+        {
+          "start": 10.791,
+          "end": 14.872,
+          "text": "A team default needs more observations,\nso repeat the test on another"
+        },
+        {
+          "start": 14.923,
+          "end": 16.719,
+          "text": "representative task."
+        },
+        {
+          "start": 16.796,
+          "end": 19.722,
+          "text": "If the pattern changes, record where it\nchanges."
+        },
+        {
+          "start": 20.373,
+          "end": 24.427,
+          "text": "That gives reviewers a useful decision\nrule based on the work they actually"
+        },
+        {
+          "start": 24.504,
+          "end": 24.875,
+          "text": "see."
+        }
+      ]
+    }
+  ]
+}

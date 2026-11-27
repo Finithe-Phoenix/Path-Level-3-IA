@@ -1,0 +1,221 @@
+1
+00:00:00,439 --> 00:00:04,689
+Suppose your agent needs the acceptance
+criteria from a training issue.
+
+2
+00:00:04,764 --> 00:00:06,814
+How does that issue get into the
+session?
+
+3
+00:00:06,899 --> 00:00:07,882
+Follow the arrows.
+
+4
+00:00:08,495 --> 00:00:11,070
+The client connects to an M C P server,
+
+5
+00:00:11,120 --> 00:00:13,995
+and the server offers one read-only
+tool.
+
+6
+00:00:14,045 --> 00:00:18,065
+When the tool is called, it reads a
+synthetic issue fixture and sends a
+
+7
+00:00:18,115 --> 00:00:18,917
+result back.
+
+8
+00:00:19,573 --> 00:00:21,954
+Let's check the contract before calling
+it.
+
+9
+00:00:23,376 --> 00:00:25,726
+Open the approved integration record.
+
+10
+00:00:25,801 --> 00:00:29,956
+It names a server, training issues, and
+a tool, get training issue.
+
+11
+00:00:30,006 --> 00:00:33,214
+The tool takes a number and can read
+orders issues from the fixture.
+
+12
+00:00:33,852 --> 00:00:37,002
+Look at the operation and the data scope
+together.
+
+13
+00:00:37,102 --> 00:00:40,377
+If the workspace owner has provided the
+lab as a recording,
+
+14
+00:00:40,427 --> 00:00:44,037
+the same record tells you which action
+the captured result represents.
+
+15
+00:00:45,564 --> 00:00:48,489
+Next, inspect how the approved client
+connects.
+
+16
+00:00:48,539 --> 00:00:52,789
+The real screen depends on whether
+you're in Claude Code or OpenCode and on
+
+17
+00:00:52,814 --> 00:00:53,936
+the installed build.
+
+18
+00:00:54,595 --> 00:00:59,320
+Find the configured server identity and
+scope where the workspace exposes them.
+
+19
+00:00:59,370 --> 00:01:01,620
+The values on this screen are fixtures.
+
+20
+00:01:01,695 --> 00:01:05,120
+Use the approved connection as
+configured, and keep the lab on this
+
+21
+00:01:05,170 --> 00:01:06,657
+synthetic data boundary.
+
+22
+00:01:08,126 --> 00:01:11,826
+Ask for issue seventeen and its
+acceptance criteria.
+
+23
+00:01:11,901 --> 00:01:15,701
+In this example, the client proposes get
+training issue with issue number
+
+24
+00:01:15,751 --> 00:01:16,433
+seventeen.
+
+25
+00:01:17,036 --> 00:01:19,086
+Check the operation and the number.
+
+26
+00:01:19,136 --> 00:01:22,636
+They should match the request you made,
+and the tool should be approved for that
+
+27
+00:01:22,686 --> 00:01:23,786
+input.
+
+28
+00:01:23,861 --> 00:01:27,361
+This is the evidence you want before
+responding to any confirmation prompt
+
+29
+00:01:27,436 --> 00:01:28,825
+shown by your workspace.
+
+30
+00:01:30,264 --> 00:01:32,539
+The tool returns two requirements.
+
+31
+00:01:32,614 --> 00:01:34,714
+Positive integers are accepted.
+
+32
+00:01:34,814 --> 00:01:37,639
+Zero and negative integers are rejected.
+
+33
+00:01:37,714 --> 00:01:40,819
+Now look at the agent's summary and
+check that it carries both.
+
+34
+00:01:41,443 --> 00:01:46,243
+If it only says to reject zero, the
+negative case was lost in the summary.
+
+35
+00:01:46,318 --> 00:01:50,243
+Correct the summary against the actual
+issue text so the next stage can use
+
+36
+00:01:50,293 --> 00:01:51,888
+both acceptance criteria.
+
+37
+00:01:53,418 --> 00:01:57,743
+Imagine the next proposed action is to
+post the summary to a pull request.
+
+38
+00:01:57,818 --> 00:01:59,768
+Catch that change in scope.
+
+39
+00:01:59,843 --> 00:02:03,347
+Reading issue seventeen and writing a
+comment are different operations.
+
+40
+00:02:03,981 --> 00:02:06,941
+For this lab, save the summary in the
+session.
+
+41
+00:02:07,016 --> 00:02:10,816
+In the actual review workflow, the
+authorized author or reviewer decides
+
+42
+00:02:10,866 --> 00:02:14,421
+what to post using their own account and
+GitHub CLI.
+
+43
+00:02:15,935 --> 00:02:19,850
+Finish with a small record: the approved
+server, the tool and number,
+
+44
+00:02:20,025 --> 00:02:22,375
+and the two criteria you verified.
+
+45
+00:02:22,450 --> 00:02:25,795
+A teammate should see exactly what was
+read and what matched the source.
+
+46
+00:02:26,419 --> 00:02:29,694
+That is the simplest useful M C P
+workflow:
+
+47
+00:02:29,769 --> 00:02:33,194
+one authorized tool call that brings
+evidence into the task,
+
+48
+00:02:33,244 --> 00:02:35,008
+with a boundary that you can explain.

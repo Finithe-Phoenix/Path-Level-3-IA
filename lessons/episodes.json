@@ -1,0 +1,785 @@
+[
+  {
+    "id": "A01",
+    "title": "Start an Agent Session in GCP",
+    "subtitle": "Advanced · Claude Code and OpenCode",
+    "sources": [
+      {
+        "label": "Claude Code settings",
+        "url": "https://code.claude.com/docs/en/settings"
+      },
+      {
+        "label": "Claude Code model configuration",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "label": "OpenCode providers",
+        "url": "https://opencode.ai/docs/providers/"
+      },
+      {
+        "label": "OpenCode permissions",
+        "url": "https://opencode.ai/docs/permissions/"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "lab",
+        "kind": "diagram",
+        "eyebrow": "ADVANCED · GCP",
+        "title": "Place the terminal in GCP",
+        "body": "Establish the workspace before running a client.",
+        "code": "Corporate GCP workspace\nTraining checkout: /work/training-orders\nClients: Claude Code and OpenCode",
+        "result": "Synthetic workspace · example directory",
+        "narration": "Before we launch either agent, look at the workspace badge. It says Corporate G C P, and the terminal is open in that workspace. That's the operating boundary for this series. The repository in the demo is a synthetic order service. We'll start with a read-only task, so by the end you can compare exactly what the agent explored with what changed on disk.",
+        "focus": "Workspace badge: Corporate GCP",
+        "action": "Open the approved GCP workspace."
+      },
+      {
+        "id": "checkout",
+        "kind": "terminal",
+        "eyebrow": "WORKSPACE · REPOSITORY",
+        "title": "Check the working directory",
+        "body": "The next three commands establish the starting state.",
+        "code": "pwd\ngit status --short --branch\ngit rev-parse --short HEAD",
+        "result": "/work/training-orders\n## lab/a01\n27e4ab1",
+        "narration": "In the terminal, run P W D, then Git status and Git rev-parse. The path ends in training-orders. Status displays the lab branch and no file entries beneath it, so we have a clean starting point. The short commit is twenty-seven E four A B one. Copy the commit from your own terminal. You can use it later to reproduce the same inspection.",
+        "focus": "Clean branch lab/a01 at 27e4ab1",
+        "action": "Check the directory, status, and commit."
+      },
+      {
+        "id": "clients",
+        "kind": "terminal",
+        "eyebrow": "WORKSPACE · TOOLS",
+        "title": "Identify the installed clients",
+        "body": "The installed build determines which controls you can check.",
+        "code": "claude --version\nopencode --version",
+        "result": "Claude Code version: copy from terminal\nOpenCode version: copy from terminal",
+        "narration": "Now ask each client for its version. This is much faster than guessing from the menu or from a video. Record the two values your workspace reports. If one command is missing, you can finish the first inspection with the other approved client. Use those version numbers when you look up configuration, model selection, or skill discovery later.",
+        "focus": "Two client versions belong in the record",
+        "action": "Run both approved version commands."
+      },
+      {
+        "id": "model",
+        "kind": "decision",
+        "eyebrow": "SESSION · MODEL",
+        "title": "Record the resolved model",
+        "body": "Record the resolved identifier where the client displays it.",
+        "code": "Client: Claude Code or OpenCode\nResolved model: from authorized session\nProvider: from approved workspace settings\nRuntime: corporate GCP workspace",
+        "result": "Lab record fields · use your workspace values",
+        "narration": "Open the existing session's model selector or status view. Suppose the client shows a friendly model label. Record the resolved identifier when the workspace makes it visible, since the same label can point to different versions. Then check the configured provider. The terminal runs in G C P, while the configured provider determines where model requests are processed. Keep both facts in the session record.",
+        "focus": "A client, a model, and a provider are separate",
+        "action": "Read the session's active model and provider."
+      },
+      {
+        "id": "access",
+        "kind": "decision",
+        "eyebrow": "SESSION · PERMISSIONS",
+        "title": "Confirm what the session may do",
+        "body": "The listed grants belong to the synthetic lab.",
+        "code": "Read training files       allowed\nEdit the training branch  ask first\nRun unit tests            ask first\nExternal integrations     unavailable",
+        "result": "First task scope: inspect the checkout",
+        "narration": "Here is the effective policy for our example: reading the training files is allowed, and edits or unit-test runs ask for confirmation. Look up the effective policy for your own session. This matters even for a simple prompt. You can tell an agent to inspect a file, but a proposed command is still a separate action that needs to fit the session's permissions.",
+        "focus": "Read allowed; edits and tests ask first",
+        "action": "Open the effective session permissions."
+      },
+      {
+        "id": "request",
+        "kind": "editor",
+        "eyebrow": "SESSION · FIRST REQUEST",
+        "title": "Begin with a read-only task",
+        "body": "Use specific evidence the learner can open independently.",
+        "code": "Find the order quantity validator and its unit tests.\nPoint to the zero-quantity case with its file path.\nUse read-only inspection for this request.",
+        "result": "orders/quantity.py · is_valid_quantity\ntests/test_quantity.py · test_rejects_zero",
+        "narration": "Ask the agent for two paths and one concrete case: the quantity validator, its test file, and the test for zero. Watch it inspect the checkout. The example points to the validator in orders slash quantity dot P Y and to test rejects zero in the test suite. Those names give us a simple way to confirm the answer ourselves.",
+        "focus": "Find the validator and its zero-case test",
+        "action": "Send the inspection request in one approved client."
+      },
+      {
+        "id": "verify",
+        "kind": "terminal",
+        "eyebrow": "SESSION · VERIFY",
+        "title": "Verify the paths and starting state",
+        "body": "The no-edit claim has a visible check.",
+        "code": "git status --short --branch\ngit rev-parse --short HEAD",
+        "result": "## lab/a01\n27e4ab1",
+        "narration": "Open the reported validator and the test. Check that the test actually passes zero to the validator and expects a rejection. Then run the branch and commit checks again. In the demonstration the branch header is still the only status line, and the commit is unchanged. That gives us direct evidence about the checkout, independent of the agent's summary.",
+        "focus": "The commit matches and the file list is empty",
+        "action": "Open the two paths and rerun Git status."
+      },
+      {
+        "id": "close",
+        "kind": "diagram",
+        "eyebrow": "SESSION · HANDOFF",
+        "title": "Save a short session record",
+        "body": "Keep enough information for another teammate to repeat it.",
+        "code": "Workspace · branch · commit\nClient version · resolved model · provider\nPermission scope · inspected file paths",
+        "result": "Lab complete: two paths verified, clean checkout",
+        "narration": "Finish by saving the workspace, commit, client version, model, provider, and permissions next to the two verified paths. That's the minimum useful record for the next lab. You can now start a session with a clear boundary, ask a small question, and verify the answer. Next, we'll check how both clients pick up the same repository convention.",
+        "focus": "The next session begins with a reproducible record",
+        "action": "Save the verified paths with the session details."
+      }
+    ]
+  },
+  {
+    "id": "A02",
+    "title": "Version Instructions and Skills Across Tools",
+    "subtitle": "Advanced · One repository, two agent clients",
+    "sources": [
+      {
+        "label": "Claude Code memory and instructions",
+        "url": "https://code.claude.com/docs/en/memory"
+      },
+      {
+        "label": "Claude Code skills",
+        "url": "https://code.claude.com/docs/en/skills"
+      },
+      {
+        "label": "OpenCode instructions",
+        "url": "https://opencode.ai/docs/instructions/"
+      },
+      {
+        "label": "OpenCode skills",
+        "url": "https://opencode.ai/docs/skills/"
+      },
+      {
+        "label": "Agent Skills specification",
+        "url": "https://agentskills.io/specification"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "example",
+        "kind": "github",
+        "eyebrow": "ADVANCED · INSTRUCTIONS",
+        "title": "Start with a convention you can test",
+        "body": "Both approved GCP clients start from the same training checkout.",
+        "code": "After a quantity-validator edit, record:\n1. Exact test command\n2. Test outcome\n3. Files inspected",
+        "result": "Synthetic order service · evidence convention",
+        "narration": "Imagine a reviewer opens a training pull request and sees only the words 'tests passed.' Which tests, and on what files? We'll give both agent clients a convention that answers those questions. Whenever the quantity validator changes, the evidence should name the exact test command, the outcome, and the files checked. Those three fields give us a clear pass condition for this exercise.",
+        "focus": "Three evidence fields reviewers can check",
+        "action": "Choose a convention with observable output."
+      },
+      {
+        "id": "persistent",
+        "kind": "editor",
+        "eyebrow": "REPOSITORY · INSTRUCTIONS",
+        "title": "Place persistent guidance in the repository",
+        "body": "Compare the shared convention and its actual load path.",
+        "code": "CLAUDE.md       → project guidance in Claude Code\nAGENTS.md       → project guidance in OpenCode\n\nTest: python -m unittest discover -s tests -v",
+        "result": "Confirm the actual load path for your installed builds.",
+        "narration": "Open the project instructions for each client. In this lab, Claude Code reads the convention through Claude dot M D, and OpenCode reads it through Agents dot M D. The files repeat the same short requirement. Your installed versions and workspace settings determine which project guidance is loaded, so compare the actual paths before assuming that both sessions received the convention.",
+        "focus": "The test convention lives with the repository",
+        "action": "Open the effective project instruction in each client."
+      },
+      {
+        "id": "skill",
+        "kind": "editor",
+        "eyebrow": "REPOSITORY · SKILL",
+        "title": "Put the procedure in a skill",
+        "body": "The skill packages a procedure for training PR evidence.",
+        "code": "---\nname: training-test-evidence\ndescription: Summarize test evidence for training PRs.\n---\nRecord command, outcome, and inspected files.",
+        "result": "A named skill with a concrete description",
+        "narration": "Next, open Skill dot M D. The description explains when the procedure is useful: summarizing test evidence for a training pull request. The body says which fields to return and in what format. If you need a reusable evidence template, include it with the skill in a location the client supports. Keep the first version short so you can tell which part helped.",
+        "focus": "The description names a specific task",
+        "action": "Read the trigger and evidence steps in SKILL.md."
+      },
+      {
+        "id": "paths",
+        "kind": "diagram",
+        "eyebrow": "REPOSITORY · DISCOVERY",
+        "title": "Verify each configured discovery path",
+        "body": "These are example project-relative locations.",
+        "code": ".claude/skills/training-test-evidence/SKILL.md\n.opencode/skills/training-test-evidence/SKILL.md",
+        "result": "Open the loaded file or inspect the discovery record.",
+        "narration": "From the repository root, follow the skill path for each client. Here the paths start with dot Claude and dot OpenCode. The base filename is the same: Skill dot M D. Compare the file contents with what the session reports loading and confirm precedence if more than one definition exists. A matching name on disk by itself tells you where the file is, so take one more step and test the behavior.",
+        "focus": "Check both discovery paths from the repo root",
+        "action": "Locate the skill file in both client paths."
+      },
+      {
+        "id": "positive",
+        "kind": "terminal",
+        "eyebrow": "LAB · MATCHING TASK",
+        "title": "Check the skill on a relevant task",
+        "body": "Feed both sessions the same recorded test output.",
+        "code": "Summarize this training PR's validation evidence.\nUse the supplied test run and file list.",
+        "result": "Command: python -m unittest discover -s tests -v\nOutcome: 4 passed\nScope: validator and zero-boundary test",
+        "narration": "Start a fresh session in each client and provide the same recorded run. Ask for the pull request evidence summary. The example returns the command, four passing tests, and the validator and zero-boundary test as the checked scope. Confirm each item against the captured run. If the client shows the skill invocation, note that signal alongside the behavior you observed.",
+        "focus": "Output contains command, outcome, and scope",
+        "action": "Run the same matching request in each client."
+      },
+      {
+        "id": "unrelated",
+        "kind": "terminal",
+        "eyebrow": "LAB · UNRELATED TASK",
+        "title": "Try an unrelated request",
+        "body": "Check that the summary format appears only where useful.",
+        "code": "Explain how order IDs are formatted.\nGive the file path that defines the format.",
+        "result": "Expected: a concise answer with a source file.",
+        "narration": "Try a second prompt: explain how order IDs are formatted, and cite the defining file. The skill's test-evidence output would add clutter here. Look for a simple explanation and a path instead. This gives you a practical two-case test for the skill: one matching request and one unrelated request. Keep both examples when you revise the description.",
+        "focus": "An order-ID question needs a source citation",
+        "action": "Try a request outside the skill's description."
+      },
+      {
+        "id": "authority",
+        "kind": "decision",
+        "eyebrow": "LAB · PERMISSIONS",
+        "title": "Confirm the tool boundary",
+        "body": "The skill describes the procedure. Effective policy controls execution.",
+        "code": "Convention → what evidence to record\nSkill      → how to format the evidence\nPolicy     → whether the test command can run",
+        "result": "The reviewer makes the PR decision with their account.",
+        "narration": "Notice that the evidence template includes a test command. A repository file can describe that command and the skill can format its output. The workspace controls whether the client may execute it and whether approval is needed. Read the proposed command and the actual policy. The author can then hand the resulting evidence to an independent reviewer for a decision.",
+        "focus": "Command approval is a workspace control",
+        "action": "Check permission before any proposed test command."
+      },
+      {
+        "id": "review",
+        "kind": "github",
+        "eyebrow": "LAB · REVIEW",
+        "title": "Review the instructions as code",
+        "body": "The pull request records the checked behavior.",
+        "code": "git status --short\ngit diff -- CLAUDE.md AGENTS.md .claude .opencode\nMatching task: all three evidence fields\nUnrelated task: cited order-ID explanation",
+        "result": "Capture the client versions with both outcomes.",
+        "narration": "Review the persistent instruction files and the skill files in the repository diff. Include the matching and unrelated results in the pull request, along with the client versions. Someone reading that evidence should be able to reproduce both outcomes. Then one person can keep the rule aligned across tools while a separate reviewer checks what changed.",
+        "focus": "One test pair plus the versioned files",
+        "action": "Review both instruction files and both skill copies."
+      }
+    ]
+  },
+  {
+    "id": "A03",
+    "title": "Run a Multi-File Change in Stages",
+    "subtitle": "Advanced · Scoped implementation in GCP",
+    "sources": [
+      {
+        "label": "Claude Code best practices",
+        "url": "https://code.claude.com/docs/en/best-practices"
+      },
+      {
+        "label": "OpenCode agents",
+        "url": "https://opencode.ai/docs/agents/"
+      },
+      {
+        "label": "DORA on working in small batches",
+        "url": "https://dora.dev/capabilities/working-in-small-batches/"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "ticket",
+        "kind": "github",
+        "eyebrow": "ADVANCED · TRAINING ISSUE",
+        "title": "Set a narrow goal",
+        "body": "The synthetic refactor shares a rule across two callers.",
+        "code": "Issue #31 · Centralize the order quantity rule\nAccept positive integers. Reject 0 and negatives.\nPreserve current CLI and API outputs.\nScope: shared rule and its two callers.",
+        "result": "Expected change: one central validator",
+        "narration": "The CLI and API in this synthetic order service both validate quantity, and the rule is duplicated. Issue thirty-one asks us to share the validator and keep the behavior of both callers. Open the issue and point to the expected outputs before asking for edits. We want a small structural change with the same results for the same inputs.",
+        "focus": "Preserve the CLI and API behavior",
+        "action": "Read issue 31 and mark the allowed files."
+      },
+      {
+        "id": "baseline",
+        "kind": "terminal",
+        "eyebrow": "LAB · BASELINE",
+        "title": "Record the behavior before editing",
+        "body": "The baseline covers both callers and quantity boundaries.",
+        "code": "git status --short --branch\ngit rev-parse --short HEAD\npython -m unittest discover -s tests -v",
+        "result": "Synthetic baseline: 8 tests pass.",
+        "narration": "Run the existing suite first. The synthetic baseline shows eight passing tests, including normal and boundary cases around the two callers. Capture the starting commit and command with that result. This gives us a comparison point after each stage. If a boundary isn't already covered, agree on how to capture it before you ask the agent to move the rule.",
+        "focus": "Eight tests pass before any edit",
+        "action": "Check the branch and save the starting test run."
+      },
+      {
+        "id": "plan",
+        "kind": "editor",
+        "eyebrow": "GCP AGENT · PLAN",
+        "title": "Ask for one stage at a time",
+        "body": "Put a human checkpoint between the proposed edits.",
+        "code": "1. Extract the rule and migrate the CLI.\n2. Migrate the API caller after I review stage 1.\nShow the files and run the approved focused checks.",
+        "result": "Approve only the shared rule and CLI stage.",
+        "narration": "Ask the agent to map the two callers and propose one stage for each migration. The first stage extracts the rule and points the CLI at it. The second stage changes the API. Check that the agent can name the files and validation command. Then approve the first stage and leave the second stage waiting for the diff and test evidence.",
+        "focus": "Stage 1 changes the CLI; stage 2 changes the API",
+        "action": "Ask for the plan and confirm the first stage only."
+      },
+      {
+        "id": "first",
+        "kind": "terminal",
+        "eyebrow": "STAGE 1 · CHECKPOINT",
+        "title": "Inspect the first implementation",
+        "body": "Check the updated call without losing existing outputs.",
+        "code": "git status --short\ngit diff -- orders/quantity.py orders/cli.py",
+        "result": "Shared rule copied into is_valid_quantity.\nCLI now calls is_valid_quantity(value).",
+        "narration": "Look at Git status first so a newly created file is visible. In the example, the shared validator and the CLI are the only files changed. Open the validator and check the comparison, then follow the call in the CLI. The tests should still show the same behavior for quantity one, zero, and negative values. Review that evidence before the API stage.",
+        "focus": "The shared validator and CLI are the only changes",
+        "action": "Open the shared rule and CLI diff."
+      },
+      {
+        "id": "scope",
+        "kind": "decision",
+        "eyebrow": "STAGE 2 · PERMISSION",
+        "title": "Pause a change outside the issue",
+        "body": "The deployment file is unrelated to this synthetic issue.",
+        "code": "Proposed: orders/api.py       in scope\nProposed: infra/deploy.yaml   outside scope\n\nKeep the edit limited to the API call site.",
+        "result": "Decision: exclude the deployment edit.",
+        "narration": "Here's the staged handoff. The agent proposes opening the API and a deployment file. Pause on the deployment entry. The issue names an API caller and a behavior check, so there is no reason to approve that file in this step. Tell the agent which call site belongs to the scope and ask for a revised plan before it edits anything further.",
+        "focus": "infra/deploy.yaml is outside the approved scope",
+        "action": "Stop and ask for a narrower API proposal."
+      },
+      {
+        "id": "second",
+        "kind": "terminal",
+        "eyebrow": "STAGE 2 · VERIFY",
+        "title": "Recheck the whole change",
+        "body": "Compare the current result with the starting evidence.",
+        "code": "git status --short\npython -m unittest discover -s tests -v",
+        "result": "orders/quantity.py · orders/cli.py · orders/api.py\nSynthetic final result: 8 tests pass.",
+        "narration": "After the API stage, confirm the names of all three changed files and inspect the new call. Run the same test command again, on the final state. Here all eight tests still pass. Compare the observed boundary cases with the baseline and check the public outputs. The final run is the one that supports this exact diff.",
+        "focus": "Three expected files; the same eight tests pass",
+        "action": "Review status, then rerun the baseline suite."
+      },
+      {
+        "id": "handoff",
+        "kind": "github",
+        "eyebrow": "LAB · PULL REQUEST",
+        "title": "Turn the checkpoints into review evidence",
+        "body": "Link the synthetic issue and capture compatibility checks.",
+        "code": "Issue #31 · shared validator and two callers\nBaseline: 8 pass\nFinal: 8 pass\nCLI and API outcomes checked",
+        "result": "Independent reviewer verifies using GitHub CLI.",
+        "narration": "The pull request can now explain what changed, what stayed compatible, and how we checked it. Include both runs and the scope decision about the deployment file. A separate human reviewer can inspect the diff and check status using GitHub CLI from the authorized terminal. They can follow the same evidence trail without having to watch your agent session.",
+        "focus": "The reviewer can connect both test runs to the diff",
+        "action": "Prepare the PR summary with the stage evidence."
+      },
+      {
+        "id": "practice",
+        "kind": "diagram",
+        "eyebrow": "LAB · PRACTICE",
+        "title": "Repeat the pattern on another small refactor",
+        "body": "Choose your stop and approval points before editing.",
+        "code": "Baseline → plan → first caller → verify\n                     second caller → verify → PR",
+        "result": "Every checkpoint resolves one question.",
+        "narration": "For practice, find a second repeated rule in the training checkout. Decide what the first stage proves and what the second stage proves. Keep both stages small enough to explain in a sentence. If you can point to a baseline, a stop point, and a final independent check, you have a refactoring workflow you can reuse.",
+        "focus": "Each stage has one testable outcome",
+        "action": "Repeat the pattern with two small callers."
+      }
+    ]
+  },
+  {
+    "id": "A04",
+    "title": "What Is MCP? Connect One Scoped Tool",
+    "subtitle": "Advanced · An approved read-only integration",
+    "sources": [
+      {
+        "label": "MCP architecture",
+        "url": "https://modelcontextprotocol.io/docs/learn/architecture"
+      },
+      {
+        "label": "Claude Code MCP",
+        "url": "https://code.claude.com/docs/en/mcp"
+      },
+      {
+        "label": "OpenCode MCP servers",
+        "url": "https://opencode.ai/docs/mcp-servers/"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "purpose",
+        "kind": "diagram",
+        "eyebrow": "ADVANCED · MCP",
+        "title": "Trace the connection",
+        "body": "The demo labels the server and its single tool.",
+        "code": "GCP agent client → approved MCP server\n                       ↓\n               get_training_issue\n                       ↓\n               synthetic issue fixture",
+        "result": "Training integration · synthetic results",
+        "narration": "Suppose your agent needs the acceptance criteria from a training issue. How does that issue get into the session? Follow the arrows. The client connects to an M C P server, and the server offers one read-only tool. When the tool is called, it reads a synthetic issue fixture and sends a result back. Let's check the contract before calling it.",
+        "focus": "One client, one server, one read action",
+        "action": "Trace how a synthetic issue reaches the agent."
+      },
+      {
+        "id": "scope",
+        "kind": "decision",
+        "eyebrow": "INTEGRATION · SCOPE",
+        "title": "Verify the server and the available action",
+        "body": "Confirm the operation with the owner-provided policy.",
+        "code": "Server: training-issues\nTool: get_training_issue\nInput: issue number\nData: synthetic orders issues only\nOperation: read",
+        "result": "One read tool in the illustrative policy.",
+        "narration": "Open the approved integration record. It names a server, training issues, and a tool, get training issue. The tool takes a number and can read orders issues from the fixture. Look at the operation and the data scope together. If the workspace owner has provided the lab as a recording, the same record tells you which action the captured result represents.",
+        "focus": "get_training_issue reads only training issues",
+        "action": "Inspect the approved server and the tool's data scope."
+      },
+      {
+        "id": "config",
+        "kind": "editor",
+        "eyebrow": "GCP · INTEGRATION SETUP",
+        "title": "Inspect the approved configuration",
+        "body": "These fields illustrate the setup, using fictitious values.",
+        "code": "Server identity: training-issues\nEnvironment: approved GCP lab\nData scope: read:synthetic-issues\nOwner: training workspace administrator",
+        "result": "Example settings · use the approved configuration.",
+        "narration": "Next, inspect how the approved client connects. The real screen depends on whether you're in Claude Code or OpenCode and on the installed build. Find the configured server identity and scope where the workspace exposes them. The values on this screen are fixtures. Use the approved connection as configured, and keep the lab on this synthetic data boundary.",
+        "focus": "The managed identity has read scope",
+        "action": "Find the connection settings in the approved client."
+      },
+      {
+        "id": "call",
+        "kind": "terminal",
+        "eyebrow": "MCP · TOOL INVOCATION",
+        "title": "Inspect the proposed tool call",
+        "body": "A tool call makes the input visible before the result returns.",
+        "code": "Fetch training issue 17 and list its criteria.\n\nget_training_issue({\"issue_number\": 17})",
+        "result": "Proposed call: read training issue #17",
+        "narration": "Ask for issue seventeen and its acceptance criteria. In this example, the client proposes get training issue with issue number seventeen. Check the operation and the number. They should match the request you made, and the tool should be approved for that input. This is the evidence you want before responding to any confirmation prompt shown by your workspace.",
+        "focus": "The proposed argument is issue number 17",
+        "action": "Ask for the issue and inspect the read request."
+      },
+      {
+        "id": "result",
+        "kind": "editor",
+        "eyebrow": "MCP · TOOL RESULT",
+        "title": "Trace the evidence into the answer",
+        "body": "The tool result is the source for a two-part summary.",
+        "code": "Issue #17 · Reject zero order quantities\nPositive integers are accepted.\nZero and negative integers are rejected.",
+        "result": "Verified: two criteria from the issue record.",
+        "narration": "The tool returns two requirements. Positive integers are accepted. Zero and negative integers are rejected. Now look at the agent's summary and check that it carries both. If it only says to reject zero, the negative case was lost in the summary. Correct the summary against the actual issue text so the next stage can use both acceptance criteria.",
+        "focus": "Both acceptance criteria come from issue 17",
+        "action": "Compare the response with the returned issue."
+      },
+      {
+        "id": "boundary",
+        "kind": "decision",
+        "eyebrow": "MCP · BOUNDARY CHECK",
+        "title": "Verify the write boundary from policy",
+        "body": "Keep the agent within the read-only integration.",
+        "code": "Read issue #17       granted\nPost a PR comment    separate write permission\nChange issue status  separate write permission",
+        "result": "Save the evidence summary for the human author.",
+        "narration": "Imagine the next proposed action is to post the summary to a pull request. Catch that change in scope. Reading issue seventeen and writing a comment are different operations. For this lab, save the summary in the session. In the actual review workflow, the authorized author or reviewer decides what to post using their own account and GitHub CLI.",
+        "focus": "Posting a PR comment would require a different grant",
+        "action": "Check the requested operation against the verified policy."
+      },
+      {
+        "id": "record",
+        "kind": "diagram",
+        "eyebrow": "MCP · EVIDENCE",
+        "title": "Save the smallest useful audit record",
+        "body": "Retain a concise record for the next workflow step.",
+        "code": "training-issues · read only\nget_training_issue(17)\nVerified against both issue criteria",
+        "result": "Evidence: issue #17, two checked criteria",
+        "narration": "Finish with a small record: the approved server, the tool and number, and the two criteria you verified. A teammate should see exactly what was read and what matched the source. That is the simplest useful M C P workflow: one authorized tool call that brings evidence into the task, with a boundary that you can explain.",
+        "focus": "A tool input and its source make the read reproducible",
+        "action": "Record the tool, input, scope, and checked result."
+      }
+    ]
+  },
+  {
+    "id": "A05",
+    "title": "Design a Workflow with Deterministic Checks",
+    "subtitle": "Advanced · Let evidence control the next step",
+    "sources": [
+      {
+        "label": "Anthropic on workflows and agents",
+        "url": "https://www.anthropic.com/research/building-effective-agents"
+      },
+      {
+        "label": "GitHub Actions workflows",
+        "url": "https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows"
+      },
+      {
+        "label": "GitHub CLI checks",
+        "url": "https://cli.github.com/manual/gh_pr_checks"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "flow",
+        "kind": "diagram",
+        "eyebrow": "ADVANCED · WORKFLOW",
+        "title": "Map the steps and the gates",
+        "body": "The synthetic issue starts with a known defect.",
+        "code": "Issue → review plan → prove failure\nFix → rerun tests → inspect diff → PR\n                            ↳ human review",
+        "result": "The agent may choose its approach inside scope.",
+        "narration": "Put yourself at the moment before a fix is handed off. How do you know it solves the right problem? We will use a fixed regression test and an independent human review. In this order service, the agent can choose how to inspect and edit the validator inside the planned scope. Each transition in the workflow depends on a visible result.",
+        "focus": "Two test gates and a human review checkpoint",
+        "action": "Mark which evidence controls each transition."
+      },
+      {
+        "id": "contract",
+        "kind": "editor",
+        "eyebrow": "WORKFLOW · ACCEPTANCE",
+        "title": "Turn the requirement into observable outcomes",
+        "body": "Write the expected result before changing the validator.",
+        "code": "Quantity     1      5      0      -1\nAccept?      yes    yes    no     no\n\nRule: positive integers only.",
+        "result": "The expected answers stay fixed across runs.",
+        "narration": "Read the issue and write down the expected answer for each example. One and five should be accepted. Zero and negative one should be rejected. Use the zero case for the regression test, and keep the earlier cases in the suite. These fixed inputs give us something concrete to check before and after the edit.",
+        "focus": "The zero case is the required regression",
+        "action": "Turn the issue into a table of expected results."
+      },
+      {
+        "id": "red",
+        "kind": "terminal",
+        "eyebrow": "WORKFLOW · EXPECTED FAIL",
+        "title": "Capture the failing case on the original code",
+        "body": "An expected failure supplies stronger evidence than an error.",
+        "code": "python -m unittest discover -s tests -v",
+        "result": "test_rejects_zero ... FAIL\nAssertion: expected False, got True",
+        "narration": "Run the suite with the regression in place and the original code still present. Pause at the failure. It's the zero-case assertion, and the validator returned true even though we expected false. An import error would tell a different story. Capture the assertion and its revision. Now we have evidence that the new test actually detects the defect.",
+        "focus": "The assertion reveals the exact defect",
+        "action": "Run the regression against the original implementation."
+      },
+      {
+        "id": "gate",
+        "kind": "decision",
+        "eyebrow": "WORKFLOW · GATE",
+        "title": "Define what happens after the test",
+        "body": "Separate the known initial failure from the post-fix gate.",
+        "code": "After the fix:\nTest exit code 0 + expected diff → ready for review\nAny assertion failure           → inspect and repair\nUnexpected files                → inspect scope",
+        "result": "Gate evaluation uses the current revision.",
+        "narration": "Before asking for the edit, agree on a gate. The post-fix tests must pass, and the files must fit the task. If an assertion fails, inspect it. If the diff includes an unrelated file, follow up before handing it to review. Keep the regression's expected result fixed while trying a repair, so the passing result still answers the original question.",
+        "focus": "A failed post-fix test stops the handoff",
+        "action": "Set the pass condition before applying the fix."
+      },
+      {
+        "id": "green",
+        "kind": "terminal",
+        "eyebrow": "WORKFLOW · EXPECTED PASS",
+        "title": "Run the same test command after the fix",
+        "body": "Compare the current run with the observed failure.",
+        "code": "git diff --stat\npython -m unittest discover -s tests -v",
+        "result": "test_rejects_zero ... ok\nSynthetic run: 4 tests pass.",
+        "narration": "Run the same command again, this time on the edited revision. The zero-case test now passes, along with the three existing cases. Check the diff and save this output beside the first run. You've just shown a behavior change: the same test observed acceptance before the fix and rejection after it. The reviewer can now evaluate the implementation and scope.",
+        "focus": "The same assertion now passes",
+        "action": "Rerun exactly the same test command after the edit."
+      },
+      {
+        "id": "ci",
+        "kind": "github",
+        "eyebrow": "WORKFLOW · GITHUB CHECKS",
+        "title": "Run independent checks on the PR",
+        "body": "Look for a check still pending on the current PR revision.",
+        "code": "gh pr checks 42",
+        "result": "Unit tests     pass\nFormat check   pass",
+        "narration": "Once the human author has opened the training pull request, use G H P R checks to see what continuous integration observed. This sample has two completed checks. In your repo, check the required set and what each result belongs to. If a required check is still pending, stay at that gate until it finishes and you can inspect the result.",
+        "focus": "Verify the required checks on PR 42",
+        "action": "Inspect the actual check statuses in the approved terminal."
+      },
+      {
+        "id": "review",
+        "kind": "github",
+        "eyebrow": "WORKFLOW · HUMAN DECISION",
+        "title": "Hand off evidence to the reviewer",
+        "body": "GitHub CLI is the authorized review path for this lab.",
+        "code": "Issue #17 · diff · exact test command\nBefore: zero assertion fails as expected\nAfter: 4 pass · required checks passed",
+        "result": "Independent human review via GitHub CLI.",
+        "narration": "Now hand over the issue reference, diff, test command, both outputs, and the pull request checks. The reviewer opens the actual change and records their own decision with GitHub CLI. Give them enough to question the result: which assertion failed, what changed, and what was verified. That's the value of a deterministic checkpoint in a workflow that also requires judgment.",
+        "focus": "The author hands over evidence, the reviewer decides",
+        "action": "Send the issue, diff, and both runs for independent review."
+      }
+    ]
+  },
+  {
+    "id": "A06",
+    "title": "RAG and Embeddings for Repository Knowledge",
+    "subtitle": "Advanced · Retrieve evidence before answering",
+    "sources": [
+      {
+        "label": "OpenAI embeddings",
+        "url": "https://developers.openai.com/api/docs/guides/embeddings"
+      },
+      {
+        "label": "OpenAI retrieval",
+        "url": "https://developers.openai.com/api/docs/guides/retrieval"
+      },
+      {
+        "label": "Microsoft Foundry RAG overview",
+        "url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "question",
+        "kind": "diagram",
+        "eyebrow": "ADVANCED · RETRIEVAL",
+        "title": "Start with a question the repository can answer",
+        "body": "The training index consists of synthetic policy documents.",
+        "code": "Can an order have quantity zero?\nReturn a source file and revision.",
+        "result": "The claim should be checkable in the approved checkout.",
+        "narration": "Suppose you ask your agent whether this service accepts zero-quantity orders. A quick answer is useful only if you can find the rule behind it. In this synthetic example, we'll trace one question through retrieval, answer it using a repository passage, then run the same question when the passage is missing. Look for the file and revision in each result.",
+        "focus": "Answer from a file and a revision",
+        "action": "Start with the exact repository question."
+      },
+      {
+        "id": "input",
+        "kind": "editor",
+        "eyebrow": "RETRIEVAL · PREPARE SOURCES",
+        "title": "Index small passages with useful metadata",
+        "body": "Document fragments carry metadata to retrieval.",
+        "code": "docs/order-policy.md @ 27e4ab1\n  Quantity must be a positive integer.\ndocs/shipping-policy.md @ 27e4ab1\n  Delivery dates use the business calendar.",
+        "result": "Two synthetic documents, one order-quantity rule.",
+        "narration": "Start with two short passages from the approved training checkout. The first says that quantity must be a positive integer. The second explains shipping calendars. Keep the path and commit next to each text fragment. Those fields travel with the retrieved passage so you can still find the original rule when the answer arrives.",
+        "focus": "Each passage retains a source path and commit",
+        "action": "Inspect the two text passages before indexing."
+      },
+      {
+        "id": "embed",
+        "kind": "diagram",
+        "eyebrow": "RETRIEVAL · EMBEDDINGS",
+        "title": "Represent passages for similarity search",
+        "body": "The embedding model supplies vectors for comparison.",
+        "code": "Question → embedding model → query vector\nPassages → matching embedding model → vectors\nCompare candidates by similarity",
+        "result": "Similarity helps locate a passage. Verify the actual text.",
+        "narration": "An embedding represents text as a list of numbers. The query and the passages go through the matching embedding model so a retrieval system can compare them. The system uses similarity to rank candidate material. That ranking helps find a likely match. Open the candidate text to decide whether it answers this question, and check the metadata for its revision.",
+        "focus": "Similarity ranks candidates",
+        "action": "Follow the query and each passage into the same index."
+      },
+      {
+        "id": "retrieve",
+        "kind": "terminal",
+        "eyebrow": "RETRIEVAL · CANDIDATES",
+        "title": "Inspect the passages selected for this question",
+        "body": "Synthetic scores illustrate the ranking.",
+        "code": "1  order-policy.md@27e4ab1      score 0.86\n   Quantity must be a positive integer.\n2  shipping-policy.md@27e4ab1   score 0.24\n   Delivery dates use the business calendar.",
+        "result": "Illustrative scores. Use the order rule as evidence.",
+        "narration": "The first candidate is the order policy. Read the highlighted sentence. Positive integer is the rule we need. The second candidate is about delivery dates, so it doesn't support either answer. The scores here are illustrative. The important check is relevance. Keep the useful passage with its path and revision, then feed it into the answer step.",
+        "focus": "The order policy addresses quantity",
+        "action": "Compare the retrieved candidates with the actual question."
+      },
+      {
+        "id": "generate",
+        "kind": "editor",
+        "eyebrow": "RAG · GENERATION",
+        "title": "Ask for an answer grounded in the passage",
+        "body": "The cited positive-integer rule excludes zero.",
+        "code": "Question: Is zero an allowed order quantity?\nEvidence: docs/order-policy.md@27e4ab1\nRule: Quantity must be a positive integer.\nAnswer with the cited file and revision.",
+        "result": "Zero is invalid. See docs/order-policy.md@27e4ab1.",
+        "narration": "Now send the question with the selected passage and request a source reference. Retrieval augmented generation, often called R A G, is the pattern you just saw. The system first retrieves relevant evidence, then includes it when generating the response. The answer says zero is invalid and cites the order policy. Open that path at the stated revision and verify the sentence.",
+        "focus": "The answer cites the rule that supports it",
+        "action": "Generate from the retrieved passage and open its source."
+      },
+      {
+        "id": "stale",
+        "kind": "decision",
+        "eyebrow": "RAG · MISSING EVIDENCE",
+        "title": "Handle a stale or missing source",
+        "body": "An insufficient-evidence response is an observable check.",
+        "code": "Retrieved source: shipping-policy.md\nQuestion: is zero quantity allowed?\nEvidence for the rule: missing",
+        "result": "The retrieved source has insufficient evidence.",
+        "narration": "Now simulate an index gap. The same query gets only the shipping policy. Read it again. There's no rule about order quantity, and the model can say that the retrieved source has insufficient evidence. In an actual repository, a stale index can produce a similar result. Confirm the revision and refresh the approved sources when your process allows it.",
+        "focus": "Shipping policy contains no quantity rule",
+        "action": "Repeat the query with the supporting passage removed."
+      },
+      {
+        "id": "govern",
+        "kind": "decision",
+        "eyebrow": "RAG · DATA SCOPE",
+        "title": "Keep retrieval within the approved boundary",
+        "body": "Keep source authorization and freshness with the pipeline.",
+        "code": "Approved source → index → authorized retrieval\nEvidence: file path, revision, passage\nVerification: open the source in the checkout",
+        "result": "Both supported-answer and missing-source cases tested.",
+        "narration": "Before using the pattern for an actual project, check the allowed source scope and which identities can retrieve documents. Keep the path, revision, and passage visible. Test two cases: an answer supported by a verified rule, and a question whose rule is missing. Those checks let you tell whether the retrieval system is giving the model evidence it can use.",
+        "focus": "Check the index's scope and revision",
+        "action": "Verify which sources and identities the index serves."
+      }
+    ]
+  },
+  {
+    "id": "A07",
+    "title": "Evaluate Models and Agents on the Same Task",
+    "subtitle": "Advanced · Compare behavior with a repeatable lab",
+    "sources": [
+      {
+        "label": "Claude Code best practices",
+        "url": "https://code.claude.com/docs/en/best-practices"
+      },
+      {
+        "label": "OpenCode models",
+        "url": "https://opencode.ai/docs/models/"
+      },
+      {
+        "label": "DORA software delivery metrics",
+        "url": "https://dora.dev/guides/dora-metrics/"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "eyebrow": "ADVANCED · EVALUATION",
+        "title": "Ask what you are trying to learn",
+        "body": "Both platforms use an approved synthetic training task.",
+        "code": "Which setup produces a reviewable fix\nfor zero-quantity acceptance?",
+        "result": "Evaluate complete configurations on a fixed task.",
+        "narration": "You are deciding which of two approved agent setups creates a more reviewable change. Give that decision a clear question: what happens when each setup fixes the same zero-quantity defect? We'll keep the task and tests fixed, record the environment, and compare what a reviewer actually inherits. The numbers you see are synthetic and explain how to read the evidence.",
+        "focus": "Compare review effort after correctness and scope",
+        "action": "Write a question the evaluation can answer."
+      },
+      {
+        "id": "baseline",
+        "kind": "terminal",
+        "eyebrow": "EVALUATION · STARTING STATE",
+        "title": "Use the same baseline for both runs",
+        "body": "Separate checkouts keep one run from changing the other.",
+        "code": "git rev-parse --short HEAD\ngit status --short --branch",
+        "result": "Run A: 27e4ab1 · clean\nRun B: 27e4ab1 · clean",
+        "narration": "Use two authorized checkouts in the G C P workspace. In each terminal, confirm the same starting commit and a clean working tree. That keeps the first run's edits out of the second run. Put the same issue, source files, and tests in scope. If a checkout already has extra changes, reset the experiment by opening a clean training checkout.",
+        "focus": "Both sessions start clean at 27e4ab1",
+        "action": "Check the commit and status in each training checkout."
+      },
+      {
+        "id": "controls",
+        "kind": "editor",
+        "eyebrow": "EVALUATION · INPUTS",
+        "title": "Write one prompt and record each setup",
+        "body": "Record the settings that can change how a run behaves.",
+        "code": "Fix the zero-quantity case.\nEdit only the validator and its regression test.\nReturn the diff and test evidence.",
+        "result": "Log client, model ID, provider, and permissions.",
+        "narration": "Send the same task to both sessions and capture the settings that matter: client version, resolved model, provider, permissions, and context. If the clients can use the same approved model and configuration, that helps isolate a client difference. When the models differ, your result describes both complete setups. Write that down now, before the outcome tempts you to overinterpret it.",
+        "focus": "The prompt and starting evidence match",
+        "action": "Give both sessions the same task and requirements."
+      },
+      {
+        "id": "rubric",
+        "kind": "editor",
+        "eyebrow": "EVALUATION · RUBRIC",
+        "title": "Decide what counts before seeing the result",
+        "body": "A passing test has to accompany an in-scope diff.",
+        "code": "Gate 1: all 4 reference tests pass\nGate 2: validator and regression test only\nRecord: number of redirects\nRecord: reviewer time to verified result",
+        "result": "Apply the same rubric to both runs.",
+        "narration": "Set the rubric before opening the diffs. First, require the four reference tests to pass. Second, require the two approved files only. Then measure how often you redirect the session and how long a reviewer needs to reach a verified result. The first two fields are gates. The other fields quantify how much human work each complete setup leaves.",
+        "focus": "The required criteria are fixed before the runs",
+        "action": "Agree on the two gates and the review measurements."
+      },
+      {
+        "id": "run",
+        "kind": "terminal",
+        "eyebrow": "EVALUATION · OBSERVE",
+        "title": "Capture evidence instead of trusting summaries",
+        "body": "The recorded outcomes use the same reference tests.",
+        "code": "git status --short\ngit diff --stat\npython -m unittest discover -s tests -v",
+        "result": "Run A: 4 pass · 2 files\nRun B: 4 pass · 3 files",
+        "narration": "For each run, read the diff and run the reference suite yourself in the approved workspace. Both synthetic runs pass all four tests. Run B changes one extra file. Open that file and use the issue to decide if it belongs. In the illustration it doesn't, so B passed the test gate but missed the scope gate. Record both observations.",
+        "focus": "Observe the two diffs and run the reference suite",
+        "action": "Check changed files and tests in both checkouts."
+      },
+      {
+        "id": "compare",
+        "kind": "decision",
+        "eyebrow": "EVALUATION · COMPARE",
+        "title": "Compare the work a reviewer inherits",
+        "body": "These numbers illustrate the decision and review cost.",
+        "code": "                      A       B\nTests passed          4       4\nOutside-scope edits   0       1\nHuman redirects       1       2\nReviewer time         4 min   7 min",
+        "result": "Synthetic outcome: A satisfies both required gates.",
+        "narration": "Now read the scorecard from top to bottom. Both runs have the same result on the tests. A stays inside the scope and takes four minutes to review. B has an extra edit and takes seven minutes. Keep the failed gate visible in the scorecard. The separate rows explain why the review effort changed and give you a traceable conclusion.",
+        "focus": "Both pass tests; only A passes the scope gate",
+        "action": "Compare the evidence row by row."
+      },
+      {
+        "id": "conclude",
+        "kind": "diagram",
+        "eyebrow": "EVALUATION · NEXT RUN",
+        "title": "Keep the conclusion tied to the experiment",
+        "body": "Repeat with another representative change before setting a default.",
+        "code": "Save: task, commit, prompt, configurations\nSave: diffs, tests, redirects, review times\nNext: repeat on another representative task",
+        "result": "This comparison applies to this task and these settings.",
+        "narration": "Write the conclusion with the task, commit, and two configurations attached. In this worked example, A produced the in-scope fix and required less review time. A team default needs more observations, so repeat the test on another representative task. If the pattern changes, record where it changes. That gives reviewers a useful decision rule based on the work they actually see.",
+        "focus": "The conclusion names the task and both settings",
+        "action": "Save the comparisons, then choose another test task."
+      }
+    ]
+  }
+]

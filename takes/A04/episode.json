@@ -1,0 +1,378 @@
+{
+  "id": "A04",
+  "title": "What Is MCP? Connect One Scoped Tool",
+  "subtitle": "Advanced · An approved read-only integration",
+  "sources": [
+    {
+      "label": "MCP architecture",
+      "url": "https://modelcontextprotocol.io/docs/learn/architecture"
+    },
+    {
+      "label": "Claude Code MCP",
+      "url": "https://code.claude.com/docs/en/mcp"
+    },
+    {
+      "label": "OpenCode MCP servers",
+      "url": "https://opencode.ai/docs/mcp-servers/"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "purpose",
+      "kind": "diagram",
+      "eyebrow": "ADVANCED · MCP",
+      "title": "Trace the connection",
+      "body": "The demo labels the server and its single tool.",
+      "code": "GCP agent client → approved MCP server\n                       ↓\n               get_training_issue\n                       ↓\n               synthetic issue fixture",
+      "result": "Training integration · synthetic results",
+      "narration": "Suppose your agent needs the acceptance criteria from a training issue. How does that issue get into the session? Follow the arrows. The client connects to an M C P server, and the server offers one read-only tool. When the tool is called, it reads a synthetic issue fixture and sends a result back. Let's check the contract before calling it.",
+      "focus": "One client, one server, one read action",
+      "action": "Trace how a synthetic issue reaches the agent.",
+      "durationFrames": 551,
+      "duration": 22.958333333333332,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 4.689,
+          "text": "Suppose your agent needs the acceptance\ncriteria from a training issue."
+        },
+        {
+          "start": 4.764,
+          "end": 6.814,
+          "text": "How does that issue get into the\nsession?"
+        },
+        {
+          "start": 6.899,
+          "end": 7.882,
+          "text": "Follow the arrows."
+        },
+        {
+          "start": 8.495,
+          "end": 11.07,
+          "text": "The client connects to an M C P server,"
+        },
+        {
+          "start": 11.12,
+          "end": 13.995,
+          "text": "and the server offers one read-only\ntool."
+        },
+        {
+          "start": 14.045,
+          "end": 18.065,
+          "text": "When the tool is called, it reads a\nsynthetic issue fixture and sends a"
+        },
+        {
+          "start": 18.115,
+          "end": 18.917,
+          "text": "result back."
+        },
+        {
+          "start": 19.573,
+          "end": 21.954,
+          "text": "Let's check the contract before calling\nit."
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "kind": "decision",
+      "eyebrow": "INTEGRATION · SCOPE",
+      "title": "Verify the server and the available action",
+      "body": "Confirm the operation with the owner-provided policy.",
+      "code": "Server: training-issues\nTool: get_training_issue\nInput: issue number\nData: synthetic orders issues only\nOperation: read",
+      "result": "One read tool in the illustrative policy.",
+      "narration": "Open the approved integration record. It names a server, training issues, and a tool, get training issue. The tool takes a number and can read orders issues from the fixture. Look at the operation and the data scope together. If the workspace owner has provided the lab as a recording, the same record tells you which action the captured result represents.",
+      "focus": "get_training_issue reads only training issues",
+      "action": "Inspect the approved server and the tool's data scope.",
+      "durationFrames": 532,
+      "duration": 22.166666666666668,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 2.768,
+          "text": "Open the approved integration record."
+        },
+        {
+          "start": 2.843,
+          "end": 6.998,
+          "text": "It names a server, training issues, and\na tool, get training issue."
+        },
+        {
+          "start": 7.048,
+          "end": 10.256,
+          "text": "The tool takes a number and can read\norders issues from the fixture."
+        },
+        {
+          "start": 10.894,
+          "end": 14.044,
+          "text": "Look at the operation and the data scope\ntogether."
+        },
+        {
+          "start": 14.144,
+          "end": 17.419,
+          "text": "If the workspace owner has provided the\nlab as a recording,"
+        },
+        {
+          "start": 17.469,
+          "end": 21.079,
+          "text": "the same record tells you which action\nthe captured result represents."
+        }
+      ]
+    },
+    {
+      "id": "config",
+      "kind": "editor",
+      "eyebrow": "GCP · INTEGRATION SETUP",
+      "title": "Inspect the approved configuration",
+      "body": "These fields illustrate the setup, using fictitious values.",
+      "code": "Server identity: training-issues\nEnvironment: approved GCP lab\nData scope: read:synthetic-issues\nOwner: training workspace administrator",
+      "result": "Example settings · use the approved configuration.",
+      "narration": "Next, inspect how the approved client connects. The real screen depends on whether you're in Claude Code or OpenCode and on the installed build. Find the configured server identity and scope where the workspace exposes them. The values on this screen are fixtures. Use the approved connection as configured, and keep the lab on this synthetic data boundary.",
+      "focus": "The managed identity has read scope",
+      "action": "Find the connection settings in the approved client.",
+      "durationFrames": 542,
+      "duration": 22.583333333333332,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 3.364,
+          "text": "Next, inspect how the approved client\nconnects."
+        },
+        {
+          "start": 3.414,
+          "end": 7.664,
+          "text": "The real screen depends on whether\nyou're in Claude Code or OpenCode and on"
+        },
+        {
+          "start": 7.689,
+          "end": 8.811,
+          "text": "the installed build."
+        },
+        {
+          "start": 9.47,
+          "end": 14.195,
+          "text": "Find the configured server identity and\nscope where the workspace exposes them."
+        },
+        {
+          "start": 14.245,
+          "end": 16.495,
+          "text": "The values on this screen are fixtures."
+        },
+        {
+          "start": 16.57,
+          "end": 19.995,
+          "text": "Use the approved connection as\nconfigured, and keep the lab on this"
+        },
+        {
+          "start": 20.045,
+          "end": 21.532,
+          "text": "synthetic data boundary."
+        }
+      ]
+    },
+    {
+      "id": "call",
+      "kind": "terminal",
+      "eyebrow": "MCP · TOOL INVOCATION",
+      "title": "Inspect the proposed tool call",
+      "body": "A tool call makes the input visible before the result returns.",
+      "code": "Fetch training issue 17 and list its criteria.\n\nget_training_issue({\"issue_number\": 17})",
+      "result": "Proposed call: read training issue #17",
+      "narration": "Ask for issue seventeen and its acceptance criteria. In this example, the client proposes get training issue with issue number seventeen. Check the operation and the number. They should match the request you made, and the tool should be approved for that input. This is the evidence you want before responding to any confirmation prompt shown by your workspace.",
+      "focus": "The proposed argument is issue number 17",
+      "action": "Ask for the issue and inspect the read request.",
+      "durationFrames": 532,
+      "duration": 22.166666666666668,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 4.118,
+          "text": "Ask for issue seventeen and its\nacceptance criteria."
+        },
+        {
+          "start": 4.193,
+          "end": 7.993,
+          "text": "In this example, the client proposes get\ntraining issue with issue number"
+        },
+        {
+          "start": 8.043,
+          "end": 8.725,
+          "text": "seventeen."
+        },
+        {
+          "start": 9.328,
+          "end": 11.378,
+          "text": "Check the operation and the number."
+        },
+        {
+          "start": 11.428,
+          "end": 14.928,
+          "text": "They should match the request you made,\nand the tool should be approved for that"
+        },
+        {
+          "start": 14.978,
+          "end": 16.078,
+          "text": "input."
+        },
+        {
+          "start": 16.153,
+          "end": 19.653,
+          "text": "This is the evidence you want before\nresponding to any confirmation prompt"
+        },
+        {
+          "start": 19.728,
+          "end": 21.117,
+          "text": "shown by your workspace."
+        }
+      ]
+    },
+    {
+      "id": "result",
+      "kind": "editor",
+      "eyebrow": "MCP · TOOL RESULT",
+      "title": "Trace the evidence into the answer",
+      "body": "The tool result is the source for a two-part summary.",
+      "code": "Issue #17 · Reject zero order quantities\nPositive integers are accepted.\nZero and negative integers are rejected.",
+      "result": "Verified: two criteria from the issue record.",
+      "narration": "The tool returns two requirements. Positive integers are accepted. Zero and negative integers are rejected. Now look at the agent's summary and check that it carries both. If it only says to reject zero, the negative case was lost in the summary. Correct the summary against the actual issue text so the next stage can use both acceptance criteria.",
+      "focus": "Both acceptance criteria come from issue 17",
+      "action": "Compare the response with the returned issue.",
+      "durationFrames": 555,
+      "duration": 23.125,
+      "cues": [
+        {
+          "start": 0.389,
+          "end": 2.664,
+          "text": "The tool returns two requirements."
+        },
+        {
+          "start": 2.739,
+          "end": 4.839,
+          "text": "Positive integers are accepted."
+        },
+        {
+          "start": 4.939,
+          "end": 7.764,
+          "text": "Zero and negative integers are rejected."
+        },
+        {
+          "start": 7.839,
+          "end": 10.944,
+          "text": "Now look at the agent's summary and\ncheck that it carries both."
+        },
+        {
+          "start": 11.568,
+          "end": 16.368,
+          "text": "If it only says to reject zero, the\nnegative case was lost in the summary."
+        },
+        {
+          "start": 16.443,
+          "end": 20.368,
+          "text": "Correct the summary against the actual\nissue text so the next stage can use"
+        },
+        {
+          "start": 20.418,
+          "end": 22.013,
+          "text": "both acceptance criteria."
+        }
+      ]
+    },
+    {
+      "id": "boundary",
+      "kind": "decision",
+      "eyebrow": "MCP · BOUNDARY CHECK",
+      "title": "Verify the write boundary from policy",
+      "body": "Keep the agent within the read-only integration.",
+      "code": "Read issue #17       granted\nPost a PR comment    separate write permission\nChange issue status  separate write permission",
+      "result": "Save the evidence summary for the human author.",
+      "narration": "Imagine the next proposed action is to post the summary to a pull request. Catch that change in scope. Reading issue seventeen and writing a comment are different operations. For this lab, save the summary in the session. In the actual review workflow, the authorized author or reviewer decides what to post using their own account and GitHub CLI.",
+      "focus": "Posting a PR comment would require a different grant",
+      "action": "Check the requested operation against the verified policy.",
+      "durationFrames": 540,
+      "duration": 22.5,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 4.743,
+          "text": "Imagine the next proposed action is to\npost the summary to a pull request."
+        },
+        {
+          "start": 4.818,
+          "end": 6.768,
+          "text": "Catch that change in scope."
+        },
+        {
+          "start": 6.843,
+          "end": 10.347,
+          "text": "Reading issue seventeen and writing a\ncomment are different operations."
+        },
+        {
+          "start": 10.981,
+          "end": 13.941,
+          "text": "For this lab, save the summary in the\nsession."
+        },
+        {
+          "start": 14.016,
+          "end": 17.816,
+          "text": "In the actual review workflow, the\nauthorized author or reviewer decides"
+        },
+        {
+          "start": 17.866,
+          "end": 21.421,
+          "text": "what to post using their own account and\nGitHub CLI."
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "kind": "diagram",
+      "eyebrow": "MCP · EVIDENCE",
+      "title": "Save the smallest useful audit record",
+      "body": "Retain a concise record for the next workflow step.",
+      "code": "training-issues · read only\nget_training_issue(17)\nVerified against both issue criteria",
+      "result": "Evidence: issue #17, two checked criteria",
+      "narration": "Finish with a small record: the approved server, the tool and number, and the two criteria you verified. A teammate should see exactly what was read and what matched the source. That is the simplest useful M C P workflow: one authorized tool call that brings evidence into the task, with a boundary that you can explain.",
+      "focus": "A tool input and its source make the read reproducible",
+      "action": "Record the tool, input, scope, and checked result.",
+      "durationFrames": 504,
+      "duration": 21.0,
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 4.35,
+          "text": "Finish with a small record: the approved\nserver, the tool and number,"
+        },
+        {
+          "start": 4.525,
+          "end": 6.875,
+          "text": "and the two criteria you verified."
+        },
+        {
+          "start": 6.95,
+          "end": 10.295,
+          "text": "A teammate should see exactly what was\nread and what matched the source."
+        },
+        {
+          "start": 10.919,
+          "end": 14.194,
+          "text": "That is the simplest useful M C P\nworkflow:"
+        },
+        {
+          "start": 14.269,
+          "end": 17.694,
+          "text": "one authorized tool call that brings\nevidence into the task,"
+        },
+        {
+          "start": 17.744,
+          "end": 19.508,
+          "text": "with a boundary that you can explain."
+        }
+      ]
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 3756,
+  "voiceBuild": "f7cbcf40d8bb508fd26c8e33ad4ea5ecde5a26198c96fe6f36d8ab9202d1cd0e"
+}

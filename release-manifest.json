@@ -1,0 +1,117 @@
+{
+  "lessonsSha256": "f5845dfb031387e3501cc6115a488995b634608160e630e52edb0a2ad89a6f3b",
+  "episodes": [
+    {
+      "id": "A01",
+      "title": "Start an Agent Session in GCP",
+      "frames": 4823,
+      "fps": 24,
+      "chapters": 8,
+      "sha256": {
+        "videos/A01.mp4": "4f9bf7b6088f16e1f0e1b24c471c5df6f6a9c13be264c13a074cdb34d947f341",
+        "subtitles/A01.en.srt": "b6f8ffff1efc0d371746e7d2f73acca2df3f342b14ccc1511d903af276c85198",
+        "narration/A01/narration.m4a": "ea7b8e6acae11808806e5775a6c9be29c4116d9126b16709a62b00415e58fda1",
+        "narration/A01/timing.json": "d803f2005489107995a13efdf4f8bbc03598f433c686de040ed24684b0c12128",
+        "takes/A01/episode.json": "d6f31dba98c2ac611696882446f90a85c5afaf8646c566c0c84bed60da542a36",
+        "takes/A01/narration.m4a": "1c457161834b72833199c0379af9ce80623670098148192623470dfafc54566f",
+        "takes/A01/captions.srt": "f7b8354fc30e6091addd9e8a82bf6ea62ee420c4875eba859dbe7126c9fdad79"
+      }
+    },
+    {
+      "id": "A02",
+      "title": "Version Instructions and Skills Across Tools",
+      "frames": 4853,
+      "fps": 24,
+      "chapters": 8,
+      "sha256": {
+        "videos/A02.mp4": "078de0b194f17187c47062a95715d0a00c88a63e7caa846d94540ee7c73163e0",
+        "subtitles/A02.en.srt": "6d535dc8da29f1b98a47c53aeceac531182048669620a598820de5c14ed17495",
+        "narration/A02/narration.m4a": "49d9b17b079933056c7daae1a45f66f27abf8f429b01e55eac1ed2e19ba7c9ee",
+        "narration/A02/timing.json": "4ba538ca46e8459e58471fc292aefdb5c0342a690d1b3fce9ef92b98be2f1566",
+        "takes/A02/episode.json": "c887fbdd06a5b6deaf13bd783bae7041f1e747ee10da67daac8560cd13764d13",
+        "takes/A02/narration.m4a": "0d99c6a1be476272bf18d0892f64f3ce3716ec2cb511e3078e7f4c45b89e4fd0",
+        "takes/A02/captions.srt": "b3309898b6beab305cc25a2bdf15603550e16c7fdf49165acc7d8beaaaf24b78"
+      }
+    },
+    {
+      "id": "A03",
+      "title": "Run a Multi-File Change in Stages",
+      "frames": 4695,
+      "fps": 24,
+      "chapters": 8,
+      "sha256": {
+        "videos/A03.mp4": "46a63ea11a4c203ac7dd96e0d6adee9f9a606f8e66dac8c38f1fad046c896d03",
+        "subtitles/A03.en.srt": "4f7ccdf75eae74bfd2ef9b2948c573de41ec37fa3786c8afcc6a6392a4149a7d",
+        "narration/A03/narration.m4a": "65bdf4a790e8da34f5c63ac7b494c473b55a270c9e4b1e35cb50ffa1435a8fdf",
+        "narration/A03/timing.json": "b7baca32b53d9aee2b33ba681911f80c4b8dd4f2304dc038dce61c8b44e6ba5a",
+        "takes/A03/episode.json": "e6e2c538e51ed2b62f377a4d6db996c6f151d9a78a6326a719d0d08f699758a2",
+        "takes/A03/narration.m4a": "c5c5f55163dd8264360d702428471740f1f4a6b1dcddd915ad88d903644bf02f",
+        "takes/A03/captions.srt": "d16a4c0a27f6805db12013b7c4a0184000a33db4fefa8fffb5cd57e36aeee5f5"
+      }
+    },
+    {
+      "id": "A04",
+      "title": "What Is MCP? Connect One Scoped Tool",
+      "frames": 4083,
+      "fps": 24,
+      "chapters": 7,
+      "sha256": {
+        "videos/A04.mp4": "e5d1de8a7298bd654a88c0c549b79da1157fecdf714f39b910e5cf13b2c5f87b",
+        "subtitles/A04.en.srt": "3ebdcdcc675ec2112556299ad9443cfdb18bd3b67ae60a0d71c9e55ed3a433a3",
+        "narration/A04/narration.m4a": "5a52c1112f4b2b7d9ecda85bd4ac483773bbd4264c84f9fdbddcd197c9176dc0",
+        "narration/A04/timing.json": "9f4ba1b72763ff43380427480844235085e62c8870aaccd4416bcae7953495ae",
+        "takes/A04/episode.json": "f40c0d6c3a2f2458274163821cb11cc684cd7571efaea98351ce613f027561df",
+        "takes/A04/narration.m4a": "1fbf9db5dbfc3a916b60d4bee91b55834ff89b3ccf8bc45ca660374d84e6bec8",
+        "takes/A04/captions.srt": "93139ea497eac5028d1ed982212dbc6563436b96215fa327fbb87e82db628590"
+      }
+    },
+    {
+      "id": "A05",
+      "title": "Design a Workflow with Deterministic Checks",
+      "frames": 4093,
+      "fps": 24,
+      "chapters": 7,
+      "sha256": {
+        "videos/A05.mp4": "cefb74dba81c2406075e089ef863a43924a61a6a5455d9e42519baf44a8d3cfe",
+        "subtitles/A05.en.srt": "4fb156ce4f563ac608c1700e8c8fa2dafc91be03e54864ac3f747d256c238807",
+        "narration/A05/narration.m4a": "766ac84c8dbc34e58efdf13e7e7845d882ce4665d91e1285543dc25f9cecd16c",
+        "narration/A05/timing.json": "6b94b36455ebbf1125648abb6320ee10742ef62ba9420980a408ab2b7138424b",
+        "takes/A05/episode.json": "18021a3a0c025e655cfff829a35214a87ee09e119619a0f2c0ee996ebb978ae5",
+        "takes/A05/narration.m4a": "3ccaef41281e6bb7574ede11eb5fd29773fb58b4fc4f457caa1021d3ed3b7ce7",
+        "takes/A05/captions.srt": "4f98d868317ebe89f4e32f42ca91cbf3466b601380a2cfc3616678efbe8ec1c6"
+      }
+    },
+    {
+      "id": "A06",
+      "title": "RAG and Embeddings for Repository Knowledge",
+      "frames": 4064,
+      "fps": 24,
+      "chapters": 7,
+      "sha256": {
+        "videos/A06.mp4": "08e8bc64a85720259005ff00609a60359dd7cce42bc7762c46528ebe783f717c",
+        "subtitles/A06.en.srt": "746462f55fb43bf87f71f90e031bf16c923848beb0549795e77494ab9ebe65f0",
+        "narration/A06/narration.m4a": "dba700b765eca124eba6bc9f2356069923b7b68e4e7e37e6717df1d90e3fe681",
+        "narration/A06/timing.json": "6e0027ffc114b1cd6f9b08acda8287059298fce831c961d78a97f21c9aa69fd3",
+        "takes/A06/episode.json": "5c0a486e90b9e8e34f74e8255037741995012db462a1756d1332fd7b066ad72f",
+        "takes/A06/narration.m4a": "fd4995d2e63cb373ffb125b3a9dd4ab649b736e6cdb890671b30089015877f19",
+        "takes/A06/captions.srt": "cf51e3def1807c1f40caa138a29bbd9e8238c226a8df48b3eb872310d32036ec"
+      }
+    },
+    {
+      "id": "A07",
+      "title": "Evaluate Models and Agents on the Same Task",
+      "frames": 4142,
+      "fps": 24,
+      "chapters": 7,
+      "sha256": {
+        "videos/A07.mp4": "58d04be2b4c9bd7f8efee98db244a3091703581a6005e8dec54d34f01c5cd287",
+        "subtitles/A07.en.srt": "06a090cbf2ac351f873c8f28701067cab5c253270e2d020adf5c99afe939dd1a",
+        "narration/A07/narration.m4a": "4b6fff049a728ddc198b990ad1c6514e19a2724f6a050957c975fc6d0931a8f4",
+        "narration/A07/timing.json": "ac98e0939770d908a20f4240efc2c887359258999f0f25c99397e6b40a4f19eb",
+        "takes/A07/episode.json": "fe5ef820775bc8797d6bdcbd6257c14e17954c17173fc6446cf679857e289d93",
+        "takes/A07/narration.m4a": "d3841fc5373ade0d5a3b93ee6e1f37004c5efa3c997f05ba7194f3af3e371d88",
+        "takes/A07/captions.srt": "400b68ce9b071cb493def3c19a555bb991f46c8e8c3c09da51733d6fb95de3ca"
+      }
+    }
+  ]
+}
