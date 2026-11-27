@@ -1,54 +1,38 @@
-# Path de IA · Avanzado
+# Avanzado · Agentes en el workspace de GCP
 
-Configura agentes en GCP, limita las herramientas que pueden usar y evalúa sus resultados con casos reproducibles. Practica recuperación de fuentes y revisión de evidencia.
+![Una búsqueda compara la similitud de dos documentos y recupera la política de pedidos.](docs/portada.png)
 
-Cada episodio tiene narración y subtítulos en inglés. El MP4 incluye capítulos para volver a un paso. [Descargar el episodio de muestra A06](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A06.mp4).
+Trabaja con Claude Code y OpenCode dentro del workspace de GCP. La ruta empieza por verificar qué sesión y qué permisos tienes, y termina con dos agentes resolviendo la misma tarea bajo criterios que un revisor puede comprobar.
 
-[![Fragmentos del episodio A06](preview.gif)](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A06.mp4)
+**7 episodios · 21:21 en total.** Narración y subtítulos en inglés. Cada MP4 incluye capítulos para repetir un paso.
 
-| Episodio | Demostración | Duración | Archivos |
-|---|---|---:|---|
-| A01 | Start an Agent Session in GCP | 3:21 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A01.mp4) · [SRT](subtitles/A01.en.srt) |
-| A02 | Version Instructions and Skills Across Tools | 3:22 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A02.mp4) · [SRT](subtitles/A02.en.srt) |
-| A03 | Run a Multi-File Change in Stages | 3:16 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A03.mp4) · [SRT](subtitles/A03.en.srt) |
-| A04 | What Is MCP? Connect One Scoped Tool | 2:50 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A04.mp4) · [SRT](subtitles/A04.en.srt) |
-| A05 | Design a Workflow with Deterministic Checks | 2:51 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A05.mp4) · [SRT](subtitles/A05.en.srt) |
-| A06 | RAG and Embeddings for Repository Knowledge | 2:49 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A06.mp4) · [SRT](subtitles/A06.en.srt) |
-| A07 | Evaluate Models and Agents on the Same Task | 2:53 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/refs/heads/main/videos/A07.mp4) · [SRT](subtitles/A07.en.srt) |
+[Descargar el primer episodio (A01)](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/videos/A01.mp4) · [Editar o reconstruir los videos](PRODUCCION.md)
 
-## Reconstruir un episodio en GCP
+## Temario
 
-En el workspace remoto, abre la raíz del repositorio. La producción utiliza Linux, Node.js 24, Python 3.12, FFmpeg y DejaVu Sans. La pista de voz, los subtítulos y los tiempos ya están en Git.
+Selecciona el título para descargar el video. Puedes activar los subtítulos en tu reproductor o descargar el archivo SRT de cada episodio.
 
-```bash
-npm ci --prefix engine
-python3 studio.py list
-python3 studio.py render A01
-python3 studio.py verify A01 --decode
-```
+| Episodio | Qué harás en pantalla |
+| --- | --- |
+| **A01** · [Start an Agent Session in GCP](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/videos/A01.mp4)<br>3:21 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/subtitles/A01.en.srt) | Verifica el directorio, el cliente, el modelo y los permisos. Conserva el estado de partida de la sesión. |
+| **A02** · [Version Instructions and Skills Across Tools](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/videos/A02.mp4)<br>3:22 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/subtitles/A02.en.srt) | Versiona una convención y una skill. Comprueba dónde las descubre cada cliente y cuándo se activa la skill. |
+| **A03** · [Run a Multi-File Change in Stages](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/videos/A03.mp4)<br>3:16 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/subtitles/A03.en.srt) | Divide una refactorización en etapas y compara pruebas y archivos modificados después de cada una. |
+| **A04** · [What Is MCP? Connect One Scoped Tool](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/videos/A04.mp4)<br>2:50 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/subtitles/A04.en.srt) | Sigue una consulta MCP desde el cliente hasta la lectura de un issue. Inspecciona el argumento y el permiso utilizado. |
+| **A05** · [Design a Workflow with Deterministic Checks](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/videos/A05.mp4)<br>2:51 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/subtitles/A05.en.srt) | Define qué prueba debe fallar antes del arreglo, cuál debe pasar después y cuándo entregar el cambio al revisor. |
+| **A06** · [RAG and Embeddings for Repository Knowledge](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/videos/A06.mp4)<br>2:49 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/subtitles/A06.en.srt) | Recupera pasajes del repositorio mediante embeddings y comprueba qué archivo y revisión sustentan la respuesta. |
+| **A07** · [Evaluate Models and Agents on the Same Task](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/videos/A07.mp4)<br>2:53 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-3-IA/raw/videos-v2.0.0/subtitles/A07.en.srt) | Ejecuta la misma tarea desde el mismo commit y compara corrección, alcance del diff y esfuerzo de revisión. |
 
-El MP4 se escribe en `videos/A01.mp4`. Para renderizar el path completo, usa `python3 studio.py render all`. Para generar el proyecto HTML editable y su vista previa, ejecuta `python3 studio.py project A01` y abre `build/A01/preview.html`. Las instrucciones de HyperFrames y Remotion están en [engine/README.md](engine/README.md).
+<details>
+<summary>Ver un fragmento animado de A06</summary>
 
-## Cambiar lo que se explica o cómo suena
+![Fragmento de la demostración A06](preview.gif)
 
-Edita el guion, las acciones y los resultados de pantalla en [lessons/episodes.json](lessons/episodes.json). Cada episodio enlaza sus fuentes técnicas. El estilo, el ritmo y la mezcla de voces están en [voice/profile.json](voice/profile.json). Si cambias el texto hablado o el orden de las escenas, regenera la voz antes del render.
+</details>
 
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r voice/requirements.txt
-python voice/assets.py
-python studio.py voice A01
-python studio.py render A01
-python studio.py verify A01 --decode
-```
+## Fuentes editables
 
-Para cambiar solo el ritmo, usa la toma original guardada en `takes/`. Por ejemplo, ejecuta `python3 studio.py pace A01 --target-wpm 142` y vuelve a renderizar. Este ajuste conserva el tono y recalcula escenas y subtítulos. La síntesis de voz descarga dos archivos de modelo con hashes fijados y los reutiliza. Las pistas AAC ya publicadas permiten editar la animación y volver a exportar sin sintetizar voz. [Detalles de narración](voice/README.md).
+Para preparar una nueva edición, empieza por el guion y las referencias técnicas de cada escena. El repositorio también guarda los dibujos, la toma original de voz, el audio final y sus marcas de tiempo. [Guiones y referencias](lessons/episodes.json) · [Guía de producción](PRODUCCION.md) · [Guía para agentes](AGENTS.md) · [Descargar las fuentes de v2.0.0 en ZIP](https://github.com/Finithe-Phoenix/Path-Level-3-IA/archive/refs/tags/v2.0.0.zip).
 
-## Versionar la siguiente edición
+## Otras rutas
 
-Crea una rama para el cambio y conserva el ID de cada episodio. Tras revisar el video, ejecuta `python3 studio.py manifest` para renovar el inventario y `python3 studio.py verify all --release` para cotejar los archivos. Si el episodio editado aparece en la vista previa del README, regenera ese fragmento con `python3 preview.py`. Incluye las fuentes y los archivos generados en el mismo PR. La guía de trabajo está en [AGENTS.md](AGENTS.md).
-
-Las pantallas y los datos del curso son simulaciones didácticas. Los PR del ejemplo los revisa una persona mediante `gh` en el terminal autorizado. Claude Code y OpenCode se ejecutan dentro del workspace de GCP.
-
-Puedes consultar los [materiales de producción de la edición 1](archive/v1/) y los [videos originales](https://github.com/Finithe-Phoenix/Path-Level-3-IA/releases/tag/v1.0.0).
+[Básico](https://github.com/Finithe-Phoenix/Path-Level-1-IA) · [Medio](https://github.com/Finithe-Phoenix/Path-Level-2-IA) · [Managers](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA)

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="440" viewBox="0 0 1440 440" role="img" aria-labelledby="title desc">
+<title id="title">RUTA DE IA  /  AVANZADO · Agentes en GCP</title>
+<desc id="desc">Resultados de búsqueda en dos documentos del repositorio. 7 videos · 21 min 21 s</desc>
+<defs>
+<pattern id="dots" width="13" height="13" patternUnits="userSpaceOnUse">
+<circle cx="2" cy="2" r="0.85" fill="#15202a" opacity=".15"/>
+</pattern>
+<pattern id="graph" width="23" height="23" patternUnits="userSpaceOnUse">
+<path d="M23 0H0V23" fill="none" stroke="#cbcadd" stroke-width="1"/>
+</pattern>
+</defs>
+<rect x="0" y="0" width="1440" height="440" rx="0" fill="#15202a" />
+<rect x="589" y="0" width="851" height="440" rx="0" fill="#e4e3f5" />
+<rect x="589" y="0" width="851" height="440" rx="0" fill="url(#dots)" />
+<g transform="translate(52 51)">
+<path d="M0 5L8 0L8 17L0 22Z" fill="#c2b8ff" stroke-linejoin="round"/>
+<path d="M10 0L18 5L18 22L10 17Z" fill="#c2b8ff" stroke-linejoin="round"/>
+<path d="M20 5L28 0L28 17L20 22Z" fill="#c2b8ff" stroke-linejoin="round"/>
+</g>
+<text x="98" y="69" font-family="DejaVu Sans Mono,monospace" font-size="19" font-weight="700" fill="#f7f5ed" text-anchor="start" letter-spacing="1.3">RUTA DE IA  /  AVANZADO</text>
+<text x="48" y="192" font-family="Open Sans,DejaVu Sans,sans-serif" font-size="80" font-weight="700" fill="#f7f5ed" text-anchor="start" letter-spacing="-4">Agentes</text>
+<text x="48" y="280" font-family="Open Sans,DejaVu Sans,sans-serif" font-size="80" font-weight="700" fill="#c2b8ff" text-anchor="start" letter-spacing="-4">en GCP</text>
+<path d="M52 339L526 339" fill="none" stroke="#495661" stroke-width="1.7" />
+<path d="M54 363L54 381L68 372Z" fill="#c2b8ff" />
+<text x="83" y="380" font-family="DejaVu Sans Mono,monospace" font-size="21" font-weight="400" fill="#e5e8df" text-anchor="start" >7 videos · 21 min 21 s</text>
+<path d="M618 30L631 30" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M618 30L618 43" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M1411 30L1398 30" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M1411 30L1411 43" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M618 410L631 410" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M618 410L618 397" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M1411 410L1398 410" fill="none" stroke="#15202a" stroke-width="1.5" />
+<path d="M1411 410L1411 397" fill="none" stroke="#15202a" stroke-width="1.5" />
+<text x="652" y="69" font-family="DejaVu Sans Mono,monospace" font-size="19" font-weight="700" fill="#15202a" text-anchor="start" letter-spacing="1.1">RECUPERACIÓN DE EVIDENCIA</text>
+<rect x="652" y="97" width="310" height="238" rx="9" fill="#ebedfc" stroke="#15202a" stroke-width="2.5" />
+<rect x="654" y="99" width="306" height="234" rx="8" fill="url(#graph)" />
+<circle cx="682" cy="267" r="4.3" fill="#7a7998" />
+<circle cx="709" cy="166" r="4.3" fill="#7a7998" />
+<circle cx="736" cy="191" r="4.3" fill="#7a7998" />
+<circle cx="748" cy="269" r="4.3" fill="#7a7998" />
+<circle cx="779" cy="133" r="4.3" fill="#7a7998" />
+<circle cx="875" cy="247" r="4.3" fill="#7a7998" />
+<circle cx="900" cy="137" r="4.3" fill="#7a7998" />
+<circle cx="920" cy="268" r="4.3" fill="#7a7998" />
+<circle cx="929" cy="216" r="4.3" fill="#7a7998" />
+<path d="M802 212L814 185" fill="none" stroke="#6958a7" stroke-width="2.1" />
+<path d="M802 212L840 193" fill="none" stroke="#6958a7" stroke-width="2.1" />
+<path d="M802 212L872 175" fill="none" stroke="#6958a7" stroke-width="2.1" />
+<circle cx="814" cy="185" r="5.7" fill="#9b86e3" stroke="#15202a" stroke-width="1.6"/>
+<circle cx="840" cy="193" r="5.7" fill="#9b86e3" stroke="#15202a" stroke-width="1.6"/>
+<circle cx="872" cy="175" r="9" fill="#fed16f" stroke="#15202a" stroke-width="2.2"/>
+<circle cx="802" cy="212" r="10" fill="#8c76de" stroke="#15202a" stroke-width="2.2"/>
+<text x="675" y="311" font-family="Open Sans,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#15202a" text-anchor="start" >Índice semántico</text>
+<path d="M962 169H990V149H1011M990 169V270H1011" fill="none" stroke="#15202a" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1004 143l8 6-8 6" fill="none" stroke="#15202a" stroke-width="3" />
+<path d="M1004 264l8 6-8 6" fill="none" stroke="#15202a" stroke-width="3" />
+<rect x="1028" y="105" width="337" height="99" rx="8" fill="#15202a" />
+<rect x="1022" y="99" width="337" height="99" rx="8" fill="#ffd889" stroke="#15202a" stroke-width="2.6" />
+<text x="1042" y="133" font-family="DejaVu Sans Mono,monospace" font-size="21" font-weight="700" fill="#15202a" text-anchor="start" >order-policy.md</text>
+<rect x="1043" y="158" width="191" height="13" rx="3" fill="#f4eee3" stroke="#15202a" stroke-width="1.3" />
+<rect x="1043" y="158" width="164" height="13" rx="3" fill="#645393" stroke="#15202a" stroke-width="1.3" />
+<text x="1336" y="175" font-family="DejaVu Sans Mono,monospace" font-size="25" font-weight="700" fill="#15202a" text-anchor="end" >0.86</text>
+<rect x="1028" y="224" width="337" height="99" rx="8" fill="#15202a" />
+<rect x="1022" y="218" width="337" height="99" rx="8" fill="#dcd9f3" stroke="#15202a" stroke-width="2.6" />
+<text x="1042" y="252" font-family="DejaVu Sans Mono,monospace" font-size="21" font-weight="700" fill="#15202a" text-anchor="start" >shipping-policy.md</text>
+<rect x="1043" y="277" width="191" height="13" rx="3" fill="#f4eee3" stroke="#15202a" stroke-width="1.3" />
+<rect x="1043" y="277" width="45" height="13" rx="3" fill="#645393" stroke="#15202a" stroke-width="1.3" />
+<text x="1336" y="294" font-family="DejaVu Sans Mono,monospace" font-size="25" font-weight="700" fill="#15202a" text-anchor="end" >0.24</text>
+<text x="653" y="380" font-family="DejaVu Sans Mono,monospace" font-size="18" font-weight="700" fill="#15202a" text-anchor="start" >Ejemplo A06</text>
+<path d="M798 374L1148 374" fill="none" stroke="#77768d" stroke-width="1.3" />
+<text x="1363" y="380" font-family="Open Sans,DejaVu Sans,sans-serif" font-size="18" font-weight="400" fill="#15202a" text-anchor="end" >Similitud ilustrativa</text>
+</svg>
