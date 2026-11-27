@@ -2,8 +2,8 @@
   "episode": "A06",
   "shots": [
     [
-      "embed",
-      0.38
+      "question",
+      0.028
     ],
     [
       "retrieve",
