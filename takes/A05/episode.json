@@ -28,37 +28,37 @@
       "narration": "Put yourself at the moment before a fix is handed off. How do you know it solves the right problem? We will use a fixed regression test and an independent human review. In this order service, the agent can choose how to inspect and edit the validator inside the planned scope. Each transition in the workflow depends on a visible result.",
       "focus": "Two test gates and a human review checkpoint",
       "action": "Mark which evidence controls each transition.",
-      "durationFrames": 503,
-      "duration": 20.958333333333332,
+      "durationFrames": 464,
+      "duration": 19.333333333333332,
       "cues": [
         {
-          "start": 0.389,
-          "end": 3.539,
+          "start": 0.22,
+          "end": 2.69,
           "text": "Put yourself at the moment before a fix\nis handed off."
         },
         {
-          "start": 3.614,
-          "end": 5.939,
+          "start": 3.031,
+          "end": 4.865,
           "text": "How do you know it solves the right\nproblem?"
         },
         {
-          "start": 5.989,
-          "end": 9.536,
+          "start": 5.506,
+          "end": 8.981,
           "text": "We will use a fixed regression test and\nan independent human review."
         },
         {
-          "start": 10.164,
-          "end": 13.864,
+          "start": 9.382,
+          "end": 13.169,
           "text": "In this order service, the agent can\nchoose how to inspect and edit the"
         },
         {
-          "start": 13.914,
-          "end": 16.514,
+          "start": 13.169,
+          "end": 14.95,
           "text": "validator inside the planned scope."
         },
         {
-          "start": 16.589,
-          "end": 19.858,
+          "start": 15.331,
+          "end": 18.577,
           "text": "Each transition in the workflow depends\non a visible result."
         }
       ]
@@ -74,42 +74,37 @@
       "narration": "Read the issue and write down the expected answer for each example. One and five should be accepted. Zero and negative one should be rejected. Use the zero case for the regression test, and keep the earlier cases in the suite. These fixed inputs give us something concrete to check before and after the edit.",
       "focus": "The zero case is the required regression",
       "action": "Turn the issue into a table of expected results.",
-      "durationFrames": 465,
-      "duration": 19.375,
+      "durationFrames": 449,
+      "duration": 18.708333333333332,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.293,
+          "start": 0.315,
+          "end": 4.155,
           "text": "Read the issue and write down the\nexpected answer for each example."
         },
         {
-          "start": 4.368,
-          "end": 6.268,
-          "text": "One and five should be accepted."
+          "start": 4.626,
+          "end": 8.737,
+          "text": "One and five should be accepted. Zero\nand negative one should be rejected."
         },
         {
-          "start": 6.368,
-          "end": 8.555,
-          "text": "Zero and negative one should be\nrejected."
+          "start": 9.098,
+          "end": 11.174,
+          "text": "Use the zero case for the regression\ntest,"
         },
         {
-          "start": 9.192,
-          "end": 13.267,
-          "text": "Use the zero case for the regression\ntest, and keep the earlier cases in the"
+          "start": 11.506,
+          "end": 13.542,
+          "text": "and keep the earlier cases in the suite."
         },
         {
-          "start": 13.342,
-          "end": 14.292,
-          "text": "suite."
-        },
-        {
-          "start": 14.367,
-          "end": 17.817,
+          "start": 13.952,
+          "end": 17.777,
           "text": "These fixed inputs give us something\nconcrete to check before and after the"
         },
         {
-          "start": 17.867,
-          "end": 18.268,
+          "start": 17.777,
+          "end": 18.072,
           "text": "edit."
         }
       ]
@@ -125,47 +120,42 @@
       "narration": "Run the suite with the regression in place and the original code still present. Pause at the failure. It's the zero-case assertion, and the validator returned true even though we expected false. An import error would tell a different story. Capture the assertion and its revision. Now we have evidence that the new test actually detects the defect.",
       "focus": "The assertion reveals the exact defect",
       "action": "Run the regression against the original implementation.",
-      "durationFrames": 523,
-      "duration": 21.791666666666668,
+      "durationFrames": 504,
+      "duration": 21.0,
       "cues": [
         {
-          "start": 0.418,
-          "end": 3.793,
+          "start": 0.276,
+          "end": 4.06,
           "text": "Run the suite with the regression in\nplace and the original code still"
         },
         {
-          "start": 3.843,
-          "end": 4.868,
+          "start": 4.06,
+          "end": 4.446,
           "text": "present."
         },
         {
-          "start": 4.943,
-          "end": 6.418,
-          "text": "Pause at the failure."
+          "start": 4.898,
+          "end": 7.796,
+          "text": "Pause at the failure. It's the zero-case\nassertion,"
         },
         {
-          "start": 6.493,
-          "end": 10.568,
-          "text": "It's the zero-case assertion, and the\nvalidator returned true even though we"
+          "start": 7.927,
+          "end": 11.246,
+          "text": "and the validator returned true even\nthough we expected false."
         },
         {
-          "start": 10.618,
-          "end": 11.627,
-          "text": "expected false."
+          "start": 11.757,
+          "end": 16.058,
+          "text": "An import error would tell a different\nstory. Capture the assertion and its"
         },
         {
-          "start": 12.239,
-          "end": 14.739,
-          "text": "An import error would tell a different\nstory."
+          "start": 16.058,
+          "end": 16.625,
+          "text": "revision."
         },
         {
-          "start": 14.814,
-          "end": 17.139,
-          "text": "Capture the assertion and its revision."
-        },
-        {
-          "start": 17.214,
-          "end": 20.7,
+          "start": 16.946,
+          "end": 20.261,
           "text": "Now we have evidence that the new test\nactually detects the defect."
         }
       ]
@@ -181,37 +171,37 @@
       "narration": "Before asking for the edit, agree on a gate. The post-fix tests must pass, and the files must fit the task. If an assertion fails, inspect it. If the diff includes an unrelated file, follow up before handing it to review. Keep the regression's expected result fixed while trying a repair, so the passing result still answers the original question.",
       "focus": "A failed post-fix test stops the handoff",
       "action": "Set the pass condition before applying the fix.",
-      "durationFrames": 537,
-      "duration": 22.375,
+      "durationFrames": 499,
+      "duration": 20.791666666666668,
       "cues": [
         {
-          "start": 0.368,
-          "end": 3.118,
-          "text": "Before asking for the edit, agree on a\ngate."
+          "start": 0.22,
+          "end": 4.235,
+          "text": "Before asking for the edit, agree on a\ngate. The post-fix tests must pass,"
         },
         {
-          "start": 3.168,
-          "end": 6.893,
-          "text": "The post-fix tests must pass, and the\nfiles must fit the task."
+          "start": 4.486,
+          "end": 5.96,
+          "text": "and the files must fit the task."
         },
         {
-          "start": 6.968,
-          "end": 8.939,
-          "text": "If an assertion fails, inspect it."
+          "start": 6.36,
+          "end": 10.798,
+          "text": "If an assertion fails, inspect it. If\nthe diff includes an unrelated file,"
         },
         {
-          "start": 9.532,
-          "end": 14.532,
-          "text": "If the diff includes an unrelated file,\nfollow up before handing it to review."
+          "start": 10.989,
+          "end": 12.641,
+          "text": "follow up before handing it to review."
         },
         {
-          "start": 14.607,
-          "end": 18.257,
+          "start": 13.172,
+          "end": 16.73,
           "text": "Keep the regression's expected result\nfixed while trying a repair,"
         },
         {
-          "start": 18.307,
-          "end": 21.299,
+          "start": 17.101,
+          "end": 20.057,
           "text": "so the passing result still answers the\noriginal question."
         }
       ]
@@ -227,37 +217,37 @@
       "narration": "Run the same command again, this time on the edited revision. The zero-case test now passes, along with the three existing cases. Check the diff and save this output beside the first run. You've just shown a behavior change: the same test observed acceptance before the fix and rejection after it. The reviewer can now evaluate the implementation and scope.",
       "focus": "The same assertion now passes",
       "action": "Rerun exactly the same test command after the edit.",
-      "durationFrames": 554,
-      "duration": 23.083333333333332,
+      "durationFrames": 511,
+      "duration": 21.291666666666668,
       "cues": [
         {
-          "start": 0.439,
-          "end": 4.314,
+          "start": 0.255,
+          "end": 3.682,
           "text": "Run the same command again, this time on\nthe edited revision."
         },
         {
-          "start": 4.364,
-          "end": 8.319,
+          "start": 4.058,
+          "end": 7.74,
           "text": "The zero-case test now passes, along\nwith the three existing cases."
         },
         {
-          "start": 8.921,
-          "end": 12.171,
+          "start": 8.271,
+          "end": 10.962,
           "text": "Check the diff and save this output\nbeside the first run."
         },
         {
-          "start": 12.246,
-          "end": 16.621,
+          "start": 11.317,
+          "end": 15.611,
           "text": "You've just shown a behavior change: the\nsame test observed acceptance before the"
         },
         {
-          "start": 16.696,
-          "end": 18.193,
+          "start": 15.611,
+          "end": 17.281,
           "text": "fix and rejection after it."
         },
         {
-          "start": 18.802,
-          "end": 21.997,
+          "start": 17.542,
+          "end": 20.572,
           "text": "The reviewer can now evaluate the\nimplementation and scope."
         }
       ]
@@ -273,37 +263,37 @@
       "narration": "Once the human author has opened the training pull request, use G H P R checks to see what continuous integration observed. This sample has two completed checks. In your repo, check the required set and what each result belongs to. If a required check is still pending, stay at that gate until it finishes and you can inspect the result.",
       "focus": "Verify the required checks on PR 42",
       "action": "Inspect the actual check statuses in the approved terminal.",
-      "durationFrames": 532,
-      "duration": 22.166666666666668,
+      "durationFrames": 481,
+      "duration": 20.041666666666668,
       "cues": [
         {
-          "start": 0.414,
-          "end": 3.839,
+          "start": 0.295,
+          "end": 3.034,
           "text": "Once the human author has opened the\ntraining pull request,"
         },
         {
-          "start": 3.914,
-          "end": 8.021,
+          "start": 3.346,
+          "end": 7.008,
           "text": "use G H P R checks to see what\ncontinuous integration observed."
         },
         {
-          "start": 8.634,
-          "end": 11.134,
-          "text": "This sample has two completed checks."
+          "start": 7.374,
+          "end": 10.184,
+          "text": "This sample has two completed checks. In\nyour repo,"
         },
         {
-          "start": 11.209,
-          "end": 15.604,
-          "text": "In your repo, check the required set and\nwhat each result belongs to."
+          "start": 10.355,
+          "end": 13.25,
+          "text": "check the required set and what each\nresult belongs to."
         },
         {
-          "start": 15.679,
-          "end": 19.729,
+          "start": 13.72,
+          "end": 18.017,
           "text": "If a required check is still pending,\nstay at that gate until it finishes and"
         },
         {
-          "start": 19.779,
-          "end": 21.069,
+          "start": 18.017,
+          "end": 19.285,
           "text": "you can inspect the result."
         }
       ]
@@ -319,47 +309,47 @@
       "narration": "Now hand over the issue reference, diff, test command, both outputs, and the pull request checks. The reviewer opens the actual change and records their own decision with GitHub CLI. Give them enough to question the result: which assertion failed, what changed, and what was verified. That's the value of a deterministic checkpoint in a workflow that also requires judgment.",
       "focus": "The author hands over evidence, the reviewer decides",
       "action": "Send the issue, diff, and both runs for independent review.",
-      "durationFrames": 600,
-      "duration": 25.0,
+      "durationFrames": 550,
+      "duration": 22.916666666666668,
       "cues": [
         {
-          "start": 0.418,
-          "end": 4.598,
+          "start": 0.275,
+          "end": 3.88,
           "text": "Now hand over the issue reference, diff,\ntest command, both outputs,"
         },
         {
-          "start": 4.658,
-          "end": 6.558,
+          "start": 4.152,
+          "end": 5.407,
           "text": "and the pull request checks."
         },
         {
-          "start": 6.633,
-          "end": 11.058,
+          "start": 5.788,
+          "end": 9.966,
           "text": "The reviewer opens the actual change and\nrecords their own decision with GitHub"
         },
         {
-          "start": 11.133,
-          "end": 11.916,
+          "start": 10.056,
+          "end": 11.249,
           "text": "CLI."
         },
         {
-          "start": 12.529,
-          "end": 17.054,
+          "start": 11.614,
+          "end": 15.81,
           "text": "Give them enough to question the result:\nwhich assertion failed, what changed,"
         },
         {
-          "start": 17.134,
-          "end": 18.784,
+          "start": 16.001,
+          "end": 17.234,
           "text": "and what was verified."
         },
         {
-          "start": 18.859,
-          "end": 22.334,
+          "start": 17.644,
+          "end": 21.006,
           "text": "That's the value of a deterministic\ncheckpoint in a workflow that also"
         },
         {
-          "start": 22.384,
-          "end": 23.494,
+          "start": 21.006,
+          "end": 21.936,
           "text": "requires judgment."
         }
       ]
@@ -368,6 +358,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 3714,
-  "voiceBuild": "cb55217168f77f3a2c9a3ca61c06dade08efc0e2c5856d62b1e41f690e2a4b0f"
+  "durationFrames": 3458,
+  "voiceBuild": "9e43f4eec5bad43f0f5d4562bde12509072461573930c6b2f5ff86d4013c89bc"
 }

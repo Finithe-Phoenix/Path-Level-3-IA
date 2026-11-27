@@ -1,49 +1,50 @@
 {
+  "audioEdition": 3,
   "fps": 24,
-  "voiceBuild": "cb55217168f77f3a2c9a3ca61c06dade08efc0e2c5856d62b1e41f690e2a4b0f",
-  "paceBuild": "cdcd5d0f55dd30b328d8ad97347cf694d4a905b89a608f290e6b945d2510e374",
+  "voiceBuild": "9e43f4eec5bad43f0f5d4562bde12509072461573930c6b2f5ff86d4013c89bc",
+  "paceBuild": "836637eaf39b44e6d35693eae61f30a7649512b4408dacefb004e93dc9ddf02d",
   "delivery": {
-    "targetWordsPerMinute": 146,
-    "inputWordsPerMinute": 160.9,
-    "tempo": 0.92760239,
-    "outputWordsPerMinute": 146.01
+    "targetWordsPerMinute": 149,
+    "inputWordsPerMinute": 172.82,
+    "tempo": 0.88181482,
+    "outputWordsPerMinute": 148.99
   },
-  "audioSha256": "766ac84c8dbc34e58efdf13e7e7845d882ce4665d91e1285543dc25f9cecd16c",
-  "captionsSha256": "4fb156ce4f563ac608c1700e8c8fa2dafc91be03e54864ac3f747d256c238807",
+  "audioSha256": "63e1f7d052b00e042551efdb711cf0c0042bd8a2e039faa083c074792a19ab2b",
+  "captionsSha256": "4492b03c4daa45c191dbb99f6cc8a749a0e20c24e77b68e27a4c121a75e980b6",
   "scenes": [
     {
       "id": "flow",
       "scriptSha256": "8e9e12b62f51fef1edda7c9019dc96758c5fe835703ffe266990b1d44e897f98",
-      "durationFrames": 551,
+      "durationFrames": 535,
       "cues": [
         {
-          "start": 0.419,
-          "end": 3.815,
+          "start": 0.249,
+          "end": 3.051,
           "text": "Put yourself at the moment before a fix\nis handed off."
         },
         {
-          "start": 3.896,
-          "end": 6.403,
+          "start": 3.437,
+          "end": 5.517,
           "text": "How do you know it solves the right\nproblem?"
         },
         {
-          "start": 6.456,
-          "end": 10.28,
+          "start": 6.244,
+          "end": 10.185,
           "text": "We will use a fixed regression test and\nan independent human review."
         },
         {
-          "start": 10.957,
-          "end": 14.946,
+          "start": 10.639,
+          "end": 14.934,
           "text": "In this order service, the agent can\nchoose how to inspect and edit the"
         },
         {
-          "start": 15.0,
-          "end": 17.803,
+          "start": 14.934,
+          "end": 16.954,
           "text": "validator inside the planned scope."
         },
         {
-          "start": 17.884,
-          "end": 21.408,
+          "start": 17.386,
+          "end": 21.067,
           "text": "Each transition in the workflow depends\non a visible result."
         }
       ]
@@ -51,88 +52,81 @@
     {
       "id": "contract",
       "scriptSha256": "08ffb48e885988f6e6f7fa02462516992d389ad5def5cbddb31dcdb0595e7222",
-      "durationFrames": 517,
+      "durationFrames": 525,
       "cues": [
         {
-          "start": 0.451,
-          "end": 4.628,
+          "start": 0.357,
+          "end": 4.712,
           "text": "Read the issue and write down the\nexpected answer for each example."
         },
         {
-          "start": 4.709,
-          "end": 6.757,
-          "text": "One and five should be accepted."
+          "start": 5.246,
+          "end": 9.908,
+          "text": "One and five should be accepted. Zero\nand negative one should be rejected."
         },
         {
-          "start": 6.865,
-          "end": 9.223,
-          "text": "Zero and negative one should be\nrejected."
+          "start": 10.317,
+          "end": 12.672,
+          "text": "Use the zero case for the regression\ntest,"
         },
         {
-          "start": 9.909,
-          "end": 14.302,
-          "text": "Use the zero case for the regression\ntest, and keep the earlier cases in the"
+          "start": 13.048,
+          "end": 15.357,
+          "text": "and keep the earlier cases in the suite."
         },
         {
-          "start": 14.383,
-          "end": 15.407,
-          "text": "suite."
-        },
-        {
-          "start": 15.488,
-          "end": 19.208,
+          "start": 15.822,
+          "end": 20.16,
           "text": "These fixed inputs give us something\nconcrete to check before and after the"
         },
         {
-          "start": 19.261,
-          "end": 19.694,
-          "text": "edit."
+          "start": 20.16,
+          "end": 20.81,
+          "text": "edit.",
+          "speechEnd": 20.494
         }
       ]
     },
     {
       "id": "red",
       "scriptSha256": "c7a1229abdf95e99733b97d6f7414024e445cef91fcf79f0d2496f26b82a1343",
-      "durationFrames": 580,
+      "durationFrames": 587,
       "cues": [
         {
-          "start": 0.451,
-          "end": 4.089,
+          "start": 0.313,
+          "end": 4.604,
           "text": "Run the suite with the regression in\nplace and the original code still"
         },
         {
-          "start": 4.143,
-          "end": 5.248,
-          "text": "present."
+          "start": 4.604,
+          "end": 5.254,
+          "text": "present.",
+          "speechEnd": 5.042
         },
         {
-          "start": 5.329,
-          "end": 6.919,
-          "text": "Pause at the failure."
+          "start": 5.554,
+          "end": 8.841,
+          "text": "Pause at the failure. It's the zero-case\nassertion,"
         },
         {
-          "start": 7.0,
-          "end": 11.393,
-          "text": "It's the zero-case assertion, and the\nvalidator returned true even though we"
+          "start": 8.989,
+          "end": 12.753,
+          "text": "and the validator returned true even\nthough we expected false."
         },
         {
-          "start": 11.447,
-          "end": 12.534,
-          "text": "expected false."
+          "start": 13.333,
+          "end": 18.21,
+          "text": "An import error would tell a different\nstory. Capture the assertion and its"
         },
         {
-          "start": 13.194,
-          "end": 15.889,
-          "text": "An import error would tell a different\nstory."
+          "start": 18.21,
+          "end": 18.86,
+          "text": "revision.",
+          "speechEnd": 18.853
         },
         {
-          "start": 15.97,
-          "end": 18.477,
-          "text": "Capture the assertion and its revision."
-        },
-        {
-          "start": 18.558,
-          "end": 22.316,
+          "start": 19.217,
+          "end": 22.976,
           "text": "Now we have evidence that the new test\nactually detects the defect."
         }
       ]
@@ -140,36 +134,36 @@
     {
       "id": "gate",
       "scriptSha256": "0b84a4f55b9af9a45252ce5c747ac0d497c7d489fe5aa18115437349fed419d6",
-      "durationFrames": 594,
+      "durationFrames": 582,
       "cues": [
         {
-          "start": 0.397,
-          "end": 3.361,
-          "text": "Before asking for the edit, agree on a\ngate."
+          "start": 0.249,
+          "end": 4.803,
+          "text": "Before asking for the edit, agree on a\ngate. The post-fix tests must pass,"
         },
         {
-          "start": 3.415,
-          "end": 7.431,
-          "text": "The post-fix tests must pass, and the\nfiles must fit the task."
+          "start": 5.087,
+          "end": 6.759,
+          "text": "and the files must fit the task."
         },
         {
-          "start": 7.512,
-          "end": 9.637,
-          "text": "If an assertion fails, inspect it."
+          "start": 7.212,
+          "end": 12.245,
+          "text": "If an assertion fails, inspect it. If\nthe diff includes an unrelated file,"
         },
         {
-          "start": 10.276,
-          "end": 15.666,
-          "text": "If the diff includes an unrelated file,\nfollow up before handing it to review."
+          "start": 12.462,
+          "end": 14.335,
+          "text": "follow up before handing it to review."
         },
         {
-          "start": 15.747,
-          "end": 19.682,
+          "start": 14.937,
+          "end": 18.972,
           "text": "Keep the regression's expected result\nfixed while trying a repair,"
         },
         {
-          "start": 19.736,
-          "end": 22.961,
+          "start": 19.393,
+          "end": 22.745,
           "text": "so the passing result still answers the\noriginal question."
         }
       ]
@@ -177,36 +171,36 @@
     {
       "id": "green",
       "scriptSha256": "bc618e7302def9f0b4aebdd08760e88ac4856795c174ffc1fcb574aa90dcd54f",
-      "durationFrames": 613,
+      "durationFrames": 595,
       "cues": [
         {
-          "start": 0.473,
-          "end": 4.651,
+          "start": 0.289,
+          "end": 4.175,
           "text": "Run the same command again, this time on\nthe edited revision."
         },
         {
-          "start": 4.705,
-          "end": 8.968,
+          "start": 4.602,
+          "end": 8.777,
           "text": "The zero-case test now passes, along\nwith the three existing cases."
         },
         {
-          "start": 9.617,
-          "end": 13.121,
+          "start": 9.38,
+          "end": 12.431,
           "text": "Check the diff and save this output\nbeside the first run."
         },
         {
-          "start": 13.202,
-          "end": 17.918,
+          "start": 12.834,
+          "end": 17.703,
           "text": "You've just shown a behavior change: the\nsame test observed acceptance before the"
         },
         {
-          "start": 17.999,
-          "end": 19.613,
+          "start": 17.703,
+          "end": 19.597,
           "text": "fix and rejection after it."
         },
         {
-          "start": 20.269,
-          "end": 23.714,
+          "start": 19.893,
+          "end": 23.329,
           "text": "The reviewer can now evaluate the\nimplementation and scope."
         }
       ]
@@ -214,36 +208,36 @@
     {
       "id": "ci",
       "scriptSha256": "aabd5ab53db94bc87f099bc5afa272323afe6b3b23cc8b22fb432f1eaef75847",
-      "durationFrames": 583,
+      "durationFrames": 554,
       "cues": [
         {
-          "start": 0.446,
-          "end": 4.139,
+          "start": 0.335,
+          "end": 3.441,
           "text": "Once the human author has opened the\ntraining pull request,"
         },
         {
-          "start": 4.219,
-          "end": 8.647,
+          "start": 3.794,
+          "end": 7.947,
           "text": "use G H P R checks to see what\ncontinuous integration observed."
         },
         {
-          "start": 9.308,
-          "end": 12.003,
-          "text": "This sample has two completed checks."
+          "start": 8.362,
+          "end": 11.549,
+          "text": "This sample has two completed checks. In\nyour repo,"
         },
         {
-          "start": 12.084,
-          "end": 16.822,
-          "text": "In your repo, check the required set and\nwhat each result belongs to."
+          "start": 11.743,
+          "end": 15.026,
+          "text": "check the required set and what each\nresult belongs to."
         },
         {
-          "start": 16.903,
-          "end": 21.269,
+          "start": 15.559,
+          "end": 20.432,
           "text": "If a required check is still pending,\nstay at that gate until it finishes and"
         },
         {
-          "start": 21.323,
-          "end": 22.713,
+          "start": 20.432,
+          "end": 21.87,
           "text": "you can inspect the result."
         }
       ]
@@ -251,46 +245,46 @@
     {
       "id": "review",
       "scriptSha256": "69929c87f753cf6b886deb2dd44331f41a42f3b613b13d3d3e33dd72a1a8d18d",
-      "durationFrames": 655,
+      "durationFrames": 633,
       "cues": [
         {
-          "start": 0.451,
-          "end": 4.957,
+          "start": 0.312,
+          "end": 4.4,
           "text": "Now hand over the issue reference, diff,\ntest command, both outputs,"
         },
         {
-          "start": 5.022,
-          "end": 7.07,
+          "start": 4.708,
+          "end": 6.132,
           "text": "and the pull request checks."
         },
         {
-          "start": 7.151,
-          "end": 11.921,
+          "start": 6.564,
+          "end": 11.302,
           "text": "The reviewer opens the actual change and\nrecords their own decision with GitHub"
         },
         {
-          "start": 12.002,
-          "end": 12.846,
+          "start": 11.404,
+          "end": 12.757,
           "text": "CLI."
         },
         {
-          "start": 13.507,
-          "end": 18.385,
+          "start": 13.171,
+          "end": 17.929,
           "text": "Give them enough to question the result:\nwhich assertion failed, what changed,"
         },
         {
-          "start": 18.471,
-          "end": 20.25,
+          "start": 18.146,
+          "end": 19.544,
           "text": "and what was verified."
         },
         {
-          "start": 20.331,
-          "end": 24.077,
+          "start": 20.009,
+          "end": 23.821,
           "text": "That's the value of a deterministic\ncheckpoint in a workflow that also"
         },
         {
-          "start": 24.131,
-          "end": 25.328,
+          "start": 23.821,
+          "end": 24.876,
           "text": "requires judgment."
         }
       ]
